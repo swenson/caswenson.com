@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,10 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2012_09_25_post_test">Post 1 Test</a></h1>
+<p>This is a test post.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />
@@ -47,11 +49,11 @@ window.onload = function () {{
 	</div>
 	<h2>Pages</h2>
 		<ul>
-	    <li><a href="about">About</a></li>
-	    <li><a href="disclosures">Disclousres</a></li>
-	    <li><a href="speaking">Speaking</a></li>
-		  <li><a href="presentations">Presentations</a></li>
-		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+	    <li><a href="/about">About</a></li>
+	    <li><a href="/disclosures">Disclousres</a></li>
+	    <li><a href="/speaking">Speaking</a></li>
+		  <li><a href="/presentations">Presentations</a></li>
+		  <li><a href="/mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
 		</ul>
 	  <h2><a href="/past">Archive</a></h2>
 	</div>
