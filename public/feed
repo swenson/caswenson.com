@@ -2,11 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2012-04-28T22:00:40-00:00</updated>
+  <updated>2012-09-27T06:51:02-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>What Every Programmer Should Know About Memory</title><link href="2012_04_28_what_every_programmer_should_know_about_memory" rel="alternate" /><id>2012_04_28_what_every_programmer_should_know_about_memory</id><published>2012-04-28T22:00:40-00:00</published><updated>2012-04-28T22:00:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Blog Redo</title><link href="2012_09_26_blog_redo" rel="alternate" /><id>2012_09_26_blog_redo</id><published>2012-09-27T06:51:02-00:00</published><updated>2012-09-27T06:51:02-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I got tired of the old site having issues, so I rewrote the site using a
+custom static site gene</summary><content type="html">
+&lt;p&gt;I got tired of the old site having issues, so I rewrote the site using a
+custom static site generator.&lt;/p&gt;
+
+&lt;p&gt;Things pretty much work. I am in the process of moving old Disqus comments over
+to the new system, and working with a small issue or two there.&lt;/p&gt;
+
+&lt;p&gt;I should have some new material up soon as well!&lt;/p&gt;
+</content></entry><entry><title>What Every Programmer Should Know About Memory</title><link href="2012_04_28_what_every_programmer_should_know_about_memory" rel="alternate" /><id>2012_04_28_what_every_programmer_should_know_about_memory</id><published>2012-04-28T22:00:40-00:00</published><updated>2012-04-28T22:00:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know </summary><content type="html">
 &lt;p&gt;I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know About Memory".&lt;/p&gt;
 
@@ -109,14 +119,5 @@ sections when you distribute them as separate work. &amp;hellip;
 &lt;p&gt;(Note that you have to escape the percent signs in a crontab line.)&lt;/p&gt;
 
 &lt;p&gt;Just a quick update &amp;mdash; trying to get back into the habit of posting.&lt;/p&gt;
-</content></entry><entry><title>Language Implementation Patterns</title><link href="2010_02_09_language_implementation_patterns" rel="alternate" /><id>2010_02_09_language_implementation_patterns</id><published>2010-02-10T01:21:40-00:00</published><updated>2010-02-10T01:21:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;&lt;div style="float: left; margin-right: 5px;"&gt;&lt;a href="http://www.amazon.com/gp/product/193435645</summary><content type="html">
-&lt;p&gt;&lt;div style="float: left; margin-right: 5px;"&gt;&lt;a href="http://www.amazon.com/gp/product/193435645X?ie=UTF8&amp;amp;tag=mathfigu-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=193435645X"&gt;&lt;img border="0" src="http://m.caswenson.com/images/parr_lang.jpg"&gt;&lt;/a&gt;&lt;img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&amp;amp;l=as2&amp;amp;o=1&amp;amp;a=193435645X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;&lt;/div&gt;One thing I am constantly thinking about is programming languages: implementing them, designing them, using them.  The latter two are just fun, but implementing languages is a tricky business, and can be difficult and time-consuming.&lt;/p&gt;
-
-&lt;p&gt;There are some tools for helping you implement a language, such as the classical &lt;a href="http://dinosaur.compilertools.net/"&gt;lex and yacc&lt;/a&gt; lexical analyzer and parser generator, respectively, or the more modern &lt;a href="http://www.antlr.org/"&gt;ANTLR&lt;/a&gt;, a combination of both.&lt;/p&gt;
-
-&lt;p&gt;However, learning how to even use these tools, or when to, is also difficult.  Enter &lt;a href="http://www.amazon.com/gp/product/193435645X?ie=UTF8&amp;amp;tag=mathfigu-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=193435645X"&gt;Language Implementation Patterns&lt;/a&gt;&lt;img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&amp;amp;l=as2&amp;amp;o=1&amp;amp;a=193435645X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;.  This book, by Terence Parr (inventor of ANTLR, no less), attempts, quite successfully, to introduce the common patterns that you will use in implementing a language, with or without a parser-generator like ANTLR.&lt;/p&gt;
-
-&lt;p&gt;Most of all, I say that it is about freaking time for a book like this to come out.  Compiler books have been mostly stagnating these past few years, and while this doesn't cover some of the more advanced optimization techniques and the like, it does a thorough job of showing how modern compilers are built.  Bravo, Terence.&lt;/p&gt;
 </content></entry>
 </feed>
