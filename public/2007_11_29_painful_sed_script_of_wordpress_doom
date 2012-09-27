@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2007_11_29_painful_sed_script_of_wordpress_doom">Painful sed script of Wordpress doom</a></h1>
+	<div class="postzoom"><h1><a href="2007_11_29_painful_sed_script_of_wordpress_doom">Painful sed script of Wordpress doom</a></h1>
 <p>So, I figured out most of the problems, and how to solve them.</p>
 
 <p>Problem one: pasting text from Word stores the document in <a href="http://en.wikipedia.org/wiki/Windows-1252">Windows-1252</a> encoding.</p>
@@ -95,7 +95,7 @@ s/\xc3\x83\xc2\xb6/\&amp;ouml;/g
 
 <p>This removes all but 30 of my invalid characters, and those remaining ones appear to be pretty much broke (viewing the original articles shows garbage, and there is no logical character that would fit in those places).  Good enough.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_11_29_painful_sed_script_of_wordpress_doom">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

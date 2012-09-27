@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2008_02_19_mac_os_x_python">Mac OS X Python</a></h1>
+	<div class="postzoom"><h1><a href="2008_02_19_mac_os_x_python">Mac OS X Python</a></h1>
 <p><a href='http://www.caswenson.com/wp-content/uploads/2008/02/python.png' title='Python Logo'><img class="alignright" src='http://www.caswenson.com/wp-content/uploads/2008/02/python.png' alt='Python Logo' /></a></p>
 
 <p>Python on Mac OS X is poorly designed and all sorts of unfun to fix.  Certain packages work better with the built-in Python, certain work better with fink/ports/portage Python.  However, wxPython only works with the built-in one, since it integrates with Aqua, so I decided to switch everything over to using only the built-in version.</p>
@@ -52,7 +52,7 @@ window.onload = function () {
 
 <p>For my work, the core packages are <a href="http://www.wxpython.org/download.php">wxPython</a>, <a href="http://www.scipy.org/Download">numpy + scipy</a>, <a href="http://sourceforge.net/projects/matplotlib">matplotlib</a>, and the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>.  I've successfully installed them all now using the above method, but note that numpy and scipy will not install via the OS X package, but have to be compiled from source.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_02_19_mac_os_x_python">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

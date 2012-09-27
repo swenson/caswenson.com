@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2008_08_08_the_call_of_cthulhu_anyone_for_a_free_short_story">The Call of Cthulhu: Anyone for a free short story?</a></h1>
+	<div class="postzoom"><h1><a href="2008_08_08_the_call_of_cthulhu_anyone_for_a_free_short_story">The Call of Cthulhu: Anyone for a free short story?</a></h1>
 <p>I decided to finally sit down and read the short story <a href="http://en.wikipedia.org/wiki/Call_Of_Cthulhu">The Call of Cthulhu</a>, by H.P. Lovecraft the other day.  Turns out that it is <a href="http://www.aetherial.net/lovecraft/">pretty much</a> in the public domain (this is actually a matter of some debate, but all the evidence I have found on the Internet seems to point pretty squarely that the copyrights expired long ago).</p>
 
 <p>Anyways, I often wish to read works that were published in print, well, in print.  I found the complete text on <a href="http://en.wikisource.org/wiki/The_Call_of_Cthulhu">Wikipedia</a>, but it feels kind of lifeless.  Something like Lovecraft just <em>feels</em> like it should be in print, you know?</p>
@@ -54,7 +54,7 @@ window.onload = function () {
 
 <p>Maybe there will be more to come in the future?</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_08_08_the_call_of_cthulhu_anyone_for_a_free_short_story">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

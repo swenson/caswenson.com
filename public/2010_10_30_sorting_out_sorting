@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2010_10_30_sorting_out_sorting">Sorting out sorting</a></h1>
+	<div class="postzoom"><h1><a href="2010_10_30_sorting_out_sorting">Sorting out sorting</a></h1>
 <p>I <a href="http://github.com/swenson/sort">recently wrote</a> a C version of a bunch of comparison-based sorting algorithms, notably timsort and quicksort.</p>
 
 <p><a href="http://en.wikipedia.org/wiki/Timsort">Timsort</a> is a neat, unbalanced mergesort that I've been wanting to try out for the past while, and so I spent the time to write a fast C implementation of the algorithm.  My experiments on random data show about a 5-10% improvement over quicksort, which is pretty amazing.  If the data has any structure, which is extremely common, it has "superhuman" performance, as it can merge natural runs in the data in an efficient manner.</p>
@@ -51,7 +51,7 @@ window.onload = function () {
 
 <p>Sadly, sorting doesn't usually have <a href="http://www.youtube.com/watch?v=YvTW7341kpA">sound effects</a>.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2010_10_30_sorting_out_sorting">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2010_04_27_task">Task</a></h1>
+	<div class="postzoom"><h1><a href="2010_04_27_task">Task</a></h1>
 <p>I recently discovered <a href="http://taskwarrior.org/projects/show/taskwarrior/">task</a>, a powerful, yet simple, command-line to-do and task management tool.  Up until now, I hadn't found any way to manage to-do lists that felt "right".  But task has changed that for me.</p>
 
 <p>One feature I feel is missing (though I think they are planning on <a href="http://taskwarrior.org/wiki/taskwarrior/Features">fixing this</a>) is the lack of email notifications.  I would really like to know what I have to do today, and I may not always remember to login and check, especially in my current transition period of getting used to using it everyday.</p>
@@ -52,7 +52,7 @@ window.onload = function () {
 
 <p>Just a quick update &mdash; trying to get back into the habit of posting.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2010_04_27_task">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

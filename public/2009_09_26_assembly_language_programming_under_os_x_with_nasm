@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2009_09_26_assembly_language_programming_under_os_x_with_nasm">Assembly language programming under OS X with NASM</a></h1>
+	<div class="postzoom"><h1><a href="2009_09_26_assembly_language_programming_under_os_x_with_nasm">Assembly language programming under OS X with NASM</a></h1>
 <p>One of my favorite passions from my teenage days was assembly language programming.  Don't laugh.</p>
 
 <p>It embodies a lot of my favorite things about programming: I have total control, it is clean and simple, and it is just and fast and functional as I am capable of making it.  The only thing standing in the way of me and world domination is how well I can program.</p>
@@ -150,7 +150,7 @@ J
 
 <p>Am I the only one who likes assembly language programming these days?</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2009_09_26_assembly_language_programming_under_os_x_with_nasm">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

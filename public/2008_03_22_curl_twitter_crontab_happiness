@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2008_03_22_curl_twitter_crontab_happiness">curl + twitter + crontab = Happiness</a></h1>
+	<div class="postzoom"><h1><a href="2008_03_22_curl_twitter_crontab_happiness">curl + twitter + crontab = Happiness</a></h1>
 <p>I've always wanted to know how my servers are doing.  I don't have time to check on every single one of them all of the time.  In the past, this meant perhaps an automatic email sent to me at some specified time during the day.</p>
 
 <p>But emails are annoying.  RSS is definitely the technology that would be nice, but how to implement it?</p>
@@ -68,7 +68,7 @@ curl --basic --user $USER:$PASS --data status="$STATUS" $URL</pre>
 
 <p>Naturally, this was designed to work for Linux, and would probably work on OS X and Windows/<a href="http://en.wikipedia.org/wiki/Cygwin">Cygwin</a> as well.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_03_22_curl_twitter_crontab_happiness">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

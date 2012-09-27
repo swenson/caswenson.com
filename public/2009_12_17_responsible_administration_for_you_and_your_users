@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2009_12_17_responsible_administration_for_you_and_your_users">Responsible administration for you and your users</a></h1>
+	<div class="postzoom"><h1><a href="2009_12_17_responsible_administration_for_you_and_your_users">Responsible administration for you and your users</a></h1>
 <p>When I was constructing my own websites, for myself or for clients, I was always bothered by one thing:</p>
 
 <p>I didn't have an SSL certificate for any of my domains.</p>
@@ -61,7 +61,7 @@ window.onload = function () {
 
 <p>Extra credit question: why aren't there are any free SSL signing authorities out there?</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2009_12_17_responsible_administration_for_you_and_your_users">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

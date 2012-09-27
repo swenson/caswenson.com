@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2008_08_29_my_best_purchase_recently_textmate">My best purchase recently: TextMate</a></h1>
+	<div class="postzoom"><h1><a href="2008_08_29_my_best_purchase_recently_textmate">My best purchase recently: TextMate</a></h1>
 <p><a href="http://macromates.com/">TextMate</a> is one of my favorite companions these days.  It's the pinnacle text editing, but unfortunately, only for Mac OS X.</p>
 
 <p>What makes it so great?  A few things:<ul>
@@ -53,7 +53,7 @@ window.onload = function () {
 
 <p>(P.P.S. Anyone doing serious TeX work should be using OS X anyways: it's the only platform that has built-in grammar checking, so you can finally grammar check your TeX!)</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_08_29_my_best_purchase_recently_textmate">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

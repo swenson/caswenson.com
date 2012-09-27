@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2007_06_17_python_fftw">Python (F)FTW!</a></h1>
+	<div class="postzoom"><h1><a href="2007_06_17_python_fftw">Python (F)FTW!</a></h1>
 <p>Some of the work I have been doing involves taking the <a href="http://en.wikipedia.org/wiki/Fast_Fourier_Transform">Fast Fourier Transform</a> of a set of samples.  I originally thought that this needed to be done in C, using <a href="http://www.fftw.org/">FFTW</a>. However, it leads to messes like</p>
 
 <pre lang="c">fftw_complex *in, *out;
@@ -69,7 +69,7 @@ fftout = fft(samples)
 
 <p>And that's it! I should have been using nothing but Python for nearly everything from the start, and screw C.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_06_17_python_fftw">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

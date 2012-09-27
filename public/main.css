@@ -156,7 +156,7 @@ hr {
 	
 }
 
-.post .title {
+.post h1 {
 	margin: 0;
 	padding: 0px 0 0 0;
 	margin-left: 10px;
@@ -164,12 +164,12 @@ hr {
 	font-size: 1.4em;
 }
 
-.post .title a {
+.post h1 a {
 	color: #222;
 	text-decoration: none;
 }
 
-.post title a:hover {
+.post h1 a:hover {
   color: #080808;
 }
 
@@ -207,7 +207,7 @@ hr {
 	position: relative;
 }
 
-.postzoom .title {
+.postzoom h1 {
 	margin: 0;
 	padding: 0px 0 0 0;
 	font-size: 3em;
@@ -259,7 +259,7 @@ hr {
 	color: #828170;
 }
 
-.archive .title a {
+.archive h1 a {
 	font-size: 120%;
 	text-decoration: none;
 	color: #333312;
@@ -293,27 +293,6 @@ pre span.punct { color: #6A5ACD; }
 pre span.regex { color: #DD00DD; }
 pre span.string { color: #DD00DD; }
 pre span.symbol { color: #008B8B; }
-
-/* Edit post */
-
-form[name=edit] p.title {
-  font-size: 100%;
-}
-
-form[name=edit] input[name=title] {
-	font-size: 100%;
-	width: 300pt;
-}
-form[name=edit] input[name=tags] {
-	font-size: 100%;
-	width: 300pt;
-}
-form[name=edit] textarea {
-	font-size: 100%;
-	width: 50em;
-	height: 25em;
-	display: inline;
-}
 
 /* Sidebar */
 

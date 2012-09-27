@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2007_09_13_two_texlatex_period_spacing_gotchas">Two TeX/LaTeX period spacing gotchas</a></h1>
+	<div class="postzoom"><h1><a href="2007_09_13_two_texlatex_period_spacing_gotchas">Two TeX/LaTeX period spacing gotchas</a></h1>
 <p>An easy thing to forget about TeX is that it tries to guess what you mean, and can get it wrong.  In this case, I am talking about periods.</p>
 
 <p>TeX interprets a period based on the previous letter.  If the previous letter is a capital, like "D. Knuth", it puts a normal space in, thinking that you are giving an initial.  If it is lowercase, like "I went to the store.  It was nice", it assumes you meant a period that ends a sentence, which has about 1 to 1.5 spaces after it (depending on the justification needs and the style settings you prefer).</p>
@@ -63,7 +63,7 @@ window.onload = function () {
 
 <p>Thanks to <a href="http://john.regehr.org/latex/">John</a> for giving one of the scripts and reminding me of this.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_09_13_two_texlatex_period_spacing_gotchas">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

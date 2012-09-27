@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2007_10_13_unread_book_meme">Unread book meme</a></h1>
+	<div class="postzoom"><h1><a href="2007_10_13_unread_book_meme">Unread book meme</a></h1>
 <p>Per <a href="http://www.thursdaybram.com">Thursday Bram</a>'s blog:</p>
 
 <blockquote>These are the top 106 books most often marked as “unread” by LibraryThing’s users. As usual, bold what you have read, italicise what you started but couldn’t finish, and strike through what you couldn’t stand. Add an asterisk to those you’ve read more than once. Underline those on your to-read list.
@@ -149,7 +149,7 @@ Watership Down
 Wuthering Heights
 Zen and the Art of Motorcycle Maintenance: an Inquiry into Values</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_10_13_unread_book_meme">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

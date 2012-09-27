@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2009_04_25_netbook">Netbook</a></h1>
+	<div class="postzoom"><h1><a href="2009_04_25_netbook">Netbook</a></h1>
 <p>I finally convinced myself to buy a netbook recently.  I am currently typing this post on it.</p>
 
 <p>I got an Asus EeePC 1000HA &ndash; that is, it's got a 10&quot; screen, 160 GB hard drive (regular, not solid state), and a 6-cell battery (4.5 hours or so battery life under real-world conditions, I estimate).  I'm pretty thrilled about it: typing is fine (though the right shift key has some adjustment time), the screen is nice and crisp, and it is very snappy under Windows XP and in Linux.  The 1.6 GHz Atom CPU is <strong>just</strong> enough to play Netflix Instant videos, which was the only thing I was worried about performance-wise.</p>
@@ -49,7 +49,7 @@ window.onload = function () {
 
 <p>Overall, I'm impressed and very happy with my purchase.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2009_04_25_netbook">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

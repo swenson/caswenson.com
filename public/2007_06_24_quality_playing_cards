@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2007_06_24_quality_playing_cards">Quality playing cards</a></h1>
+	<div class="postzoom"><h1><a href="2007_06_24_quality_playing_cards">Quality playing cards</a></h1>
 <p>One of my previous annoyances in life was the lack of a good set of EPS / PDF playing cards.  For the book I am currently writing, and possibly for a future one, I wanted to show some examples, and nice figures can say so much more than some dull text.  But finding some good playing cards that weren't ripped from Windows Solitaire or were at terrible resolution has been very difficult.</p>
 
 <p>Now, the normal cards, Ace through Ten, would be easy to make in MetaPost.  Heck, the shapes are even part of Unicode.  But, the real problem is the face cards.  I am not an artist, and I don't have the time, so I just can't make some new face cards.  I also couldn't seem to find even any high-res scans of the Bicycle cards faces, even though I would imagine that they are public domain by now (since those date back over 100 years).</p>
@@ -47,7 +47,7 @@ window.onload = function () {
 
 <p>I packaged them up as well.  I talked to David, and he said he might even distribute them along with the official version in the future, so that even more people might get some use out of them (since nobody who cares about high quality playing cards probably reads my blog).  But for those of you interested, on the right-hand side of this page under "Resources", you can download them from here.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_06_24_quality_playing_cards">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

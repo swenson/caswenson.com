@@ -38,14 +38,14 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2012_04_28_what_every_programmer_should_know_about_memory">What Every Programmer Should Know About Memory</a></h1>
+	<div class="postzoom"><h1><a href="2012_04_28_what_every_programmer_should_know_about_memory">What Every Programmer Should Know About Memory</a></h1>
 <p>I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know About Memory".</p>
 
 <p><a href="http://www.akkadia.org/drepper/cpumemory.pdf">http://www.akkadia.org/drepper/cpumemory.pdf</a></p>
 
 <p>If you haven't read it, and you are a programmer, then you really need to read this paper.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2012_04_28_what_every_programmer_should_know_about_memory">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

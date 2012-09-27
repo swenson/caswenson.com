@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2009_02_16_the_perfect_programming_language">The perfect programming language</a></h1>
+	<div class="postzoom"><h1><a href="2009_02_16_the_perfect_programming_language">The perfect programming language</a></h1>
 <p>I've been doing a lot of programming lately, and in a multitude of different languages.  For the most part, these are pretty "decent" languages: C, Python, Ruby, etc.  However, none of the languages really makes me happy.</p>
 
 <p>It's hard to define exactly what I mean by "happy".  They're all, for the most part, <a href="http://xkcd.com/353/">fun</a> to program in to various degrees.  But I don't really feel like I have all of the power at my fingertips in any of them.  For example:</p>
@@ -81,7 +81,7 @@ window.onload = function () {
 
 <p><small>And yes, if I get some time, I might consider forking a project related to one of the above to get what I want.</small></p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2009_02_16_the_perfect_programming_language">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

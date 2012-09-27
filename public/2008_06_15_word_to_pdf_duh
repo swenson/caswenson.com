@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2008_06_15_word_to_pdf_duh">Word to PDF: Duh!</a></h1>
+	<div class="postzoom"><h1><a href="2008_06_15_word_to_pdf_duh">Word to PDF: Duh!</a></h1>
 <p>I don't know about you, but I really despise Word files.  I hate dealing with them: they are bulky and slow, and full of potential problems.  Even with Office 2008 for my Mac, they are a pain.</p>
 
 <p>PDFs on my Mac are, however, pretty nice.  As long as they can be loaded with the OS X's Preview application (99.9% of the time), they are snappy and quick to search.  I have fallen back in love with PDFs on my Mac.</p>
@@ -53,7 +53,7 @@ window.onload = function () {
 
 <p>Acrobat 8 Reader on Windows, though, I've had a lot of trouble with.  Specifically, <a href="http://www.winshell.org">WinShell</a> (my LaTeX editor) will crash it constantly when it notifies it of an update to the PDF created by LaTeX.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_06_15_word_to_pdf_duh">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2008_04_29_hacked_my_former_vonages_dlink_vtavd">Hacked my former Vonage's D-Link VTA-VD</a></h1>
+	<div class="postzoom"><h1><a href="2008_04_29_hacked_my_former_vonages_dlink_vtavd">Hacked my former Vonage's D-Link VTA-VD</a></h1>
 <p><a href='http://www.caswenson.com/wp-content/uploads/2008/04/picture-2.png'><img class="alignright" src="http://www.caswenson.com/wp-content/uploads/2008/04/picture-2-300x282.png" alt="" title="D-Link VTA Success" width="300" height="282" class="alignnone size-medium wp-image-48" /></a>I finally successfully hacked my D-Link VTA-VD (Vonage Terminal Adapter) 1.00.09 firmware to work with an arbitrary SIP server.  (Although I've kept it at the 1.00.07 firmware once I successfully downgraded).</p>
 
 <p>I relied heavily on these <a href="http://www.dslreports.com/forum/remark,16748441">two</a> <a href="http://www.dslreports.com/forum/remark,19774802?hilite=">posts</a>.  I definitely would have had a hard time doing it without them.</p>
@@ -100,7 +100,7 @@ ti.tftp.vonage.net.      3600000      A     192.168.0.101</pre>
 
 <p>And after that, you should be able to configure the device for an arbitrary SIP server by logging in with the Admin account ("Admin" is the default password, case-sensitive).</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_04_29_hacked_my_former_vonages_dlink_vtavd">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

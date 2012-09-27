@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2008_02_22_python_gnuplot_gnuplotpy">Python + gnuplot = gnuplot-py</a></h1>
+	<div class="postzoom"><h1><a href="2008_02_22_python_gnuplot_gnuplotpy">Python + gnuplot = gnuplot-py</a></h1>
 <p><a href='http://www.caswenson.com/wp-content/uploads/2008/02/gnuplot-py.png' title='Image from gnuplot'><img class="alignright" src='http://www.caswenson.com/wp-content/uploads/2008/02/gnuplot-py.thumbnail.png' alt='Image from gnuplot' /></a></p>
 
 <p>I recently discovered a fairly old (last updated in 2003), but still functional package for Python that provides nifty integration with <a href="http://www.gnuplot.info">gnuplot</a> called <a href="http://gnuplot-py.sourceforge.net/">gnuplot-py</a>.</p>
@@ -63,7 +63,7 @@ gplot.plot(data) # plot the data</pre>
 
 <p>The hardest part of using it is the fact that the Python "Numeric" package is now called numpy.  To fix this, download <a href="http://mirrors.usc.edu/pub/linux/distributions/gentoo/dev-python/gnuplot-py/files/gnuplot-py-1.7-numpy.patch">this patch file</a> and run it against the sources you download (usually with <code>patch -p1 &lt; gnuplot-py-1.7-numpy.patch</code>, if run from within the source directory itself).</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_02_22_python_gnuplot_gnuplotpy">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

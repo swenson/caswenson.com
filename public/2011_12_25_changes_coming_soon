@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2011_12_25_changes_coming_soon">Changes coming soon</a></h1>
+	<div class="postzoom"><h1><a href="2011_12_25_changes_coming_soon">Changes coming soon</a></h1>
 <p>This is the first post of the year. That's a little sad, but I think I am going to be redoing this site a bit in the near future.</p>
 
 <p>So, some upcoming changes:</p>
@@ -49,7 +49,7 @@ window.onload = function () {
 <li><p>... and more.</p></li>
 </ul>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2011_12_25_changes_coming_soon">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="postzoom"><h1><a href="2007_10_04_this_is_going_to_be_a_long_month">This is going to be a long month</a></h1>
+	<div class="postzoom"><h1><a href="2007_10_04_this_is_going_to_be_a_long_month">This is going to be a long month</a></h1>
 <p>October has just gotten started, and it's already incredibly stressful.</p>
 
 <p>The book's nearly done, but there's a lot of edits, reviews, meetings, and general <b>work</b> that has to be done to get this thing through.  And I thought writing it was the hard part!</p>
@@ -51,7 +51,7 @@ window.onload = function () {
 
 <p>And so what am I doing that isn't finishing up my current work?  Posting here.</p>
 </div>
-	
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_10_04_this_is_going_to_be_a_long_month">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />
