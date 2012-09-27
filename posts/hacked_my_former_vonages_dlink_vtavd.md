@@ -1,0 +1,62 @@
+Hacked my former Vonage's D-Link VTA-VD
+=======================================
+<a href='http://www.caswenson.com/wp-content/uploads/2008/04/picture-2.png'><img class="alignright" src="http://www.caswenson.com/wp-content/uploads/2008/04/picture-2-300x282.png" alt="" title="D-Link VTA Success" width="300" height="282" class="alignnone size-medium wp-image-48" /></a>I finally successfully hacked my D-Link VTA-VD (Vonage Terminal Adapter) 1.00.09 firmware to work with an arbitrary SIP server.  (Although I've kept it at the 1.00.07 firmware once I successfully downgraded).
+
+I relied heavily on these <a href="http://www.dslreports.com/forum/remark,16748441">two</a> <a href="http://www.dslreports.com/forum/remark,19774802?hilite=">posts</a>.  I definitely would have had a hard time doing it without them.
+
+First, you can just hope that your D-Link has the Support account unlocked.  Usually, the password will either be blank, or it will be "tivonpw", and the user name is "Support".
+
+If that doesn't work, you can try the URL trick: login as "user" (usually the password is "user"), and then send it a URL of the form
+
+<code>http://192.168.0.2/cgi-bin/webcm?getpage=/usr/www_safe/html/home/home_system.htmvar:OldProvisioned=on&=&var:OldUnProvisioned=on&=&var:isFirstTime=no</code>
+
+where you change the IP address, and alternate between "on" and "off" for the "OldProvisioned" setting in the URL.  Eventually, you should get both the "Provisioned" and "Non-Provisioned" reset check boxes checked.  Once you do, tell it to do a factory reset.  Hopefully that will work.  (It may take several tries, as well as a hardware reset or two (by pressing the reset button).)
+
+That didn't work for me.  If that doesn't for you as well, you are in for a bit of work.  You will need a DHCP server, a DNS server, a TFTP server, and <a href="http://www.wireshark.org/">Wireshark</a>.  I have OS X, so I used <a href="http://www.finkproject.org/">Fink</a> to install a DHCP server (called "dhcp") (rather than futz with OS X's built-in one) and the DNS server (I used BIND, listed under "bind9").  So, first, set up your DHCP server with a nice  subnet like (in <code>/sw/etc/dhcpd.conf</code>):
+
+<pre>subnet 192.168.0.0 netmask 255.255.255.0 {
+  range 192.168.0.2 192.168.0.2;
+  server-name "192.168.0.101";
+  option routers 192.168.0.101;
+  option domain-name-servers 192.168.0.101;
+}</pre>
+
+Where 192.168.0.101 is the IP address of your box, 192.168.0.2 is the address of your VTA that you would like to hack.  If it complains when you start it up about some file being missing, just run <code>sudo touch /var/db/dhcpd.leases</code>.
+
+Now you need a DNS zone.  If you are on OS X, just drop this line into your <code>/sw/etc/named.conf</code>:
+
+<pre>zone "vonage.net" {
+    type master;
+    file "/sw/etc/named.vonage";
+    notify no;
+};</pre>
+
+And then create a file <code>/sw/etc/named.vonage</code> with the following junk in it (again, the 192.168.0.101 should be your server)</code>:
+
+<pre>$TTL    604800
+@   IN  SOA vonage.net. root.vonage.net. (
+                  1     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800 )   ; Negative Cache TTL
+@   IN  NS  ti.tftp.vonage.net.
+ti.tftp.vonage.net.      3600000      A     192.168.0.101</pre>
+
+While you are at the command-line, go ahead and launch the built-in TFTP server with the command <code>sudo launchctl load -F /System/Library/LaunchDaemons/tftp.plist</code>.  You can unload it later with <code>sudo launchctl unload /System/Library/LaunchDaemons/tftp.plist</code>.  The TFTP folder is in <code>/private/tftpboot</code>.
+
+You have Wireshark installed by now, right?  Good.  Now, plug that router into your machine (not connected to the Internet), and sniff all of the traffic using Wireshark.  After about a minute or so, you should see a TFTP request come in for a file called at ti.tftp.vonage.net at "/adsfadf/ti00179A------.xml", where the junk at the beginning is some random junk, and the "00179A------" is your MAC address.
+
+Now, go out on the Internet, and grab that XML file from Vonage at <code>http://httpconfig.vonage.net/adsfadf/ti00179A------.xml</code> (again, replacing where necessary), and upload the XML file to that same folder under <code>/private/tftpboot</code> on your server.  Don't bother trying to read it... it's apparently encrypted with RC4 (and you can recover the key later).  Now the VTA will either find the file on its own, or you may just reboot it again and it will search for the file and find it on your "Vonage" TFTP server.
+
+Ha-ha!  Now you should be able to login as "Support" (either no password or "tivonpw" as your password, again).
+
+Now, you need to get a copy of the <a href="http://httpconfig.vonage.net/VTA-11.4.0-r060331-1.00.07-r060418.img">1.00.07 firmware</a> to downgrade.  Login to your box with the Support account and upload it!
+
+Now, it does have two firmware slots, and it seems to have a tendency to boot up into the 1.00.09 firmware for no reason, so if that happens, upload the 1.00.07 firmware again.
+
+Okay, home stretch.  Configure it with a static IP (trust me... it's easier).  Now find a Windows box (ugh) and get the beta copy of <a href="http://www.bargainshare.com/index.php?showtopic=87504">CYT 4.6</a> (I couldn't get the stable one to work, at least).  Open up the program from the command-line with "DLINK" as a command-line parameter (like, <code>cyt46.exe DLINK</code>).  Set the IP address of your device (option 3), and then go to option 1 to reset the password and start an XML provisioning server.
+
+I'm not sure what all kind of magic is going on here, but something is.  (I also had my Windows box as the DNS and default gateway, too, which may or may not have helped.)  Eventually (after about a minute or so), it should report success.  I had to reset it and do this again for it to take.
+
+And after that, you should be able to configure the device for an arbitrary SIP server by logging in with the Admin account ("Admin" is the default password, case-sensitive).

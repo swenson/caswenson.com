@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,37 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2008_03_22_curl_twitter_crontab_happiness">curl + twitter + crontab = Happiness</a></h1>
+<p>I've always wanted to know how my servers are doing.  I don't have time to check on every single one of them all of the time.  In the past, this meant perhaps an automatic email sent to me at some specified time during the day.</p>
+
+<p>But emails are annoying.  RSS is definitely the technology that would be nice, but how to implement it?</p>
+
+<p><a href="http://www.twitter.com/">Twitter</a> is ideal for this purpose.  Multiple people (admins?) can check the status of a server as it is updated, and you can lock it down so that only authorized people can view the status.</p>
+
+<p>Updating is easy using the Twitter API through <a href="http://www.sakana.fr/blog/2007/03/18/scripting-twitter-with-curl/">curl</a>.  I just wrote the following bash script to update a twitter feed for a specified user:</p>
+
+<pre lang="bash">#!/bin/bash
+
+USER="server"
+PASS="password"
+URL="http://twitter.com/statuses/update.xml"
+STATUS="[`hostname`] `uptime`, `df -h / | grep -o -e '[0-9][0-9]*%'` HD used"
+
+curl --basic --user $USER:$PASS --data status="$STATUS" $URL</pre>
+
+<p>This automatically sends updates that look like:</p>
+
+<pre>[servname] 11:23:20 up 7 days, 14:43, 1 user, load average: 0.18, 0.36, 0.17, 83% HD used</pre>
+
+<p>Then I name it something useful, like <code>/root/twitter.sh</code>, and add a <a href="http://en.wikipedia.org/wiki/Cron">crontab</a> entry:</p>
+
+<pre>0 0 * * * /root/twitter.sh >& /dev/null</pre>
+
+<p>And I'm set.</p>
+
+<p>Naturally, this was designed to work for Linux, and would probably work on OS X and Windows/<a href="http://en.wikipedia.org/wiki/Cygwin">Cygwin</a> as well.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

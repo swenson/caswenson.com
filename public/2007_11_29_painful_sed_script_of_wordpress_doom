@@ -1,0 +1,121 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Christopher Swenson</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+
+<script src="js/shCore.js" type="text/javascript"></script>
+<!--<script src="js/shBrushCSharp.js" type="text/javascript"></script>
+<script src="js/shBrushCpp.js" type="text/javascript"></script>
+<script src="js/shBrushCss.js" type="text/javascript"></script>
+<script src="js/shBrushDelphi.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+<script src="js/shBrushJava.js" type="text/javascript"></script>
+<script src="js/shBrushPhp.js" type="text/javascript"></script>-->
+<script src="js/shBrushRuby.js" type="text/javascript"></script>
+<script src="js/shBrushPython.js" type="text/javascript"></script>
+<!--<script src="js/shBrushSql.js" type="text/javascript"></script>
+<script src="js/shBrushVb.js" type="text/javascript"></script>
+<script src="js/shBrushXml.js" type="text/javascript"></script>-->
+
+<script language="javascript">
+window.onload = function () {
+    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+}
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<img src="images/chrisbluething.png" alt="blue thing" />
+		<h1><a href="/">Christopher Swenson</a></h1>
+		<p>Computer science, math, programming, and stuff.</p>
+	</div>
+</div>
+<div id="content">
+	<div id="postzoom"><h1><a href="2007_11_29_painful_sed_script_of_wordpress_doom">Painful sed script of Wordpress doom</a></h1>
+<p>So, I figured out most of the problems, and how to solve them.</p>
+
+<p>Problem one: pasting text from Word stores the document in <a href="http://en.wikipedia.org/wiki/Windows-1252">Windows-1252</a> encoding.</p>
+
+<p>Problem two: this is stored in MySQL, by default, in the deceptively-similar-to-but-incompatible-with-1252 <a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a> encoding.</p>
+
+<p>Problem three: Wordpress is smart, and automatically converts 1252 into HTML entities, which hides the problem until you dump the database.</p>
+
+<p>Problem four: <a href="http://en.wikipedia.org/wiki/Utf-8">UTF-8</a> is freely intermingled with 1252 text in the entries.</p>
+
+<p>Problem five: Windows does really weird things to encode non-1252 characters (like <a href="http://en.wikipedia.org/wiki/Smart_quotes">smart quotes</a>) in a 1252 character stream.</p>
+
+<p>Problem six: Some piece of software went wrong at some point (probably PHP or phpMyAdmin) , and converted the 1252, non-1252 weird smart quotes, ISO-8859-1, and UTF-8 codes to UTF-8 (by converting the byte literal values instead of the underlying characters, which for UTF-8 codes means that you have to decode twice to get the real answer), but MySQL keeps the text marked as ISO-8859-1.</p>
+
+<p>Problem seven: you are me, and you have 2,300 of these invalid characters in a MySQL dump that needs to be imported.</p>
+
+<p>Problem eight: Mac OS X, by default, uses a sub-standard version of <a href="http://www.gnu.org/software/sed/">sed</a> that does not support replacement of literal values (<code>"\xC2"</code>, for example), making it impossible to replace any non-ASCII characters.</p>
+
+<p>Solution: install sed from <a href="http://finkproject.org/">Fink</a>, and run the following sed script on your MySQL dump:</p>
+
+<pre>
+s/DEFAULT CHARSET=latin1/DEFAULT CHARSET=utf8/g
+s/\xc3\xa2\xe2\x82\xac\xe2\x84\xa2/\&amp;rsquo;/g
+s/\xc3\xa2\xe2\x82\xac\xe2\x80\x9d/\&amp;mdash;/g
+s/\xE2\x80\x9C/\&amp;ndash;/g
+s/\xc3\xa2\xe2\x82\xac\xc2\xa2/\&amp;bull;/g
+s/\xC3\xA2\xE2\x82\xAC\xC5\x93/\&amp;ldquo;/g
+s/\xC3\xA2\xE2\x82\xAC\xC2\x9D/\&amp;rdquo;/g
+s/\xC3\xA2\xE2\x82\xAC\xC2\x9C/\&amp;lsquo;/g
+s/\xC3\xA2\xE2\x82\xAC/\&amp;rdquo;/g
+s/\xC3\x85\xE2\x80\x99/\&amp;lsquo;/g
+s/\xc3\x82\xc2\xba/\&amp;deg;/g
+s/\xC3\x82\xC2\xA9/\&amp;copy;/g
+s/\xc3\xa2\xC2\xA6/\&amp;hellip;/g
+s/\xC3\x82\xC2\xA3/\&amp;pound;/g
+s/\xC3\x83\xC2\xA3/\&amp;aacute;/g
+s/\xc3\x83\xc2\xa1/\&amp;aacute;/g
+s/\xC3\x83\xC2\xA8/\&amp;egrave;/g
+s/\xC3\x83\xC2\xA9/\&amp;eacute;/g
+s/\xC3\x83\xC2\xA7/\&amp;ccedil;/g
+s/\xc3\x82\xc2\xae/\&amp;reg;/g
+s/\xc3\x83\xc2\x81/\&amp;Aacute;/g
+s/\xc3\x83\xc2\xab/\&amp;euml;/g
+s/\xc3\x82\xc2\xbd/\&amp;frac12;/g
+s/\xc3\x82\xc2\xbc/\&amp;frac14;/g
+s/\xc3\xa2\xe2\x80\x9e\xc2\xa2/\&amp;trade;/g
+s/\xc2\xbf//g
+s/\xc2\xa0/\&amp;nbsp;/g
+s/\xc3\x82\xc2\xb9/\&amp;#185;/g
+s/\xc3\x82\xc2\xb0/\&amp;deg;/g
+s/\xc3\x82\xc2\xab/\&amp;laquo;/g
+s/\xc3\x83\xc2\xb6/\&amp;ouml;/g
+</pre>
+
+<p>This removes all but 30 of my invalid characters, and those remaining ones appear to be pretty much broke (viewing the original articles shows garbage, and there is no logical character that would fit in those places).  Good enough.</p>
+</div>
+	
+	<div id="sidebar">
+  <h2>Modern Cryptanalysis</h2>
+	<div><br />
+			<center><a href="http://www.amazon.com/gp/product/047013593X?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047013593X"><img border="0" src="images/21tcdykwdkl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=047013593X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></center>
+	</div>
+	<h2>Pages</h2>
+		<ul>
+	    <li><a href="about">About</a></li>
+	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		  <li><a href="presentations">Presentations</a></li>
+		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+		</ul>
+	  <h2><a href="past">Archive</a></h2>
+	</div>
+	<div id="footer">
+	<p id="legal">
+	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) | 
+	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
+	</p>
+</div>
+</body>
+</html>

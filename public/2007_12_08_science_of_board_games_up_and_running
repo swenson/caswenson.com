@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,12 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_12_08_science_of_board_games_up_and_running">“Science of Board Games” up and running</a></h1>
+<p>I have launched a new blog, <a href="http://www.scienceofboardgames.com">Science of Board Games</a>.  Basically, musings on board games, particularly related to computer science, simulations, and mathematics.  I wrote a quick entry on Scrabble words, and I have another entry on dice coming up soon.</p>
+
+<p>We'll see how it goes.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

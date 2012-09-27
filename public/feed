@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Christopher Swenson</title>
+  <id>http://www.caswenson.com/</id>
+  <updated>2012-04-28T22:00:40-00:00</updated>
+  <author>
+    <name>Christopher Swenson</name>
+  </author>
+<entry><title>What Every Programmer Should Know About Memory</title><link href="2012_04_28_what_every_programmer_should_know_about_memory" rel="alternate" /><id>2012_04_28_what_every_programmer_should_know_about_memory</id><published>2012-04-28T22:00:40-00:00</published><updated>2012-04-28T22:00:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know </summary><content type="html">
+&lt;p&gt;I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know About Memory".&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.akkadia.org/drepper/cpumemory.pdf"&gt;http://www.akkadia.org/drepper/cpumemory.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you haven't read it, and you are a programmer, then you really need to read this paper.&lt;/p&gt;
+</content></entry><entry><title>Modern Cryptanalysis Errata updated</title><link href="2011_12_30_modern_cryptanalysis_errata_updated" rel="alternate" /><id>2011_12_30_modern_cryptanalysis_errata_updated</id><published>2011-12-30T23:36:33-00:00</published><updated>2011-12-30T23:36:33-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I have updated &lt;a href="http://www.caswenson.com/mcerrata"&gt;the errata&lt;/a&gt; for my book, Modern Cr</summary><content type="html">
+&lt;p&gt;I have updated &lt;a href="http://www.caswenson.com/mcerrata"&gt;the errata&lt;/a&gt; for my book, Modern Cryptanalysis.&lt;/p&gt;
+</content></entry><entry><title>Changes coming soon</title><link href="2011_12_25_changes_coming_soon" rel="alternate" /><id>2011_12_25_changes_coming_soon</id><published>2011-12-26T04:51:07-00:00</published><updated>2011-12-26T04:51:07-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;This is the first post of the year. That's a little sad, but I think I am going to be redoing th</summary><content type="html">
+&lt;p&gt;This is the first post of the year. That's a little sad, but I think I am going to be redoing this site a bit in the near future.&lt;/p&gt;
+
+&lt;p&gt;So, some upcoming changes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Errata for my book -- this link has been on the RHS of my page for quite a while now, and I haven't gotten around to compiling this errata.  I will do so in the next few days.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Notes on upcoming projects. I am currently working on several projects, open source and not, and a few writing projects. Expect more details on these.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;... and more.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Monospaced font</title><link href="2010_12_01_monospaced_font" rel="alternate" /><id>2010_12_01_monospaced_font</id><published>2010-12-01T08:40:37-00:00</published><updated>2010-12-01T08:40:37-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I have been searching for years for a decent programming font (that is, monospaced). Over the ye</summary><content type="html">
+&lt;p&gt;I have been searching for years for a decent programming font (that is, monospaced). Over the years, I've found various ones that suited me, but recently I found ranks as my favorite: &lt;a href="http://www.cosmix.org/software/"&gt;Droid Sans Mono, Dotted&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://m.caswenson.com/images/droidsansmono.png" width="901" height="649" alt="Droid Sans Mono Dotted picture" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Essentially, cosmix created a dotted and slashed zero variant to Droid Sans Mono, part of the &lt;a href="http://www.droidfonts.com/"&gt;Droid family of fonts&lt;/a&gt; designed for Google's Android operating system.&lt;/p&gt;
+
+&lt;p&gt;They are designed to very legible, and I have found the Sans Mono to be clean and pleasant when in the terminal or in a coding window.  It also has pretty decent Unicode support.&lt;/p&gt;
+
+&lt;p&gt;My previous favorite coding fonts have been: Monaco, DejaVu Sans Mono, Consolas, and Lucida Sans Console.&lt;/p&gt;
+</content></entry><entry><title>Sorting out sorting</title><link href="2010_10_30_sorting_out_sorting" rel="alternate" /><id>2010_10_30_sorting_out_sorting</id><published>2010-10-30T10:29:39-00:00</published><updated>2010-10-30T10:29:39-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I &lt;a href="http://github.com/swenson/sort"&gt;recently wrote&lt;/a&gt; a C version of a bunch of comparis</summary><content type="html">
+&lt;p&gt;I &lt;a href="http://github.com/swenson/sort"&gt;recently wrote&lt;/a&gt; a C version of a bunch of comparison-based sorting algorithms, notably timsort and quicksort.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Timsort"&gt;Timsort&lt;/a&gt; is a neat, unbalanced mergesort that I've been wanting to try out for the past while, and so I spent the time to write a fast C implementation of the algorithm.  My experiments on random data show about a 5-10% improvement over quicksort, which is pretty amazing.  If the data has any structure, which is extremely common, it has "superhuman" performance, as it can merge natural runs in the data in an efficient manner.&lt;/p&gt;
+
+&lt;p&gt;Another annoying thing I've noticed is that I've written the same sorting algorithms a ton of times, often just changing the type.  Sometimes I've used the standard C &lt;a href="http://fxr.watson.org/fxr/source/stdlib/qsort.c?v=GLIBC27"&gt;qsort&lt;/a&gt;, but the function-pointer comparison function causes awful performance (the version I wrote isn't even as optimized, and is still often twice as fast).  Why can't I just write a good, fast sorting algorithm?&lt;/p&gt;
+
+&lt;p&gt;A solution comes from a neat trick in C: &lt;a href="http://en.wikipedia.org/wiki/C_preprocessor#Token_concatenation"&gt;token pasting&lt;/a&gt;.  Using this, it's possible to write the function once, and just swap out the types as needed.&lt;/p&gt;
+
+&lt;p&gt;Using token pasting, it is also possible to implement the entire library as a single header file: no library to compile!&lt;/p&gt;
+
+&lt;p&gt;Sadly, sorting doesn't usually have &lt;a href="http://www.youtube.com/watch?v=YvTW7341kpA"&gt;sound effects&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Wordpress, Thesis, and the GPL</title><link href="2010_07_18_wordpress_thesis_and_the_gpl" rel="alternate" /><id>2010_07_18_wordpress_thesis_and_the_gpl</id><published>2010-07-18T13:30:39-00:00</published><updated>2010-07-18T13:30:39-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;There's been &lt;a href="http://mixergy.com/chris-pearson-matt-mullenweg/"&gt;some hubbub&lt;/a&gt; going ar</summary><content type="html">
+&lt;p&gt;There's been &lt;a href="http://mixergy.com/chris-pearson-matt-mullenweg/"&gt;some hubbub&lt;/a&gt; going around the web about Wordpress potentially suing a developer for breaching the GPL.&lt;/p&gt;
+
+&lt;p&gt;The quick run-down: Wordpress is licensed under &lt;a href="http://en.wikipedia.org/wiki/GNU_General_Public_License"&gt;GPL2&lt;/a&gt;. Thesis is a premium Wordpress theme.&lt;/p&gt;
+
+&lt;p&gt;The debate really boils down to: does the GPL require Thesis to be also licensed under the GPL?&lt;/p&gt;
+
+&lt;p&gt;The answer: &lt;strong&gt;almost&lt;/strong&gt; not, but maybe.&lt;/p&gt;
+
+&lt;p&gt;I'll save you some reading.  Clause 2 of GPL2:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&amp;hellip; If identifiable sections of that work are not derived from the Program,
+and can be reasonably considered independent and separate works in
+themselves, then this License, and its terms, do not apply to those
+sections when you distribute them as separate work. &amp;hellip;
+&lt;/blockquote&gt;
+
+&lt;p&gt;IANAL, but this says, quite clearly, if it is not derived from GPL code &lt;strong&gt;and&lt;/strong&gt; can be reasonably considered independent, then the GPL does not apply.&lt;/p&gt;
+
+&lt;p&gt;The question is, what does "independent" mean in this sentence.  Does it mean independent in the sense that it can run without it?  Or does it mean the code does not have any code in common with the GPL code?&lt;/p&gt;
+
+&lt;p&gt;It's unclear.  I am inclined to the second viewpoint, because the first has a lot of nasty ramifications.  However, some people, including &lt;a href="http://www.gnu.org/licenses/gpl-faq.html#GPLPluginsInNF"&gt;the FSF&lt;/a&gt;, appear to believe in the first viewpoint (roughly speaking).&lt;/p&gt;
+
+&lt;p&gt;Ugh.  Software licensing sucks.  This is why I use the &lt;a href="http://en.wikipedia.org/wiki/MIT_License"&gt;MIT License&lt;/a&gt;.  Mostly because I like putting some kind of license on the code, and this seems one of the least restrictive ones.&lt;/p&gt;
+</content></entry><entry><title>Intel Threading Challenge 2010, ICFP 2010</title><link href="2010_06_06_intel_threading_challenge_2010_icfp_2010" rel="alternate" /><id>2010_06_06_intel_threading_challenge_2010_icfp_2010</id><published>2010-06-07T04:41:06-00:00</published><updated>2010-06-07T04:41:06-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I'm a sucker for programming contests, and have been since high school.&lt;/p&gt;
+
+&lt;p&gt;I thought I woul</summary><content type="html">
+&lt;p&gt;I'm a sucker for programming contests, and have been since high school.&lt;/p&gt;
+
+&lt;p&gt;I thought I would post here about one ongoing contest and one upcoming one.&lt;/p&gt;
+
+&lt;p&gt;First, the &lt;a href="http://software.intel.com/en-us/contests/threading-challenge-prof-2010/codecontest.php"&gt;Intel Threading Challenge&lt;/a&gt; has already started.  Essentially, it a little programming contest that is supposed to test your ability to program effectively for a large multi-threaded task.  The "Master" section this year is writing a program to compute a simple and laborious graph theoretic property.&lt;/p&gt;
+
+&lt;p&gt;Second, the annual &lt;a href="http://icfpcontest.org/"&gt;ICFP programming contest&lt;/a&gt; is right around the corner.  Although nominally a functional programming contest, anyone can enter in any language.  It's an super-fun, intense 72-hour competition.  If you want to try to place, I recommend having a group of about 2&amp;ndash;4 strong programmers.  I won't be able to compete this year because of a scheduling conflict. :(&lt;/p&gt;
+</content></entry><entry><title>sliderepl for Sage</title><link href="2010_05_20_sliderepl_for_sage" rel="alternate" /><id>2010_05_20_sliderepl_for_sage</id><published>2010-05-20T08:44:24-00:00</published><updated>2010-05-20T08:44:24-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;&lt;a href="http://discorporate.us/projects/sliderepl/"&gt;sliderepl&lt;/a&gt; is a really neat Python prese</summary><content type="html">
+&lt;p&gt;&lt;a href="http://discorporate.us/projects/sliderepl/"&gt;sliderepl&lt;/a&gt; is a really neat Python presentation tool for demonstrating code, live, in a slide-like format.  Essentially, you organize your code into "slides", which you can then scroll through (though you can't go back, really).  The tool was written originally by &lt;a href="http://discorporate.us/jek/"&gt;Jason Kirtland&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I wanted to see if I could use it for &lt;a href="http://www.sagemath.org"&gt;Sage&lt;/a&gt; code as sort of a GUI-less notebook thing.  Kind of.  Unfortunately, sliderepl is full of hacky magic, involving embedding an interpreter and introspection.  Sage is too, and so they don't like each other very much.&lt;/p&gt;
+
+&lt;p&gt;Through some more magic, I figured out how to get them to work together anyway, and released the code on Github as &lt;a href="http://github.com/swenson/sage_sliderepl"&gt;sage_sliderepl&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Task</title><link href="2010_04_27_task" rel="alternate" /><id>2010_04_27_task</id><published>2010-04-28T05:42:30-00:00</published><updated>2010-04-28T05:42:30-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I recently discovered &lt;a href="http://taskwarrior.org/projects/show/taskwarrior/"&gt;task&lt;/a&gt;, a po</summary><content type="html">
+&lt;p&gt;I recently discovered &lt;a href="http://taskwarrior.org/projects/show/taskwarrior/"&gt;task&lt;/a&gt;, a powerful, yet simple, command-line to-do and task management tool.  Up until now, I hadn't found any way to manage to-do lists that felt "right".  But task has changed that for me.&lt;/p&gt;
+
+&lt;p&gt;One feature I feel is missing (though I think they are planning on &lt;a href="http://taskwarrior.org/wiki/taskwarrior/Features"&gt;fixing this&lt;/a&gt;) is the lack of email notifications.  I would really like to know what I have to do today, and I may not always remember to login and check, especially in my current transition period of getting used to using it everyday.&lt;/p&gt;
+
+&lt;p&gt;So, I set up &lt;a href="http://en.wikipedia.org/wiki/Cron"&gt;cron&lt;/a&gt; on my system to email my current list (that is due today) every day.  For those of you following along at home, you can do the same with something like so added to your crontab (&lt;code&gt;crontab -e&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;SHELL=/bin/bash
+1 0 * * * task list due:today | mail -s "Due `date '+\%A, \%m/\%d/\%Y'`" your@emailaddress.com&lt;/pre&gt;
+
+&lt;p&gt;(Note that you have to escape the percent signs in a crontab line.)&lt;/p&gt;
+
+&lt;p&gt;Just a quick update &amp;mdash; trying to get back into the habit of posting.&lt;/p&gt;
+</content></entry><entry><title>Language Implementation Patterns</title><link href="2010_02_09_language_implementation_patterns" rel="alternate" /><id>2010_02_09_language_implementation_patterns</id><published>2010-02-10T01:21:40-00:00</published><updated>2010-02-10T01:21:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;&lt;div style="float: left; margin-right: 5px;"&gt;&lt;a href="http://www.amazon.com/gp/product/193435645</summary><content type="html">
+&lt;p&gt;&lt;div style="float: left; margin-right: 5px;"&gt;&lt;a href="http://www.amazon.com/gp/product/193435645X?ie=UTF8&amp;amp;tag=mathfigu-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=193435645X"&gt;&lt;img border="0" src="http://m.caswenson.com/images/parr_lang.jpg"&gt;&lt;/a&gt;&lt;img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&amp;amp;l=as2&amp;amp;o=1&amp;amp;a=193435645X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;&lt;/div&gt;One thing I am constantly thinking about is programming languages: implementing them, designing them, using them.  The latter two are just fun, but implementing languages is a tricky business, and can be difficult and time-consuming.&lt;/p&gt;
+
+&lt;p&gt;There are some tools for helping you implement a language, such as the classical &lt;a href="http://dinosaur.compilertools.net/"&gt;lex and yacc&lt;/a&gt; lexical analyzer and parser generator, respectively, or the more modern &lt;a href="http://www.antlr.org/"&gt;ANTLR&lt;/a&gt;, a combination of both.&lt;/p&gt;
+
+&lt;p&gt;However, learning how to even use these tools, or when to, is also difficult.  Enter &lt;a href="http://www.amazon.com/gp/product/193435645X?ie=UTF8&amp;amp;tag=mathfigu-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=193435645X"&gt;Language Implementation Patterns&lt;/a&gt;&lt;img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&amp;amp;l=as2&amp;amp;o=1&amp;amp;a=193435645X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;.  This book, by Terence Parr (inventor of ANTLR, no less), attempts, quite successfully, to introduce the common patterns that you will use in implementing a language, with or without a parser-generator like ANTLR.&lt;/p&gt;
+
+&lt;p&gt;Most of all, I say that it is about freaking time for a book like this to come out.  Compiler books have been mostly stagnating these past few years, and while this doesn't cover some of the more advanced optimization techniques and the like, it does a thorough job of showing how modern compilers are built.  Bravo, Terence.&lt;/p&gt;
+</content></entry>
+</feed>

@@ -1,0 +1,86 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Christopher Swenson</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+
+<script src="js/shCore.js" type="text/javascript"></script>
+<!--<script src="js/shBrushCSharp.js" type="text/javascript"></script>
+<script src="js/shBrushCpp.js" type="text/javascript"></script>
+<script src="js/shBrushCss.js" type="text/javascript"></script>
+<script src="js/shBrushDelphi.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+<script src="js/shBrushJava.js" type="text/javascript"></script>
+<script src="js/shBrushPhp.js" type="text/javascript"></script>-->
+<script src="js/shBrushRuby.js" type="text/javascript"></script>
+<script src="js/shBrushPython.js" type="text/javascript"></script>
+<!--<script src="js/shBrushSql.js" type="text/javascript"></script>
+<script src="js/shBrushVb.js" type="text/javascript"></script>
+<script src="js/shBrushXml.js" type="text/javascript"></script>-->
+
+<script language="javascript">
+window.onload = function () {
+    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+}
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<img src="images/chrisbluething.png" alt="blue thing" />
+		<h1><a href="/">Christopher Swenson</a></h1>
+		<p>Computer science, math, programming, and stuff.</p>
+	</div>
+</div>
+<div id="content">
+	<div id="postzoom"><h1><a href="2008_01_12_flash_and_hosting">Flash and Hosting</a></h1>
+<p>I am considering spending some time to properly learn Flash CS3 and ActionScript, in order to write a game, possibly based on an old BBS game I was very fond of, called <a href="http://en.wikipedia.org/wiki/Lords_of_Cyberspace">Lords of Cyberspace</a> (some more info available at <a href="http://everything2.com/index.pl?node_id=1687694">Everything2</a>).  For some reason, I seem to be the only person that cares about the game, as evidenced by the fact that I wrote both of those articles on it.</p>
+
+<p>I was able to get the actual game working on a demo copy of MajorBBS running under <a href="http://www.dosbox.com/">DOSbox</a> on my MacBook Pro.  (BTW, DOSbox is an amazing product that allows you play classic MS-DOS games under OS X.)</p>
+
+<p>In addition to that, <a href="http://www.thursdaybram.com">Thursday</a> and I have come up with a possible idea for a web-based service.  The site will probably be created in something like Ruby on Rails, Django, <a href="http://webpy.org/">web.py</a>, or whatever technology comes across tomorrow, and it may require a bit of bandwidth (enough to worry about bandwidth allotments less than 100GB a month).</p>
+
+<p>I have had a hard time finding a hosting service that makes me happy.  Here's what I would like:</p>
+
+<ul>
+<li><b>Cheap.</b> Obviously, as inexpensive as I can get away with.  Especially since it will likely be months before this is actually out of testing and we start selling the service.</li>
+<li><b>Full RoR/Django/bleeding edge whatever support.</b> Self-explanatory.</li>
+<li><b>Shell access.</b> I don't understand how some providers can have Ruby on Rails support but without shell access but some do (like GoDaddy, who hosts this blog).</li>
+<li><b>100+GB per month transfer.</b>  But I would like to be able to easily upgrade this by a few times before moving to dedicated hosting (ha).  Storage to go along with that is also necessary.</li>
+</ul>
+
+<p>Storage isn't a bit less of a concern, the more I think about it, because I can always use something like <a href="http://aws.amazon.com/s3">Amazon S3</a> (and this may alleviate some bandwidth concerns as well), which is pretty reasonable.</p>
+
+<p>So far, I like <a href="http://hostingwizard.com/site5/">Site5</a> (but feels almost too good to be true) and <a href="http://www.crucialp.com/web-hosting/">Crucial Paradigm</a> (despite their dumb name, but their plans don't have the most storage or space, though S3 might alleviate some of this, and they look like they know what they are doing).</p>
+
+<p>Anybody have any experience, good or bad, with hosting providers that provide web services support?</p>
+</div>
+	
+	<div id="sidebar">
+  <h2>Modern Cryptanalysis</h2>
+	<div><br />
+			<center><a href="http://www.amazon.com/gp/product/047013593X?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047013593X"><img border="0" src="images/21tcdykwdkl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=047013593X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></center>
+	</div>
+	<h2>Pages</h2>
+		<ul>
+	    <li><a href="about">About</a></li>
+	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		  <li><a href="presentations">Presentations</a></li>
+		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+		</ul>
+	  <h2><a href="past">Archive</a></h2>
+	</div>
+	<div id="footer">
+	<p id="legal">
+	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) | 
+	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
+	</p>
+</div>
+</body>
+</html>

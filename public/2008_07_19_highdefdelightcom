@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,10 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2008_07_19_highdefdelightcom">HighDefDelight.com</a></h1>
+<p>If my writing seems sparse here lately, it's because I've been writing a bit more on the <a href="http://www.highdefdelight.com/">High Def Delight</a> blog, an HD-centric blog hosted by b5media.  Check it out.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

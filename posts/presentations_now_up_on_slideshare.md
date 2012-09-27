@@ -1,0 +1,11 @@
+Presentations now up on slideshare
+==================================
+Someone recently requested that I post some of my older presentations on miscellaneous topics.
+
+When I was more actively involved with teaching and research at <a href="http://www.utulsa.edu/">The University of Tulsa</a>, I would often give presentations on random things.  Programming, research I was doing, my anal retentiveness, whatever.  We often had weekly meetings for most of my graduate program, so I would give talks there, or at ACM meetings.
+
+I have been tracking some of these down and posting them to <a href="http://www.slideshare.net/caswenson/slideshows">my slideshare account</a>, although I will maintain a list of them (as well as descriptions) <a href="http://www.caswenson.com/presentations">here on this site</a> (you can always see them on the slide bar.
+
+As a sample, here is one that is based on some (abandoned) research I did on applying genetic programming to chess.
+
+<div style="width:425px;text-align:left" id="__ss_1448288"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/caswenson/better-chess-through-genetic-programming?type=powerpoint" title="Better Chess through Genetic Programming">Better Chess through Genetic Programming</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=seminar-gp-090517132642-phpapp02&stripped_title=better-chess-through-genetic-programming" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=seminar-gp-090517132642-phpapp02&stripped_title=better-chess-through-genetic-programming" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">presentations</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/caswenson">caswenson</a>.</div></div>

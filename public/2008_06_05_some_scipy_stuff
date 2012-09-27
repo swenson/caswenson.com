@@ -1,0 +1,106 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Christopher Swenson</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+
+<script src="js/shCore.js" type="text/javascript"></script>
+<!--<script src="js/shBrushCSharp.js" type="text/javascript"></script>
+<script src="js/shBrushCpp.js" type="text/javascript"></script>
+<script src="js/shBrushCss.js" type="text/javascript"></script>
+<script src="js/shBrushDelphi.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+<script src="js/shBrushJava.js" type="text/javascript"></script>
+<script src="js/shBrushPhp.js" type="text/javascript"></script>-->
+<script src="js/shBrushRuby.js" type="text/javascript"></script>
+<script src="js/shBrushPython.js" type="text/javascript"></script>
+<!--<script src="js/shBrushSql.js" type="text/javascript"></script>
+<script src="js/shBrushVb.js" type="text/javascript"></script>
+<script src="js/shBrushXml.js" type="text/javascript"></script>-->
+
+<script language="javascript">
+window.onload = function () {
+    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+}
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<img src="images/chrisbluething.png" alt="blue thing" />
+		<h1><a href="/">Christopher Swenson</a></h1>
+		<p>Computer science, math, programming, and stuff.</p>
+	</div>
+</div>
+<div id="content">
+	<div id="postzoom"><h1><a href="2008_06_05_some_scipy_stuff">Some scipy stuff</a></h1>
+<p>It's been quiet here lately.  I've had a lot of projects going on that occupy most of my time in the evenings and on weekends.</p>
+
+<p>One of these is a new blog I will be writing for, so expect news of that in the next few days.  I've been putting together a chapter for a book, working on my dissertation, working on new web sites, and a whole slew of other activities.</p>
+
+<p>Once some of this stuff starts taking off (and out of my plate), I will have more time to post.</p>
+
+<hr />
+
+<p>So, I want this post to have some meat.  Well, one of the things that has been occupying my time lately has been programming things for my dissertation, particularly in Python using <a href="http://www.scipy.org/">scipy</a>.</p>
+
+<p>Scipy is great.  What is not so great about it is two-fold: everyone else uses MATLAB (or the free alternative, <a href="http://www.gnu.org/software/octave/">GNU Octave</a>), and there is practically no documentation on scipy.  Scipy has a bunch of packages that emulate various toolboxes from MATLAB, but what makes matters worse is that sometimes it doesn't implement all of a package, or it implements it strangely.</p>
+
+<p>How so?  Well, MATLAB doesn't differentiate between a 1x1 matrix and a number, and you can use them interchangeably.  Scipy is much more strictly typed, and you can't just mix and match.  Nor can you mix and match complex numbers, reals, etc.  Also, MATLAB numbers all lists, matrices, etc., starting with 1, and scipy use's Python's conventions of starting with 0.  This makes a lot of MATLAB example code you for something you are doing annoying to port over to scipy.</p>
+
+<p>One great resource for this is <a href="http://www.scipy.org/NumPy_for_Matlab_Users">NumPy for Matlab Users</a>.  Not only does this tell you how to convert many common MATLAB operations to scipy, but it gives you an idea of what you <em>can</em> do with scipy.</p>
+
+<p>Both tools are excellent, if a little difficult to get working on Mac OS X.</p>
+
+<hr />
+
+<p>A quick tip for MATLAB users: MATLAB has a great function for <a href="http://en.wikipedia.org/wiki/Cross-correlation">cross correlation</a>, called <code>xcorr</code>.  The scipy.signal package includes a function, <code>correlate</code>, that is almost, but not quite, completely incompatible with the <code>xcorr</code> function.  So, I reimplemented the MATLAB <code>xcorr</code> in Python, as follows:</p>
+
+<pre name="code" class="python">
+def matlab_xcorr(x, yy = None):
+  # if no y, compute the autocorrelation of x
+  y = yy
+  if y == None:
+    y = x
+
+  n = len(x)
+  c = zeros(2 * n - 1, complex)
+  for m in range(1, 2 * n):
+    c[m - 1] = cxy(x, y, m - n)
+
+  return c
+</pre>
+
+<p>Hopefully someone might find this useful, if they are suddenly frustrated by the lack of <code>xcorr</code> in scipy.</p>
+
+<p>BTW, I recently switched to writing Python code <a href="http://panela.blog-city.com/python_at_google_greg_stein__sdforum.htm">Google-style</a>, and have never looked back.</p>
+</div>
+	
+	<div id="sidebar">
+  <h2>Modern Cryptanalysis</h2>
+	<div><br />
+			<center><a href="http://www.amazon.com/gp/product/047013593X?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047013593X"><img border="0" src="images/21tcdykwdkl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=047013593X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></center>
+	</div>
+	<h2>Pages</h2>
+		<ul>
+	    <li><a href="about">About</a></li>
+	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		  <li><a href="presentations">Presentations</a></li>
+		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+		</ul>
+	  <h2><a href="past">Archive</a></h2>
+	</div>
+	<div id="footer">
+	<p id="legal">
+	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) | 
+	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
+	</p>
+</div>
+</body>
+</html>

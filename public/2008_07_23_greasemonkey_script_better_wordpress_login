@@ -1,0 +1,103 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Christopher Swenson</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+
+<script src="js/shCore.js" type="text/javascript"></script>
+<!--<script src="js/shBrushCSharp.js" type="text/javascript"></script>
+<script src="js/shBrushCpp.js" type="text/javascript"></script>
+<script src="js/shBrushCss.js" type="text/javascript"></script>
+<script src="js/shBrushDelphi.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+<script src="js/shBrushJava.js" type="text/javascript"></script>
+<script src="js/shBrushPhp.js" type="text/javascript"></script>-->
+<script src="js/shBrushRuby.js" type="text/javascript"></script>
+<script src="js/shBrushPython.js" type="text/javascript"></script>
+<!--<script src="js/shBrushSql.js" type="text/javascript"></script>
+<script src="js/shBrushVb.js" type="text/javascript"></script>
+<script src="js/shBrushXml.js" type="text/javascript"></script>-->
+
+<script language="javascript">
+window.onload = function () {
+    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+}
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<img src="images/chrisbluething.png" alt="blue thing" />
+		<h1><a href="/">Christopher Swenson</a></h1>
+		<p>Computer science, math, programming, and stuff.</p>
+	</div>
+</div>
+<div id="content">
+	<div id="postzoom"><h1><a href="2008_07_23_greasemonkey_script_better_wordpress_login">Greasemonkey Script: Better WordPress Login</a></h1>
+<p>A problem I've always had: WordPress blogs transmit passwords in the clear by default.  The only way to remedy this was to break down and buy an SSL certificate for each of your WordPress blogs.</p>
+
+<p>Until now.</p>
+
+<p>I wrote a simple <a href="https://addons.mozilla.org/en-US/firefox/addon/748">Greasemonkey</a> script for Firefox that secures your password as it is transmitted to any WordPress site.  <a href="http://www.caswenson.com/wp-content/uploads/gm/betterloginwp.user.js">Click here to install it</a> (assuming you are running Firefox and have Greasemonkey installed).  It seems to work with WordPress version 2.4 or better (possibly earlier &hellip; I just haven't tested it with them).</p>
+
+<p>Naturally, I had to modify the WordPress change password screen.  Assuming you are logged in, just go ahead and go to change your password to a new secure one.  Notice the "SECURED" text that indicates that the script is working its magic.</p>
+
+<p><a href="http://www.caswenson.com/wp-content/uploads/2008/07/wp-change-password.png"><img src="http://www.caswenson.com/wp-content/uploads/2008/07/wp-change-password-300x111.png" alt="" title="Modified WordPress Change Password" width="300" height="111" class="alignnone size-medium wp-image-64" /></a></p>
+
+<p>Now, if you log out, you would normally see this login screen:</p>
+
+<p><a href="http://www.caswenson.com/wp-content/uploads/2008/07/wp-login-insecure.png"><img src="http://www.caswenson.com/wp-content/uploads/2008/07/wp-login-insecure-300x222.png" alt="Insecure WordPress Login" title="WordPress Login (Normal, Insecure)" width="300" height="222" class="size-medium wp-image-59" /></a></p>
+
+<p>However, with the new script installed, it should look like this (note the word "Secure" has been added to the login button).</p>
+
+<p><a href="http://www.caswenson.com/wp-content/uploads/2008/07/wp-login.png"><img src="http://www.caswenson.com/wp-content/uploads/2008/07/wp-login-300x220.png" alt="" title="WordPress Login (More Secure)" width="300" height="220" class="alignnone size-medium wp-image-62" /></a></p>
+
+<p>After you type in your password and click on the "Secure Login Button", the script automatically rewrites your password by hashing it (with a salt), which will produce an identical output for an identical input on the same site.  You can see it in action here:</p>
+
+<p><a href="http://www.caswenson.com/wp-content/uploads/2008/07/wp-login-replace.png"><img src="http://www.caswenson.com/wp-content/uploads/2008/07/wp-login-replace-300x221.png" alt="" title="WordPress Login (More secure, with replaces password)" width="300" height="221" class="alignnone size-medium wp-image-63" /></a></p>
+
+<p>Technical notes:</p>
+
+<ul>
+    <li>it replaces your password with a SHA-1 hash of the SHA-1 hash of your password appended with a salt.  Nothing too fancy.</li>
+    <li>The salt is the DNS name of the web server you are connected to.  This way, your password for different sites will have different hashes.
+
+If you didn't do this, and just used a plain hash for your password, then this would not really give you too much security.  For example, if you really think that your password "secret" is made more secure by using the MD5 hash of it instead, just do a Google search on the hash (<a href="http://www.google.com/search?q=dd02c7c2232759874e1c205587017bed">dd02c7c2232759874e1c205587017bed</a>) to see how secure your password <b>really</b> is.</li>
+    <li>This is important: <b>you will have to have the script installed on every computer you expect to login with</b>.  The password is permanently changed to be a hash, and if you could still login with the old password, that would be silly.</li>
+    <li>You have to login normally first (Greasemonkey script off) with your old password, and then change the password with the Greasemonkey script turned on.  Then, just leave it on.</li>
+    <li>The script is licensed under the BSD license, so it is easy to adapt to your own purposes.  Feel free to do so.</li>
+    <li>I will also make this into a WordPress plugin if there is a desire for that.  (I actually prefer having it as a Greasemonkey script so that I know that it is working and hasn't been changed, but I know some people don't want to use Greasemonkey to do this.)</li>
+    <li>A Twitter version is also in testing and cleanup (Twitter does secure your password when you login, but not when you change your password).</li>
+</ul>
+
+<p>If you like what you see, then <a href="http://www.caswenson.com/wp-content/uploads/gm/betterloginwp.user.js">click here to install the script</a>.</p>
+</div>
+	
+	<div id="sidebar">
+  <h2>Modern Cryptanalysis</h2>
+	<div><br />
+			<center><a href="http://www.amazon.com/gp/product/047013593X?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047013593X"><img border="0" src="images/21tcdykwdkl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=047013593X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></center>
+	</div>
+	<h2>Pages</h2>
+		<ul>
+	    <li><a href="about">About</a></li>
+	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		  <li><a href="presentations">Presentations</a></li>
+		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+		</ul>
+	  <h2><a href="past">Archive</a></h2>
+	</div>
+	<div id="footer">
+	<p id="legal">
+	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) | 
+	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
+	</p>
+</div>
+</body>
+</html>

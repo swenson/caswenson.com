@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,22 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2008_12_27_emthe_curious_case_of_benjamin_buttonem"><em>The Curious Case of Benjamin Button</em></a></h1>
+<p>I intend to go see <em>The Curious Case of Benjamin Button</em> this weekend.  While quickly looking it up on the Internet, I realized that the original short story was published in 1921, and would therefore have fallen out of copyright.</p>
+
+<p>So, I decided to read it.  I found it on <a href="http://www.gutenberg.org/ebooks/6695">Project Gutenberg</a>, but the copy is (of course) in plain, vanilla ASCII, and has several typos.</p>
+
+<p>I decided then to quickly typeset it so that I would feel more better when reading it.</p>
+
+<p>Feel free to download it <a href="http://www.caswenson.com/pub/button.pdf">here</a>.</p>
+
+<p>I typeset it with Adobe InDesign in Adobe Garamond Pro 12pt.  It's about 11 pages and change long, double-column format.</p>
+
+<p>I fixed some of the Gutenberg-isms (like using "<em>whatever</em>" to indicate italics), and corrected what I could as far as typos.  There's one case where the word "array" is used, and I can't find an original source to tell me if that is a mis-OCR for "army" (which would make more sense today, but array could be correct, if a bit arcane).</p>
+
+<p>I liked the short story, but I feel that the movie will give a sense of time passing that the short story rather lacks.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

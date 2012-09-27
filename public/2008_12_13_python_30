@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,25 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2008_12_13_python_30">Python 3.0</a></h1>
+<p>There are lots of things I dislike about Python 3.0.  I dislike the removal of the <code>print</code> statement (I would have much preferred allowing Ruby-like function calling without parenthesis, and transparently changing the statement to a function).  I dislike the fact that <code>map</code> and friends return iterators instead of, you know, mapping things.</p>
+
+<p>And why don't they include a Mac OS X installer?</p>
+
+<p>Well, for you Mac OS X users, it's still pretty easy to install from source.  Merely download the source, and run a series of commands like so:</p>
+
+<pre>tar xvjf Python-3.0.tar.bz2
+cd Python-3.0
+./configure --enable-framework --enable-shared
+make
+sudo make install
+</pre>
+
+<p>Be a little careful, though, as it will will overwrite <code>/Library/Frameworks/Python.framework/Versions/Current</code> with 3.0, so you may need to take some measures to use your older versions of Python (though you should hopefully be able to execute them by just calling them with a version number, like <code>python2.5</code>).  YMMV.</p>
+
+<p>Also, I really hate the name "Python 3000".</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

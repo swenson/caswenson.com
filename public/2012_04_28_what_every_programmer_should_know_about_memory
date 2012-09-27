@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,14 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2012_04_28_what_every_programmer_should_know_about_memory">What Every Programmer Should Know About Memory</a></h1>
+<p>I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know About Memory".</p>
+
+<p><a href="http://www.akkadia.org/drepper/cpumemory.pdf">http://www.akkadia.org/drepper/cpumemory.pdf</a></p>
+
+<p>If you haven't read it, and you are a programmer, then you really need to read this paper.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

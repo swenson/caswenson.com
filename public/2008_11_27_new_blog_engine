@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,14 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2008_11_27_new_blog_engine">New blog engine</a></h1>
+<p>I successfully moved this site from a Wordpress blog to <a href="http://github.com/adamwiggins/scanty/">scanty</a>, with some <a href="http://github.com/swenson/scanty/">modifications</a>.</p>
+
+<p>I think I have it nearly all working except my old comments.  Rest assured that I have them all (and they are all stored in Disqus), but I haven't gotten them all linked properly.</p>
+
+<p>Let me know if anything is too broken.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

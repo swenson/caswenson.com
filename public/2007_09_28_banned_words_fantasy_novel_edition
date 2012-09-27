@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,42 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_09_28_banned_words_fantasy_novel_edition">Banned Words: Fantasy Novel Edition</a></h1>
+<p>There are certain words that are just used too often in fantasy book titles.  (The same goes for other genres, but that is another post.)</p>
+
+<p>I have constructed the following list of banned words in the titles of books.  Not that I won't read books with these words in their titles, necessarily, or that there are no good books that use these words, it's just that I am sick of seeing books called "The Dragon Wizard Tales" or "Legend of the Elf Knight".  The words are just overused, and they immediately put me off.</p>
+
+<p>The banned words are, in no particular order:</p>
+
+<p>wizard
+ring
+lord
+elf
+time
+dragon
+winter
+crown
+king
+magic
+magician
+wand
+sword
+fire
+spell
+demon
+dune
+tale
+legend
+wyrm
+fate
+knight
+ship
+bard
+god
+gods
+tower</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

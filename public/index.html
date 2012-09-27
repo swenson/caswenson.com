@@ -38,8 +38,106 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div id="post"><h1><a href="2012_09_25_post_test">Post 1 Test</a></h1>
-<p>This is a test post.</p>
+	<div id="post"><h1><a href="2012_04_28_what_every_programmer_should_know_about_memory">What Every Programmer Should Know About Memory</a></h1>
+<p>I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know About Memory".</p>
+
+<p><a href="http://www.akkadia.org/drepper/cpumemory.pdf">http://www.akkadia.org/drepper/cpumemory.pdf</a></p>
+
+<p>If you haven't read it, and you are a programmer, then you really need to read this paper.</p>
+</div><div id="post"><h1><a href="2011_12_30_modern_cryptanalysis_errata_updated">Modern Cryptanalysis Errata updated</a></h1>
+<p>I have updated <a href="http://www.caswenson.com/mcerrata">the errata</a> for my book, Modern Cryptanalysis.</p>
+</div><div id="post"><h1><a href="2011_12_25_changes_coming_soon">Changes coming soon</a></h1>
+<p>This is the first post of the year. That's a little sad, but I think I am going to be redoing this site a bit in the near future.</p>
+
+<p>So, some upcoming changes:</p>
+
+<ul>
+<li><p>Errata for my book -- this link has been on the RHS of my page for quite a while now, and I haven't gotten around to compiling this errata.  I will do so in the next few days.</p></li>
+<li><p>Notes on upcoming projects. I am currently working on several projects, open source and not, and a few writing projects. Expect more details on these.</p></li>
+<li><p>... and more.</p></li>
+</ul>
+</div><div id="post"><h1><a href="2010_12_01_monospaced_font">Monospaced font</a></h1>
+<p>I have been searching for years for a decent programming font (that is, monospaced). Over the years, I've found various ones that suited me, but recently I found ranks as my favorite: <a href="http://www.cosmix.org/software/">Droid Sans Mono, Dotted</a>.</p>
+
+<p><img src="http://m.caswenson.com/images/droidsansmono.png" width="901" height="649" alt="Droid Sans Mono Dotted picture" /></p>
+
+<p>Essentially, cosmix created a dotted and slashed zero variant to Droid Sans Mono, part of the <a href="http://www.droidfonts.com/">Droid family of fonts</a> designed for Google's Android operating system.</p>
+
+<p>They are designed to very legible, and I have found the Sans Mono to be clean and pleasant when in the terminal or in a coding window.  It also has pretty decent Unicode support.</p>
+
+<p>My previous favorite coding fonts have been: Monaco, DejaVu Sans Mono, Consolas, and Lucida Sans Console.</p>
+</div><div id="post"><h1><a href="2010_10_30_sorting_out_sorting">Sorting out sorting</a></h1>
+<p>I <a href="http://github.com/swenson/sort">recently wrote</a> a C version of a bunch of comparison-based sorting algorithms, notably timsort and quicksort.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Timsort">Timsort</a> is a neat, unbalanced mergesort that I've been wanting to try out for the past while, and so I spent the time to write a fast C implementation of the algorithm.  My experiments on random data show about a 5-10% improvement over quicksort, which is pretty amazing.  If the data has any structure, which is extremely common, it has "superhuman" performance, as it can merge natural runs in the data in an efficient manner.</p>
+
+<p>Another annoying thing I've noticed is that I've written the same sorting algorithms a ton of times, often just changing the type.  Sometimes I've used the standard C <a href="http://fxr.watson.org/fxr/source/stdlib/qsort.c?v=GLIBC27">qsort</a>, but the function-pointer comparison function causes awful performance (the version I wrote isn't even as optimized, and is still often twice as fast).  Why can't I just write a good, fast sorting algorithm?</p>
+
+<p>A solution comes from a neat trick in C: <a href="http://en.wikipedia.org/wiki/C_preprocessor#Token_concatenation">token pasting</a>.  Using this, it's possible to write the function once, and just swap out the types as needed.</p>
+
+<p>Using token pasting, it is also possible to implement the entire library as a single header file: no library to compile!</p>
+
+<p>Sadly, sorting doesn't usually have <a href="http://www.youtube.com/watch?v=YvTW7341kpA">sound effects</a>.</p>
+</div><div id="post"><h1><a href="2010_07_18_wordpress_thesis_and_the_gpl">Wordpress, Thesis, and the GPL</a></h1>
+<p>There's been <a href="http://mixergy.com/chris-pearson-matt-mullenweg/">some hubbub</a> going around the web about Wordpress potentially suing a developer for breaching the GPL.</p>
+
+<p>The quick run-down: Wordpress is licensed under <a href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GPL2</a>. Thesis is a premium Wordpress theme.</p>
+
+<p>The debate really boils down to: does the GPL require Thesis to be also licensed under the GPL?</p>
+
+<p>The answer: <strong>almost</strong> not, but maybe.</p>
+
+<p>I'll save you some reading.  Clause 2 of GPL2:</p>
+
+<blockquote>
+&hellip; If identifiable sections of that work are not derived from the Program,
+and can be reasonably considered independent and separate works in
+themselves, then this License, and its terms, do not apply to those
+sections when you distribute them as separate work. &hellip;
+</blockquote>
+
+<p>IANAL, but this says, quite clearly, if it is not derived from GPL code <strong>and</strong> can be reasonably considered independent, then the GPL does not apply.</p>
+
+<p>The question is, what does "independent" mean in this sentence.  Does it mean independent in the sense that it can run without it?  Or does it mean the code does not have any code in common with the GPL code?</p>
+
+<p>It's unclear.  I am inclined to the second viewpoint, because the first has a lot of nasty ramifications.  However, some people, including <a href="http://www.gnu.org/licenses/gpl-faq.html#GPLPluginsInNF">the FSF</a>, appear to believe in the first viewpoint (roughly speaking).</p>
+
+<p>Ugh.  Software licensing sucks.  This is why I use the <a href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a>.  Mostly because I like putting some kind of license on the code, and this seems one of the least restrictive ones.</p>
+</div><div id="post"><h1><a href="2010_06_06_intel_threading_challenge_2010_icfp_2010">Intel Threading Challenge 2010, ICFP 2010</a></h1>
+<p>I'm a sucker for programming contests, and have been since high school.</p>
+
+<p>I thought I would post here about one ongoing contest and one upcoming one.</p>
+
+<p>First, the <a href="http://software.intel.com/en-us/contests/threading-challenge-prof-2010/codecontest.php">Intel Threading Challenge</a> has already started.  Essentially, it a little programming contest that is supposed to test your ability to program effectively for a large multi-threaded task.  The "Master" section this year is writing a program to compute a simple and laborious graph theoretic property.</p>
+
+<p>Second, the annual <a href="http://icfpcontest.org/">ICFP programming contest</a> is right around the corner.  Although nominally a functional programming contest, anyone can enter in any language.  It's an super-fun, intense 72-hour competition.  If you want to try to place, I recommend having a group of about 2&ndash;4 strong programmers.  I won't be able to compete this year because of a scheduling conflict. :(</p>
+</div><div id="post"><h1><a href="2010_05_20_sliderepl_for_sage">sliderepl for Sage</a></h1>
+<p><a href="http://discorporate.us/projects/sliderepl/">sliderepl</a> is a really neat Python presentation tool for demonstrating code, live, in a slide-like format.  Essentially, you organize your code into "slides", which you can then scroll through (though you can't go back, really).  The tool was written originally by <a href="http://discorporate.us/jek/">Jason Kirtland</a>.</p>
+
+<p>I wanted to see if I could use it for <a href="http://www.sagemath.org">Sage</a> code as sort of a GUI-less notebook thing.  Kind of.  Unfortunately, sliderepl is full of hacky magic, involving embedding an interpreter and introspection.  Sage is too, and so they don't like each other very much.</p>
+
+<p>Through some more magic, I figured out how to get them to work together anyway, and released the code on Github as <a href="http://github.com/swenson/sage_sliderepl">sage_sliderepl</a>.</p>
+</div><div id="post"><h1><a href="2010_04_27_task">Task</a></h1>
+<p>I recently discovered <a href="http://taskwarrior.org/projects/show/taskwarrior/">task</a>, a powerful, yet simple, command-line to-do and task management tool.  Up until now, I hadn't found any way to manage to-do lists that felt "right".  But task has changed that for me.</p>
+
+<p>One feature I feel is missing (though I think they are planning on <a href="http://taskwarrior.org/wiki/taskwarrior/Features">fixing this</a>) is the lack of email notifications.  I would really like to know what I have to do today, and I may not always remember to login and check, especially in my current transition period of getting used to using it everyday.</p>
+
+<p>So, I set up <a href="http://en.wikipedia.org/wiki/Cron">cron</a> on my system to email my current list (that is due today) every day.  For those of you following along at home, you can do the same with something like so added to your crontab (<code>crontab -e</code>):</p>
+
+<pre>SHELL=/bin/bash
+1 0 * * * task list due:today | mail -s "Due `date '+\%A, \%m/\%d/\%Y'`" your@emailaddress.com</pre>
+
+<p>(Note that you have to escape the percent signs in a crontab line.)</p>
+
+<p>Just a quick update &mdash; trying to get back into the habit of posting.</p>
+</div><div id="post"><h1><a href="2010_02_09_language_implementation_patterns">Language Implementation Patterns</a></h1>
+<p><div style="float: left; margin-right: 5px;"><a href="http://www.amazon.com/gp/product/193435645X?ie=UTF8&amp;tag=mathfigu-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=193435645X"><img border="0" src="http://m.caswenson.com/images/parr_lang.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&amp;l=as2&amp;o=1&amp;a=193435645X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></div>One thing I am constantly thinking about is programming languages: implementing them, designing them, using them.  The latter two are just fun, but implementing languages is a tricky business, and can be difficult and time-consuming.</p>
+
+<p>There are some tools for helping you implement a language, such as the classical <a href="http://dinosaur.compilertools.net/">lex and yacc</a> lexical analyzer and parser generator, respectively, or the more modern <a href="http://www.antlr.org/">ANTLR</a>, a combination of both.</p>
+
+<p>However, learning how to even use these tools, or when to, is also difficult.  Enter <a href="http://www.amazon.com/gp/product/193435645X?ie=UTF8&amp;tag=mathfigu-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=193435645X">Language Implementation Patterns</a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&amp;l=as2&amp;o=1&amp;a=193435645X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.  This book, by Terence Parr (inventor of ANTLR, no less), attempts, quite successfully, to introduce the common patterns that you will use in implementing a language, with or without a parser-generator like ANTLR.</p>
+
+<p>Most of all, I say that it is about freaking time for a book like this to come out.  Compiler books have been mostly stagnating these past few years, and while this doesn't cover some of the more advanced optimization techniques and the like, it does a thorough job of showing how modern compilers are built.  Bravo, Terence.</p>
 </div>
 	<script type="text/javascript">
 //<[CDATA[
@@ -64,13 +162,13 @@ window.onload = function () {
 	</div>
 	<h2>Pages</h2>
 		<ul>
-	    <li><a href="/about">About</a></li>
-	    <li><a href="/disclosures">Disclousres</a></li>
-	    <li><a href="/speaking">Speaking</a></li>
-		  <li><a href="/presentations">Presentations</a></li>
-		  <li><a href="/mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+	    <li><a href="about">About</a></li>
+	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		  <li><a href="presentations">Presentations</a></li>
+		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
 		</ul>
-	  <h2><a href="/past">Archive</a></h2>
+	  <h2><a href="past">Archive</a></h2>
 	</div>
 	<div id="footer">
 	<p id="legal">

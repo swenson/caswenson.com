@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,14 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2010_05_20_sliderepl_for_sage">sliderepl for Sage</a></h1>
+<p><a href="http://discorporate.us/projects/sliderepl/">sliderepl</a> is a really neat Python presentation tool for demonstrating code, live, in a slide-like format.  Essentially, you organize your code into "slides", which you can then scroll through (though you can't go back, really).  The tool was written originally by <a href="http://discorporate.us/jek/">Jason Kirtland</a>.</p>
+
+<p>I wanted to see if I could use it for <a href="http://www.sagemath.org">Sage</a> code as sort of a GUI-less notebook thing.  Kind of.  Unfortunately, sliderepl is full of hacky magic, involving embedding an interpreter and introspection.  Sage is too, and so they don't like each other very much.</p>
+
+<p>Through some more magic, I figured out how to get them to work together anyway, and released the code on Github as <a href="http://github.com/swenson/sage_sliderepl">sage_sliderepl</a>.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,14 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_07_22_reason_why_i_am_writing">Reason why I am writing</a></h1>
+<p>As I was looking through some references, I came across the following diagram, from <a href="http://www.lacim.uqam.ca/~chateau/fichiers/stagemaitrise.ps">Practical Public Key Crytposystems</a>:</p>
+
+<p><img src="http://www.caswenson.com/wp-content/uploads/2007/07/bad-diagram.png" alt="Bad Diagram" /></p>
+
+<p>Diagrams like this make me cry.  I hope none of mine look this bad.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

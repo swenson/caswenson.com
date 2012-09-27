@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,12 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2008_03_24_switch_to_bluehost">Switch to Bluehost</a></h1>
+<p>I recently switched over this blog, and soon the rest of my sites, to <a href="http://www.bluehost.com" title="Bluehost">Bluehost</a>.  They seem to support all of the features I need (RoR, PHP, shell access, multiple domains, decent bandwidth and storage) for a reasonable price.  It's not virtual dedicated, but it's not priced like virtual dedicated either.</p>
+
+<p>So far, I am liking it quite a bit, though I have not played around with the Rails bits yet, though I will quite soon, as several of my current projects use it.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

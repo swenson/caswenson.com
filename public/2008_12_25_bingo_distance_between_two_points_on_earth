@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,38 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2008_12_25_bingo_distance_between_two_points_on_earth">Bingo!  Distance between two points on Earth</a></h1>
+<p>As a follow-up to my previous post, I have found two ways of finding the distance between two cities in the US.  One is slow and more correct, one is less slow and less correct.</p>
+
+<p>First, the slow one.  You can take the third formula from the Wikipedia entry for <a href="http://en.wikipedia.org/wiki/Great-circle_distance#Formulas">finding the great-circle distance</a>.  It translates pretty naturally into any language, but involves many trigonometric functions, squares, square roots, etc.  It's quite ugly an inelegant in code, and quite slow.</p>
+
+<p>In Ruby, it looks something like this (the <code>lat</code> and <code>rlat</code> accessors return the latitude in degrees and radians, respectively, and similarly for longitude with <code>lon</code> and <code>rlon</code>).</p>
+
+<pre name="code" class="ruby">  def distance_miles_slow(other)
+    3956.54938 * Math.atan2(Math.sqrt((Math.cos(other.rlat) *
+        Math.sin(other.rlon - rlon)) ** 2 +
+      (Math.cos(rlat) * Math.sin(other.rlat) - Math.sin(rlat) *
+        Math.cos(other.rlat) * Math.cos(other.rlon - rlon)) ** 2),
+      (Math.sin(rlat) * Math.sin(other.rlat) + Math.cos(rlat) *
+        Math.cos(other.rlat) * Math.cos(other.rlon - rlon)))
+  end</pre>
+
+<p>Ugh.</p>
+
+<p>It turns out that my naïve method of simply using the Pythagorean theorem after finding the "linear" distance in latitude and longitude (from <a href="http://en.wikipedia.org/wiki/Geographic_coordinate_system#Expressing_latitude_and_longitude_as_linear_units">here</a>) is actually pretty good.  Not as accurate, as the rougher figures seem to be off by about 2% at moderate distances (less than 1,000 miles), which is good enough for me at the moment.</p>
+
+<p>Here's what the Ruby for that look like:</p>
+
+<pre name="code" class="ruby">  def distance_miles_fast(other)
+    dlat = lat - other.lat
+    drlon = rlon - other.rlon
+    Math.sqrt((68.9100652 * dlat)**2 +
+      (drlon * 3956.54938 * Math.cos(rlat))**2)
+  end</pre>
+
+<p>A little bit better, and at least a bit faster.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

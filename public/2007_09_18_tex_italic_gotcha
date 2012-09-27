@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,14 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_09_18_tex_italic_gotcha">TeX Italic Gotcha</a></h1>
+<p>As an epilogue to the previous post, there is another common gotcha of TeX (and LaTeX).  Immediately after using italic or slanted text (such as with <code>\emph</code>, <code>\it</code>, <code>\sl</code>, etc.), TeX will put in a standard space.  However, the italic or slant from the previous letter will stick out, making the next (roman, or whatever) text be too close to the previous.  The fix is to insert an italic correction space, <code>\/</code>, immediately after italic text.</p>
+
+<p>To catch yourself accidentally not doing this, run the following:</p>
+
+<pre lang="bash">grep "\\emph{.*} " *.tex</pre>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,16 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_06_06_whats_the_point">What’s the point?</a></h1>
+<p>So, it might be a good time to talk about the goal of this blog.</p>
+
+<p>As you can tell from the title, I like computer science.  I also like math, typesetting, writing, editing, and all sorts of other things.  I am currently writing a book as well as working full time, and a dozen other projects at a time.  This blog I intend to be a sort of place for me to discuss things on my mind regarding these topics, especially writing, science, math, etc.  I also intend to write little snippets and articles about topics important or interesting to me.</p>
+
+<p>Please feel free to comment and let me know what you think about these things.  The topics I will publish are mostly for my own enjoyment, as I like to write, but I would be pleased if others found anything I said useful.</p>
+
+<p>Cheers.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

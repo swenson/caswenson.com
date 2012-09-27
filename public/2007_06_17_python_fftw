@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,38 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_06_17_python_fftw">Python (F)FTW!</a></h1>
+<p>Some of the work I have been doing involves taking the <a href="http://en.wikipedia.org/wiki/Fast_Fourier_Transform">Fast Fourier Transform</a> of a set of samples.  I originally thought that this needed to be done in C, using <a href="http://www.fftw.org/">FFTW</a>. However, it leads to messes like</p>
+
+<pre lang="c">fftw_complex *in, *out;
+in = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N);
+out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N);
+fftw_plan p;
+p = fftw_plan_dft_1d(N, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+
+/* read in samples */
+
+fftw_execute(p);
+
+/* do stuff */
+
+fftw_destroy_plan(p);
+fftw_free(in);
+fftw_free(out);
+</pre>
+
+<p>In Python with <a href="http://numpy.scipy.org/"><code>numpy</code>/<code>scipy</code></a> installed, this is so much easier.</p>
+
+<pre lang="c">from numpy import *
+
+# read in samples
+
+fftout = fft(samples)
+</pre>
+
+<p>And that's it! I should have been using nothing but Python for nearly everything from the start, and screw C.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

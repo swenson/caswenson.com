@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,16 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2008_12_25_us_zip_code_data">US ZIP Code Data</a></h1>
+<p>Recently, I was thinking to myself, "Where do all of these wonderful sites on the web get information to map cities, towns, and <a href="http://en.wikipedia.org/wiki/ZIP_code">US ZIP codes</a> to actual locations?"  I then though, "How much do they pay?"  In reality, I don't know the answer, though there seem to be many companies you can pay for the information.</p>
+
+<p>The best data I could find easily was from the <a href="http://www.census.gov/geo/www/gazetteer/places2k.html">US Census</a>, though it is in a terse, fixed-column format.  Clearly then, the next step is to read it into a database.</p>
+
+<p>So, naturally, I created a small Ruby script to do just that.  If you are interested in such things, you can view it <a href="http://github.com/swenson/rubyzipload">over at github</a>.</p>
+
+<p>The next question I am curious about is calculating the distance between two points on the Earth's surface given their latitude and longitude pairs.  This isn't <a href="http://en.wikipedia.org/wiki/Geographic_coordinate_system">trivial</a>, but it shouldn't be too hard to get a rough estimate.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

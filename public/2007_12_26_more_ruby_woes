@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,41 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_12_26_more_ruby_woes">More Ruby Woes</a></h1>
+<p>I have been giving Ruby the old college try.  I was running into some strange difficulties with a minimax function in Ruby that at first I thought were more scoping oddities.</p>
+
+<p>It turns out that the <code>clone</code> and <code>dup</code> operators on Arrays in Ruby only perform shallow copying, which will pretty much not work on multidimensional arrays.  Oh well, I guess I would have to write my own, or copy someone else's, right?  Maybe something like:</p>
+
+<pre lang="ruby">def deepcopy(x)
+  if x.kind_of? Array
+    copy = []
+    x.each { |y|  copy += [deepcopy(y)] }
+    return copy
+  else
+    return x.dup
+  end
+end</pre>
+
+<p><strong>Wrong</strong>.  Ruby's almost-but-not-quite pure-OO nature actually makes it nearly impossible to create a generic deep copy function.  The problem is that integers, floats, and so forth are not the complete objects we thought they were, because you can't <code>dup</code> them:</p>
+
+<pre>>> x = 1.dup
+TypeError: can't dup Fixnum
+    from (irb):1:in `dup'
+    from (irb):1</pre>
+
+<p>So much for pure OO.</p>
+
+<p>The best solution I could come up with for a two-deep copy is (knowing ahead of time that it is a matrix):</p>
+
+<pre lang="ruby">def copy2(b)
+    newb = []
+    b.each { |r|  newb += [r.dup] }
+    return newb
+end</pre>
+
+<p>This, along with the odd scoping rules and counter-intuitive syntax are making me seriously consider ending my Ruby experiment.  And I so wanted to love Ruby.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

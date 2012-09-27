@@ -1,0 +1,13 @@
+Learning Rails
+==============
+Since I have been learning Ruby lately, I thought it might be fun to pick up Rails.  Normally, while doing this, I would be inclined to search around the Internet for some tutorials and documentation, and start digging in.
+
+However, I was not able to find any acceptable tutorials on the Internet.  I mean, sure, I found a ton of "Build your own blog" kind of tutorials, but Rails typically just needs more of an explanation, from what I could get.  Sure, the tutorial might tell me to insert a line into <code>004_add_stuff.rb</code> and run <code>rake migrate</code> (more properly, as I have learned, <code>rake db:migrate</code>), but what the hell does that mean?  And so on.
+
+Another problem is that Rails 2.0 appears to be just broken, everywhere.  It came out less a month ago, and I cannot get critical parts of it working properly on any box I am running (OS X and Linux).  But that doesn't matter, because there's no decent (see previous paragraph) tutorials on it.
+
+<a href="http://www.amazon.com/gp/product/0977616630?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0977616630"><img class="alignright" border="0" src="http://www.caswenson.com/wp-content/uploads/2007/12/21br22k8svl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=0977616630" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />So, my current solution is to use my Gentoo Linux box (which currently only supports Rails 1.2, since it also sees 2.0 as totally broken), and I bought <a href="http://www.amazon.com/gp/product/0977616630?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0977616630">Agile Web Development with Rails</a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=0977616630" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.  Looking through all of the book options, this one best suited what I wanted.  It's a bit chatty, but that can be good, since Rails does an awful lot of complicated stuff without you knowing, but you have to know in order to change any of it.
+
+The biggest issue is that the book does not cover Rails 2.0, and came out slightly before Rails 1.2, even though it is only about a year old!  I don't hold that against the book, especially since I can only seem to get the older Rails to work on my boxes.
+
+In a nutshell: having the book is about a billion times better than not having one.  Though I may still give up on this whole Ruby thing and switch to Python and Pylons at some point.

@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,19 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<h2>Disclosures</h2>
+
+<p>
+For transparency, I wanted to make it clear that I do work for Google, and so this can limit
+my participation and engagement in certain discussions, events, etc.
+</p>
+
+<p>
+If you want more information, please contact me at
+<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>.
+</p>
+
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

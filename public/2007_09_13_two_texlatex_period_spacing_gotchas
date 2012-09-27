@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,32 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_09_13_two_texlatex_period_spacing_gotchas">Two TeX/LaTeX period spacing gotchas</a></h1>
+<p>An easy thing to forget about TeX is that it tries to guess what you mean, and can get it wrong.  In this case, I am talking about periods.</p>
+
+<p>TeX interprets a period based on the previous letter.  If the previous letter is a capital, like "D. Knuth", it puts a normal space in, thinking that you are giving an initial.  If it is lowercase, like "I went to the store.  It was nice", it assumes you meant a period that ends a sentence, which has about 1 to 1.5 spaces after it (depending on the justification needs and the style settings you prefer).</p>
+
+<p>But what if you have a sentence that ends with, say, "which is why I like NINJAS."  Here, the period ends a sentence.  Or how about, "all of the misc. tools", where the period doesn't?</p>
+
+<p>A quick way to check to see if you made an oops doing this in your source file is to run the two scripts:</p>
+
+<pre lang="bash">grep "[A-Z]\. " *.tex</pre>
+
+<p>This checks for the first case, while this:</p>
+
+<pre lang="bash">grep "[a-z]\. [a-z]" *.tex</pre>
+
+<p>checks for the second case.</p>
+
+<p>To fix the case with the capital and the period, change "<code>NINJAS. </code>" to "<code>NINJAS\@. </code>", to tell TeX to treat the period as a sentence stopper.</p>
+
+<p>For the other case, with the lowercase and the period, change "<code>misc. tools</code>" to "<code>misc.\ tools</code>", to tell TeX to treat it as a normal space.</p>
+
+<p>I strongly recommend that anyone who uses TeX or LaTeX should, at some point, read <a href="http://www.amazon.com/gp/product/0201134489?ie=UTF8&amp;tag=mathfigu-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0201134489">The TeXbook</a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&amp;l=as2&amp;o=1&amp;a=0201134489" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, by Donald Knuth, and find out what really goes on under the hood.</p>
+
+<p>Thanks to <a href="http://john.regehr.org/latex/">John</a> for giving one of the scripts and reminding me of this.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

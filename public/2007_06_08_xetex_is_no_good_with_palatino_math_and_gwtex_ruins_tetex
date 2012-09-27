@@ -22,10 +22,10 @@
 <script src="js/shBrushXml.js" type="text/javascript"></script>-->
 
 <script language="javascript">
-window.onload = function () {{
+window.onload = function () {
     dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
     dp.SyntaxHighlighter.HighlightAll('code');
-}}
+}
 </script>
 
 </head>
@@ -38,8 +38,14 @@ window.onload = function () {{
 	</div>
 </div>
 <div id="content">
-	{posts}
-	{disqus}
+	<div id="postzoom"><h1><a href="2007_06_08_xetex_is_no_good_with_palatino_math_and_gwtex_ruins_tetex">XeTeX is no good with Palatino math, and gwTeX ruins teTeX.</a></h1>
+<p>So I determined, after several hours over the last few days, that <a href="http://scripts.sil.org/XeTeX">XeTeX</a> just <strong>will not</strong> have anything to do with Palatino math fonts.  I even tried an experimental <code>unicode-math</code> package.  Absolutely nothing seems to be able to get the two to work together: the <code>fontspec</code> package seems to make it ignore the <code>mathpazo</code> and <code>pxfonts</code> package, no matter where they come in the preamble.</p>
+
+<p>I decided to give up, and go back to plain LaTeX with the <code>pxfonts</code> package.  This stinks, because I really like the Unicode support and the hassle-free way of selecting text fonts.</p>
+
+<p>There is also another lesson I learned: having Fink teTeX, the old MacTeX teTeX, as well as the new LiveCD 2007 version of gwTeX installed on the same Mac will cause great confusion, and many lost fonts.  I decided to wipe all three installations, and install the actual full MacTeX 2007 distribution, which cleaned up some of the mess going on.</p>
+</div>
+	
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

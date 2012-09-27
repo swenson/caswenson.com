@@ -1,0 +1,9 @@
+Quality playing cards
+=====================
+One of my previous annoyances in life was the lack of a good set of EPS / PDF playing cards.  For the book I am currently writing, and possibly for a future one, I wanted to show some examples, and nice figures can say so much more than some dull text.  But finding some good playing cards that weren't ripped from Windows Solitaire or were at terrible resolution has been very difficult.
+
+Now, the normal cards, Ace through Ten, would be easy to make in MetaPost.  Heck, the shapes are even part of Unicode.  But, the real problem is the face cards.  I am not an artist, and I don't have the time, so I just can't make some new face cards.  I also couldn't seem to find even any high-res scans of the Bicycle cards faces, even though I would imagine that they are public domain by now (since those date back over 100 years).
+
+I stumbled across David Bellot's <a href="http://david.bellot.free.fr/svg-cards/">SVG cards</a> several times, but each time thought it would just be too much hassle to convert them to EPS or PDF, since they are distributed as one giant SVG file, rather than individually.  But, I got bored, and opened it in Illustrator.  I figured out a way to convert them fairly quickly to EPS (ungrouping, and some quick keyboard copy-paste-save-delete-repeat action).  I then wrote a script to clean out all of the Illustrator garbage using Ghostscript, and save copies in PDF as well.
+
+I packaged them up as well.  I talked to David, and he said he might even distribute them along with the official version in the future, so that even more people might get some use out of them (since nobody who cares about high quality playing cards probably reads my blog).  But for those of you interested, on the right-hand side of this page under "Resources", you can download them from here.
