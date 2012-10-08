@@ -38,7 +38,7 @@ def ReadFromDatabase(self, query, metadata):
 
 So... what is query? A string? What is its format? Could it be a tuple, a list? What is metadata? Essentially, the only answers to these questions were to go digging through documentation, look for other code that calls that function, read through the function itself. And sometimes I just don't have time to go on a coding adventure: I want to call the method and go on with my day. Java, for all of its faults, at least tells you the type information of the parameters, so I have a strong hint for my adventure. This might involve navigating factories, factoryfactories, and all other kinds of abominations, but at least I would have a good start.
 
-It Should Be Easy To Run Your Program.
+It should be easy to run your program.
 --------------------------------------
 
 Google programmers love command-line flags. They sprinkle them everywhere. The problem is: they often specify the default values elsewhere, perhaps in a script that only runs in production. It can make running a program locally difficult, which in turns makes testing and debugging hard. The moral I learned is that it should be dead simple to build, run, and test your program. Hunting around for documentation on the perfect incantation magic is a real bummer.
