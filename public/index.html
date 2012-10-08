@@ -38,7 +38,7 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div class="post"><h1><a href="2012_10_08_things_ive_learned_at_google_part_one">Things I've Learned At Google, Part One</a></h1>
+	<div class="post"><div class="date"><b>oct</b> 08 2012</div><h1><a href="2012_10_08_things_ive_learned_at_google_part_one">Things I've Learned At Google, Part One</a></h1>
 <p>I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.</p>
 
 <p>This first post will be about software engineering. Shortly, I'll post another about general workplace stuff.</p>
@@ -82,7 +82,7 @@ def ReadFromDatabase(self, query, metadata):
 <h2>Test <em>ALL</em> the things.</h2>
 
 <p>Before Google, I hadn't really practiced a lot of TDD. Sure, when I had a small piece of code that had very well-defined inputs and outputs, and if I had time, I would create some doctests (in Python) or the equivalent elsewise, but it was never a priority. At Google, good testing is the state religion. If it doesn't have tests, it doesn't exist. No excuses. I don't care how complex the code is: it has to be tested. Writing the tests firsts often helps, but doesn't always make sense.</p>
-</div><div class="post"><h1><a href="2012_09_27_blog_redo">Blog Redo</a></h1>
+</div><div class="post"><div class="date"><b>sep</b> 27 2012</div><h1><a href="2012_09_27_blog_redo">Blog Redo</a></h1>
 <p>I got tired of the old site having issues, so I rewrote the site using a
 custom static site generator.</p>
 
@@ -90,15 +90,15 @@ custom static site generator.</p>
 to the new system, and working with a small issue or two there.</p>
 
 <p>I should have some new material up soon as well!</p>
-</div><div class="post"><h1><a href="2012_04_28_what_every_programmer_should_know_about_memory">What Every Programmer Should Know About Memory</a></h1>
+</div><div class="post"><div class="date"><b>apr</b> 28 2012</div><h1><a href="2012_04_28_what_every_programmer_should_know_about_memory">What Every Programmer Should Know About Memory</a></h1>
 <p>I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know About Memory".</p>
 
 <p><a href="http://www.akkadia.org/drepper/cpumemory.pdf">http://www.akkadia.org/drepper/cpumemory.pdf</a></p>
 
 <p>If you haven't read it, and you are a programmer, then you really need to read this paper.</p>
-</div><div class="post"><h1><a href="2011_12_30_modern_cryptanalysis_errata_updated">Modern Cryptanalysis Errata updated</a></h1>
+</div><div class="post"><div class="date"><b>dec</b> 30 2011</div><h1><a href="2011_12_30_modern_cryptanalysis_errata_updated">Modern Cryptanalysis Errata updated</a></h1>
 <p>I have updated <a href="http://www.caswenson.com/mcerrata">the errata</a> for my book, Modern Cryptanalysis.</p>
-</div><div class="post"><h1><a href="2011_12_25_changes_coming_soon">Changes coming soon</a></h1>
+</div><div class="post"><div class="date"><b>dec</b> 25 2011</div><h1><a href="2011_12_25_changes_coming_soon">Changes coming soon</a></h1>
 <p>This is the first post of the year. That's a little sad, but I think I am going to be redoing this site a bit in the near future.</p>
 
 <p>So, some upcoming changes:</p>
@@ -108,7 +108,7 @@ to the new system, and working with a small issue or two there.</p>
 <li><p>Notes on upcoming projects. I am currently working on several projects, open source and not, and a few writing projects. Expect more details on these.</p></li>
 <li><p>... and more.</p></li>
 </ul>
-</div><div class="post"><h1><a href="2010_12_01_monospaced_font">Monospaced font</a></h1>
+</div><div class="post"><div class="date"><b>dec</b> 01 2010</div><h1><a href="2010_12_01_monospaced_font">Monospaced font</a></h1>
 <p>I have been searching for years for a decent programming font (that is, monospaced). Over the years, I've found various ones that suited me, but recently I found ranks as my favorite: <a href="http://www.cosmix.org/software/">Droid Sans Mono, Dotted</a>.</p>
 
 <p><img src="http://m.caswenson.com/images/droidsansmono.png" width="901" height="649" alt="Droid Sans Mono Dotted picture" /></p>
@@ -118,7 +118,7 @@ to the new system, and working with a small issue or two there.</p>
 <p>They are designed to very legible, and I have found the Sans Mono to be clean and pleasant when in the terminal or in a coding window.  It also has pretty decent Unicode support.</p>
 
 <p>My previous favorite coding fonts have been: Monaco, DejaVu Sans Mono, Consolas, and Lucida Sans Console.</p>
-</div><div class="post"><h1><a href="2010_10_30_sorting_out_sorting">Sorting out sorting</a></h1>
+</div><div class="post"><div class="date"><b>oct</b> 30 2010</div><h1><a href="2010_10_30_sorting_out_sorting">Sorting out sorting</a></h1>
 <p>I <a href="http://github.com/swenson/sort">recently wrote</a> a C version of a bunch of comparison-based sorting algorithms, notably timsort and quicksort.</p>
 
 <p><a href="http://en.wikipedia.org/wiki/Timsort">Timsort</a> is a neat, unbalanced mergesort that I've been wanting to try out for the past while, and so I spent the time to write a fast C implementation of the algorithm.  My experiments on random data show about a 5-10% improvement over quicksort, which is pretty amazing.  If the data has any structure, which is extremely common, it has "superhuman" performance, as it can merge natural runs in the data in an efficient manner.</p>
@@ -130,7 +130,7 @@ to the new system, and working with a small issue or two there.</p>
 <p>Using token pasting, it is also possible to implement the entire library as a single header file: no library to compile!</p>
 
 <p>Sadly, sorting doesn't usually have <a href="http://www.youtube.com/watch?v=YvTW7341kpA">sound effects</a>.</p>
-</div><div class="post"><h1><a href="2010_07_18_wordpress_thesis_and_the_gpl">Wordpress, Thesis, and the GPL</a></h1>
+</div><div class="post"><div class="date"><b>jul</b> 18 2010</div><h1><a href="2010_07_18_wordpress_thesis_and_the_gpl">Wordpress, Thesis, and the GPL</a></h1>
 <p>There's been <a href="http://mixergy.com/chris-pearson-matt-mullenweg/">some hubbub</a> going around the web about Wordpress potentially suing a developer for breaching the GPL.</p>
 
 <p>The quick run-down: Wordpress is licensed under <a href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GPL2</a>. Thesis is a premium Wordpress theme.</p>
@@ -155,7 +155,7 @@ sections when you distribute them as separate work. &hellip;
 <p>It's unclear.  I am inclined to the second viewpoint, because the first has a lot of nasty ramifications.  However, some people, including <a href="http://www.gnu.org/licenses/gpl-faq.html#GPLPluginsInNF">the FSF</a>, appear to believe in the first viewpoint (roughly speaking).</p>
 
 <p>Ugh.  Software licensing sucks.  This is why I use the <a href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a>.  Mostly because I like putting some kind of license on the code, and this seems one of the least restrictive ones.</p>
-</div><div class="post"><h1><a href="2010_06_07_intel_threading_challenge_2010_icfp_2010">Intel Threading Challenge 2010, ICFP 2010</a></h1>
+</div><div class="post"><div class="date"><b>jun</b> 07 2010</div><h1><a href="2010_06_07_intel_threading_challenge_2010_icfp_2010">Intel Threading Challenge 2010, ICFP 2010</a></h1>
 <p>I'm a sucker for programming contests, and have been since high school.</p>
 
 <p>I thought I would post here about one ongoing contest and one upcoming one.</p>
@@ -163,7 +163,7 @@ sections when you distribute them as separate work. &hellip;
 <p>First, the <a href="http://software.intel.com/en-us/contests/threading-challenge-prof-2010/codecontest.php">Intel Threading Challenge</a> has already started.  Essentially, it a little programming contest that is supposed to test your ability to program effectively for a large multi-threaded task.  The "Master" section this year is writing a program to compute a simple and laborious graph theoretic property.</p>
 
 <p>Second, the annual <a href="http://icfpcontest.org/">ICFP programming contest</a> is right around the corner.  Although nominally a functional programming contest, anyone can enter in any language.  It's an super-fun, intense 72-hour competition.  If you want to try to place, I recommend having a group of about 2&ndash;4 strong programmers.  I won't be able to compete this year because of a scheduling conflict. :(</p>
-</div><div class="post"><h1><a href="2010_05_20_sliderepl_for_sage">sliderepl for Sage</a></h1>
+</div><div class="post"><div class="date"><b>may</b> 20 2010</div><h1><a href="2010_05_20_sliderepl_for_sage">sliderepl for Sage</a></h1>
 <p><a href="http://discorporate.us/projects/sliderepl/">sliderepl</a> is a really neat Python presentation tool for demonstrating code, live, in a slide-like format.  Essentially, you organize your code into "slides", which you can then scroll through (though you can't go back, really).  The tool was written originally by <a href="http://discorporate.us/jek/">Jason Kirtland</a>.</p>
 
 <p>I wanted to see if I could use it for <a href="http://www.sagemath.org">Sage</a> code as sort of a GUI-less notebook thing.  Kind of.  Unfortunately, sliderepl is full of hacky magic, involving embedding an interpreter and introspection.  Sage is too, and so they don't like each other very much.</p>

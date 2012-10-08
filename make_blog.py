@@ -57,6 +57,8 @@ for fname in static_files:
   run_cmd("mkdir -p " + os.path.join("public", os.path.dirname(fname[len("static/"):])))
   shutil.copy(fname, os.path.join("public", fname[len("static/"):]))
 
+months = 'xxx jan feb mar apr may jun jul aug sep oct nov dec'.split()
+
 # Create posts.
 print "Posting"
 posts_text = ""
@@ -67,11 +69,17 @@ for mtime, post in posts:
   lines = post.split("\n")
   post_title = lines[0][4:-5]
   slug = title_slug(post_title)
-  link = "%s_%s" % (str(date.fromtimestamp(mtime)).replace("-", "_"), slug)
+  pdate = str(date.fromtimestamp(mtime))
+  post_year, post_month, post_day = pdate.split('-')
+  post_month = int(post_month)
+  link = "%s_%s" % (pdate.replace("-", "_"), slug)
   post_h1 = "<h1><a href=\"%s\">%s</a></h1>" % (link, post_title)
   post_body = "\n".join(lines[1:])
+  post_date = "<b>%s</b> %s %s" % (months[post_month], post_day, post_year)
   if processed < INDEX_POSTS:
-    posts_text += """<div class="post">%s%s</div>""" % (post_h1, post_body)
+    posts_text += """<div class="post">"""
+    posts_text += """<div class="date">%s</div>""" % post_date
+    posts_text += """%s%s</div>""" % (post_h1, post_body)
   if processed < RSS_POSTS:
     entry = et.Element("entry")
     title = et.SubElement(entry, "title")
