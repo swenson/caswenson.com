@@ -25,8 +25,10 @@ Prior to Google, I despised IDEs. I still don't have a lot of love for them, but
 Build systems still suck.
 -------------------------
 
-Google has their own build system that integrates with, well, everything. But it still sucks. Not as much as autotools, SCons, Makefiles, but it still sucks. Where, oh where, is the build system of my dreams?
+Google has their own build system that integrates with, well, everything. But it still sucks. Not as much as autotools, SCons, Makefiles, but it still sucks. Where, oh where, is the build system of my dreams? To be fair, this was probably the best build system I have ever used.
+
 Python and other untyped languages make life harder for large projects.
+-----------------------------------------------------------------------
 
 For small projects or stuff that I am doing by myself, I love Python. The time it saves me is tremendous. However, nothing is more frustrating than programming with a large, unknown codebase in Python. I would often see code like this, even in a well-manicured codebase:
 
