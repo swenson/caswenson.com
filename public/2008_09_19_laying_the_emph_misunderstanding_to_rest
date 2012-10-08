@@ -38,21 +38,49 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div class="postzoom"><h1><a href="2008_02_19_mac_os_x_python">Mac OS X Python</a></h1>
-<p><a href='http://www.caswenson.com/wp-content/uploads/2008/02/python.png' title='Python Logo'><img class="alignright" src='http://www.caswenson.com/wp-content/uploads/2008/02/python.png' alt='Python Logo' /></a></p>
+	<div class="postzoom"><h1><a href="2008_09_19_laying_the_emph_misunderstanding_to_rest">Laying the \emph misunderstanding to rest</a></h1>
+<p>As a response to <a href="http://www.caswenson.com/?p=18">a previous post</a> regarding LaTeX's <code>\emph</code> command: I was under the impression that you need to still use the <code>\/</code> command afterward to do an italic correction: it turns out that you do <strong>not</strong> need to.</p>
 
-<p>Python on Mac OS X is poorly designed and all sorts of unfun to fix.  Certain packages work better with the built-in Python, certain work better with fink/ports/portage Python.  However, wxPython only works with the built-in one, since it integrates with Aqua, so I decided to switch everything over to using only the built-in version.</p>
+<p>I verified this using the wonderul <code>\showbox</code> command in LaTeX: this spits out the contents of a box, including all characters and kerns.</p>
 
-<p>Here is what you need to do to get up to speed:</p>
+<p>Note: in order to use this command in LaTeX, you need to reset the <code>\showboxdepth</code> and <code>\showboxbreadth</code> counters, which are reset for some reason.  This can be done like so:</p>
 
-<ol>
-    <li><a href="http://www.python.org/download/">Update</a> to the latest Python for OS X.</li>
-    <li>If you are running on an Intel processor on OS X 10.5 Leopard, <a href="http://www.oreillynet.com/onlamp/blog/2007/12/pil_on_leopard_or_how_i_made_p.html">fix</a> (really, unbreak) your Python core Makefile to drop PPC support, since it breaks things like PIL.  (The link just stays to remove all <code>-arch ppc</code>'s from <code>/Library/&zwnj;Frameworks/&zwnj;Python.framework/&zwnj;Versions/&zwnj;Current/&zwnj;lib/&zwnj;python2.5/&zwnj;config/&zwnj;Makefile</code></li>
-    <li>Install everything either with Framework packages (wxPython), or by manually building via <code>sudo python setup.py install</code>.</li></ol>
+<pre lang="tex">\showboxdepth=100
+\showboxbreadth=100</pre>
 
-<p>For my work, the core packages are <a href="http://www.wxpython.org/download.php">wxPython</a>, <a href="http://www.scipy.org/Download">numpy + scipy</a>, <a href="http://sourceforge.net/projects/matplotlib">matplotlib</a>, and the <a href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>.  I've successfully installed them all now using the above method, but note that numpy and scipy will not install via the OS X package, but have to be compiled from source.</p>
+<p>Thanks to <a href="http://uucode.com/blog/2006/02/26/showbox-in-latex/">Oleg</a> for this tip.</p>
+
+<p>After I did this, I threw the following code in a LaTeX document (it has to be inside of a document, not the preamble, otherwise it won't load the fonts properly):</p>
+
+<pre lang="tex">\setbox122=\hbox{{\it i}i}
+\showbox122
+\setbox123=\hbox{\emph{i}i}
+\showbox123</pre>
+
+<p>Then, checking the log file gave me:</p>
+
+<pre>> \box122=
+\hbox(6.67859+0.0)x5.84444
+.\OT1/cmr/m/it/10 i
+.\OT1/cmr/m/n/10 i
+
+
+! OK.
+l.7 \showbox122
+
+? 
+> \box123=
+\hbox(6.67859+0.0)x6.86339
+.\OT1/cmr/m/it/10 i
+.\kern 1.01895
+.\OT1/cmr/m/n/10 i
+
+! OK.
+l.9 \showbox123</pre>
+
+<p>So, the <code>\emph</code> command automatically puts in the <code>\/</code> as necessary.  (I verified that it doesn't seem to insert this when it isn't needed.)</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_02_19_mac_os_x_python">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_09_19_laying_the_emph_misunderstanding_to_rest">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

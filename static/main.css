@@ -129,6 +129,8 @@ hr {
 
 .post {
 	margin-top: 20px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid #ddd;
 }
 
 .post .date {
@@ -153,7 +155,7 @@ hr {
 	margin-top: -5px;
 	font-size: 14px;
 	color: #555555;
-	
+
 }
 
 .post h1 {

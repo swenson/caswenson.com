@@ -2,11 +2,56 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2012-09-27T06:51:02-00:00</updated>
+  <updated>2012-10-08T21:46:48-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>Blog Redo</title><link href="2012_09_26_blog_redo" rel="alternate" /><id>2012_09_26_blog_redo</id><published>2012-09-27T06:51:02-00:00</published><updated>2012-09-27T06:51:02-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Things I've Learned At Google, Part One</title><link href="2012_10_08_things_ive_learned_at_google_part_one" rel="alternate" /><id>2012_10_08_things_ive_learned_at_google_part_one</id><published>2012-10-08T21:46:48-00:00</published><updated>2012-10-08T21:46:48-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot </summary><content type="html">
+&lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.&lt;/p&gt;
+
+&lt;p&gt;This first post will be about software engineering. Shortly, I'll post another about general workplace stuff.&lt;/p&gt;
+
+&lt;p&gt;First, an overall thought: Google was definitely the most professional place I've worked in terms of software engineering. However, just like any software engineering methodologies, their software engineering Kool-Aid is good, but you don't want to drink all of it.&lt;/p&gt;
+
+&lt;h2&gt;Code reviews are a must.&lt;/h2&gt;
+
+&lt;p&gt;Prior to Google, I had done very little formal code review as most projects we were simply "too busy" to "take time out" to do them. They are not even a little bit optional at Google: every change to the codebase must undergo at least one person's review, and possibly many more depending on the exact nature of the change and the person making it. At first, I was very skeptical about this, but I learned that there is so much much value in having this formal process, for a multitude of reasons.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;First, if you have a small team, code reviews are a good way to keep up with what other people on your project are doing, both on a personal level ("Jane is working on feature X"), as well as understanding what the code does. This means that it will be easier for you to make a modification to the codebase, if it is necessary, or even to take ownership of it should something happen (i.e., team member moves on).&lt;/li&gt;
+&lt;li&gt;Code reviews don't take as long as you think.&lt;/li&gt;
+&lt;li&gt;Code reviews significantly increase the quality of the code produced, both in readability, but in catching bugs and poor design decisions. Perhaps not as much as true pair programming, but with a lot fewer of the disadvantages.&lt;/li&gt;
+&lt;li&gt;Unfortunately, code reviews have one downside: it is often tricky to work on two different reviews on the same part of the codebase at the same time. This depends heavily on your version control system &amp;mdash; distributed version control systems, like git, tend to support this pretty well. But even so, there is some cost in terms of "mental swap space", as sometimes it is difficult to focus on an entirely different change until you hear back on your pending change. The best way to avoid this is make sure your team prioritizes reviewing code above pretty much all else, so that your other team members aren't waiting on you. (Code reviews are a bit like a turn-based game, and when it is the other person's turn, it can seem like it takes forever.) I always tried to have a spare project to work on that I could hack on a little while waiting.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;IDEs are worth it for large projects.&lt;/h2&gt;
+
+&lt;p&gt;Prior to Google, I despised IDEs. I still don't have a lot of love for them, but reusing Google's extensive codebase in my own code finally broke me out of my IDE-less existence: there is simply &lt;em&gt;too much&lt;/em&gt; code to try to wrangle without features like autoimport, name completion, refactoring, etc. I chose Eclipse, because I was doing Java work and Eclipse is well-supported inside Google. As slow as Eclipse is, it saved me a lot of time hunting through docs looking for the right class, with the right class name, the right function name method, etc.: I could just tab-complete my way to freedom a lot of the time.&lt;/p&gt;
+
+&lt;h2&gt;Build systems still suck.&lt;/h2&gt;
+
+&lt;p&gt;Google has their own build system that integrates with, well, everything. But it still sucks. Not as much as autotools, SCons, Makefiles, but it still sucks. Where, oh where, is the build system of my dreams?
+Python and other untyped languages make life harder for large projects.&lt;/p&gt;
+
+&lt;p&gt;For small projects or stuff that I am doing by myself, I love Python. The time it saves me is tremendous. However, nothing is more frustrating than programming with a large, unknown codebase in Python. I would often see code like this, even in a well-manicured codebase:&lt;/p&gt;
+
+&lt;pre&gt;
+def ReadFromDatabase(self, query, metadata):
+  """Perform the query on the database."""
+  ...
+&lt;/pre&gt;
+
+&lt;p&gt;So... what is query? A string? What is its format? Could it be a tuple, a list? What is metadata? Essentially, the only answers to these questions were to go digging through documentation, look for other code that calls that function, read through the function itself. And sometimes I just don't have time to go on a coding adventure: I want to call the method and go on with my day. Java, for all of its faults, at least tells you the type information of the parameters, so I have a strong hint for my adventure. This might involve navigating factories, factoryfactories, and all other kinds of abominations, but at least I would have a good start.&lt;/p&gt;
+
+&lt;h2&gt;It Should Be Easy To Run Your Program.&lt;/h2&gt;
+
+&lt;p&gt;Google programmers love command-line flags. They sprinkle them everywhere. The problem is: they often specify the default values elsewhere, perhaps in a script that only runs in production. It can make running a program locally difficult, which in turns makes testing and debugging hard. The moral I learned is that it should be dead simple to build, run, and test your program. Hunting around for documentation on the perfect incantation magic is a real bummer.&lt;/p&gt;
+
+&lt;h2&gt;Test &lt;em&gt;ALL&lt;/em&gt; the things.&lt;/h2&gt;
+
+&lt;p&gt;Before Google, I hadn't really practiced a lot of TDD. Sure, when I had a small piece of code that had very well-defined inputs and outputs, and if I had time, I would create some doctests (in Python) or the equivalent elsewise, but it was never a priority. At Google, good testing is the state religion. If it doesn't have tests, it doesn't exist. No excuses. I don't care how complex the code is: it has to be tested. Writing the tests firsts often helps, but doesn't always make sense.&lt;/p&gt;
+</content></entry><entry><title>Blog Redo</title><link href="2012_09_27_blog_redo" rel="alternate" /><id>2012_09_27_blog_redo</id><published>2012-09-27T06:51:02-00:00</published><updated>2012-09-27T06:51:02-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I got tired of the old site having issues, so I rewrote the site using a
 custom static site gene</summary><content type="html">
 &lt;p&gt;I got tired of the old site having issues, so I rewrote the site using a
@@ -87,7 +132,7 @@ sections when you distribute them as separate work. &amp;hellip;
 &lt;p&gt;It's unclear.  I am inclined to the second viewpoint, because the first has a lot of nasty ramifications.  However, some people, including &lt;a href="http://www.gnu.org/licenses/gpl-faq.html#GPLPluginsInNF"&gt;the FSF&lt;/a&gt;, appear to believe in the first viewpoint (roughly speaking).&lt;/p&gt;
 
 &lt;p&gt;Ugh.  Software licensing sucks.  This is why I use the &lt;a href="http://en.wikipedia.org/wiki/MIT_License"&gt;MIT License&lt;/a&gt;.  Mostly because I like putting some kind of license on the code, and this seems one of the least restrictive ones.&lt;/p&gt;
-</content></entry><entry><title>Intel Threading Challenge 2010, ICFP 2010</title><link href="2010_06_06_intel_threading_challenge_2010_icfp_2010" rel="alternate" /><id>2010_06_06_intel_threading_challenge_2010_icfp_2010</id><published>2010-06-07T04:41:06-00:00</published><updated>2010-06-07T04:41:06-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Intel Threading Challenge 2010, ICFP 2010</title><link href="2010_06_07_intel_threading_challenge_2010_icfp_2010" rel="alternate" /><id>2010_06_07_intel_threading_challenge_2010_icfp_2010</id><published>2010-06-07T04:41:06-00:00</published><updated>2010-06-07T04:41:06-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I'm a sucker for programming contests, and have been since high school.&lt;/p&gt;
 
 &lt;p&gt;I thought I woul</summary><content type="html">
@@ -105,19 +150,5 @@ sections when you distribute them as separate work. &amp;hellip;
 &lt;p&gt;I wanted to see if I could use it for &lt;a href="http://www.sagemath.org"&gt;Sage&lt;/a&gt; code as sort of a GUI-less notebook thing.  Kind of.  Unfortunately, sliderepl is full of hacky magic, involving embedding an interpreter and introspection.  Sage is too, and so they don't like each other very much.&lt;/p&gt;
 
 &lt;p&gt;Through some more magic, I figured out how to get them to work together anyway, and released the code on Github as &lt;a href="http://github.com/swenson/sage_sliderepl"&gt;sage_sliderepl&lt;/a&gt;.&lt;/p&gt;
-</content></entry><entry><title>Task</title><link href="2010_04_27_task" rel="alternate" /><id>2010_04_27_task</id><published>2010-04-28T05:42:30-00:00</published><updated>2010-04-28T05:42:30-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;I recently discovered &lt;a href="http://taskwarrior.org/projects/show/taskwarrior/"&gt;task&lt;/a&gt;, a po</summary><content type="html">
-&lt;p&gt;I recently discovered &lt;a href="http://taskwarrior.org/projects/show/taskwarrior/"&gt;task&lt;/a&gt;, a powerful, yet simple, command-line to-do and task management tool.  Up until now, I hadn't found any way to manage to-do lists that felt "right".  But task has changed that for me.&lt;/p&gt;
-
-&lt;p&gt;One feature I feel is missing (though I think they are planning on &lt;a href="http://taskwarrior.org/wiki/taskwarrior/Features"&gt;fixing this&lt;/a&gt;) is the lack of email notifications.  I would really like to know what I have to do today, and I may not always remember to login and check, especially in my current transition period of getting used to using it everyday.&lt;/p&gt;
-
-&lt;p&gt;So, I set up &lt;a href="http://en.wikipedia.org/wiki/Cron"&gt;cron&lt;/a&gt; on my system to email my current list (that is due today) every day.  For those of you following along at home, you can do the same with something like so added to your crontab (&lt;code&gt;crontab -e&lt;/code&gt;):&lt;/p&gt;
-
-&lt;pre&gt;SHELL=/bin/bash
-1 0 * * * task list due:today | mail -s "Due `date '+\%A, \%m/\%d/\%Y'`" your@emailaddress.com&lt;/pre&gt;
-
-&lt;p&gt;(Note that you have to escape the percent signs in a crontab line.)&lt;/p&gt;
-
-&lt;p&gt;Just a quick update &amp;mdash; trying to get back into the habit of posting.&lt;/p&gt;
 </content></entry>
 </feed>

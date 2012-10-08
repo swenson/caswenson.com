@@ -38,22 +38,23 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div class="postzoom"><h1><a href="2008_04_18_some_things_about_fios_you_dont_know">Some things about FiOS you don't know</a></h1>
-<p>I have been a pretty big fan of <a href="http://en.wikipedia.org/wiki/Verizon_FiOS">Verizon FiOS</a> ever since I got it last August.  The Internet has not ever gone down that I can recall, TV quality is excellent, and it's competitvely priced.</p>
+	<div class="postzoom"><h1><a href="2008_08_09_the_call_of_cthulhu_anyone_for_a_free_short_story">The Call of Cthulhu: Anyone for a free short story?</a></h1>
+<p>I decided to finally sit down and read the short story <a href="http://en.wikipedia.org/wiki/Call_Of_Cthulhu">The Call of Cthulhu</a>, by H.P. Lovecraft the other day.  Turns out that it is <a href="http://www.aetherial.net/lovecraft/">pretty much</a> in the public domain (this is actually a matter of some debate, but all the evidence I have found on the Internet seems to point pretty squarely that the copyrights expired long ago).</p>
 
-<p>However, there are a few things that you probably don't know about FiOS, as I didn't until I spent a couple of hours of my evening playing around and on the phone with tech support.</p>
+<p>Anyways, I often wish to read works that were published in print, well, in print.  I found the complete text on <a href="http://en.wikisource.org/wiki/The_Call_of_Cthulhu">Wikipedia</a>, but it feels kind of lifeless.  Something like Lovecraft just <em>feels</em> like it should be in print, you know?</p>
 
-<p><strong>That Ethernet port on your FiOS box? It doesn't work.</strong> Your ONT (the boxy thing that provides the FiOS magic) has a multitude of ports: incoming fiber, and outgoing coax, two phone ports, and an Ethernet port.  It is not possible to use both the coax and the Ethernet port at the same time.</p>
+<p>Since I like to think I'm not completely terrible at typesetting, I typeset it.  At least, I typeset it enough to where the experience of reading it on paper makes me feel like I'm getting something.  It's still somewhat of a minimalist typesetting.</p>
 
-<p><strong>FiOS TV gets its listing and on-demand setting from the Internet.</strong> This has some interesting implications.  I am really curious how this works if you have FiOS TV, but not the Internet plan?</p>
+<p>Assuming that the original text is in the public domain, I hereby release the PDF and source of it into the public domain.</p>
 
-<p><strong>FiOS TV requires the coax port.</strong>  Well, duh, right?.  But, when combined with the previous notes, that means that, <strong>if you have FiOS TV service, you cannot use the Ethernet port</strong>.</p>
+<p><a href='http://www.caswenson.com/wp-content/uploads/2008/08/call-of-cthulhu.pdf'>The Call of Cthulhu</a> (PDF)
+<a href='http://www.caswenson.com/wp-content/uploads/2008/08/call-of-cthulhu.indd'>The Call of Cthulhu</a> (InDesign Source)</p>
 
-<p><strong>FiOS uses bandwidth on that coax cable from 1 to 1150 MHz.</strong>  According to my router, it uses somee range under 1000 MHz for Internet service, and 1001 through 1150 MHz for communicating with FiOS TV.  Note that a lot of cable splitters only go through 900 MHz, so be careful if you start using your own.</p>
+<p>For you people who care about things, the title font is Lucida Blackletter, and the text font is Warnock Pro (one of my favorites) set at 11pt, for that classic feel.  It was set in InDesign CS3 for standard letter paper (14 pages at 8.5 &times; 11&quot;).  It's double-column for easier reading.  Nothing fancy.</p>
 
-<p>Only about half of the tech support guys were helpful when I called (one did not know several of these points when trying to diagnose what my problem was), so watch out if you need to call.</p>
+<p>Maybe there will be more to come in the future?</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_04_18_some_things_about_fios_you_dont_know">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_08_09_the_call_of_cthulhu_anyone_for_a_free_short_story">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

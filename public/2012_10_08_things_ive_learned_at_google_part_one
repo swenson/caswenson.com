@@ -1,0 +1,109 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Christopher Swenson</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+
+<script src="js/shCore.js" type="text/javascript"></script>
+<!--<script src="js/shBrushCSharp.js" type="text/javascript"></script>
+<script src="js/shBrushCpp.js" type="text/javascript"></script>
+<script src="js/shBrushCss.js" type="text/javascript"></script>
+<script src="js/shBrushDelphi.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+<script src="js/shBrushJava.js" type="text/javascript"></script>
+<script src="js/shBrushPhp.js" type="text/javascript"></script>-->
+<script src="js/shBrushRuby.js" type="text/javascript"></script>
+<script src="js/shBrushPython.js" type="text/javascript"></script>
+<!--<script src="js/shBrushSql.js" type="text/javascript"></script>
+<script src="js/shBrushVb.js" type="text/javascript"></script>
+<script src="js/shBrushXml.js" type="text/javascript"></script>-->
+
+<script language="javascript">
+window.onload = function () {
+    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+}
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<img src="images/chrisbluething.png" alt="blue thing" />
+		<h1><a href="/">Christopher Swenson</a></h1>
+		<p>Computer science, math, programming, and stuff.</p>
+	</div>
+</div>
+<div id="content">
+	<div class="postzoom"><h1><a href="2012_10_08_things_ive_learned_at_google_part_one">Things I've Learned At Google, Part One</a></h1>
+<p>I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.</p>
+
+<p>This first post will be about software engineering. Shortly, I'll post another about general workplace stuff.</p>
+
+<p>First, an overall thought: Google was definitely the most professional place I've worked in terms of software engineering. However, just like any software engineering methodologies, their software engineering Kool-Aid is good, but you don't want to drink all of it.</p>
+
+<h2>Code reviews are a must.</h2>
+
+<p>Prior to Google, I had done very little formal code review as most projects we were simply "too busy" to "take time out" to do them. They are not even a little bit optional at Google: every change to the codebase must undergo at least one person's review, and possibly many more depending on the exact nature of the change and the person making it. At first, I was very skeptical about this, but I learned that there is so much much value in having this formal process, for a multitude of reasons.</p>
+
+<ol>
+<li>First, if you have a small team, code reviews are a good way to keep up with what other people on your project are doing, both on a personal level ("Jane is working on feature X"), as well as understanding what the code does. This means that it will be easier for you to make a modification to the codebase, if it is necessary, or even to take ownership of it should something happen (i.e., team member moves on).</li>
+<li>Code reviews don't take as long as you think.</li>
+<li>Code reviews significantly increase the quality of the code produced, both in readability, but in catching bugs and poor design decisions. Perhaps not as much as true pair programming, but with a lot fewer of the disadvantages.</li>
+<li>Unfortunately, code reviews have one downside: it is often tricky to work on two different reviews on the same part of the codebase at the same time. This depends heavily on your version control system &mdash; distributed version control systems, like git, tend to support this pretty well. But even so, there is some cost in terms of "mental swap space", as sometimes it is difficult to focus on an entirely different change until you hear back on your pending change. The best way to avoid this is make sure your team prioritizes reviewing code above pretty much all else, so that your other team members aren't waiting on you. (Code reviews are a bit like a turn-based game, and when it is the other person's turn, it can seem like it takes forever.) I always tried to have a spare project to work on that I could hack on a little while waiting.</li>
+</ol>
+
+<h2>IDEs are worth it for large projects.</h2>
+
+<p>Prior to Google, I despised IDEs. I still don't have a lot of love for them, but reusing Google's extensive codebase in my own code finally broke me out of my IDE-less existence: there is simply <em>too much</em> code to try to wrangle without features like autoimport, name completion, refactoring, etc. I chose Eclipse, because I was doing Java work and Eclipse is well-supported inside Google. As slow as Eclipse is, it saved me a lot of time hunting through docs looking for the right class, with the right class name, the right function name method, etc.: I could just tab-complete my way to freedom a lot of the time.</p>
+
+<h2>Build systems still suck.</h2>
+
+<p>Google has their own build system that integrates with, well, everything. But it still sucks. Not as much as autotools, SCons, Makefiles, but it still sucks. Where, oh where, is the build system of my dreams?
+Python and other untyped languages make life harder for large projects.</p>
+
+<p>For small projects or stuff that I am doing by myself, I love Python. The time it saves me is tremendous. However, nothing is more frustrating than programming with a large, unknown codebase in Python. I would often see code like this, even in a well-manicured codebase:</p>
+
+<pre>
+def ReadFromDatabase(self, query, metadata):
+  """Perform the query on the database."""
+  ...
+</pre>
+
+<p>So... what is query? A string? What is its format? Could it be a tuple, a list? What is metadata? Essentially, the only answers to these questions were to go digging through documentation, look for other code that calls that function, read through the function itself. And sometimes I just don't have time to go on a coding adventure: I want to call the method and go on with my day. Java, for all of its faults, at least tells you the type information of the parameters, so I have a strong hint for my adventure. This might involve navigating factories, factoryfactories, and all other kinds of abominations, but at least I would have a good start.</p>
+
+<h2>It Should Be Easy To Run Your Program.</h2>
+
+<p>Google programmers love command-line flags. They sprinkle them everywhere. The problem is: they often specify the default values elsewhere, perhaps in a script that only runs in production. It can make running a program locally difficult, which in turns makes testing and debugging hard. The moral I learned is that it should be dead simple to build, run, and test your program. Hunting around for documentation on the perfect incantation magic is a real bummer.</p>
+
+<h2>Test <em>ALL</em> the things.</h2>
+
+<p>Before Google, I hadn't really practiced a lot of TDD. Sure, when I had a small piece of code that had very well-defined inputs and outputs, and if I had time, I would create some doctests (in Python) or the equivalent elsewise, but it was never a priority. At Google, good testing is the state religion. If it doesn't have tests, it doesn't exist. No excuses. I don't care how complex the code is: it has to be tested. Writing the tests firsts often helps, but doesn't always make sense.</p>
+</div>
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2012_10_08_things_ive_learned_at_google_part_one">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	<div id="sidebar">
+  <h2>Modern Cryptanalysis</h2>
+	<div><br />
+			<center><a href="http://www.amazon.com/gp/product/047013593X?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047013593X"><img border="0" src="images/21tcdykwdkl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=047013593X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></center>
+	</div>
+	<h2>Pages</h2>
+		<ul>
+	    <li><a href="about">About</a></li>
+	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		  <li><a href="presentations">Presentations</a></li>
+		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+		</ul>
+	  <h2><a href="past">Archive</a></h2>
+	</div>
+	<div id="footer">
+	<p id="legal">
+	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) | 
+	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
+	</p>
+</div>
+</body>
+</html>
