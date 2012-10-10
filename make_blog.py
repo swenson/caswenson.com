@@ -112,19 +112,19 @@ for mtime, post in posts:
     disqus = """<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/%s/embed.js"></script><noscript><a href="http://%s.disqus.com/?url=%s">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>"""
     disqus = disqus % (DISQUS_SHORTNAME, DISQUS_SHORTNAME, url)
     post_text = """<div class="postzoom">%s%s</div>""" % (post_h1, post_body)
-    post_out.write(index_template.format(posts=post_text, disqus=disqus))
+    post_out.write(index_template.format(title=post_title, posts=post_text, disqus=disqus))
 archive_text += "</ul>"
 
 print "Index"
 
 # Create index.
 with open("public/index.html", "w") as index:
-  index.write(index_template.format(posts=posts_text, disqus=disqus_text))
+  index.write(index_template.format(title="Main", posts=posts_text, disqus=disqus_text))
 
 print "Archive"
 # Create archive at /past
 with open("public/past", "w") as past:
-  past.write(index_template.format(posts=archive_text, disqus=""))
+  past.write(index_template.format(title="Archive", posts=archive_text, disqus=""))
 
 print "Atom"
 # Create RSS
@@ -138,7 +138,7 @@ print "Pages"
 for page in glob.glob("pages/*"):
   name = os.path.basename(page)
   with open("public/" + name, "w") as page_out:
-    page_out.write(index_template.format(posts=open(page).read(), disqus=""))
+    page_out.write(index_template.format(title=name.replace("_", " ").capitalize(), posts=open(page).read(), disqus=""))
 
 
 

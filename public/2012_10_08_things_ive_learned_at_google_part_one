@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Christopher Swenson</title>
+	<title>Things I've Learned At Google, Part One &mdash; Christopher Swenson</title>
 	<link href="main.css" rel="stylesheet" type="text/css" />
 	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
 	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
@@ -62,8 +62,9 @@ window.onload = function () {
 
 <h2>Build systems still suck.</h2>
 
-<p>Google has their own build system that integrates with, well, everything. But it still sucks. Not as much as autotools, SCons, Makefiles, but it still sucks. Where, oh where, is the build system of my dreams?
-Python and other untyped languages make life harder for large projects.</p>
+<p>Google has their own build system that integrates with, well, everything. But it still sucks. Not as much as autotools, SCons, Makefiles, but it still sucks. Where, oh where, is the build system of my dreams? To be fair, this was probably the best build system I have ever used.</p>
+
+<h2>Python and other untyped languages make life harder for large projects.</h2>
 
 <p>For small projects or stuff that I am doing by myself, I love Python. The time it saves me is tremendous. However, nothing is more frustrating than programming with a large, unknown codebase in Python. I would often see code like this, even in a well-manicured codebase:</p>
 
@@ -101,7 +102,7 @@ def ReadFromDatabase(self, query, metadata):
 	</div>
 	<div id="footer">
 	<p id="legal">
-	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) | 
+	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) |
 	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
 	</p>
 </div>
