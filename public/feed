@@ -2,11 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2012-10-10T13:27:47-00:00</updated>
+  <updated>2013-01-01T21:51:20-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>Things I've Learned At Google, Part Two</title><link href="2012_10_10_things_ive_learned_at_google_part_two" rel="alternate" /><id>2012_10_10_things_ive_learned_at_google_part_two</id><published>2012-10-10T13:27:47-00:00</published><updated>2012-10-10T13:27:47-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Scala and Clojure</title><link href="2013_01_01_scala_and_clojure" rel="alternate" /><id>2013_01_01_scala_and_clojure</id><published>2013-01-01T21:51:20-00:00</published><updated>2013-01-01T21:51:20-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;My primary language for the past few months has been Scala, with some occasionaly bouts of Java.</summary><content type="html">
+&lt;p&gt;My primary language for the past few months has been Scala, with some occasionaly bouts of Java.&lt;/p&gt;
+
+&lt;p&gt;I've also started to learn Clojure. The company I am working for is into the JVM stack, and these languages are both based on the JVM.&lt;/p&gt;
+
+&lt;p&gt;As a long-time Java programmer, I appreciate the cleanliness of Scala, and I've grown pretty comfortable with it over the past few months. It's sort of the language that Java really wanted to be when it grew up: all that OO goodness that we love, but without so many mistakes as Java has, and with a helpful smattering of functional programming.&lt;/p&gt;
+
+&lt;p&gt;That said, Scala has some flaws, including some fairly deep ones.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;IDE support is pretty terrible. I tried to use Eclipse and IntelliJ early on, and they were both incredibly broken. I've never gotten them to work well. I just use Sublime Text 2 these days, and I find that Scala is a clean enough language that this isn't too big of a deal.&lt;/li&gt;
+&lt;li&gt;Implicits are just a bad idea. The standard library uses them sparingly and fairly well, but this is such a dangerous feature. (For those of you who don't know Scala, implicit functions are used to automatically convert an object of one type to another, under the hood.) It makes sense in a few limited cases, but I groan when I see them now.&lt;/li&gt;
+&lt;li&gt;The standard fundamental data types are wasteful and have poor performance. The &lt;code&gt;List&lt;/code&gt; and &lt;code&gt;Map&lt;/code&gt; data types are optimized for adding things to them, but in doing so create lots of extra copies and have very poor access properties. &lt;code&gt;List&lt;/code&gt;, the most fundamental structure, is a damned linked list! This makes me want to cry. &lt;code&gt;OpenHashMap&lt;/code&gt; is better, at least.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That said, I much prefer Scala to Java at this point.&lt;/p&gt;
+
+&lt;p&gt;Clojure, on the other hands, I am much newer to, and don't have nearly as solid experience with yet, so take my points with a grain of salt.&lt;/p&gt;
+
+&lt;p&gt;Clojure's obsession with immutability is nice from the point-of-view of thread-safety and (theoretical, yet mostly unrealized) concurrency, but at a high cost. Its memory footprint seems to be the worst of the JVM languages, and it defaults to using reflection for most method calls, so it is significantly slower. (Even with proper type annotations, it is slower.)&lt;/p&gt;
+
+&lt;p&gt;Furthermore, I think Clojure is just fundamentally harder to read. I've done my fair share of Lisp programming in the past, and I think that Lisp is just a lot less natural to read, probably because we spend so much time with infix languages.&lt;/p&gt;
+
+&lt;p&gt;Plus, I would posit that Clojure's premise is doomed to failure. A Lisp that doesn't support tail-call optimization and proper recursion seems broken. (And yes, I know about &lt;code&gt;loop&lt;/code&gt;/&lt;code&gt;recur&lt;/code&gt;, but that is essentially a functional for-loop.) Scala does some rudimentary TCO, though it doesn't always tell you the function you wrote can use it.&lt;/p&gt;
+
+&lt;p&gt;The biggest plus for Clojure is that it is JVM (which is also a weakness). It's a plus because it means you can take advangate of the Java ecosystem (logging, libraries, experience, etc.). Which is probably the primary reason we are using it instead of some other functional languages.&lt;/p&gt;
+
+&lt;p&gt;That said, I will be spending quite a bit of time this year learning both in greater detail, so perhaps I will update with further opinions on them.&lt;/p&gt;
+
+&lt;p&gt;(I'm also thinking about getting more into Go this year, and perhaps finally learning Erlang.)&lt;/p&gt;
+</content></entry><entry><title>Things I've Learned At Google, Part Two</title><link href="2012_10_10_things_ive_learned_at_google_part_two" rel="alternate" /><id>2012_10_10_things_ive_learned_at_google_part_two</id><published>2012-10-10T13:27:47-00:00</published><updated>2012-10-10T13:27:47-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot </summary><content type="html">
 &lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.&lt;/p&gt;
 
@@ -116,7 +147,7 @@ def ReadFromDatabase(self, query, metadata):
 &lt;h2&gt;Test &lt;em&gt;ALL&lt;/em&gt; the things.&lt;/h2&gt;
 
 &lt;p&gt;Before Google, I hadn't really practiced a lot of TDD. Sure, when I had a small piece of code that had very well-defined inputs and outputs, and if I had time, I would create some doctests (in Python) or the equivalent elsewise, but it was never a priority. At Google, good testing is the state religion. If it doesn't have tests, it doesn't exist. No excuses. I don't care how complex the code is: it has to be tested. Writing the tests firsts often helps, but doesn't always make sense.&lt;/p&gt;
-</content></entry><entry><title>Blog Redo</title><link href="2012_09_27_blog_redo" rel="alternate" /><id>2012_09_27_blog_redo</id><published>2012-09-27T06:51:02-00:00</published><updated>2012-09-27T06:51:02-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Blog Redo</title><link href="2012_09_26_blog_redo" rel="alternate" /><id>2012_09_26_blog_redo</id><published>2012-09-27T06:51:02-00:00</published><updated>2012-09-27T06:51:02-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I got tired of the old site having issues, so I rewrote the site using a
 custom static site gene</summary><content type="html">
 &lt;p&gt;I got tired of the old site having issues, so I rewrote the site using a
@@ -197,16 +228,5 @@ sections when you distribute them as separate work. &amp;hellip;
 &lt;p&gt;It's unclear.  I am inclined to the second viewpoint, because the first has a lot of nasty ramifications.  However, some people, including &lt;a href="http://www.gnu.org/licenses/gpl-faq.html#GPLPluginsInNF"&gt;the FSF&lt;/a&gt;, appear to believe in the first viewpoint (roughly speaking).&lt;/p&gt;
 
 &lt;p&gt;Ugh.  Software licensing sucks.  This is why I use the &lt;a href="http://en.wikipedia.org/wiki/MIT_License"&gt;MIT License&lt;/a&gt;.  Mostly because I like putting some kind of license on the code, and this seems one of the least restrictive ones.&lt;/p&gt;
-</content></entry><entry><title>Intel Threading Challenge 2010, ICFP 2010</title><link href="2010_06_07_intel_threading_challenge_2010_icfp_2010" rel="alternate" /><id>2010_06_07_intel_threading_challenge_2010_icfp_2010</id><published>2010-06-07T04:41:06-00:00</published><updated>2010-06-07T04:41:06-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;I'm a sucker for programming contests, and have been since high school.&lt;/p&gt;
-
-&lt;p&gt;I thought I woul</summary><content type="html">
-&lt;p&gt;I'm a sucker for programming contests, and have been since high school.&lt;/p&gt;
-
-&lt;p&gt;I thought I would post here about one ongoing contest and one upcoming one.&lt;/p&gt;
-
-&lt;p&gt;First, the &lt;a href="http://software.intel.com/en-us/contests/threading-challenge-prof-2010/codecontest.php"&gt;Intel Threading Challenge&lt;/a&gt; has already started.  Essentially, it a little programming contest that is supposed to test your ability to program effectively for a large multi-threaded task.  The "Master" section this year is writing a program to compute a simple and laborious graph theoretic property.&lt;/p&gt;
-
-&lt;p&gt;Second, the annual &lt;a href="http://icfpcontest.org/"&gt;ICFP programming contest&lt;/a&gt; is right around the corner.  Although nominally a functional programming contest, anyone can enter in any language.  It's an super-fun, intense 72-hour competition.  If you want to try to place, I recommend having a group of about 2&amp;ndash;4 strong programmers.  I won't be able to compete this year because of a scheduling conflict. :(&lt;/p&gt;
 </content></entry>
 </feed>

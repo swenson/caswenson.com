@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Intel Threading Challenge 2010, ICFP 2010 &mdash; Christopher Swenson</title>
+	<title>Some things about FiOS you don't know &mdash; Christopher Swenson</title>
 	<link href="main.css" rel="stylesheet" type="text/css" />
 	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
 	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
@@ -38,16 +38,22 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div class="postzoom"><h1><a href="2010_06_07_intel_threading_challenge_2010_icfp_2010">Intel Threading Challenge 2010, ICFP 2010</a></h1>
-<p>I'm a sucker for programming contests, and have been since high school.</p>
+	<div class="postzoom"><h1><a href="2008_04_18_some_things_about_fios_you_dont_know">Some things about FiOS you don't know</a></h1>
+<p>I have been a pretty big fan of <a href="http://en.wikipedia.org/wiki/Verizon_FiOS">Verizon FiOS</a> ever since I got it last August.  The Internet has not ever gone down that I can recall, TV quality is excellent, and it's competitvely priced.</p>
 
-<p>I thought I would post here about one ongoing contest and one upcoming one.</p>
+<p>However, there are a few things that you probably don't know about FiOS, as I didn't until I spent a couple of hours of my evening playing around and on the phone with tech support.</p>
 
-<p>First, the <a href="http://software.intel.com/en-us/contests/threading-challenge-prof-2010/codecontest.php">Intel Threading Challenge</a> has already started.  Essentially, it a little programming contest that is supposed to test your ability to program effectively for a large multi-threaded task.  The "Master" section this year is writing a program to compute a simple and laborious graph theoretic property.</p>
+<p><strong>That Ethernet port on your FiOS box? It doesn't work.</strong> Your ONT (the boxy thing that provides the FiOS magic) has a multitude of ports: incoming fiber, and outgoing coax, two phone ports, and an Ethernet port.  It is not possible to use both the coax and the Ethernet port at the same time.</p>
 
-<p>Second, the annual <a href="http://icfpcontest.org/">ICFP programming contest</a> is right around the corner.  Although nominally a functional programming contest, anyone can enter in any language.  It's an super-fun, intense 72-hour competition.  If you want to try to place, I recommend having a group of about 2&ndash;4 strong programmers.  I won't be able to compete this year because of a scheduling conflict. :(</p>
+<p><strong>FiOS TV gets its listing and on-demand setting from the Internet.</strong> This has some interesting implications.  I am really curious how this works if you have FiOS TV, but not the Internet plan?</p>
+
+<p><strong>FiOS TV requires the coax port.</strong>  Well, duh, right?.  But, when combined with the previous notes, that means that, <strong>if you have FiOS TV service, you cannot use the Ethernet port</strong>.</p>
+
+<p><strong>FiOS uses bandwidth on that coax cable from 1 to 1150 MHz.</strong>  According to my router, it uses somee range under 1000 MHz for Internet service, and 1001 through 1150 MHz for communicating with FiOS TV.  Note that a lot of cable splitters only go through 900 MHz, so be careful if you start using your own.</p>
+
+<p>Only about half of the tech support guys were helpful when I called (one did not know several of these points when trying to diagnose what my problem was), so watch out if you need to call.</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2010_06_07_intel_threading_challenge_2010_icfp_2010">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_04_18_some_things_about_fios_you_dont_know">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />

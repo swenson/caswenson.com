@@ -1,0 +1,95 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Scala and Clojure &mdash; Christopher Swenson</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+
+<script src="js/shCore.js" type="text/javascript"></script>
+<!--<script src="js/shBrushCSharp.js" type="text/javascript"></script>
+<script src="js/shBrushCpp.js" type="text/javascript"></script>
+<script src="js/shBrushCss.js" type="text/javascript"></script>
+<script src="js/shBrushDelphi.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+<script src="js/shBrushJava.js" type="text/javascript"></script>
+<script src="js/shBrushPhp.js" type="text/javascript"></script>-->
+<script src="js/shBrushRuby.js" type="text/javascript"></script>
+<script src="js/shBrushPython.js" type="text/javascript"></script>
+<!--<script src="js/shBrushSql.js" type="text/javascript"></script>
+<script src="js/shBrushVb.js" type="text/javascript"></script>
+<script src="js/shBrushXml.js" type="text/javascript"></script>-->
+
+<script language="javascript">
+window.onload = function () {
+    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+}
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<img src="images/chrisbluething.png" alt="blue thing" />
+		<h1><a href="/">Christopher Swenson</a></h1>
+		<p>Computer science, math, programming, and stuff.</p>
+	</div>
+</div>
+<div id="content">
+	<div class="postzoom"><h1><a href="2013_01_01_scala_and_clojure">Scala and Clojure</a></h1>
+<p>My primary language for the past few months has been Scala, with some occasionaly bouts of Java.</p>
+
+<p>I've also started to learn Clojure. The company I am working for is into the JVM stack, and these languages are both based on the JVM.</p>
+
+<p>As a long-time Java programmer, I appreciate the cleanliness of Scala, and I've grown pretty comfortable with it over the past few months. It's sort of the language that Java really wanted to be when it grew up: all that OO goodness that we love, but without so many mistakes as Java has, and with a helpful smattering of functional programming.</p>
+
+<p>That said, Scala has some flaws, including some fairly deep ones.</p>
+
+<ul>
+<li>IDE support is pretty terrible. I tried to use Eclipse and IntelliJ early on, and they were both incredibly broken. I've never gotten them to work well. I just use Sublime Text 2 these days, and I find that Scala is a clean enough language that this isn't too big of a deal.</li>
+<li>Implicits are just a bad idea. The standard library uses them sparingly and fairly well, but this is such a dangerous feature. (For those of you who don't know Scala, implicit functions are used to automatically convert an object of one type to another, under the hood.) It makes sense in a few limited cases, but I groan when I see them now.</li>
+<li>The standard fundamental data types are wasteful and have poor performance. The <code>List</code> and <code>Map</code> data types are optimized for adding things to them, but in doing so create lots of extra copies and have very poor access properties. <code>List</code>, the most fundamental structure, is a damned linked list! This makes me want to cry. <code>OpenHashMap</code> is better, at least.</li>
+</ul>
+
+<p>That said, I much prefer Scala to Java at this point.</p>
+
+<p>Clojure, on the other hands, I am much newer to, and don't have nearly as solid experience with yet, so take my points with a grain of salt.</p>
+
+<p>Clojure's obsession with immutability is nice from the point-of-view of thread-safety and (theoretical, yet mostly unrealized) concurrency, but at a high cost. Its memory footprint seems to be the worst of the JVM languages, and it defaults to using reflection for most method calls, so it is significantly slower. (Even with proper type annotations, it is slower.)</p>
+
+<p>Furthermore, I think Clojure is just fundamentally harder to read. I've done my fair share of Lisp programming in the past, and I think that Lisp is just a lot less natural to read, probably because we spend so much time with infix languages.</p>
+
+<p>Plus, I would posit that Clojure's premise is doomed to failure. A Lisp that doesn't support tail-call optimization and proper recursion seems broken. (And yes, I know about <code>loop</code>/<code>recur</code>, but that is essentially a functional for-loop.) Scala does some rudimentary TCO, though it doesn't always tell you the function you wrote can use it.</p>
+
+<p>The biggest plus for Clojure is that it is JVM (which is also a weakness). It's a plus because it means you can take advangate of the Java ecosystem (logging, libraries, experience, etc.). Which is probably the primary reason we are using it instead of some other functional languages.</p>
+
+<p>That said, I will be spending quite a bit of time this year learning both in greater detail, so perhaps I will update with further opinions on them.</p>
+
+<p>(I'm also thinking about getting more into Go this year, and perhaps finally learning Erlang.)</p>
+</div>
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2013_01_01_scala_and_clojure">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	<div id="sidebar">
+  <h2>Modern Cryptanalysis</h2>
+	<div><br />
+			<center><a href="http://www.amazon.com/gp/product/047013593X?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047013593X"><img border="0" src="images/21tcdykwdkl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=047013593X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></center>
+	</div>
+	<h2>Pages</h2>
+		<ul>
+	    <li><a href="about">About</a></li>
+	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		  <li><a href="presentations">Presentations</a></li>
+		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+		</ul>
+	  <h2><a href="past">Archive</a></h2>
+	</div>
+	<div id="footer">
+	<p id="legal">
+	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) |
+	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
+	</p>
+</div>
+</body>
+</html>

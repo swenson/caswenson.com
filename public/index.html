@@ -38,7 +38,37 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div class="post"><div class="date"><b>oct</b> 10 2012</div><h1><a href="2012_10_10_things_ive_learned_at_google_part_two">Things I've Learned At Google, Part Two</a></h1>
+	<div class="post"><div class="date"><b>jan</b> 01 2013</div><h1><a href="2013_01_01_scala_and_clojure">Scala and Clojure</a></h1>
+<p>My primary language for the past few months has been Scala, with some occasionaly bouts of Java.</p>
+
+<p>I've also started to learn Clojure. The company I am working for is into the JVM stack, and these languages are both based on the JVM.</p>
+
+<p>As a long-time Java programmer, I appreciate the cleanliness of Scala, and I've grown pretty comfortable with it over the past few months. It's sort of the language that Java really wanted to be when it grew up: all that OO goodness that we love, but without so many mistakes as Java has, and with a helpful smattering of functional programming.</p>
+
+<p>That said, Scala has some flaws, including some fairly deep ones.</p>
+
+<ul>
+<li>IDE support is pretty terrible. I tried to use Eclipse and IntelliJ early on, and they were both incredibly broken. I've never gotten them to work well. I just use Sublime Text 2 these days, and I find that Scala is a clean enough language that this isn't too big of a deal.</li>
+<li>Implicits are just a bad idea. The standard library uses them sparingly and fairly well, but this is such a dangerous feature. (For those of you who don't know Scala, implicit functions are used to automatically convert an object of one type to another, under the hood.) It makes sense in a few limited cases, but I groan when I see them now.</li>
+<li>The standard fundamental data types are wasteful and have poor performance. The <code>List</code> and <code>Map</code> data types are optimized for adding things to them, but in doing so create lots of extra copies and have very poor access properties. <code>List</code>, the most fundamental structure, is a damned linked list! This makes me want to cry. <code>OpenHashMap</code> is better, at least.</li>
+</ul>
+
+<p>That said, I much prefer Scala to Java at this point.</p>
+
+<p>Clojure, on the other hands, I am much newer to, and don't have nearly as solid experience with yet, so take my points with a grain of salt.</p>
+
+<p>Clojure's obsession with immutability is nice from the point-of-view of thread-safety and (theoretical, yet mostly unrealized) concurrency, but at a high cost. Its memory footprint seems to be the worst of the JVM languages, and it defaults to using reflection for most method calls, so it is significantly slower. (Even with proper type annotations, it is slower.)</p>
+
+<p>Furthermore, I think Clojure is just fundamentally harder to read. I've done my fair share of Lisp programming in the past, and I think that Lisp is just a lot less natural to read, probably because we spend so much time with infix languages.</p>
+
+<p>Plus, I would posit that Clojure's premise is doomed to failure. A Lisp that doesn't support tail-call optimization and proper recursion seems broken. (And yes, I know about <code>loop</code>/<code>recur</code>, but that is essentially a functional for-loop.) Scala does some rudimentary TCO, though it doesn't always tell you the function you wrote can use it.</p>
+
+<p>The biggest plus for Clojure is that it is JVM (which is also a weakness). It's a plus because it means you can take advangate of the Java ecosystem (logging, libraries, experience, etc.). Which is probably the primary reason we are using it instead of some other functional languages.</p>
+
+<p>That said, I will be spending quite a bit of time this year learning both in greater detail, so perhaps I will update with further opinions on them.</p>
+
+<p>(I'm also thinking about getting more into Go this year, and perhaps finally learning Erlang.)</p>
+</div><div class="post"><div class="date"><b>oct</b> 10 2012</div><h1><a href="2012_10_10_things_ive_learned_at_google_part_two">Things I've Learned At Google, Part Two</a></h1>
 <p>I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.</p>
 
 <p>This first post was about software engineering. This post is more about general workplace practices.</p>
@@ -146,7 +176,7 @@ def ReadFromDatabase(self, query, metadata):
 <h2>Test <em>ALL</em> the things.</h2>
 
 <p>Before Google, I hadn't really practiced a lot of TDD. Sure, when I had a small piece of code that had very well-defined inputs and outputs, and if I had time, I would create some doctests (in Python) or the equivalent elsewise, but it was never a priority. At Google, good testing is the state religion. If it doesn't have tests, it doesn't exist. No excuses. I don't care how complex the code is: it has to be tested. Writing the tests firsts often helps, but doesn't always make sense.</p>
-</div><div class="post"><div class="date"><b>sep</b> 27 2012</div><h1><a href="2012_09_27_blog_redo">Blog Redo</a></h1>
+</div><div class="post"><div class="date"><b>sep</b> 26 2012</div><h1><a href="2012_09_26_blog_redo">Blog Redo</a></h1>
 <p>I got tired of the old site having issues, so I rewrote the site using a
 custom static site generator.</p>
 
@@ -219,14 +249,6 @@ sections when you distribute them as separate work. &hellip;
 <p>It's unclear.  I am inclined to the second viewpoint, because the first has a lot of nasty ramifications.  However, some people, including <a href="http://www.gnu.org/licenses/gpl-faq.html#GPLPluginsInNF">the FSF</a>, appear to believe in the first viewpoint (roughly speaking).</p>
 
 <p>Ugh.  Software licensing sucks.  This is why I use the <a href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a>.  Mostly because I like putting some kind of license on the code, and this seems one of the least restrictive ones.</p>
-</div><div class="post"><div class="date"><b>jun</b> 07 2010</div><h1><a href="2010_06_07_intel_threading_challenge_2010_icfp_2010">Intel Threading Challenge 2010, ICFP 2010</a></h1>
-<p>I'm a sucker for programming contests, and have been since high school.</p>
-
-<p>I thought I would post here about one ongoing contest and one upcoming one.</p>
-
-<p>First, the <a href="http://software.intel.com/en-us/contests/threading-challenge-prof-2010/codecontest.php">Intel Threading Challenge</a> has already started.  Essentially, it a little programming contest that is supposed to test your ability to program effectively for a large multi-threaded task.  The "Master" section this year is writing a program to compute a simple and laborious graph theoretic property.</p>
-
-<p>Second, the annual <a href="http://icfpcontest.org/">ICFP programming contest</a> is right around the corner.  Although nominally a functional programming contest, anyone can enter in any language.  It's an super-fun, intense 72-hour competition.  If you want to try to place, I recommend having a group of about 2&ndash;4 strong programmers.  I won't be able to compete this year because of a scheduling conflict. :(</p>
 </div>
 	<script type="text/javascript">
 //<[CDATA[

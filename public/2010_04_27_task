@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>The Call of Cthulhu: Anyone for a free short story? &mdash; Christopher Swenson</title>
+	<title>Task &mdash; Christopher Swenson</title>
 	<link href="main.css" rel="stylesheet" type="text/css" />
 	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
 	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
@@ -38,23 +38,21 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div class="postzoom"><h1><a href="2008_08_09_the_call_of_cthulhu_anyone_for_a_free_short_story">The Call of Cthulhu: Anyone for a free short story?</a></h1>
-<p>I decided to finally sit down and read the short story <a href="http://en.wikipedia.org/wiki/Call_Of_Cthulhu">The Call of Cthulhu</a>, by H.P. Lovecraft the other day.  Turns out that it is <a href="http://www.aetherial.net/lovecraft/">pretty much</a> in the public domain (this is actually a matter of some debate, but all the evidence I have found on the Internet seems to point pretty squarely that the copyrights expired long ago).</p>
+	<div class="postzoom"><h1><a href="2010_04_27_task">Task</a></h1>
+<p>I recently discovered <a href="http://taskwarrior.org/projects/show/taskwarrior/">task</a>, a powerful, yet simple, command-line to-do and task management tool.  Up until now, I hadn't found any way to manage to-do lists that felt "right".  But task has changed that for me.</p>
 
-<p>Anyways, I often wish to read works that were published in print, well, in print.  I found the complete text on <a href="http://en.wikisource.org/wiki/The_Call_of_Cthulhu">Wikipedia</a>, but it feels kind of lifeless.  Something like Lovecraft just <em>feels</em> like it should be in print, you know?</p>
+<p>One feature I feel is missing (though I think they are planning on <a href="http://taskwarrior.org/wiki/taskwarrior/Features">fixing this</a>) is the lack of email notifications.  I would really like to know what I have to do today, and I may not always remember to login and check, especially in my current transition period of getting used to using it everyday.</p>
 
-<p>Since I like to think I'm not completely terrible at typesetting, I typeset it.  At least, I typeset it enough to where the experience of reading it on paper makes me feel like I'm getting something.  It's still somewhat of a minimalist typesetting.</p>
+<p>So, I set up <a href="http://en.wikipedia.org/wiki/Cron">cron</a> on my system to email my current list (that is due today) every day.  For those of you following along at home, you can do the same with something like so added to your crontab (<code>crontab -e</code>):</p>
 
-<p>Assuming that the original text is in the public domain, I hereby release the PDF and source of it into the public domain.</p>
+<pre>SHELL=/bin/bash
+1 0 * * * task list due:today | mail -s "Due `date '+\%A, \%m/\%d/\%Y'`" your@emailaddress.com</pre>
 
-<p><a href='http://www.caswenson.com/wp-content/uploads/2008/08/call-of-cthulhu.pdf'>The Call of Cthulhu</a> (PDF)
-<a href='http://www.caswenson.com/wp-content/uploads/2008/08/call-of-cthulhu.indd'>The Call of Cthulhu</a> (InDesign Source)</p>
+<p>(Note that you have to escape the percent signs in a crontab line.)</p>
 
-<p>For you people who care about things, the title font is Lucida Blackletter, and the text font is Warnock Pro (one of my favorites) set at 11pt, for that classic feel.  It was set in InDesign CS3 for standard letter paper (14 pages at 8.5 &times; 11&quot;).  It's double-column for easier reading.  Nothing fancy.</p>
-
-<p>Maybe there will be more to come in the future?</p>
+<p>Just a quick update &mdash; trying to get back into the habit of posting.</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_08_09_the_call_of_cthulhu_anyone_for_a_free_short_story">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2010_04_27_task">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	<div id="sidebar">
   <h2>Modern Cryptanalysis</h2>
 	<div><br />
