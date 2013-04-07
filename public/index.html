@@ -38,7 +38,23 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div class="post"><div class="date"><b>jan</b> 01 2013</div><h1><a href="2013_01_01_scala_and_clojure">Scala and Clojure</a></h1>
+	<div class="post"><div class="date"><b>apr</b> 07 2013</div><h1><a href="2013_04_07_when_to_start_testing_and_why">When to Start Testing and Why</a></h1>
+<p>I didn't begin to really appreciate the value of proper testing in code until well into my current software engineering career. Testing wasn't something that came up during my formal education in computer science, since it isn't really relevant to the academic pursuit (except for perhaps a course in software engineering, most code you write academically is more about learning or exercising something than creating production code). Now, though, I love testing, and love how it helps ensure stability in my code.</p>
+
+<p>Two questions that come up when I talk to other people, especially relatively new programmers, are when should you learn how to test in a language or environment, and when in your project do you start testing on a given project?</p>
+
+<p>To answer the first question, the best time to learn to test (in my opinion) is after have started to get a good handle on the language and environment you're in, especially if this is the first language you've ever learned. The simple reason for this is that testing is often almost like an entirely new sub-language you have to learn, and it can be a little confusing to dive right into it.</p>
+
+<p>However, you really don't want to put it off for too long, especially if you've never written test code before. Writing good, idiomatic, testable code is an important skill, and living too long in a vacuum of untested code might make it harder to learn to write testable code.</p>
+
+<p>What do I mean when I say "testable code"? Generally, to me, testable code means that you've designed each class or function to be easily tested in isolation. Often, this means making it slightly more explicit than you might naturally write, writing more, smaller functions and extracting out dependencies (such as database connections) so that you can test each small piece.</p>
+
+<p>After all, if your function uses a database connection, you aren't probably too concerned with launching an entire database to test that function and testing that the database writes worked &ndash; you are more interested in validating your logic that is wrapped around it. When you call insert_entry, does it convert values correctly, does it call the appropriate methods that would invoke the database, etc.? In general, you can accomplish testing independent of the database by mocking out the database layer when testing out the checkbook logic.</p>
+
+<p>Going back to our second question, on when do you start testing a given project? I like the philosophy of test-driven development (TDD), where you write the tests before you write the code. This is doubly true if this is code for a client, for your job, or some other code that is meant to be consumed by people other than you, or running any kind logic dealing with other people's data. Furthermore, writing tests first helps you to figure out the architecture of your project a lot better, and to make sure that your architecture is testable from the beginning.</p>
+
+<p>Writing tests before you write every piece of your software is a good way to do practice defensive coding: ensure that every piece of your programs and libraries are extraordinarily well tested before they're even written. As you write more functionality, keep growing those tests as to ensure that everything cooperates well and that nothing new is going to break the old.</p>
+</div><div class="post"><div class="date"><b>jan</b> 01 2013</div><h1><a href="2013_01_01_scala_and_clojure">Scala and Clojure</a></h1>
 <p>My primary language for the past few months has been Scala, with some occasionaly bouts of Java.</p>
 
 <p>I've also started to learn Clojure. The company I am working for is into the JVM stack, and these languages are both based on the JVM.</p>
@@ -224,31 +240,6 @@ to the new system, and working with a small issue or two there.</p>
 <p>Using token pasting, it is also possible to implement the entire library as a single header file: no library to compile!</p>
 
 <p>Sadly, sorting doesn't usually have <a href="http://www.youtube.com/watch?v=YvTW7341kpA">sound effects</a>.</p>
-</div><div class="post"><div class="date"><b>jul</b> 18 2010</div><h1><a href="2010_07_18_wordpress_thesis_and_the_gpl">Wordpress, Thesis, and the GPL</a></h1>
-<p>There's been <a href="http://mixergy.com/chris-pearson-matt-mullenweg/">some hubbub</a> going around the web about Wordpress potentially suing a developer for breaching the GPL.</p>
-
-<p>The quick run-down: Wordpress is licensed under <a href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GPL2</a>. Thesis is a premium Wordpress theme.</p>
-
-<p>The debate really boils down to: does the GPL require Thesis to be also licensed under the GPL?</p>
-
-<p>The answer: <strong>almost</strong> not, but maybe.</p>
-
-<p>I'll save you some reading.  Clause 2 of GPL2:</p>
-
-<blockquote>
-&hellip; If identifiable sections of that work are not derived from the Program,
-and can be reasonably considered independent and separate works in
-themselves, then this License, and its terms, do not apply to those
-sections when you distribute them as separate work. &hellip;
-</blockquote>
-
-<p>IANAL, but this says, quite clearly, if it is not derived from GPL code <strong>and</strong> can be reasonably considered independent, then the GPL does not apply.</p>
-
-<p>The question is, what does "independent" mean in this sentence.  Does it mean independent in the sense that it can run without it?  Or does it mean the code does not have any code in common with the GPL code?</p>
-
-<p>It's unclear.  I am inclined to the second viewpoint, because the first has a lot of nasty ramifications.  However, some people, including <a href="http://www.gnu.org/licenses/gpl-faq.html#GPLPluginsInNF">the FSF</a>, appear to believe in the first viewpoint (roughly speaking).</p>
-
-<p>Ugh.  Software licensing sucks.  This is why I use the <a href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a>.  Mostly because I like putting some kind of license on the code, and this seems one of the least restrictive ones.</p>
 </div>
 	<script type="text/javascript">
 //<[CDATA[
