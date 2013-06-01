@@ -2,11 +2,62 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2013-04-07T22:21:09-00:00</updated>
+  <updated>2013-06-01T18:45:38-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>When to Start Testing and Why</title><link href="2013_04_07_when_to_start_testing_and_why" rel="alternate" /><id>2013_04_07_when_to_start_testing_and_why</id><published>2013-04-07T22:21:09-00:00</published><updated>2013-04-07T22:21:09-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Configuration files in Go</title><link href="2013_06_01_configuration_files_in_go" rel="alternate" /><id>2013_06_01_configuration_files_in_go</id><published>2013-06-01T18:45:38-00:00</published><updated>2013-06-01T18:45:38-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;The other day, I was starting to port an existing service I had into Go.
+There were a lot of iss</summary><content type="html">
+&lt;p&gt;The other day, I was starting to port an existing service I had into Go.
+There were a lot of issues that I had to tackle to get the functionality I wanted,
+including being able to run in at least four different environments:
+test, dev, stage, and prod.&lt;/p&gt;
+
+&lt;p&gt;There are a lot of "standard" ways to do this, most focusing on some sort
+of text or structured file that you load at runtime using file I/O.&lt;/p&gt;
+
+&lt;p&gt;However, in dynamic languages, a somewhat common practice is to use a file
+in that programming language as your configuration. So, in Python, you might
+have a &lt;code&gt;settings.py&lt;/code&gt; file that is actual executed Python.&lt;/p&gt;
+
+&lt;p&gt;In non-scripting languages, like Java, you normally have an XML, YAML, INI,
+or JSON file that you read in.
+But, I've seen at least one non-scripting language, Clojure, that encourages using
+an executable Clojure file for configuration.&lt;/p&gt;
+
+&lt;p&gt;The primary argument against using a file in your programming language itself
+is that the compile time may be long, and deploying a brand new binary just to
+change the config file is laborious and slow.&lt;/p&gt;
+
+&lt;p&gt;But, I thought, Go doesn't have this limitation:
+Go compiles super fast, and the binaries tend to be reasonably sized,
+so deploys won't be that big of a deal.&lt;/p&gt;
+
+&lt;p&gt;So, can we just use Go code to be our configuration file?&lt;/p&gt;
+
+&lt;p&gt;Definitely.
+I wrote up a quick template (released under CC0, so feel free to copy and use)
+for a configuration file in Go.
+There's a small amount of boilerplate, but it is super easy to compromise.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/swenson/goconf"&gt;https://github.com/swenson/goconf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There are four key parts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;var config = getConfig()&lt;/code&gt; &amp;ndash; this triggers the configuration file to be
+read at initialization time. You can also use an &lt;code&gt;init()&lt;/code&gt; function to do this.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;type Config struct { ... }&lt;/code&gt; &amp;ndash; specify all the variables you want in your
+config file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;func readConfig() Config { ... }&lt;/code&gt; &amp;ndash; populate a &lt;code&gt;Config&lt;/code&gt; struct based
+on your environment, which I do via a &lt;code&gt;switch&lt;/code&gt; statement.&lt;/li&gt;
+&lt;li&gt;Set your environment (&lt;code&gt;ENV&lt;/code&gt; environment variable) when running&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That's it.
+This is a pretty straightforward and easy way to do config files in Go.&lt;/p&gt;
+</content></entry><entry><title>When to Start Testing and Why</title><link href="2013_04_07_when_to_start_testing_and_why" rel="alternate" /><id>2013_04_07_when_to_start_testing_and_why</id><published>2013-04-07T22:21:09-00:00</published><updated>2013-04-07T22:21:09-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I didn't begin to really appreciate the value of proper testing in code until well into my curre</summary><content type="html">
 &lt;p&gt;I didn't begin to really appreciate the value of proper testing in code until well into my current software engineering career. Testing wasn't something that came up during my formal education in computer science, since it isn't really relevant to the academic pursuit (except for perhaps a course in software engineering, most code you write academically is more about learning or exercising something than creating production code). Now, though, I love testing, and love how it helps ensure stability in my code.&lt;/p&gt;
 
@@ -206,18 +257,5 @@ to the new system, and working with a small issue or two there.&lt;/p&gt;
 &lt;p&gt;They are designed to very legible, and I have found the Sans Mono to be clean and pleasant when in the terminal or in a coding window.  It also has pretty decent Unicode support.&lt;/p&gt;
 
 &lt;p&gt;My previous favorite coding fonts have been: Monaco, DejaVu Sans Mono, Consolas, and Lucida Sans Console.&lt;/p&gt;
-</content></entry><entry><title>Sorting out sorting</title><link href="2010_10_30_sorting_out_sorting" rel="alternate" /><id>2010_10_30_sorting_out_sorting</id><published>2010-10-30T10:29:39-00:00</published><updated>2010-10-30T10:29:39-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;I &lt;a href="http://github.com/swenson/sort"&gt;recently wrote&lt;/a&gt; a C version of a bunch of comparis</summary><content type="html">
-&lt;p&gt;I &lt;a href="http://github.com/swenson/sort"&gt;recently wrote&lt;/a&gt; a C version of a bunch of comparison-based sorting algorithms, notably timsort and quicksort.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Timsort"&gt;Timsort&lt;/a&gt; is a neat, unbalanced mergesort that I've been wanting to try out for the past while, and so I spent the time to write a fast C implementation of the algorithm.  My experiments on random data show about a 5-10% improvement over quicksort, which is pretty amazing.  If the data has any structure, which is extremely common, it has "superhuman" performance, as it can merge natural runs in the data in an efficient manner.&lt;/p&gt;
-
-&lt;p&gt;Another annoying thing I've noticed is that I've written the same sorting algorithms a ton of times, often just changing the type.  Sometimes I've used the standard C &lt;a href="http://fxr.watson.org/fxr/source/stdlib/qsort.c?v=GLIBC27"&gt;qsort&lt;/a&gt;, but the function-pointer comparison function causes awful performance (the version I wrote isn't even as optimized, and is still often twice as fast).  Why can't I just write a good, fast sorting algorithm?&lt;/p&gt;
-
-&lt;p&gt;A solution comes from a neat trick in C: &lt;a href="http://en.wikipedia.org/wiki/C_preprocessor#Token_concatenation"&gt;token pasting&lt;/a&gt;.  Using this, it's possible to write the function once, and just swap out the types as needed.&lt;/p&gt;
-
-&lt;p&gt;Using token pasting, it is also possible to implement the entire library as a single header file: no library to compile!&lt;/p&gt;
-
-&lt;p&gt;Sadly, sorting doesn't usually have &lt;a href="http://www.youtube.com/watch?v=YvTW7341kpA"&gt;sound effects&lt;/a&gt;.&lt;/p&gt;
 </content></entry>
 </feed>

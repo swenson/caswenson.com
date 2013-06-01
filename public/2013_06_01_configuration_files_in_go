@@ -1,0 +1,114 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Configuration files in Go &mdash; Christopher Swenson</title>
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+
+<script src="js/shCore.js" type="text/javascript"></script>
+<!--<script src="js/shBrushCSharp.js" type="text/javascript"></script>
+<script src="js/shBrushCpp.js" type="text/javascript"></script>
+<script src="js/shBrushCss.js" type="text/javascript"></script>
+<script src="js/shBrushDelphi.js" type="text/javascript"></script>
+<script src="js/shBrushJScript.js" type="text/javascript"></script>
+<script src="js/shBrushJava.js" type="text/javascript"></script>
+<script src="js/shBrushPhp.js" type="text/javascript"></script>-->
+<script src="js/shBrushRuby.js" type="text/javascript"></script>
+<script src="js/shBrushPython.js" type="text/javascript"></script>
+<!--<script src="js/shBrushSql.js" type="text/javascript"></script>
+<script src="js/shBrushVb.js" type="text/javascript"></script>
+<script src="js/shBrushXml.js" type="text/javascript"></script>-->
+
+<script language="javascript">
+window.onload = function () {
+    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+}
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<img src="images/chrisbluething.png" alt="blue thing" />
+		<h1><a href="/">Christopher Swenson</a></h1>
+		<p>Computer science, math, programming, and stuff.</p>
+	</div>
+</div>
+<div id="content">
+	<div class="postzoom"><h1><a href="2013_06_01_configuration_files_in_go">Configuration files in Go</a></h1>
+<p>The other day, I was starting to port an existing service I had into Go.
+There were a lot of issues that I had to tackle to get the functionality I wanted,
+including being able to run in at least four different environments:
+test, dev, stage, and prod.</p>
+
+<p>There are a lot of "standard" ways to do this, most focusing on some sort
+of text or structured file that you load at runtime using file I/O.</p>
+
+<p>However, in dynamic languages, a somewhat common practice is to use a file
+in that programming language as your configuration. So, in Python, you might
+have a <code>settings.py</code> file that is actual executed Python.</p>
+
+<p>In non-scripting languages, like Java, you normally have an XML, YAML, INI,
+or JSON file that you read in.
+But, I've seen at least one non-scripting language, Clojure, that encourages using
+an executable Clojure file for configuration.</p>
+
+<p>The primary argument against using a file in your programming language itself
+is that the compile time may be long, and deploying a brand new binary just to
+change the config file is laborious and slow.</p>
+
+<p>But, I thought, Go doesn't have this limitation:
+Go compiles super fast, and the binaries tend to be reasonably sized,
+so deploys won't be that big of a deal.</p>
+
+<p>So, can we just use Go code to be our configuration file?</p>
+
+<p>Definitely.
+I wrote up a quick template (released under CC0, so feel free to copy and use)
+for a configuration file in Go.
+There's a small amount of boilerplate, but it is super easy to compromise.</p>
+
+<p><a href="https://github.com/swenson/goconf">https://github.com/swenson/goconf</a></p>
+
+<p>There are four key parts:</p>
+
+<ul>
+<li><code>var config = getConfig()</code> &ndash; this triggers the configuration file to be
+read at initialization time. You can also use an <code>init()</code> function to do this.</li>
+<li><code>type Config struct { ... }</code> &ndash; specify all the variables you want in your
+config file</li>
+<li><code>func readConfig() Config { ... }</code> &ndash; populate a <code>Config</code> struct based
+on your environment, which I do via a <code>switch</code> statement.</li>
+<li>Set your environment (<code>ENV</code> environment variable) when running</li>
+</ul>
+
+<p>That's it.
+This is a pretty straightforward and easy way to do config files in Go.</p>
+</div>
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2013_06_01_configuration_files_in_go">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	<div id="sidebar">
+  <h2>Modern Cryptanalysis</h2>
+	<div><br />
+			<center><a href="http://www.amazon.com/gp/product/047013593X?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047013593X"><img border="0" src="images/21tcdykwdkl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=047013593X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></center>
+	</div>
+	<h2>Pages</h2>
+		<ul>
+	    <li><a href="about">About</a></li>
+	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		  <li><a href="presentations">Presentations</a></li>
+		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
+		</ul>
+	  <h2><a href="past">Archive</a></h2>
+	</div>
+	<div id="footer">
+	<p id="legal">
+	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) |
+	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
+	</p>
+</div>
+</body>
+</html>
