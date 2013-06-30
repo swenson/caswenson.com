@@ -6,7 +6,7 @@
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>Configuration files in Go</title><link href="2013_06_01_configuration_files_in_go" rel="alternate" /><id>2013_06_01_configuration_files_in_go</id><published>2013-06-01T18:45:38-00:00</published><updated>2013-06-01T18:45:38-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Configuration files in Go</title><link href="http://www.caswenson.com/2013_06_01_configuration_files_in_go" rel="alternate" /><id>2013_06_01_configuration_files_in_go</id><published>2013-06-01T18:45:38-00:00</published><updated>2013-06-01T18:45:38-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;The other day, I was starting to port an existing service I had into Go.
 There were a lot of iss</summary><content type="html">
 &lt;p&gt;The other day, I was starting to port an existing service I had into Go.
@@ -57,7 +57,7 @@ on your environment, which I do via a &lt;code&gt;switch&lt;/code&gt; statement.
 
 &lt;p&gt;That's it.
 This is a pretty straightforward and easy way to do config files in Go.&lt;/p&gt;
-</content></entry><entry><title>When to Start Testing and Why</title><link href="2013_04_07_when_to_start_testing_and_why" rel="alternate" /><id>2013_04_07_when_to_start_testing_and_why</id><published>2013-04-07T22:21:09-00:00</published><updated>2013-04-07T22:21:09-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>When to Start Testing and Why</title><link href="http://www.caswenson.com/2013_04_07_when_to_start_testing_and_why" rel="alternate" /><id>2013_04_07_when_to_start_testing_and_why</id><published>2013-04-07T22:21:09-00:00</published><updated>2013-04-07T22:21:09-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I didn't begin to really appreciate the value of proper testing in code until well into my curre</summary><content type="html">
 &lt;p&gt;I didn't begin to really appreciate the value of proper testing in code until well into my current software engineering career. Testing wasn't something that came up during my formal education in computer science, since it isn't really relevant to the academic pursuit (except for perhaps a course in software engineering, most code you write academically is more about learning or exercising something than creating production code). Now, though, I love testing, and love how it helps ensure stability in my code.&lt;/p&gt;
 
@@ -74,7 +74,7 @@ This is a pretty straightforward and easy way to do config files in Go.&lt;/p&gt
 &lt;p&gt;Going back to our second question, on when do you start testing a given project? I like the philosophy of test-driven development (TDD), where you write the tests before you write the code. This is doubly true if this is code for a client, for your job, or some other code that is meant to be consumed by people other than you, or running any kind logic dealing with other people's data. Furthermore, writing tests first helps you to figure out the architecture of your project a lot better, and to make sure that your architecture is testable from the beginning.&lt;/p&gt;
 
 &lt;p&gt;Writing tests before you write every piece of your software is a good way to do practice defensive coding: ensure that every piece of your programs and libraries are extraordinarily well tested before they're even written. As you write more functionality, keep growing those tests as to ensure that everything cooperates well and that nothing new is going to break the old.&lt;/p&gt;
-</content></entry><entry><title>Scala and Clojure</title><link href="2013_01_01_scala_and_clojure" rel="alternate" /><id>2013_01_01_scala_and_clojure</id><published>2013-01-01T21:51:20-00:00</published><updated>2013-01-01T21:51:20-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Scala and Clojure</title><link href="http://www.caswenson.com/2013_01_01_scala_and_clojure" rel="alternate" /><id>2013_01_01_scala_and_clojure</id><published>2013-01-01T21:51:20-00:00</published><updated>2013-01-01T21:51:20-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;My primary language for the past few months has been Scala, with some occasionaly bouts of Java.</summary><content type="html">
 &lt;p&gt;My primary language for the past few months has been Scala, with some occasionaly bouts of Java.&lt;/p&gt;
 
@@ -105,7 +105,7 @@ This is a pretty straightforward and easy way to do config files in Go.&lt;/p&gt
 &lt;p&gt;That said, I will be spending quite a bit of time this year learning both in greater detail, so perhaps I will update with further opinions on them.&lt;/p&gt;
 
 &lt;p&gt;(I'm also thinking about getting more into Go this year, and perhaps finally learning Erlang.)&lt;/p&gt;
-</content></entry><entry><title>Things I've Learned At Google, Part Two</title><link href="2012_10_10_things_ive_learned_at_google_part_two" rel="alternate" /><id>2012_10_10_things_ive_learned_at_google_part_two</id><published>2012-10-10T13:27:47-00:00</published><updated>2012-10-10T13:27:47-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Things I've Learned At Google, Part Two</title><link href="http://www.caswenson.com/2012_10_10_things_ive_learned_at_google_part_two" rel="alternate" /><id>2012_10_10_things_ive_learned_at_google_part_two</id><published>2012-10-10T13:27:47-00:00</published><updated>2012-10-10T13:27:47-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot </summary><content type="html">
 &lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.&lt;/p&gt;
 
@@ -169,7 +169,7 @@ This can really eat at the velocity of your project, especially small projects (
 &lt;p&gt;I'm sure I learned more at Google, but those are perhaps some of the important things I felt I learned while working there.&lt;/p&gt;
 
 &lt;p&gt;I can't wait to see what I learn at my next job. :)&lt;/p&gt;
-</content></entry><entry><title>Things I've Learned At Google, Part One</title><link href="2012_10_08_things_ive_learned_at_google_part_one" rel="alternate" /><id>2012_10_08_things_ive_learned_at_google_part_one</id><published>2012-10-08T22:15:53-00:00</published><updated>2012-10-08T22:15:53-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Things I've Learned At Google, Part One</title><link href="http://www.caswenson.com/2012_10_08_things_ive_learned_at_google_part_one" rel="alternate" /><id>2012_10_08_things_ive_learned_at_google_part_one</id><published>2012-10-08T22:15:53-00:00</published><updated>2012-10-08T22:15:53-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot </summary><content type="html">
 &lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.&lt;/p&gt;
 
@@ -215,7 +215,7 @@ def ReadFromDatabase(self, query, metadata):
 &lt;h2&gt;Test &lt;em&gt;ALL&lt;/em&gt; the things.&lt;/h2&gt;
 
 &lt;p&gt;Before Google, I hadn't really practiced a lot of TDD. Sure, when I had a small piece of code that had very well-defined inputs and outputs, and if I had time, I would create some doctests (in Python) or the equivalent elsewise, but it was never a priority. At Google, good testing is the state religion. If it doesn't have tests, it doesn't exist. No excuses. I don't care how complex the code is: it has to be tested. Writing the tests firsts often helps, but doesn't always make sense.&lt;/p&gt;
-</content></entry><entry><title>Blog Redo</title><link href="2012_09_26_blog_redo" rel="alternate" /><id>2012_09_26_blog_redo</id><published>2012-09-27T06:51:02-00:00</published><updated>2012-09-27T06:51:02-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Blog Redo</title><link href="http://www.caswenson.com/2012_09_26_blog_redo" rel="alternate" /><id>2012_09_26_blog_redo</id><published>2012-09-27T06:51:02-00:00</published><updated>2012-09-27T06:51:02-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I got tired of the old site having issues, so I rewrote the site using a
 custom static site gene</summary><content type="html">
 &lt;p&gt;I got tired of the old site having issues, so I rewrote the site using a
@@ -225,17 +225,17 @@ custom static site generator.&lt;/p&gt;
 to the new system, and working with a small issue or two there.&lt;/p&gt;
 
 &lt;p&gt;I should have some new material up soon as well!&lt;/p&gt;
-</content></entry><entry><title>What Every Programmer Should Know About Memory</title><link href="2012_04_28_what_every_programmer_should_know_about_memory" rel="alternate" /><id>2012_04_28_what_every_programmer_should_know_about_memory</id><published>2012-04-28T22:00:40-00:00</published><updated>2012-04-28T22:00:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>What Every Programmer Should Know About Memory</title><link href="http://www.caswenson.com/2012_04_28_what_every_programmer_should_know_about_memory" rel="alternate" /><id>2012_04_28_what_every_programmer_should_know_about_memory</id><published>2012-04-28T22:00:40-00:00</published><updated>2012-04-28T22:00:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know </summary><content type="html">
 &lt;p&gt;I was just thinking about this paper today: Ulrich Drepper's "What Every Programmer Should Know About Memory".&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://www.akkadia.org/drepper/cpumemory.pdf"&gt;http://www.akkadia.org/drepper/cpumemory.pdf&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;If you haven't read it, and you are a programmer, then you really need to read this paper.&lt;/p&gt;
-</content></entry><entry><title>Modern Cryptanalysis Errata updated</title><link href="2011_12_30_modern_cryptanalysis_errata_updated" rel="alternate" /><id>2011_12_30_modern_cryptanalysis_errata_updated</id><published>2011-12-30T23:36:33-00:00</published><updated>2011-12-30T23:36:33-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Modern Cryptanalysis Errata updated</title><link href="http://www.caswenson.com/2011_12_30_modern_cryptanalysis_errata_updated" rel="alternate" /><id>2011_12_30_modern_cryptanalysis_errata_updated</id><published>2011-12-30T23:36:33-00:00</published><updated>2011-12-30T23:36:33-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I have updated &lt;a href="http://www.caswenson.com/mcerrata"&gt;the errata&lt;/a&gt; for my book, Modern Cr</summary><content type="html">
 &lt;p&gt;I have updated &lt;a href="http://www.caswenson.com/mcerrata"&gt;the errata&lt;/a&gt; for my book, Modern Cryptanalysis.&lt;/p&gt;
-</content></entry><entry><title>Changes coming soon</title><link href="2011_12_25_changes_coming_soon" rel="alternate" /><id>2011_12_25_changes_coming_soon</id><published>2011-12-26T04:51:07-00:00</published><updated>2011-12-26T04:51:07-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Changes coming soon</title><link href="http://www.caswenson.com/2011_12_25_changes_coming_soon" rel="alternate" /><id>2011_12_25_changes_coming_soon</id><published>2011-12-26T04:51:07-00:00</published><updated>2011-12-26T04:51:07-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;This is the first post of the year. That's a little sad, but I think I am going to be redoing th</summary><content type="html">
 &lt;p&gt;This is the first post of the year. That's a little sad, but I think I am going to be redoing this site a bit in the near future.&lt;/p&gt;
 
@@ -246,7 +246,7 @@ to the new system, and working with a small issue or two there.&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;Notes on upcoming projects. I am currently working on several projects, open source and not, and a few writing projects. Expect more details on these.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;... and more.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Monospaced font</title><link href="2010_12_01_monospaced_font" rel="alternate" /><id>2010_12_01_monospaced_font</id><published>2010-12-01T08:40:37-00:00</published><updated>2010-12-01T08:40:37-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Monospaced font</title><link href="http://www.caswenson.com/2010_12_01_monospaced_font" rel="alternate" /><id>2010_12_01_monospaced_font</id><published>2010-12-01T08:40:37-00:00</published><updated>2010-12-01T08:40:37-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I have been searching for years for a decent programming font (that is, monospaced). Over the ye</summary><content type="html">
 &lt;p&gt;I have been searching for years for a decent programming font (that is, monospaced). Over the years, I've found various ones that suited me, but recently I found ranks as my favorite: &lt;a href="http://www.cosmix.org/software/"&gt;Droid Sans Mono, Dotted&lt;/a&gt;.&lt;/p&gt;
 

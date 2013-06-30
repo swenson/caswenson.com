@@ -85,7 +85,7 @@ for mtime, post in posts:
     title = et.SubElement(entry, "title")
     title.text = post_title
     linker = et.SubElement(entry, "link")
-    linker.set('href', link)
+    linker.set('href', 'http://www.caswenson.com/' + link)
     linker.set('rel', 'alternate')
     ident = et.SubElement(entry, 'id')
     ident.text = link
