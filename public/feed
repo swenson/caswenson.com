@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2013-06-01T18:45:38-00:00</updated>
+  <updated>2013-07-22T06:27:40-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>Configuration files in Go</title><link href="http://www.caswenson.com/2013_06_01_configuration_files_in_go" rel="alternate" /><id>2013_06_01_configuration_files_in_go</id><published>2013-06-01T18:45:38-00:00</published><updated>2013-06-01T18:45:38-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Day Camp 4 Developers</title><link href="http://www.caswenson.com/2013_07_21_day_camp_4_developers" rel="alternate" /><id>2013_07_21_day_camp_4_developers</id><published>2013-07-22T06:27:40-00:00</published><updated>2013-07-22T06:27:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I'll be talking at this week's &lt;a href="http://daycamp4developers.com/"&gt;Day Camp 4 Developers&lt;/a</summary><content type="html">
+&lt;p&gt;I'll be talking at this week's &lt;a href="http://daycamp4developers.com/"&gt;Day Camp 4 Developers&lt;/a&gt; on version control
+(or source code control, or source code management, or whatever we want to call it this week).
+It'll be an introductory talk introducing why you should use version control, how it works in general, and then going into some specific workflows with git, the notorious version control system.
+I've had a lot of fun writing the talk, so it should be a lot of fun to hear it.&lt;/p&gt;
+
+&lt;p&gt;There are several other great talks that are going to happen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lorna Jane Mitchell: Practical Software Estimation Techniques, or "How Late?"&lt;/li&gt;
+&lt;li&gt;Thursday Bram: How to Make Good Documentation a Regular Part of Your Day&lt;/li&gt;
+&lt;li&gt;Brendan Wovchko: How to Speak Business &amp;amp; Eradicate Confusion in Software Development&lt;/li&gt;
+&lt;li&gt;Me: Source Code Management and Version Control&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It's only $40 to sit on this great set of talks. Friday, July 26, 2013. 8am PST to 12:30am PST.&lt;/p&gt;
+</content></entry><entry><title>Configuration files in Go</title><link href="http://www.caswenson.com/2013_06_01_configuration_files_in_go" rel="alternate" /><id>2013_06_01_configuration_files_in_go</id><published>2013-06-01T18:45:38-00:00</published><updated>2013-06-01T18:45:38-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;The other day, I was starting to port an existing service I had into Go.
 There were a lot of iss</summary><content type="html">
 &lt;p&gt;The other day, I was starting to port an existing service I had into Go.
@@ -246,16 +263,5 @@ to the new system, and working with a small issue or two there.&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;Notes on upcoming projects. I am currently working on several projects, open source and not, and a few writing projects. Expect more details on these.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;... and more.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Monospaced font</title><link href="http://www.caswenson.com/2010_12_01_monospaced_font" rel="alternate" /><id>2010_12_01_monospaced_font</id><published>2010-12-01T08:40:37-00:00</published><updated>2010-12-01T08:40:37-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;I have been searching for years for a decent programming font (that is, monospaced). Over the ye</summary><content type="html">
-&lt;p&gt;I have been searching for years for a decent programming font (that is, monospaced). Over the years, I've found various ones that suited me, but recently I found ranks as my favorite: &lt;a href="http://www.cosmix.org/software/"&gt;Droid Sans Mono, Dotted&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://m.caswenson.com/images/droidsansmono.png" width="901" height="649" alt="Droid Sans Mono Dotted picture" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Essentially, cosmix created a dotted and slashed zero variant to Droid Sans Mono, part of the &lt;a href="http://www.droidfonts.com/"&gt;Droid family of fonts&lt;/a&gt; designed for Google's Android operating system.&lt;/p&gt;
-
-&lt;p&gt;They are designed to very legible, and I have found the Sans Mono to be clean and pleasant when in the terminal or in a coding window.  It also has pretty decent Unicode support.&lt;/p&gt;
-
-&lt;p&gt;My previous favorite coding fonts have been: Monaco, DejaVu Sans Mono, Consolas, and Lucida Sans Console.&lt;/p&gt;
 </content></entry>
 </feed>
