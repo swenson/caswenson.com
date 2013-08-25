@@ -38,7 +38,33 @@ window.onload = function () {
 	</div>
 </div>
 <div id="content">
-	<div class="post"><div class="date"><b>jul</b> 21 2013</div><h1><a href="2013_07_21_day_camp_4_developers">Day Camp 4 Developers</a></h1>
+	<div class="post"><div class="date"><b>aug</b> 25 2013</div><h1><a href="2013_08_25_a_minimalistic_rss_reader">A Minimalistic RSS Reader</a></h1>
+<p>Saddened by the demise of Google Reader a few months ago, I completely gave up on RSS feeds and just cut myself off from the world.</p>
+
+<p>A few days ago, I finally decided it was time to move on. Unfortunately, I haven't been super pleased with the options available out there.
+Plus, I realized I didn't want to get burned again when they inevitably close and break my heart.</p>
+
+<p>So, like dozens of other people, I just decided to write my own RSS feed reader.</p>
+
+<h1>One user</h1>
+
+<p>One fundamental design decision I made early on is that this system would only support one user, and so I can throw out 95% of the complexity of designing the system right off the bat.</p>
+
+<p>Examples:</p>
+
+<ul>
+<li>No security. I can throw web page up under an Apache proxy with SSL and basic auth to allow only me in. I don't need to mess with logins or anything.</li>
+<li>No database. The entire state of the program will just be written out as a JSON blob periodically and read in on startup.</li>
+<li>No frills. I only use a few basic features, so I'm only going to implement those. This also means that the page looks incredibly ugly.</li>
+</ul>
+
+<h1>Open</h1>
+
+<p>I wrote it in Go (requires 1.1+) and open sourced it at https://github.com/swenson/littlereader under the MIT license.
+Feel free to use it, adapt it, whatever.</p>
+
+<p>It's not finished, but it has nearly every feature I need right now.</p>
+</div><div class="post"><div class="date"><b>jul</b> 21 2013</div><h1><a href="2013_07_21_day_camp_4_developers">Day Camp 4 Developers</a></h1>
 <p>I'll be talking at this week's <a href="http://daycamp4developers.com/">Day Camp 4 Developers</a> on version control
 (or source code control, or source code management, or whatever we want to call it this week).
 It'll be an introductory talk introducing why you should use version control, how it works in general, and then going into some specific workflows with git, the notorious version control system.
@@ -273,16 +299,6 @@ to the new system, and working with a small issue or two there.</p>
 <p>If you haven't read it, and you are a programmer, then you really need to read this paper.</p>
 </div><div class="post"><div class="date"><b>dec</b> 30 2011</div><h1><a href="2011_12_30_modern_cryptanalysis_errata_updated">Modern Cryptanalysis Errata updated</a></h1>
 <p>I have updated <a href="http://www.caswenson.com/mcerrata">the errata</a> for my book, Modern Cryptanalysis.</p>
-</div><div class="post"><div class="date"><b>dec</b> 25 2011</div><h1><a href="2011_12_25_changes_coming_soon">Changes coming soon</a></h1>
-<p>This is the first post of the year. That's a little sad, but I think I am going to be redoing this site a bit in the near future.</p>
-
-<p>So, some upcoming changes:</p>
-
-<ul>
-<li><p>Errata for my book -- this link has been on the RHS of my page for quite a while now, and I haven't gotten around to compiling this errata.  I will do so in the next few days.</p></li>
-<li><p>Notes on upcoming projects. I am currently working on several projects, open source and not, and a few writing projects. Expect more details on these.</p></li>
-<li><p>... and more.</p></li>
-</ul>
 </div>
 	<script type="text/javascript">
 //<[CDATA[

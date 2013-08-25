@@ -2,11 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2013-07-22T06:27:40-00:00</updated>
+  <updated>2013-08-25T22:34:03-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>Day Camp 4 Developers</title><link href="http://www.caswenson.com/2013_07_21_day_camp_4_developers" rel="alternate" /><id>2013_07_21_day_camp_4_developers</id><published>2013-07-22T06:27:40-00:00</published><updated>2013-07-22T06:27:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>A Minimalistic RSS Reader</title><link href="http://www.caswenson.com/2013_08_25_a_minimalistic_rss_reader" rel="alternate" /><id>2013_08_25_a_minimalistic_rss_reader</id><published>2013-08-25T22:34:03-00:00</published><updated>2013-08-25T22:34:03-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;Saddened by the demise of Google Reader a few months ago, I completely gave up on RSS feeds and </summary><content type="html">
+&lt;p&gt;Saddened by the demise of Google Reader a few months ago, I completely gave up on RSS feeds and just cut myself off from the world.&lt;/p&gt;
+
+&lt;p&gt;A few days ago, I finally decided it was time to move on. Unfortunately, I haven't been super pleased with the options available out there.
+Plus, I realized I didn't want to get burned again when they inevitably close and break my heart.&lt;/p&gt;
+
+&lt;p&gt;So, like dozens of other people, I just decided to write my own RSS feed reader.&lt;/p&gt;
+
+&lt;h1&gt;One user&lt;/h1&gt;
+
+&lt;p&gt;One fundamental design decision I made early on is that this system would only support one user, and so I can throw out 95% of the complexity of designing the system right off the bat.&lt;/p&gt;
+
+&lt;p&gt;Examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No security. I can throw web page up under an Apache proxy with SSL and basic auth to allow only me in. I don't need to mess with logins or anything.&lt;/li&gt;
+&lt;li&gt;No database. The entire state of the program will just be written out as a JSON blob periodically and read in on startup.&lt;/li&gt;
+&lt;li&gt;No frills. I only use a few basic features, so I'm only going to implement those. This also means that the page looks incredibly ugly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;Open&lt;/h1&gt;
+
+&lt;p&gt;I wrote it in Go (requires 1.1+) and open sourced it at https://github.com/swenson/littlereader under the MIT license.
+Feel free to use it, adapt it, whatever.&lt;/p&gt;
+
+&lt;p&gt;It's not finished, but it has nearly every feature I need right now.&lt;/p&gt;
+</content></entry><entry><title>Day Camp 4 Developers</title><link href="http://www.caswenson.com/2013_07_21_day_camp_4_developers" rel="alternate" /><id>2013_07_21_day_camp_4_developers</id><published>2013-07-22T06:27:40-00:00</published><updated>2013-07-22T06:27:40-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I'll be talking at this week's &lt;a href="http://daycamp4developers.com/"&gt;Day Camp 4 Developers&lt;/a</summary><content type="html">
 &lt;p&gt;I'll be talking at this week's &lt;a href="http://daycamp4developers.com/"&gt;Day Camp 4 Developers&lt;/a&gt; on version control
 (or source code control, or source code management, or whatever we want to call it this week).
@@ -252,16 +279,5 @@ to the new system, and working with a small issue or two there.&lt;/p&gt;
 </content></entry><entry><title>Modern Cryptanalysis Errata updated</title><link href="http://www.caswenson.com/2011_12_30_modern_cryptanalysis_errata_updated" rel="alternate" /><id>2011_12_30_modern_cryptanalysis_errata_updated</id><published>2011-12-30T23:36:33-00:00</published><updated>2011-12-30T23:36:33-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I have updated &lt;a href="http://www.caswenson.com/mcerrata"&gt;the errata&lt;/a&gt; for my book, Modern Cr</summary><content type="html">
 &lt;p&gt;I have updated &lt;a href="http://www.caswenson.com/mcerrata"&gt;the errata&lt;/a&gt; for my book, Modern Cryptanalysis.&lt;/p&gt;
-</content></entry><entry><title>Changes coming soon</title><link href="http://www.caswenson.com/2011_12_25_changes_coming_soon" rel="alternate" /><id>2011_12_25_changes_coming_soon</id><published>2011-12-26T04:51:07-00:00</published><updated>2011-12-26T04:51:07-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;This is the first post of the year. That's a little sad, but I think I am going to be redoing th</summary><content type="html">
-&lt;p&gt;This is the first post of the year. That's a little sad, but I think I am going to be redoing this site a bit in the near future.&lt;/p&gt;
-
-&lt;p&gt;So, some upcoming changes:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Errata for my book -- this link has been on the RHS of my page for quite a while now, and I haven't gotten around to compiling this errata.  I will do so in the next few days.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Notes on upcoming projects. I am currently working on several projects, open source and not, and a few writing projects. Expect more details on these.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;... and more.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content></entry>
 </feed>
