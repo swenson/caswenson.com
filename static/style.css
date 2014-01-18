@@ -363,7 +363,7 @@ body {
 
 #sidebar {
   float: left;
-  width: 180px;
+  width: 204.0px;
   padding-left: 48px; }
   #sidebar .side {
     -webkit-border-radius: 5px;
@@ -380,7 +380,10 @@ body {
     #sidebar .side ul {
       margin-left: -1em; }
       #sidebar .side ul li {
-        list-style: none; }
+        list-style: none;
+        padding-left: 10px;
+        text-indent: -10px;
+        margin-bottom: 5px; }
         #sidebar .side ul li a {
           color: #000066;
           text-decoration: none; }
@@ -393,11 +396,11 @@ body {
   #sidebar hr {
     color: #000066;
     background-color: #000066;
-    width: 160px;
+    width: 184.0px;
     height: 2px;
     border: 0; }
   #sidebar #pic {
-    width: 160px;
+    width: 184.0px;
     margin-left: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -419,7 +422,7 @@ body {
 
 #main {
   float: right;
-  width: 924px;
+  width: 900px;
   margin-top: 4em;
   padding-left: 24px; }
   #main .tagline {
@@ -452,4 +455,4 @@ body {
 
 #footer {
   margin-top: 5em;
-  margin-left: 324px; }
+  margin-left: 348px; }
