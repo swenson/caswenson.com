@@ -72,7 +72,7 @@ gplot.plot(data) # plot the data</pre>
 	<h2>Pages</h2>
 		<ul>
 	    <li><a href="about">About</a></li>
-	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="disclosures">Disclosures</a></li>
 	    <li><a href="speaking">Speaking</a></li>
 		  <li><a href="presentations">Presentations</a></li>
 		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>

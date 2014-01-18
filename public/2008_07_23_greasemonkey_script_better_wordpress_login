@@ -86,7 +86,7 @@ If you didn't do this, and just used a plain hash for your password, then this w
 	<h2>Pages</h2>
 		<ul>
 	    <li><a href="about">About</a></li>
-	    <li><a href="disclosures">Disclousres</a></li>
+	    <li><a href="disclosures">Disclosures</a></li>
 	    <li><a href="speaking">Speaking</a></li>
 		  <li><a href="presentations">Presentations</a></li>
 		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
