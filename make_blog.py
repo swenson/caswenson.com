@@ -122,9 +122,9 @@ with open("public/index.html", "w") as index:
   index.write(index_template.format(title="Main", posts=posts_text, disqus=disqus_text))
 
 print "Archive"
-# Create archive at /past
-with open("public/past", "w") as past:
-  past.write(index_template.format(title="Archive", posts=archive_text, disqus=""))
+# Create archive at /archive
+with open("public/archive", "w") as archive:
+  archive.write(index_template.format(title="Archive", posts=archive_text, disqus=""))
 
 print "Atom"
 # Create RSS
