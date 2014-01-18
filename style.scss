@@ -57,6 +57,21 @@ body {
 
 		  li {
 		  	list-style: none;
+
+		  	a {
+					color: $navy;
+		  	  text-decoration: none;
+		  	}
+
+		  	a:visited {
+					color: $navy;
+		  	  text-decoration: none;
+		  	}
+
+		  	a:hover {
+					color: $navy;
+		  	  text-decoration: underline;
+		  	}
 		  }
 		}
 	}
@@ -116,9 +131,20 @@ body {
 		  font-weight: normal;
 		  margin-left: -10px;
 
-		  a {
-		    text-decoration: none;
-		  }
+	  	a {
+				color: $navy;
+	  	  text-decoration: none;
+	  	}
+
+	  	a:visited {
+				color: $navy;
+	  	  text-decoration: none;
+	  	}
+
+	  	a:hover {
+				color: $navy;
+	  	  text-decoration: underline;
+	  	}
 	  }
 
 	  h2 {

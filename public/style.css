@@ -381,6 +381,15 @@ body {
       margin-left: -1em; }
       #sidebar .side ul li {
         list-style: none; }
+        #sidebar .side ul li a {
+          color: #000066;
+          text-decoration: none; }
+        #sidebar .side ul li a:visited {
+          color: #000066;
+          text-decoration: none; }
+        #sidebar .side ul li a:hover {
+          color: #000066;
+          text-decoration: underline; }
   #sidebar hr {
     color: #000066;
     background-color: #000066;
@@ -425,7 +434,14 @@ body {
       font-weight: normal;
       margin-left: -10px; }
       #main .post h1 a {
+        color: #000066;
         text-decoration: none; }
+      #main .post h1 a:visited {
+        color: #000066;
+        text-decoration: none; }
+      #main .post h1 a:hover {
+        color: #000066;
+        text-decoration: underline; }
     #main .post h2 {
       font-family: "Droid Sans", sans-serif; }
     #main .post h3 {
