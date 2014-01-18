@@ -70,15 +70,12 @@ for mtime, post in posts:
   post_title = lines[0][4:-5]
   slug = title_slug(post_title)
   pdate = str(date.fromtimestamp(mtime))
-  post_year, post_month, post_day = pdate.split('-')
-  post_month = int(post_month)
   link = "%s_%s" % (pdate.replace("-", "_"), slug)
   post_h1 = "<h1><a href=\"%s\">%s</a></h1>" % (link, post_title)
   post_body = "\n".join(lines[1:])
-  post_date = "<b>%s</b> %s %s" % (months[post_month], post_day, post_year)
   if processed < INDEX_POSTS:
     posts_text += """<div class="post">"""
-    posts_text += """<div class="date">%s</div>""" % post_date
+    posts_text += """<div class="date">%s</div>""" % pdate
     posts_text += """%s%s</div>""" % (post_h1, post_body)
   if processed < RSS_POSTS:
     entry = et.Element("entry")
