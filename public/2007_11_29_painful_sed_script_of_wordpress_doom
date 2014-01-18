@@ -1,43 +1,76 @@
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Painful sed script of Wordpress doom &mdash; Christopher Swenson</title>
-	<link href="main.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+
 	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
 
-<script src="js/shCore.js" type="text/javascript"></script>
-<!--<script src="js/shBrushCSharp.js" type="text/javascript"></script>
-<script src="js/shBrushCpp.js" type="text/javascript"></script>
-<script src="js/shBrushCss.js" type="text/javascript"></script>
-<script src="js/shBrushDelphi.js" type="text/javascript"></script>
-<script src="js/shBrushJScript.js" type="text/javascript"></script>
-<script src="js/shBrushJava.js" type="text/javascript"></script>
-<script src="js/shBrushPhp.js" type="text/javascript"></script>-->
-<script src="js/shBrushRuby.js" type="text/javascript"></script>
-<script src="js/shBrushPython.js" type="text/javascript"></script>
-<!--<script src="js/shBrushSql.js" type="text/javascript"></script>
-<script src="js/shBrushVb.js" type="text/javascript"></script>
-<script src="js/shBrushXml.js" type="text/javascript"></script>-->
-
-<script language="javascript">
-window.onload = function () {
-    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
-    dp.SyntaxHighlighter.HighlightAll('code');
-}
-</script>
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
 
 </head>
 <body>
-<div id="header">
-	<div id="logo">
-		<img src="images/chrisbluething.png" alt="blue thing" />
-		<h1><a href="/">Christopher Swenson</a></h1>
-		<p>Computer science, math, programming, and stuff.</p>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about">About</a></li>
+			<li>Contact</li>
+	    <li><a href="speaking">Speaking</a></li>
+			<li>Writing</li>
+			<li>Consulting</li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li>GitHub</li>
+			<li>Twitter</li>
+			<li>Google+</li>
+			<li>LinkedIn</li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive">Blog Archive</a></li>
+			<li>Modern Cryptanalysis</li>
+			<li><a href="https://artisanalcrypto.com">Artisinal Crypto</a></li>
+			<li>Open Source</li>
+		</ul>
 	</div>
 </div>
-<div id="content">
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
 	<div class="postzoom"><h1><a href="2007_11_29_painful_sed_script_of_wordpress_doom">Painful sed script of Wordpress doom</a></h1>
 <p>So, I figured out most of the problems, and how to solve them.</p>
 
@@ -96,26 +129,17 @@ s/\xc3\x83\xc2\xb6/\&amp;ouml;/g
 <p>This removes all but 30 of my invalid characters, and those remaining ones appear to be pretty much broke (viewing the original articles shows garbage, and there is no logical character that would fit in those places).  Good enough.</p>
 </div>
 	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_11_29_painful_sed_script_of_wordpress_doom">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-	<div id="sidebar">
-  <h2>Modern Cryptanalysis</h2>
-	<div><br />
-			<center><a href="http://www.amazon.com/gp/product/047013593X?ie=UTF8&tag=mathfigu-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047013593X"><img border="0" src="images/21tcdykwdkl_aa_sl160_.jpg"></a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&l=as2&o=1&a=047013593X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></center>
-	</div>
-	<h2>Pages</h2>
-		<ul>
-	    <li><a href="about">About</a></li>
-	    <li><a href="disclosures">Disclosures</a></li>
-	    <li><a href="speaking">Speaking</a></li>
-		  <li><a href="presentations">Presentations</a></li>
-		  <li><a href="mcerrata"><em>Modern Cryptanalaysis</em> Errata</a></li>
-		</ul>
-	  <h2><a href="past">Archive</a></h2>
-	</div>
-	<div id="footer">
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
 	<p id="legal">
-	Content by Christopher Swenson (<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>) |
-	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
+		Copyright 2014 Christopher Swenson
 	</p>
+</div>
+
 </div>
 </body>
 </html>

@@ -1,0 +1,142 @@
+@import 'normalize';
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,700,400italic,700italic);
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// fonts
+$cs-font: 'Source Sans Pro', sans-serif;
+$serif: 'Droid Serif', serif;
+$sans: 'Droid Sans', sans-serif;
+$mono: 'Droid Sans Mono', monospaced;
+
+// colors
+$gray: #CCC;
+$navy: #006;
+$blue: #36c;
+$white: #fff;
+$black: #000;
+$width: 1200px;
+
+$side-radius: 5px;
+$cs-size: 100pt;
+$side-width: 0.15 * $width;
+$main-width: $width - $side-width - 0.08 * $width;
+
+body {
+  font: 100% $serif;
+  background-color: $white;
+  color: $black;
+}
+
+#wrap {
+	width: $width;
+}
+
+#sidebar {
+  float: left;
+  width: $side-width;
+  padding-left: 0.04 * $width;
+
+	.side {
+		@include border-radius($side-radius);
+		font-size: 1.2em;
+		border: 3px solid $gray;
+		background-color: $gray;
+		color: $navy;
+		margin: 10px;
+		padding: 0;
+
+		ul {
+		  margin-left: -1em;
+
+		  li {
+		  	list-style: none;
+		  }
+		}
+	}
+
+	hr {
+	  color: $navy;
+	  background-color: $navy;
+	  width: $side-width - $side-radius * 4;
+	  height: 2px;
+	  border: 0;
+	}
+
+	#pic {
+	  width: $side-width - $side-radius * 4;
+	  margin-left: $side-radius * 2;
+		@include border-radius($side-radius);
+	}
+
+	#cs {
+		font-family: $cs-font;
+		font-weight: 600;
+	  text-align: center;
+
+	  #c {
+		  font-size: $cs-size;
+		  color: $navy;
+
+	  }
+
+	  #s {
+		  font-size: 1.15 * $cs-size;
+		  color: $blue;
+	    vertical-align: -0.225 * $cs-size;
+	    margin-left: -0.35 * $cs-size;
+	  }
+	}
+}
+
+#main {
+  float: right;
+  width: $main-width;
+  margin-top: 4em;
+  padding-left: 0.02 * $width;
+
+	.tagline {
+	  font-size: 24pt;
+	  margin-bottom: 5px;
+	}
+
+	.post {
+	  margin-top: 4em;
+	  margin-left: 2em;
+
+	  h1 {
+		  font-family: $sans;
+		  font-size: 20pt;
+		  font-weight: normal;
+		  margin-left: -10px;
+
+		  a {
+		    text-decoration: none;
+		  }
+	  }
+
+	  h2 {
+	    font-family: $sans;
+	  }
+
+	  h3 {
+	    font-family: $sans;
+	  }
+	}
+}
+
+#clear {
+	clear: both;
+}
+
+#footer {
+  margin-top: 5em;
+  margin-left: $side-width + 0.12 * $width;
+}
+
