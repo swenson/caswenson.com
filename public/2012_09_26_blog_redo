@@ -37,7 +37,7 @@
 	<div class="side">
 		<ul>
 	    <li><a href="about">About</a></li>
-			<li>Contact</li>
+			<li><a href="contact">Contact</a></li>
 	    <li><a href="speaking">Speaking</a></li>
 			<li>Writing</li>
 			<li>Consulting</li>
