@@ -5,8 +5,7 @@ I have been known to speak on occasion.
 </p>
 
 <p>
-If you wish to find out more, please contact me at
-<a href="mailto:chris@caswenson.com">chris@caswenson.com</a>.
+If you wish to find out more, please contact me at <a href="contact">here</a>.
 </p>
 
 <h2>Presentations</h2>
@@ -18,10 +17,18 @@ Sage: Open Source Math in Python
 </p>
 
 <p>
-The following are some presentations I have given.  These are linked to
-<a href="http://www.slideshare.net/">slideshare</a>.
+<iframe width="640" height="360" src="http://www.youtube.com/embed/YyEReiAYGlU?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
 </p>
 
+<p>OSCON 2012:
+<a href="http://www.oscon.com/oscon2012/public/schedule/detail/24051">
+Google Government Public Data: Finding and delivering the world’s government, tabular data
+</a>.
+
+Video available <a href="http://my.safaribooksonline.com/video/databases/9781449345099">Safari</a>.
+</p>
+
+<h3>Older stuff</h3>
 <p>
 <a href="http://www.slideshare.net/caswenson/editing-a-guide-to-anal-retentiveness">Editing, Presenting, and Anal Retenting (2006).</a>
 This is slide show about some of my anal retentive habits in editing and presenting.
