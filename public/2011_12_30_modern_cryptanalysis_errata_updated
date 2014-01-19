@@ -39,8 +39,8 @@
 	    <li><a href="about">About</a></li>
 			<li><a href="contact">Contact</a></li>
 	    <li><a href="speaking">Speaking</a></li>
-			<li>Writing</li>
-			<li>Consulting</li>
+			<li><a href="writing">Writing</a></li>
+			<li><a href="http://mathgineering.com">Consulting</a></li>
 		</ul>
 	</div>
 
