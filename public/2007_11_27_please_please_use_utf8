@@ -80,7 +80,7 @@
 
 <p>Edit: Also, if you run into such problems, two of the best helps I have found were <a href="http://myhep.com/2007/1/25/mysql-on-the-move-from-latin1-to-utf8">here</a> (though you may want to modify it a bit, since it changes smart quotes to dumb quotes) and <a href="http://www.oreillynet.com/onlamp/blog/2006/01/turning_mysql_data_in_latin1_t.html">here</a>.</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_11_27_please_please_use_utf8">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 
 </div>
 

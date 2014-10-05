@@ -102,7 +102,7 @@ fftout = fft(samples)
 
 <p>And that's it! I should have been using nothing but Python for nearly everything from the start, and screw C.</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_06_17_python_fftw">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 
 </div>
 

@@ -101,7 +101,7 @@ curl --basic --user $USER:$PASS --data status="$STATUS" $URL</pre>
 
 <p>Naturally, this was designed to work for Linux, and would probably work on OS X and Windows/<a href="http://en.wikipedia.org/wiki/Cygwin">Cygwin</a> as well.</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_03_22_curl_twitter_crontab_happiness">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 
 </div>
 

@@ -121,7 +121,7 @@ on your environment, which I do via a <code>switch</code> statement.</li>
 <p>That's it.
 This is a pretty straightforward and easy way to do config files in Go.</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2013_06_01_configuration_files_in_go">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 
 </div>
 

@@ -43,7 +43,7 @@ index_template = open("templates/index.html.template").read()
 
 rss_template = open("templates/feed.template").read()
 
-disqus_text = disqus_template % DISQUS_SHORTNAME
+disqus_text = '' # disqus_template % DISQUS_SHORTNAME
 
 static_files = [os.path.join(x[0], y) for x in os.walk("static") for y in x[2]]
 
@@ -106,8 +106,9 @@ for mtime, post in posts:
   run_cmd("mkdir -p " + os.path.join("public", os.path.dirname(link)))
   with open(os.path.join("public", link), "w") as post_out:
     url = "http://www.caswenson.com/" + link
-    disqus = """<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/%s/embed.js"></script><noscript><a href="http://%s.disqus.com/?url=%s">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>"""
-    disqus = disqus % (DISQUS_SHORTNAME, DISQUS_SHORTNAME, url)
+    #disqus = """<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/%s/embed.js"></script><noscript><a href="http://%s.disqus.com/?url=%s">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>"""
+    #disqus = disqus % (DISQUS_SHORTNAME, DISQUS_SHORTNAME, url)
+    disqus = ''
     post_text = """<div class="postzoom">%s%s</div>""" % (post_h1, post_body)
     post_out.write(index_template.format(title=post_title, posts=post_text, disqus=disqus))
 archive_text += "</ul>"

@@ -98,7 +98,7 @@ Find the next triangle number that is also pentagonal and hexagonal.
 
 <p>There is actually a slightly more clever way to do it in linear time, which lowers this to about 0.1 seconds to run.  See if you can find it.</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2009_01_24_project_euler">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 
 </div>
 

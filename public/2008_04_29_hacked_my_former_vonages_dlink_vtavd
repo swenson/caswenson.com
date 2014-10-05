@@ -133,7 +133,7 @@ ti.tftp.vonage.net.      3600000      A     192.168.0.101</pre>
 
 <p>And after that, you should be able to configure the device for an arbitrary SIP server by logging in with the Admin account ("Admin" is the default password, case-sensitive).</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2008_04_29_hacked_my_former_vonages_dlink_vtavd">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 
 </div>
 

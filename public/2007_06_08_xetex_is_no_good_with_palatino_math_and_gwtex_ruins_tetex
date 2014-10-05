@@ -78,7 +78,7 @@
 
 <p>There is also another lesson I learned: having Fink teTeX, the old MacTeX teTeX, as well as the new LiveCD 2007 version of gwTeX installed on the same Mac will cause great confusion, and many lost fonts.  I decided to wipe all three installations, and install the actual full MacTeX 2007 distribution, which cleaned up some of the mess going on.</p>
 </div>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/swenson/embed.js"></script><noscript><a href="http://swenson.disqus.com/?url=http://www.caswenson.com/2007_06_08_xetex_is_no_good_with_palatino_math_and_gwtex_ruins_tetex">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	
 
 </div>
 
