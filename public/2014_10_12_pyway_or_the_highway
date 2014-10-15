@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Pyway or the highway &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
+
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about">About</a></li>
+			<li><a href="contact">Contact</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+			<li><a href="http://mathgineering.com">Consulting</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ChristopherSwenson">Google+</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive">Blog Archive</a></li>
+			<li><a href="mc">Modern Cryptanalysis</a></li>
+			<li><a href="https://artisanalcrypto.com">Artisinal Crypto</a></li>
+			<!--<li>Open Source Bounty</li>-->
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2014_10_12_pyway_or_the_highway">Pyway or the highway</a></h1>
+<p><a href="https://github.com/swenson/pyway">Pyway</a> is a database migration tool that I wrote to solve the problem of: I want database migrations, but I don't want to bring <a href="http://guides.rubyonrails.org/migrations.html">Rails</a> or the entire <a href="http://flywaydb.org/">JVM</a> with me just to do them.</p>
+
+<p>So, I wrote a little script that does the most simple thing you can do with database migrations: keep track of them by file name, and run any new ones in sorted order.
+Python is pretty much universally present at this point in server environments, so that's the tool that I used.</p>
+
+<p>This is nothing sophisticated, and currently has <code>sqlite3</code> hardcoded in it, but it should be trivial to modify for any other databases.
+I didn't even use Python bindings for <code>sqlite3</code>: I just called the command-line program to do the migrations.
+That way, it should be easy to modify it for other databases in the near future.</p>
+
+<p>I'll probably end up adding Postgres or MySQL support sometime soon (when one of my projects that uses those technologies needs to be updated).</p>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>

@@ -70,7 +70,18 @@
 	<div class="tagline">computer science, math, programming and other stuff</div>
 	<div class="tagline">a blog by Christopher Swenson</div>
 
-	<div class="post"><div class="date">2014-10-05</div><h1><a href="2014_10_05_this_holacracy_thing">This Holacracy Thing</a></h1>
+	<div class="post"><div class="date">2014-10-12</div><h1><a href="2014_10_12_pyway_or_the_highway">Pyway or the highway</a></h1>
+<p><a href="https://github.com/swenson/pyway">Pyway</a> is a database migration tool that I wrote to solve the problem of: I want database migrations, but I don't want to bring <a href="http://guides.rubyonrails.org/migrations.html">Rails</a> or the entire <a href="http://flywaydb.org/">JVM</a> with me just to do them.</p>
+
+<p>So, I wrote a little script that does the most simple thing you can do with database migrations: keep track of them by file name, and run any new ones in sorted order.
+Python is pretty much universally present at this point in server environments, so that's the tool that I used.</p>
+
+<p>This is nothing sophisticated, and currently has <code>sqlite3</code> hardcoded in it, but it should be trivial to modify for any other databases.
+I didn't even use Python bindings for <code>sqlite3</code>: I just called the command-line program to do the migrations.
+That way, it should be easy to modify it for other databases in the near future.</p>
+
+<p>I'll probably end up adding Postgres or MySQL support sometime soon (when one of my projects that uses those technologies needs to be updated).</p>
+</div><div class="post"><div class="date">2014-10-05</div><h1><a href="2014_10_05_this_holacracy_thing">This Holacracy Thing</a></h1>
 <p>I've had a busy year where I've been trying out a lot of new ideas for working
 and collaborating, and learning a lot.
 One thing that I learned about and experienced for a few weeks was the system of <a href="http://en.wikipedia.org/wiki/Holacracy">Holacracy</a>.
@@ -415,14 +426,6 @@ def ReadFromDatabase(self, query, metadata):
 <h2>Test <em>ALL</em> the things.</h2>
 
 <p>Before Google, I hadn't really practiced a lot of TDD. Sure, when I had a small piece of code that had very well-defined inputs and outputs, and if I had time, I would create some doctests (in Python) or the equivalent elsewise, but it was never a priority. At Google, good testing is the state religion. If it doesn't have tests, it doesn't exist. No excuses. I don't care how complex the code is: it has to be tested. Writing the tests firsts often helps, but doesn't always make sense.</p>
-</div><div class="post"><div class="date">2012-09-26</div><h1><a href="2012_09_26_blog_redo">Blog Redo</a></h1>
-<p>I got tired of the old site having issues, so I rewrote the site using a
-custom static site generator.</p>
-
-<p>Things pretty much work. I am in the process of moving old Disqus comments over
-to the new system, and working with a small issue or two there.</p>
-
-<p>I should have some new material up soon as well!</p>
 </div>
 	
 
