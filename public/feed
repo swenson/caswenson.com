@@ -2,11 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2014-10-12T19:15:24-00:00</updated>
+  <updated>2014-10-19T18:44:14-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>Pyway or the highway</title><link href="http://www.caswenson.com/2014_10_12_pyway_or_the_highway" rel="alternate" /><id>2014_10_12_pyway_or_the_highway</id><published>2014-10-12T19:15:24-00:00</published><updated>2014-10-12T19:15:24-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>ttyrec conversion</title><link href="http://www.caswenson.com/2014_10_19_ttyrec_conversion" rel="alternate" /><id>2014_10_19_ttyrec_conversion</id><published>2014-10-19T18:44:14-00:00</published><updated>2014-10-19T18:44:14-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though</summary><content type="html">
+&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
+I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
+
+&lt;p&gt;I'd found some pieces of tools that might do the job around the Internet: &lt;a href="http://nethack.wikia.com/wiki/Notable_ascensions"&gt;TTY "recordings" of NetHack ascensions&lt;/a&gt; (essentially, replaying through the terminal sequences while they are playing), &lt;a href="https://github.com/selectel/pyte"&gt;pyte&lt;/a&gt; (a Python terminal emulator), and &lt;a href="https://pypi.python.org/pypi/images2gif"&gt;images2gif&lt;/a&gt; (a mostly working animated GIF maker).&lt;/p&gt;
+
+&lt;p&gt;It's &lt;em&gt;almost&lt;/em&gt; there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an &lt;a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png"&gt;old  DOS bitmap font&lt;/a&gt;, and then all of the glue code to make it all work together.
+I sped up the results by 5&amp;times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.&lt;/p&gt;
+
+&lt;p&gt;I open sourced the whole thing as &lt;a href="https://github.com/swenson/ttyrec2gif"&gt;ttyrec2gif&lt;/a&gt;. It produces nice GIFs like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://m.caswenson.com/images/out00001.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There's one last piece: how to actually turn this into a screen saver.&lt;/p&gt;
+
+&lt;p&gt;In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)&lt;/p&gt;
+
+&lt;p&gt;Anyway, at the very least, there are some cool GIFs out there to look at now.
+I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).&lt;/p&gt;
+</content></entry><entry><title>Pyway or the highway</title><link href="http://www.caswenson.com/2014_10_12_pyway_or_the_highway" rel="alternate" /><id>2014_10_12_pyway_or_the_highway</id><published>2014-10-12T19:15:24-00:00</published><updated>2014-10-12T19:15:24-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;&lt;a href="https://github.com/swenson/pyway"&gt;Pyway&lt;/a&gt; is a database migration tool that I wrote t</summary><content type="html">
 &lt;p&gt;&lt;a href="https://github.com/swenson/pyway"&gt;Pyway&lt;/a&gt; is a database migration tool that I wrote to solve the problem of: I want database migrations, but I don't want to bring &lt;a href="http://guides.rubyonrails.org/migrations.html"&gt;Rails&lt;/a&gt; or the entire &lt;a href="http://flywaydb.org/"&gt;JVM&lt;/a&gt; with me just to do them.&lt;/p&gt;
 
@@ -329,51 +353,5 @@ This can really eat at the velocity of your project, especially small projects (
 &lt;p&gt;I'm sure I learned more at Google, but those are perhaps some of the important things I felt I learned while working there.&lt;/p&gt;
 
 &lt;p&gt;I can't wait to see what I learn at my next job. :)&lt;/p&gt;
-</content></entry><entry><title>Things I've Learned At Google, Part One</title><link href="http://www.caswenson.com/2012_10_08_things_ive_learned_at_google_part_one" rel="alternate" /><id>2012_10_08_things_ive_learned_at_google_part_one</id><published>2012-10-08T22:15:53-00:00</published><updated>2012-10-08T22:15:53-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot </summary><content type="html">
-&lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.&lt;/p&gt;
-
-&lt;p&gt;This first post will be about software engineering. Shortly, I'll post another about general workplace stuff.&lt;/p&gt;
-
-&lt;p&gt;First, an overall thought: Google was definitely the most professional place I've worked in terms of software engineering. However, just like any software engineering methodologies, their software engineering Kool-Aid is good, but you don't want to drink all of it.&lt;/p&gt;
-
-&lt;h2&gt;Code reviews are a must.&lt;/h2&gt;
-
-&lt;p&gt;Prior to Google, I had done very little formal code review as most projects we were simply "too busy" to "take time out" to do them. They are not even a little bit optional at Google: every change to the codebase must undergo at least one person's review, and possibly many more depending on the exact nature of the change and the person making it. At first, I was very skeptical about this, but I learned that there is so much much value in having this formal process, for a multitude of reasons.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;First, if you have a small team, code reviews are a good way to keep up with what other people on your project are doing, both on a personal level ("Jane is working on feature X"), as well as understanding what the code does. This means that it will be easier for you to make a modification to the codebase, if it is necessary, or even to take ownership of it should something happen (i.e., team member moves on).&lt;/li&gt;
-&lt;li&gt;Code reviews don't take as long as you think.&lt;/li&gt;
-&lt;li&gt;Code reviews significantly increase the quality of the code produced, both in readability, but in catching bugs and poor design decisions. Perhaps not as much as true pair programming, but with a lot fewer of the disadvantages.&lt;/li&gt;
-&lt;li&gt;Unfortunately, code reviews have one downside: it is often tricky to work on two different reviews on the same part of the codebase at the same time. This depends heavily on your version control system &amp;mdash; distributed version control systems, like git, tend to support this pretty well. But even so, there is some cost in terms of "mental swap space", as sometimes it is difficult to focus on an entirely different change until you hear back on your pending change. The best way to avoid this is make sure your team prioritizes reviewing code above pretty much all else, so that your other team members aren't waiting on you. (Code reviews are a bit like a turn-based game, and when it is the other person's turn, it can seem like it takes forever.) I always tried to have a spare project to work on that I could hack on a little while waiting.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2&gt;IDEs are worth it for large projects.&lt;/h2&gt;
-
-&lt;p&gt;Prior to Google, I despised IDEs. I still don't have a lot of love for them, but reusing Google's extensive codebase in my own code finally broke me out of my IDE-less existence: there is simply &lt;em&gt;too much&lt;/em&gt; code to try to wrangle without features like autoimport, name completion, refactoring, etc. I chose Eclipse, because I was doing Java work and Eclipse is well-supported inside Google. As slow as Eclipse is, it saved me a lot of time hunting through docs looking for the right class, with the right class name, the right function name method, etc.: I could just tab-complete my way to freedom a lot of the time.&lt;/p&gt;
-
-&lt;h2&gt;Build systems still suck.&lt;/h2&gt;
-
-&lt;p&gt;Google has their own build system that integrates with, well, everything. But it still sucks. Not as much as autotools, SCons, Makefiles, but it still sucks. Where, oh where, is the build system of my dreams? To be fair, this was probably the best build system I have ever used.&lt;/p&gt;
-
-&lt;h2&gt;Python and other untyped languages make life harder for large projects.&lt;/h2&gt;
-
-&lt;p&gt;For small projects or stuff that I am doing by myself, I love Python. The time it saves me is tremendous. However, nothing is more frustrating than programming with a large, unknown codebase in Python. I would often see code like this, even in a well-manicured codebase:&lt;/p&gt;
-
-&lt;pre&gt;
-def ReadFromDatabase(self, query, metadata):
-  """Perform the query on the database."""
-  ...
-&lt;/pre&gt;
-
-&lt;p&gt;So... what is query? A string? What is its format? Could it be a tuple, a list? What is metadata? Essentially, the only answers to these questions were to go digging through documentation, look for other code that calls that function, read through the function itself. And sometimes I just don't have time to go on a coding adventure: I want to call the method and go on with my day. Java, for all of its faults, at least tells you the type information of the parameters, so I have a strong hint for my adventure. This might involve navigating factories, factoryfactories, and all other kinds of abominations, but at least I would have a good start.&lt;/p&gt;
-
-&lt;h2&gt;It should be easy to run your program.&lt;/h2&gt;
-
-&lt;p&gt;Google programmers love command-line flags. They sprinkle them everywhere. The problem is: they often specify the default values elsewhere, perhaps in a script that only runs in production. It can make running a program locally difficult, which in turns makes testing and debugging hard. The moral I learned is that it should be dead simple to build, run, and test your program. Hunting around for documentation on the perfect incantation magic is a real bummer.&lt;/p&gt;
-
-&lt;h2&gt;Test &lt;em&gt;ALL&lt;/em&gt; the things.&lt;/h2&gt;
-
-&lt;p&gt;Before Google, I hadn't really practiced a lot of TDD. Sure, when I had a small piece of code that had very well-defined inputs and outputs, and if I had time, I would create some doctests (in Python) or the equivalent elsewise, but it was never a priority. At Google, good testing is the state religion. If it doesn't have tests, it doesn't exist. No excuses. I don't care how complex the code is: it has to be tested. Writing the tests firsts often helps, but doesn't always make sense.&lt;/p&gt;
 </content></entry>
 </feed>
