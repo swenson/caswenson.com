@@ -2,11 +2,57 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2014-10-19T18:44:14-00:00</updated>
+  <updated>2014-10-27T01:38:59-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>ttyrec conversion</title><link href="http://www.caswenson.com/2014_10_19_ttyrec_conversion" rel="alternate" /><id>2014_10_19_ttyrec_conversion</id><published>2014-10-19T18:44:14-00:00</published><updated>2014-10-19T18:44:14-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>What I Learned As A Teen Programmer</title><link href="http://www.caswenson.com/2014_10_26_what_i_learned_as_a_teen_programmer" rel="alternate" /><id>2014_10_26_what_i_learned_as_a_teen_programmer</id><published>2014-10-27T01:38:59-00:00</published><updated>2014-10-27T01:38:59-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
+Reading t</summary><content type="html">
+&lt;p&gt;I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
+Reading through the source code, I thought a lot about how much I had grown as a developer and engineer since that long-forgotten summer.
+For instance, I now understand things like (ha!) having a consistent style (some of my code was indented over 24 spaces so that it would be in the middle of the monitor), writing comments (there are basically no comments in this code), and tests (I didn't even know that testing was a thing).
+But, I also realized that writing that emulator, and all of the development I did at the time, laid a strange foundation that colored how I've thought about programming since.&lt;/p&gt;
+
+&lt;p&gt;Up to that point, I'd puttered around a little in BASIC and C, but I didn't fall in love with programming until I discovered assembly language.
+Assembly was the first thing that really clicked for me: it was so simple, its semantics were so clear, and I found some great resources to help me learn (e.g., a nice tutorial I found on a BBS).
+So, in my heart, assembly language is my first language.&lt;/p&gt;
+
+&lt;p&gt;When I tell this to people now, they give me strange looks.
+It's almost unfathomable to teach people assembly language first.
+But, in doing so, I learned an awful lot about how software works, how computers work, and what foundation programming languages are built on top of.&lt;/p&gt;
+
+&lt;p&gt;My masterpiece as a teen programmer was the NES emulator I wrote  entirely in x86 assembly language: almost exactly 10,000 lines of it.
+This was my first taste of a real program: it was potentially useful, it had meaning, and it was a moderately large software project (my first).
+Programming this was what made me dig deep and learn how to program.&lt;/p&gt;
+
+&lt;p&gt;Here's some things that writing that emulator, and assembly language in general, taught me:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Data is just memory&lt;/strong&gt;. I remember trying to understand pointers in C and being incredibly frustrated with the strange syntax and the weird semantics. On the other hand, dealing with memory in assembly is so clearcut: memory is just a giant flat array (more or less), and pointers just point to stuff in that giant array. Indirect references, arrays of pointers, etc., make so much more sense when boiled down like this.&lt;/p&gt;
+
+&lt;p&gt;Even today, when trying to visualize many problems, I think to myself: what does this look like in memory? What structures are being used and how are they laid out? This helps me understand how algorithms and data structures work together.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;How to write everything yourself.&lt;/strong&gt; There were some limited BIOS and DOS kernel calls, but for the most part, if I needed some capability, say, reading from a floppy drive or writing to the screen, I had to write it from scratch: calling I/O ports, reading and writing to RAM addresses, etc. If I wanted graphics, I had to draw every single pixel myself. These days, I know that this is just reinventing the wheel, something normally regarded as a bad habit; however, I also learned an awful lot about inventing wheels doing it.
+I still have the bad habit of writing too many things myself, and not leveraging existing libraries as often as I should, so this lesson wasn't a complete victory.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sometimes you just have to buckle down and program all of the tedious parts&lt;/strong&gt;. A big part of the NES emulator is writing a cycle-accurate CPU emulator. I'm sure that you can imagine how daunting it must be to start writing &lt;code&gt;CPU.ASM&lt;/code&gt; and have an empty jump table with 256 entries, knowing that you have to write all 256 functions to handle every single operation. Even worse, you have to get every single piece &lt;em&gt;exactly&lt;/em&gt; right.&lt;/p&gt;
+
+&lt;p&gt;This taught me an extremely valuable skill: being able to focus on tedious, repetitive tasks.
+Programming is absolutely chock-full of tedious programming that is absolutely necessary.
+A great example is date and time functionality (especially time zones): incredibly important code to get correct, but so incredibly tedious and detail-oriented.
+Being able to dive into thousands of pages of specifications and turn them into working libraries and APIs has paid great dividends in my career as a software engineer, and I first learned that here.
+Being methodical and untiring is a great skill.&lt;/p&gt;
+
+&lt;p&gt;And really, sometimes there is just no elegant solution. Often I see programmers strive to come up with a beautiful, simple, clean way to solve a problem, only to realize that the solution doesn't stand up to reality. Sometimes reality is &lt;em&gt;ugly&lt;/em&gt;, and sometimes you have to write &lt;em&gt;ugly&lt;/em&gt; code to solve it: you just need to program your way out of it.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Assembly is useful&lt;/strong&gt;. Learning assembly has come in handy countless times: reading GDB disassembly of my code for degugging, understanding and optimizing performance, writing compilers. Every time I see an assembly dump on a screen, it feels like home.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;You have to fail a lot to succeed&lt;/strong&gt;. When writing code as a teenager in assembly language, I spent a lot of time crashing my computer. I mean, assembly is really easy to get wrong.
+When you get it wrong, you often do so catastrophically.&lt;/p&gt;
+
+&lt;p&gt;But more so, in order to learn how to build things, you first have to learn to build them wrong, and learn to recognize your mistakes. And this code is just full of mistakes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
+I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.&lt;/p&gt;
+</content></entry><entry><title>ttyrec conversion</title><link href="http://www.caswenson.com/2014_10_19_ttyrec_conversion" rel="alternate" /><id>2014_10_19_ttyrec_conversion</id><published>2014-10-19T18:44:14-00:00</published><updated>2014-10-19T18:44:14-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though</summary><content type="html">
 &lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
 I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
@@ -289,69 +335,5 @@ This is a pretty straightforward and easy way to do config files in Go.&lt;/p&gt
 &lt;p&gt;That said, I will be spending quite a bit of time this year learning both in greater detail, so perhaps I will update with further opinions on them.&lt;/p&gt;
 
 &lt;p&gt;(I'm also thinking about getting more into Go this year, and perhaps finally learning Erlang.)&lt;/p&gt;
-</content></entry><entry><title>Things I've Learned At Google, Part Two</title><link href="http://www.caswenson.com/2012_10_10_things_ive_learned_at_google_part_two" rel="alternate" /><id>2012_10_10_things_ive_learned_at_google_part_two</id><published>2012-10-10T13:27:47-00:00</published><updated>2012-10-10T13:27:47-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot </summary><content type="html">
-&lt;p&gt;I've spent the past 19 months working as a software engineer at Google. They have adopted a lot of great practices, some completely their own, and I certainly learned a lot from working them. I thought I would share some of the particular insights I had while working there.&lt;/p&gt;
-
-&lt;p&gt;This first post was about software engineering. This post is more about general workplace practices.&lt;/p&gt;
-
-&lt;h2&gt;If you want to have the best software engineers, then hire smart people and treat them well.&lt;/h2&gt;
-
-&lt;p&gt;I've worked at places in the past where they are good at hiring smart people, but then tend to treat them poorly. Then, they wonder why the leave in droves for companies, like Google, who aren't afraid to buy you a nice chair and keyboard.&lt;/p&gt;
-
-&lt;p&gt;If you want to have great employees, then you have to treat them like it.&lt;/p&gt;
-
-&lt;h2&gt;Open source licensing is important.&lt;/h2&gt;
-
-&lt;p&gt;Open source code is a lot harder than you'd think, and even the most competent software engineers will sometimes try to get away with not following the rules. The license implications in things like the GPL and AGPL are serious business. Before using any code that touches GPL or AGPL (or other similar licenses), educate yourself well on them, or designate someone at your company to be the open source czar to make sure you aren't messing this stuff up. It's not really hard or anything: it's just a little tedious, and incredibly important.&lt;/p&gt;
-
-&lt;h2&gt;Shoes are optional.&lt;/h2&gt;
-
-&lt;p&gt;I worked at mostly "business casual" places prior to Google, but Google goes straight for "casual", bordering on "who cares". And for all that, I never noticed it as a problem. Unless you are violating the health code, do what makes you productive and happy. (For instance, I am more productive when not wearing shoes, but wearing pants (or at least a kilt). YMMV.)&lt;/p&gt;
-
-&lt;h2&gt;Working from home can be fine.&lt;/h2&gt;
-
-&lt;p&gt;Personally, I work better in an office. But, my Google office is about 1 or 1.5 hours away. After a few weeks, I figured out a system where I could be very productive working from home &amp;mdash; certainly efficient enough so that there is a net gain in productivity due to commuting time. So, I spent a lot of time at Google working from home, and did quite well. (Early on, I spent a lot more time in the office, as I was still bright-eyed and bushy-tailed and was still trying to understand all of Google's inner workings, and this required being able to communicate with my coworkers more.)&lt;/p&gt;
-
-&lt;h2&gt;Don't be a gatekeeper unless it is really important.&lt;/h2&gt;
-
-&lt;p&gt;As organizations grow, certain groups start to feel important, entitled, or some other emotion, and begin injecting themselves into every process in the business. Some of these are really important, like privacy and security. For instance, a lot of managers believe that they are not doing anything unless they &lt;em&gt;change&lt;/em&gt; something, and so they sometimes like to start sticking themselves in processes they don't belong in.&lt;/p&gt;
-
-&lt;p&gt;My favorite instance of this at Google is that one of founders has to approve the application package of every single new hire (at least, for software engineers). Even though hiring is important, I am a little doubtful that his review does anything other than make him feel better.&lt;/p&gt;
-
-&lt;p&gt;Becasue of gatekeepers, you can end up with a giant checklist of people who have too much of a say in your project because someone in the past didn't have due diligence.
-This can really eat at the velocity of your project, especially small projects (where a just a few people have to deal with all of the gatekeeprs), and definitely at the morale of the team.&lt;/p&gt;
-
-&lt;p&gt;Google is large, and is brimming with gatekeepers. Which I find interesting, because Google has a really neat system for getting rid of gatekeepers: readability.&lt;/p&gt;
-
-&lt;p&gt;Let me explain readability. If you are new to Google or new to a programming language, most of your first code needs to be reviewed by an expert in that field &amp;mdash; a Java expert for example, who can say that your Java code meets all of the standard guidelines to maintainability, readability, and general sanity. After a while, you will become recognized as an expert as well (through a formal process), and you won't need to have this be part of every review anymore.&lt;/p&gt;
-
-&lt;p&gt;Perhaps a solution to gatekeeping would be to have more readability-like things: if you've launched a few projects that tackled certain thorny areas very well, then maybe you now have "readability" in those areas, and we can trust you a little bit more, and remove some bureaucracy from your plate. It's an idea at least. But the moral of the story is: don't insert yourself into the bureaucracy and become part of the problem unless there is no other choice.&lt;/p&gt;
-
-&lt;p&gt;Gatekeepers are a symptom of trust and communication mismanagement. When your product is ready for launch or has made some significant progress, all of a sudden, a bunch of gatekeepers (like your senior managers) take an interest in your project. Some of them will have looked at your project in its early phases to greenlight the concept, but to many of them, they may not have ever heard of you before. And, especially at the very highest levels, they only have 1 bit of communication down to you: launch or cancel.&lt;/p&gt;
-
-&lt;p&gt;This low-bandwidth communication is bad, especially if they see problems with your product or direction, and unfortunately, you may have just wasted a lot of effort (perhaps months or years of engineering) on something that is going in the scrap pile. This is perhaps avoidable by trusting the management below you to make the right decision early on. A senior manager having so much drastic control over a project sends a mixed message about trust.&lt;/p&gt;
-
-&lt;h2&gt;Writing is still incredibly important.&lt;/h2&gt;
-
-&lt;p&gt;Don't get me wrong, I understood this pretty well before. But even at Google, writing is still important. For one thing, any large company probably has a convoluted promotion process, and Google's, while leaner than some, still requires a lot of paperwork. Paperwork means writing, and if you can't communicate effectively about your own accomplishments, then you are just not going to get promoted, at Google or anywhere.&lt;/p&gt;
-
-&lt;p&gt;I've seen people time and time again tell me that "they just aren't good at writing about themselves" &amp;mdash; this has been nonsense every time. They were fine at writing about themselves, they just didn't &lt;em&gt;like&lt;/em&gt; to. In which case, too bad: if you want to get promoted, then just do it.&lt;/p&gt;
-
-&lt;p&gt;If you don't write about it, it didn't happen.&lt;/p&gt;
-
-&lt;h2&gt;Kids aren't nearly as good at computers as I thought they were.&lt;/h2&gt;
-
-&lt;p&gt;While not strictly workplace-related, this is something fun I learned at Google.&lt;/p&gt;
-
-&lt;p&gt;While working from Google, I was often the token Google engineer that was paraded around for local high schoolers that we would do some outreach for. I would answer questions from "how does search work?" to "do they really let you drink at work?". It was rewarding and I really enjoyed talking with them.&lt;/p&gt;
-
-&lt;p&gt;However, they were all just &lt;em&gt;terrible&lt;/em&gt; at technology, despite all that "kids these days" should be masters of all computers, cell phones, and whatnot. They should be tumblring circles around my desktop-loving self when it comes to, well, everything, but I'm pretty sure most of them couldn't program a VCR, or whatever the modern equivalent to that is. (For my younger readers, programming a VCR is perhaps the second most trivial "techie" thing to do in my generation, only slightly above having an alarm clock with the time set correctly (rather than blinking &lt;code&gt;12:00&lt;/code&gt;)).&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;I'm sure I learned more at Google, but those are perhaps some of the important things I felt I learned while working there.&lt;/p&gt;
-
-&lt;p&gt;I can't wait to see what I learn at my next job. :)&lt;/p&gt;
 </content></entry>
 </feed>
