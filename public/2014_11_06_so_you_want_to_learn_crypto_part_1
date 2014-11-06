@@ -1,0 +1,153 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>So You Want To Learn Crypto, Part 1 &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
+
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56218422-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about">About</a></li>
+			<li><a href="contact">Contact</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+			<li><a href="http://mathgineering.com">Consulting</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ChristopherSwenson">Google+</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive">Blog Archive</a></li>
+			<li><a href="mc">Modern Cryptanalysis</a></li>
+			<li><a href="https://artisanalcrypto.com">Artisinal Crypto</a></li>
+			<!--<li>Open Source Bounty</li>-->
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2014_11_06_so_you_want_to_learn_crypto_part_1">So You Want To Learn Crypto, Part 1</a></h1>
+<p>Cryptography and cryptanalysis are topics that fascinate many people, but it's a tricky area to get into.
+For instance, knowing the difference between a <a href="http://en.wikipedia.org/wiki/Hash_function">hash function</a> and a <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">cryptographically strong hash function</a> is critical, but extremely easy to mix up due to confusing terminology.
+In general, there's heavy jargon that takes serious studying to get a grasp on.</p>
+
+<p>Cryptography is also almost entirely a self-taught discipline: even today, there are few college and graduate courses on cryptography, and most of those only cover the basics. (Indeed, this is why I wrote my book on cryptanalysis: I wanted to teach a class on the topic, and there was no suitable text, so I wrote my own.)
+This means that it is reasonable, even necessary, to learn a great deal of crypto on your own.</p>
+
+<p>With that in mind, I'm going list a few resources, recommendations, and maybe even explain a little bit myself to help get you started.</p>
+
+<h2>Some resources to get you started</h2>
+
+<ul>
+<li><a href="https://twitter.com/lvh">lvh</a> has a video from PyCon 2013 called <a href="http://pyvideo.org/video/1778/crypto-101">Crypto 101</a>.
+I'm not the biggest fan of this video, as it goes through too much material in too short an amount of time, but it does give you a quick look at many different areas of cryptography.
+Since it does cover so much, don't worry if not everything clicks.
+Instead, I'd pick something that interests you, like hash functions or AES, and dive further into that one topic.
+If you try to tackle too many subjects at once, it might be overwhelming.</li>
+<li>Once you've figured out some areas you actually like, you can start digging in in that particular field.</li>
+<li>There are some great books on cryptography that you'll probably want to read eventually, so I'll go ahead and list some of them here:
+<ul>
+<li><a href="http://www.amazon.com/gp/product/047013593X/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=047013593X&amp;linkCode=as2&amp;tag=mathfigu-20&amp;linkId=T5SNSQXDSP6LHEER">Modern Cryptanlysis</a> by Christopher Swenson. Obviously, I'm a bit biased here, but I wrote some decent introduction sections to many areas of cryptography and cryptanalysis with lots of examples in Python, and there are far worse places to start. I focus primarily on block ciphers (like AES) and public key cryptography (like RSA).</li>
+<li><a href="http://www.amazon.com/gp/product/0471117099/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0471117099&amp;linkCode=as2&amp;tag=mathfigu-20&amp;linkId=CBNLGUN6PZETLFCV">Applied Cryptography</a> by Bruce Schneier. Extremely dated, but still has some useful stuff. A lot of block and stream cipher stuff.</li>
+<li><a href="http://www.amazon.com/gp/product/0471223573/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0471223573&amp;linkCode=as2&amp;tag=mathfigu-20&amp;linkId=6ZT4U6PDRCMS4V3V">Practical Cryptography</a> by Bruce Schneier. A good companion to Applied Cryptography that is a bit more updated, with lots of focus on understanding and correctly using cryptography.</li>
+<li><a href="http://www.amazon.com/gp/product/1420070029/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1420070029&amp;linkCode=as2&amp;tag=mathfigu-20&amp;linkId=CNJQJOUTTRFOKRBH">Algorithmic Cryptanalysis</a> by Antoine Joux. One of the newest books, and chock full of good stuff, with a focus on public key cryptography, stream ciphers, and lattices. This one's probably one of the most advanced cryptography books on the market.</li>
+<li><a href="http://cacr.uwaterloo.ca/hac/">Handbook for Applied Cryptography</a> by Alfred Menezes, Paul van Oorschot and Scott Vanstone. This book covers a lot of material, but I find it a little terse at times. It is free though, which is a big plus.</li>
+</ul></li>
+</ul>
+
+<p>This list is not comprehensive: it's probably best to just look at all of the available books, glance through some of the pages and the table of contents, and see if the style, approach, and depth meet your interests. In general, there are two kinds of crypto books you'll see on the market: academic ones and practical ones. When you start out learning, you'll definitely want to focus on the more practical tomes (Schneier and Swenson, for example), and start reading academic books (Joux's book, and many published by academic publishers like Springer) as you get more comfortable.</p>
+
+<h2>I know the basics, what next?</h2>
+
+<p>Once you know Crypto 101 and you want to dive into Crypto 201, where do you go?</p>
+
+<p>One great next step is to work on <a href="http://cryptopals.com/">The Matasano Crypto Challenges</a>.
+Not only will you have to learn a lot to complete them, but you'll have real experience making and breaking codes.
+I think this is a great next-step for a would-be crypto enthusiast.
+(And this is even a great step for cryptographers on any level &ndash; I certainly had fun doing them.)</p>
+
+<p>There are some Coursera courses on Cryptography taught by Dan Boneh (<a href="https://www.coursera.org/course/crypto">Cryptography I</a> and <a href="https://www.coursera.org/course/crypto2">Cryptography II</a>).
+I haven't taken them, but the instructor is top-notch, and the syllabi are solid.</p>
+
+<p>As you progress further in your knowledge, you should start reading recent research papers in cryptography.
+One great place to keep track of is the IACR <a href="http://eprint.iacr.org/">Cryptology ePrint Archive</a>.
+These are the cutting edge of cryptography and cryptanalysis, and they range from beginner-friendly to extremely deep, specialist literature.
+The writing and publication quality of the cutting-edge papers also has a wide range.
+And even though it is possible to learn almost everything about cryptography and cryptanalysis for free from these papers, the books in the previous section are often much easier to learn from since they have consistent writing style, terminology, notation, and editing.</p>
+
+<h2>This part confuses me. Help!</h2>
+
+<p>I'm going to have some more blog posts in the near future clearing up some areas that I've seen be particularly sticky for some people.
+In particular, I know that there are some sticky points in finite fields, RSA, and hashing that I think I can help clarify.</p>
+
+<p>Check back next week for part 2 of <em>So You Want To Learn Crypto</em>.</p>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>
