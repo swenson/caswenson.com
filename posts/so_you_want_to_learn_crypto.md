@@ -34,7 +34,7 @@ Once you know Crypto 101 and you want to dive into Crypto 201, where do you go?
 One great next step is to work on [The Matasano Crypto Challenges](http://cryptopals.com/).
 Not only will you have to learn a lot to complete them, but you'll have real experience making and breaking codes.
 I think this is a great next-step for a would-be crypto enthusiast.
-(And this is even a great step for cryptographers on any level — I certainly had fun doing them.)
+(And this is even a great step for cryptographers on any level &ndash; I certainly had fun doing them.)
 
 There are some Coursera courses on Cryptography taught by Dan Boneh ([Cryptography I](https://www.coursera.org/course/crypto) and [Cryptography II](https://www.coursera.org/course/crypto2)).
 I haven't taken them, but the instructor is top-notch, and the syllabi are solid.
