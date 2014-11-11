@@ -4,6 +4,7 @@
 	<title>Mc &mdash; Christopher Swenson</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
 
 	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
 	<script src="js/shCore.js" type="text/javascript"></script>
