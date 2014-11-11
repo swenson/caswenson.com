@@ -9,6 +9,9 @@ import shutil
 import string
 import subprocess as sp
 import time
+import uuid
+
+uuid_namespace = uuid.UUID('fcd0d678-5e95-4d62-9551-ac14caa3ce22')
 
 INDEX_POSTS = 10
 RSS_POSTS = 10
@@ -64,6 +67,7 @@ print "Posting"
 posts_text = ""
 archive_text = """<ul id="archive">"""
 atom_text = ""
+rss_text = ""
 processed = 0
 for mtime, post in posts:
   lines = post.split("\n")
@@ -78,6 +82,7 @@ for mtime, post in posts:
     posts_text += """<div class="date">%s</div>""" % pdate
     posts_text += """%s%s</div>""" % (post_h1, post_body)
   if processed < RSS_POSTS:
+    # Atom
     entry = et.Element("entry")
     title = et.SubElement(entry, "title")
     title.text = post_title
@@ -100,6 +105,21 @@ for mtime, post in posts:
     content.set("type", "html")
     content.text = post_body
     atom_text += et.tostring(entry, "utf-8")
+
+    # RSS
+    item = et.Element("item")
+    title = et.SubElement(item, "title")
+    title.text = post_title
+    linker = et.SubElement(item, "link")
+    linker.text = 'http://www.caswenson.com/' + link
+    guid = et.SubElement(item, "guid")
+    guid.text = str(uuid.uuid5(uuid_namespace, post_body))
+    published = et.SubElement(item, "pubDate")
+    published.text = time.strftime("%a, %d %b %Y %H:%M:%S %z", time.gmtime(mtime))
+    content = et.SubElement(item, "description")
+    content.text = post_body
+    rss_text += et.tostring(item, "utf-8")
+
   processed += 1
 
   archive_text += """<li><a href="%s">%s</a></li>""" % (link, post_title)
@@ -125,11 +145,18 @@ with open("public/archive", "w") as archive:
   archive.write(index_template.format(title="Archive", posts=archive_text, disqus=""))
 
 print "Atom"
-# Create RSS
+# Create Atom
 with open("public/feed", "w") as rss:
   mtime = posts[0][0]
   modified_time = time.strftime("%Y-%m-%dT%H:%M:%S-00:00", time.gmtime(mtime))
   rss.write(rss_template % (modified_time, atom_text))
+
+print "RSS 2.0"
+# Create RSS
+with open("public/rss", "w") as rss:
+  mtime = posts[0][0]
+  modified_time = time.strftime("%a, %d %b %Y %H:%M:%S %z", time.gmtime(mtime))
+  rss.write(rss_template % (modified_time, rss_text))
 
 print "Pages"
 # Create Pages

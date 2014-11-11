@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Christopher Swenson</title>
+  <id>http://www.caswenson.com/</id>
+  <updated>Mon, 10 Nov 2014 16:51:59 -0800</updated>
+  <author>
+    <name>Christopher Swenson</name>
+  </author>
+<item><title>How to pronounce programming words</title><link>http://www.caswenson.com/2014_11_10_how_to_pronounce_programming_words</link><guid>4d68b6bf-1482-599f-9abd-107b1c22294c</guid><pubDate>Mon, 10 Nov 2014 16:51:59 -0800</pubDate><description>
+&lt;p&gt;Certain words in programming I've seen people mangle in various ways, and
+many times, I realized that I don't actually know the correct way to pronounce them.&lt;/p&gt;
+
+&lt;p&gt;So, I've constructed a list of what I consider to be the correct pronounciations
+of various words.
+I've tried to use the original authors of as the source, when possible, or other authoritative sources.&lt;/p&gt;
+
+&lt;p&gt;In alphabetical order:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Akka&lt;/em&gt;: ahh kahh, &lt;a href="https://www.youtube.com/watch?v=GBvtE61Wrto"&gt;https://www.youtube.com/watch?v=GBvtE61Wrto&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Clique&lt;/em&gt;: click, &lt;a href="https://www.youtube.com/watch?v=txaGsawljjA"&gt;https://www.youtube.com/watch?v=txaGsawljjA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;GIF&lt;/em&gt;: jif, sorry, &lt;a href="http://www.olsenhome.com/gif/"&gt;http://www.olsenhome.com/gif/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;GNU&lt;/em&gt;: guh-new, &lt;a href="http://upload.wikimedia.org/wikipedia/commons/2/24/En-gnu.ogg"&gt;http://upload.wikimedia.org/wikipedia/commons/2/24/En-gnu.ogg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Godel&lt;/em&gt;: gurr-dle, &lt;a href="http://upload.wikimedia.org/wikipedia/commons/f/fd/Kurt_g%C3%B6del.ogg"&gt;http://upload.wikimedia.org/wikipedia/commons/f/fd/Kurt_g%C3%B6del.ogg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Knuth&lt;/em&gt;: kuh-nooth, &lt;a href="http://cs.stanford.edu/~uno/faq.html"&gt;http://cs.stanford.edu/~uno/faq.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;LaTeX&lt;/em&gt;: Leslie Lamport says there is no official pronunciation. Knuth pronounces it lah-tech, &lt;a href="http://www.webofstories.com/play/donald.knuth/69;jsessionid=57A6533A825A17DE1474F30F5B254ADD"&gt;http://www.webofstories.com/play/donald.knuth/69;jsessionid=57A6533A825A17DE1474F30F5B254ADD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Linux&lt;/em&gt;: Lih-nucks, &lt;a href="https://www.youtube.com/watch?v=uK0xXFZtJ8Q"&gt;https://www.youtube.com/watch?v=uK0xXFZtJ8Q&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;MySQL&lt;/em&gt;: my-ess-que-ell, &lt;a href="https://www.youtube.com/watch?v=nalzRhtn-vw"&gt;https://www.youtube.com/watch?v=nalzRhtn-vw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;NumPy&lt;/em&gt;: num-pie, &lt;a href="https://www.youtube.com/watch?v=vrPRwUOt-7k"&gt;https://www.youtube.com/watch?v=vrPRwUOt-7k&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;OS X&lt;/em&gt;: oh-ess-Ten, &lt;a href="https://www.youtube.com/watch?v=WcZqJHH3Gkc"&gt;https://www.youtube.com/watch?v=WcZqJHH3Gkc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;PyPI&lt;/em&gt;: pie pee eye, &lt;a href="http://www.quora.com/How-do-Pythonistas-pronounce-PyPy-and-PyPI"&gt;http://www.quora.com/How-do-Pythonistas-pronounce-PyPy-and-PyPI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Qt&lt;/em&gt;: cute, &lt;a href="https://www.youtube.com/watch?v=2hE-Oo4ltJg"&gt;https://www.youtube.com/watch?v=2hE-Oo4ltJg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Scala&lt;/em&gt;: scah-lah, rhymes with challah, &lt;a href="https://www.youtube.com/watch?v=ecekSCX3B4Q"&gt;https://www.youtube.com/watch?v=ecekSCX3B4Q&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;SQL&lt;/em&gt;: ess-que-ell (since Sequel is the predecessor), &lt;a href="https://www.youtube.com/watch?v=BvmMGHtqY6Q"&gt;https://www.youtube.com/watch?v=BvmMGHtqY6Q&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;TeX&lt;/em&gt;: tech. &lt;a href="https://www.youtube.com/watch?v=C3vILM2cNuo"&gt;https://www.youtube.com/watch?v=C3vILM2cNuo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Trie&lt;/em&gt;: tree, &lt;a href="http://www.webcitation.org/5pqUULy24"&gt;http://www.webcitation.org/5pqUULy24&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;von Neumann&lt;/em&gt;: von noi-man &lt;a href="https://www.youtube.com/watch?v=VTS9O0CoVng"&gt;https://www.youtube.com/watch?v=VTS9O0CoVng&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description></item><item><title>So You Want To Learn Crypto, Part 1</title><link>http://www.caswenson.com/2014_11_06_so_you_want_to_learn_crypto_part_1</link><guid>a40ced9c-d8fe-5ed8-bc23-07f1535dba3b</guid><pubDate>Thu, 06 Nov 2014 20:32:27 -0800</pubDate><description>
+&lt;p&gt;Cryptography and cryptanalysis are topics that fascinate many people, but it's a tricky area to get into.
+For instance, knowing the difference between a &lt;a href="http://en.wikipedia.org/wiki/Hash_function"&gt;hash function&lt;/a&gt; and a &lt;a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function"&gt;cryptographically strong hash function&lt;/a&gt; is critical, but extremely easy to mix up due to confusing terminology.
+In general, there's heavy jargon that takes serious studying to get a grasp on.&lt;/p&gt;
+
+&lt;p&gt;Cryptography is also almost entirely a self-taught discipline: even today, there are few college and graduate courses on cryptography, and most of those only cover the basics. (Indeed, this is why I wrote my book on cryptanalysis: I wanted to teach a class on the topic, and there was no suitable text, so I wrote my own.)
+This means that it is reasonable, even necessary, to learn a great deal of crypto on your own.&lt;/p&gt;
+
+&lt;p&gt;With that in mind, I'm going list a few resources, recommendations, and maybe even explain a little bit myself to help get you started.&lt;/p&gt;
+
+&lt;h2&gt;Some resources to get you started&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/lvh"&gt;lvh&lt;/a&gt; has a video from PyCon 2013 called &lt;a href="http://pyvideo.org/video/1778/crypto-101"&gt;Crypto 101&lt;/a&gt;.
+I'm not the biggest fan of this video, as it goes through too much material in too short an amount of time, but it does give you a quick look at many different areas of cryptography.
+Since it does cover so much, don't worry if not everything clicks.
+Instead, I'd pick something that interests you, like hash functions or AES, and dive further into that one topic.
+If you try to tackle too many subjects at once, it might be overwhelming.&lt;/li&gt;
+&lt;li&gt;Once you've figured out some areas you actually like, you can start digging in in that particular field.&lt;/li&gt;
+&lt;li&gt;There are some great books on cryptography that you'll probably want to read eventually, so I'll go ahead and list some of them here:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.amazon.com/gp/product/047013593X/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=047013593X&amp;amp;linkCode=as2&amp;amp;tag=mathfigu-20&amp;amp;linkId=T5SNSQXDSP6LHEER"&gt;Modern Cryptanlysis&lt;/a&gt; by Christopher Swenson. Obviously, I'm a bit biased here, but I wrote some decent introduction sections to many areas of cryptography and cryptanalysis with lots of examples in Python, and there are far worse places to start. I focus primarily on block ciphers (like AES) and public key cryptography (like RSA).&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.amazon.com/gp/product/0471117099/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0471117099&amp;amp;linkCode=as2&amp;amp;tag=mathfigu-20&amp;amp;linkId=CBNLGUN6PZETLFCV"&gt;Applied Cryptography&lt;/a&gt; by Bruce Schneier. Extremely dated, but still has some useful stuff. A lot of block and stream cipher stuff.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.amazon.com/gp/product/0471223573/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0471223573&amp;amp;linkCode=as2&amp;amp;tag=mathfigu-20&amp;amp;linkId=6ZT4U6PDRCMS4V3V"&gt;Practical Cryptography&lt;/a&gt; by Bruce Schneier. A good companion to Applied Cryptography that is a bit more updated, with lots of focus on understanding and correctly using cryptography.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.amazon.com/gp/product/1420070029/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=1420070029&amp;amp;linkCode=as2&amp;amp;tag=mathfigu-20&amp;amp;linkId=CNJQJOUTTRFOKRBH"&gt;Algorithmic Cryptanalysis&lt;/a&gt; by Antoine Joux. One of the newest books, and chock full of good stuff, with a focus on public key cryptography, stream ciphers, and lattices. This one's probably one of the most advanced cryptography books on the market.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cacr.uwaterloo.ca/hac/"&gt;Handbook for Applied Cryptography&lt;/a&gt; by Alfred Menezes, Paul van Oorschot and Scott Vanstone. This book covers a lot of material, but I find it a little terse at times. It is free though, which is a big plus.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This list is not comprehensive: it's probably best to just look at all of the available books, glance through some of the pages and the table of contents, and see if the style, approach, and depth meet your interests. In general, there are two kinds of crypto books you'll see on the market: academic ones and practical ones. When you start out learning, you'll definitely want to focus on the more practical tomes (Schneier and Swenson, for example), and start reading academic books (Joux's book, and many published by academic publishers like Springer) as you get more comfortable.&lt;/p&gt;
+
+&lt;h2&gt;I know the basics, what next?&lt;/h2&gt;
+
+&lt;p&gt;Once you know Crypto 101 and you want to dive into Crypto 201, where do you go?&lt;/p&gt;
+
+&lt;p&gt;One great next step is to work on &lt;a href="http://cryptopals.com/"&gt;The Matasano Crypto Challenges&lt;/a&gt;.
+Not only will you have to learn a lot to complete them, but you'll have real experience making and breaking codes.
+I think this is a great next-step for a would-be crypto enthusiast.
+(And this is even a great step for cryptographers on any level &amp;ndash; I certainly had fun doing them.)&lt;/p&gt;
+
+&lt;p&gt;There are some Coursera courses on Cryptography taught by Dan Boneh (&lt;a href="https://www.coursera.org/course/crypto"&gt;Cryptography I&lt;/a&gt; and &lt;a href="https://www.coursera.org/course/crypto2"&gt;Cryptography II&lt;/a&gt;).
+I haven't taken them, but the instructor is top-notch, and the syllabi are solid.&lt;/p&gt;
+
+&lt;p&gt;As you progress further in your knowledge, you should start reading recent research papers in cryptography.
+One great place to keep track of is the IACR &lt;a href="http://eprint.iacr.org/"&gt;Cryptology ePrint Archive&lt;/a&gt;.
+These are the cutting edge of cryptography and cryptanalysis, and they range from beginner-friendly to extremely deep, specialist literature.
+The writing and publication quality of the cutting-edge papers also has a wide range.
+And even though it is possible to learn almost everything about cryptography and cryptanalysis for free from these papers, the books in the previous section are often much easier to learn from since they have consistent writing style, terminology, notation, and editing.&lt;/p&gt;
+
+&lt;h2&gt;This part confuses me. Help!&lt;/h2&gt;
+
+&lt;p&gt;I'm going to have some more blog posts in the near future clearing up some areas that I've seen be particularly sticky for some people.
+In particular, I know that there are some sticky points in finite fields, RSA, and hashing that I think I can help clarify.&lt;/p&gt;
+
+&lt;p&gt;Check back next week for part 2 of &lt;em&gt;So You Want To Learn Crypto&lt;/em&gt;.&lt;/p&gt;
+</description></item><item><title>What I Learned As A Teen Programmer</title><link>http://www.caswenson.com/2014_10_26_what_i_learned_as_a_teen_programmer</link><guid>2752b5ac-a2e3-5bb3-9fe3-f11a4f4d6f73</guid><pubDate>Mon, 27 Oct 2014 01:38:59 -0800</pubDate><description>
+&lt;p&gt;I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
+Reading through the source code, I thought a lot about how much I had grown as a developer and engineer since that long-forgotten summer.
+For instance, I now understand things like (ha!) having a consistent style (some of my code was indented over 24 spaces so that it would be in the middle of the monitor), writing comments (there are basically no comments in this code), and tests (I didn't even know that testing was a thing).
+But, I also realized that writing that emulator, and all of the development I did at the time, laid a strange foundation that colored how I've thought about programming since.&lt;/p&gt;
+
+&lt;p&gt;Up to that point, I'd puttered around a little in BASIC and C, but I didn't fall in love with programming until I discovered assembly language.
+Assembly was the first thing that really clicked for me: it was so simple, its semantics were so clear, and I found some great resources to help me learn (e.g., a nice tutorial I found on a BBS).
+So, in my heart, assembly language is my first language.&lt;/p&gt;
+
+&lt;p&gt;When I tell this to people now, they give me strange looks.
+It's almost unfathomable to teach people assembly language first.
+But, in doing so, I learned an awful lot about how software works, how computers work, and what foundation programming languages are built on top of.&lt;/p&gt;
+
+&lt;p&gt;My masterpiece as a teen programmer was the NES emulator I wrote  entirely in x86 assembly language: almost exactly 10,000 lines of it.
+This was my first taste of a real program: it was potentially useful, it had meaning, and it was a moderately large software project (my first).
+Programming this was what made me dig deep and learn how to program.&lt;/p&gt;
+
+&lt;p&gt;Here's some things that writing that emulator, and assembly language in general, taught me:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Data is just memory&lt;/strong&gt;. I remember trying to understand pointers in C and being incredibly frustrated with the strange syntax and the weird semantics. On the other hand, dealing with memory in assembly is so clearcut: memory is just a giant flat array (more or less), and pointers just point to stuff in that giant array. Indirect references, arrays of pointers, etc., make so much more sense when boiled down like this.&lt;/p&gt;
+
+&lt;p&gt;Even today, when trying to visualize many problems, I think to myself: what does this look like in memory? What structures are being used and how are they laid out? This helps me understand how algorithms and data structures work together.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;How to write everything yourself.&lt;/strong&gt; There were some limited BIOS and DOS kernel calls, but for the most part, if I needed some capability, say, reading from a floppy drive or writing to the screen, I had to write it from scratch: calling I/O ports, reading and writing to RAM addresses, etc. If I wanted graphics, I had to draw every single pixel myself. These days, I know that this is just reinventing the wheel, something normally regarded as a bad habit; however, I also learned an awful lot about inventing wheels doing it.
+I still have the bad habit of writing too many things myself, and not leveraging existing libraries as often as I should, so this lesson wasn't a complete victory.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sometimes you just have to buckle down and program all of the tedious parts&lt;/strong&gt;. A big part of the NES emulator is writing a cycle-accurate CPU emulator. I'm sure that you can imagine how daunting it must be to start writing &lt;code&gt;CPU.ASM&lt;/code&gt; and have an empty jump table with 256 entries, knowing that you have to write all 256 functions to handle every single operation. Even worse, you have to get every single piece &lt;em&gt;exactly&lt;/em&gt; right.&lt;/p&gt;
+
+&lt;p&gt;This taught me an extremely valuable skill: being able to focus on tedious, repetitive tasks.
+Programming is absolutely chock-full of tedious programming that is absolutely necessary.
+A great example is date and time functionality (especially time zones): incredibly important code to get correct, but so incredibly tedious and detail-oriented.
+Being able to dive into thousands of pages of specifications and turn them into working libraries and APIs has paid great dividends in my career as a software engineer, and I first learned that here.
+Being methodical and untiring is a great skill.&lt;/p&gt;
+
+&lt;p&gt;And really, sometimes there is just no elegant solution. Often I see programmers strive to come up with a beautiful, simple, clean way to solve a problem, only to realize that the solution doesn't stand up to reality. Sometimes reality is &lt;em&gt;ugly&lt;/em&gt;, and sometimes you have to write &lt;em&gt;ugly&lt;/em&gt; code to solve it: you just need to program your way out of it.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Assembly is useful&lt;/strong&gt;. Learning assembly has come in handy countless times: reading GDB disassembly of my code for degugging, understanding and optimizing performance, writing compilers. Every time I see an assembly dump on a screen, it feels like home.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;You have to fail a lot to succeed&lt;/strong&gt;. When writing code as a teenager in assembly language, I spent a lot of time crashing my computer. I mean, assembly is really easy to get wrong.
+When you get it wrong, you often do so catastrophically.&lt;/p&gt;
+
+&lt;p&gt;But more so, in order to learn how to build things, you first have to learn to build them wrong, and learn to recognize your mistakes. And this code is just full of mistakes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
+I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.&lt;/p&gt;
+</description></item><item><title>ttyrec conversion</title><link>http://www.caswenson.com/2014_10_19_ttyrec_conversion</link><guid>ac7f0c3a-dcbd-5204-aea4-c945960dcbe1</guid><pubDate>Sun, 19 Oct 2014 18:44:14 -0800</pubDate><description>
+&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
+I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
+
+&lt;p&gt;I'd found some pieces of tools that might do the job around the Internet: &lt;a href="http://nethack.wikia.com/wiki/Notable_ascensions"&gt;TTY "recordings" of NetHack ascensions&lt;/a&gt; (essentially, replaying through the terminal sequences while they are playing), &lt;a href="https://github.com/selectel/pyte"&gt;pyte&lt;/a&gt; (a Python terminal emulator), and &lt;a href="https://pypi.python.org/pypi/images2gif"&gt;images2gif&lt;/a&gt; (a mostly working animated GIF maker).&lt;/p&gt;
+
+&lt;p&gt;It's &lt;em&gt;almost&lt;/em&gt; there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an &lt;a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png"&gt;old  DOS bitmap font&lt;/a&gt;, and then all of the glue code to make it all work together.
+I sped up the results by 5&amp;times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.&lt;/p&gt;
+
+&lt;p&gt;I open sourced the whole thing as &lt;a href="https://github.com/swenson/ttyrec2gif"&gt;ttyrec2gif&lt;/a&gt;. It produces nice GIFs like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://m.caswenson.com/images/out00001.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There's one last piece: how to actually turn this into a screen saver.&lt;/p&gt;
+
+&lt;p&gt;In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)&lt;/p&gt;
+
+&lt;p&gt;Anyway, at the very least, there are some cool GIFs out there to look at now.
+I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).&lt;/p&gt;
+</description></item><item><title>Pyway or the highway</title><link>http://www.caswenson.com/2014_10_12_pyway_or_the_highway</link><guid>f4b596d1-6b2d-50e7-b324-fac66cda24ab</guid><pubDate>Sun, 12 Oct 2014 19:15:24 -0800</pubDate><description>
+&lt;p&gt;&lt;a href="https://github.com/swenson/pyway"&gt;Pyway&lt;/a&gt; is a database migration tool that I wrote to solve the problem of: I want database migrations, but I don't want to bring &lt;a href="http://guides.rubyonrails.org/migrations.html"&gt;Rails&lt;/a&gt; or the entire &lt;a href="http://flywaydb.org/"&gt;JVM&lt;/a&gt; with me just to do them.&lt;/p&gt;
+
+&lt;p&gt;So, I wrote a little script that does the most simple thing you can do with database migrations: keep track of them by file name, and run any new ones in sorted order.
+Python is pretty much universally present at this point in server environments, so that's the tool that I used.&lt;/p&gt;
+
+&lt;p&gt;This is nothing sophisticated, and currently has &lt;code&gt;sqlite3&lt;/code&gt; hardcoded in it, but it should be trivial to modify for any other databases.
+I didn't even use Python bindings for &lt;code&gt;sqlite3&lt;/code&gt;: I just called the command-line program to do the migrations.
+That way, it should be easy to modify it for other databases in the near future.&lt;/p&gt;
+
+&lt;p&gt;I'll probably end up adding Postgres or MySQL support sometime soon (when one of my projects that uses those technologies needs to be updated).&lt;/p&gt;
+</description></item><item><title>This Holacracy Thing</title><link>http://www.caswenson.com/2014_10_05_this_holacracy_thing</link><guid>978da426-9ea0-5497-a3a4-4587d11c6998</guid><pubDate>Sun, 05 Oct 2014 21:35:58 -0800</pubDate><description>
+&lt;p&gt;I've had a busy year where I've been trying out a lot of new ideas for working
+and collaborating, and learning a lot.
+One thing that I learned about and experienced for a few weeks was the system of &lt;a href="http://en.wikipedia.org/wiki/Holacracy"&gt;Holacracy&lt;/a&gt;.
+The goal of Holacracy is to have a managerless, self-organized team of people rather than having a traditional top-down management tree.
+First, I'll state that my view of Holacracy comes after only about a month of working within it, and I don't feel that even after that I fully got it. So take this post with a grain of salt.&lt;/p&gt;
+
+&lt;h2&gt;It's an AI for a boss&lt;/h2&gt;
+
+&lt;p&gt;The initial appeal of Holacracy was that the group within the startup I was working at had no boss.
+The Holacratic system has enough processes in place to theoretically allow decisions to be made without a central leader: a true peer-to-peer sort of system.&lt;/p&gt;
+
+&lt;p&gt;Essentially, we had several Holacracy meetings a week.
+These meetings were incredibly structure-heavy.
+People would propose ideas at point A, discuss them at point B, and these discussions and round robins followed rules that theoretically ensured fairness.&lt;/p&gt;
+
+&lt;p&gt;An insight I had to this was that &lt;em&gt;your team is controlling an NPC "boss"&lt;/em&gt;, and you have a little script that you run through to control its AI.&lt;/p&gt;
+
+&lt;p&gt;This sounds like a good thing: if you have a very small team, maybe only a couple of people, it might seem like there would not be enough work for a full-time manager.
+So you can have a cardboard cutout that you all pretend is your boss, and you have a system through which your cardboard captain makes decisions.
+(I like to think of my cardboard cutout boss as Captain Picard.)&lt;/p&gt;
+
+&lt;h2&gt;It's too complex&lt;/h2&gt;
+
+&lt;p&gt;But, this AI is quite complex.
+Holacracy has a lot of rules.
+And I mean &lt;a href="http://holacracy.org/constitution"&gt;a lot&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There was a discussion I had with someone at the startup where they indicated that Holacracy was probably impossible to understand (and certainly to get right) without hiring a special Holacracy consulting company to come in and help you adopt the system &amp;mdash; helping you go learn the rules and make your Captain Picard make decisions, basically.&lt;/p&gt;
+
+&lt;p&gt;This kind of put me off.
+A system that's so complex that it takes weeks of training to be able to even use it to have a constructive meeting?
+It smells a bit fishy to me.
+Meetings are hard, but they're not &lt;em&gt;that&lt;/em&gt; hard, even for a cave troll programmer like me.
+There are entire consulting companies who would love to sell you tons of expensive training for Holacracy.&lt;/p&gt;
+
+&lt;p&gt;To make it even worse, it's also nearly impossible to run with Holacracy without using special Holacracy meeting software to help you facilitate your meetings.
+There's a lot of structure and rules, and the software helps enforce these rules.
+This also smells a bit fishy.&lt;/p&gt;
+
+&lt;p&gt;Being a newcomer to this incredibly confusing set of rules was also incredibly unpleasant.
+I felt lost in a maze of rules.
+I felt that I couldn't contribute to meetings because I didn't even know when I was allowed to talk.
+And when I was allowed to talk, I often didn't know what to say.
+(There are lots of magic words you use to indicate your status, and I sort of had to learn these
+all from context.)
+Given that I was on a feeler contract (before I came on full-time), I was not given any training in Holacracy.&lt;/p&gt;
+
+&lt;p&gt;Finally, with such elaborate rules, there's inevitable rules-lawyering.
+The rules are meant to be used as a weapon to combat inefficiency, but sometimes people get wrapped up
+in them to the point that legitimate, necessary work was dropped on the floor because it did not
+fit into the system well.
+I felt that at times this did a disservice to the team, and certainly to the users of our software.&lt;/p&gt;
+
+&lt;h2&gt;It's time-consuming&lt;/h2&gt;
+
+&lt;p&gt;Given the AI manager and the complex rules, I think it's about a wash so far.
+It's nice not to have a manager, but annoying to have a large RPG rules book to memorize before starting work.&lt;/p&gt;
+
+&lt;p&gt;But, those meetings to make Captain Picard dance were &lt;em&gt;ridiculously time-consuming&lt;/em&gt;.
+I'm of the leave-me-alone-so-I-can-code-in-my-cave School of Programming.
+I can be coaxed out of my cave for the occasional meeting, and sometimes even enjoy it.
+But the level of meetings required for the Captain Picard gears to run was debilitating.
+Hours and hours each week were spent.
+Several people had a significant amount of work before and after meetings dedicated to cleanup and prep work.
+(And even during the meeting, a couple of people were often not allowed to participate in discussions, or supposed to limit such contributions significantly, as they played the role of facilitator, secretary, etc.)&lt;/p&gt;
+
+&lt;h2&gt;In conclusion&lt;/h2&gt;
+
+&lt;p&gt;Coming in as a new hire is daunting.
+You are adjusting to a new team, learning their quirks, and learning their work.
+When you add on a whole new system of thinking about meetings and management, and give no training (when a lot of training is required), you are setting people up to fail.
+It certainly was just too much for me.
+Holacracy was a huge contributor to my deciding not to work for this particular company long-term.&lt;/p&gt;
+
+&lt;p&gt;The company that I worked with clearly prefers Holacracy, and that's their prerogative.
+And if it works for them, that's great.
+But, I didn't feel comfortable in that system, and &lt;a href="http://recode.net/2014/10/03/holacracy-or-hella-crazy-the-fringe-ideas-driving-the-las-vegas-downtown-project/"&gt;I don't think I'm the only one&lt;/a&gt;.
+I don't expect to in the future, and I plan to avoid working for companies that embrace Holacracy.&lt;/p&gt;
+
+&lt;p&gt;Or, you know, maybe Holacracy could be rebranded to use an actual Captain Picard cardboard cutout and a real RPG-like rulebook.
+I might have had more fun then.&lt;/p&gt;
+</description></item><item><title>Adobe Source Code Pro</title><link>http://www.caswenson.com/2014_01_25_adobe_source_code_pro</link><guid>55880c22-e7ec-5837-ad62-b0364e61143b</guid><pubDate>Sun, 26 Jan 2014 03:15:29 -0800</pubDate><description>
+&lt;p&gt;Just thought I would mention, since I haven't talked about fonts for a while,
+that I would give a short update.&lt;/p&gt;
+
+&lt;p&gt;About a year ago, I decided to try
+&lt;a href="http://blogs.adobe.com/typblography/2012/09/source-code-pro.html"&gt;Adobe Source Code Pro&lt;/a&gt;,
+a new fixed-width font.&lt;/p&gt;
+
+&lt;p&gt;Since I kind of forgot that I was using it, and the experiment has gone on a year,
+I'll consider it a success.&lt;/p&gt;
+
+&lt;p&gt;I definitely notice that Source Code Pro is better suited to the desktop and
+laptop world: the font has a bit higher heights and feels a little more natural
+at lower dpi, larger screens (compared to Droid Sans Mono).&lt;/p&gt;
+
+&lt;p&gt;It's free. Give it a shot.&lt;/p&gt;
+
+&lt;p&gt;P.S.  Also, the web site got a bit of a facelift!&lt;/p&gt;
+</description></item><item><title>A Minimalistic RSS Reader</title><link>http://www.caswenson.com/2013_08_25_a_minimalistic_rss_reader</link><guid>4ab53fc1-eccd-5d2d-8dea-453a881b2ce2</guid><pubDate>Sun, 25 Aug 2013 22:34:03 -0800</pubDate><description>
+&lt;p&gt;Saddened by the demise of Google Reader a few months ago, I completely gave up on RSS feeds and just cut myself off from the world.&lt;/p&gt;
+
+&lt;p&gt;A few days ago, I finally decided it was time to move on. Unfortunately, I haven't been super pleased with the options available out there.
+Plus, I realized I didn't want to get burned again when they inevitably close and break my heart.&lt;/p&gt;
+
+&lt;p&gt;So, like dozens of other people, I just decided to write my own RSS feed reader.&lt;/p&gt;
+
+&lt;h1&gt;One user&lt;/h1&gt;
+
+&lt;p&gt;One fundamental design decision I made early on is that this system would only support one user, and so I can throw out 95% of the complexity of designing the system right off the bat.&lt;/p&gt;
+
+&lt;p&gt;Examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No security. I can throw web page up under an Apache proxy with SSL and basic auth to allow only me in. I don't need to mess with logins or anything.&lt;/li&gt;
+&lt;li&gt;No database. The entire state of the program will just be written out as a JSON blob periodically and read in on startup.&lt;/li&gt;
+&lt;li&gt;No frills. I only use a few basic features, so I'm only going to implement those. This also means that the page looks incredibly ugly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1&gt;Open&lt;/h1&gt;
+
+&lt;p&gt;I wrote it in Go (requires 1.1+) and open sourced it at https://github.com/swenson/littlereader under the MIT license.
+Feel free to use it, adapt it, whatever.&lt;/p&gt;
+
+&lt;p&gt;It's not finished, but it has nearly every feature I need right now.&lt;/p&gt;
+</description></item><item><title>Day Camp 4 Developers</title><link>http://www.caswenson.com/2013_07_21_day_camp_4_developers</link><guid>32690b9c-8806-51ad-9d22-e817ee6b0888</guid><pubDate>Mon, 22 Jul 2013 06:27:40 -0800</pubDate><description>
+&lt;p&gt;I'll be talking at this week's &lt;a href="http://daycamp4developers.com/"&gt;Day Camp 4 Developers&lt;/a&gt; on version control
+(or source code control, or source code management, or whatever we want to call it this week).
+It'll be an introductory talk introducing why you should use version control, how it works in general, and then going into some specific workflows with git, the notorious version control system.
+I've had a lot of fun writing the talk, so it should be a lot of fun to hear it.&lt;/p&gt;
+
+&lt;p&gt;There are several other great talks that are going to happen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lorna Jane Mitchell: Practical Software Estimation Techniques, or "How Late?"&lt;/li&gt;
+&lt;li&gt;Thursday Bram: How to Make Good Documentation a Regular Part of Your Day&lt;/li&gt;
+&lt;li&gt;Brendan Wovchko: How to Speak Business &amp;amp; Eradicate Confusion in Software Development&lt;/li&gt;
+&lt;li&gt;Me: Source Code Management and Version Control&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It's only $40 to sit on this great set of talks. Friday, July 26, 2013. 8am PST to 12:30am PST.&lt;/p&gt;
+</description></item><item><title>Configuration files in Go</title><link>http://www.caswenson.com/2013_06_01_configuration_files_in_go</link><guid>af00d9bc-166c-5fdb-87e3-6961e7f21347</guid><pubDate>Sat, 01 Jun 2013 18:45:38 -0800</pubDate><description>
+&lt;p&gt;The other day, I was starting to port an existing service I had into Go.
+There were a lot of issues that I had to tackle to get the functionality I wanted,
+including being able to run in at least four different environments:
+test, dev, stage, and prod.&lt;/p&gt;
+
+&lt;p&gt;There are a lot of "standard" ways to do this, most focusing on some sort
+of text or structured file that you load at runtime using file I/O.&lt;/p&gt;
+
+&lt;p&gt;However, in dynamic languages, a somewhat common practice is to use a file
+in that programming language as your configuration. So, in Python, you might
+have a &lt;code&gt;settings.py&lt;/code&gt; file that is actual executed Python.&lt;/p&gt;
+
+&lt;p&gt;In non-scripting languages, like Java, you normally have an XML, YAML, INI,
+or JSON file that you read in.
+But, I've seen at least one non-scripting language, Clojure, that encourages using
+an executable Clojure file for configuration.&lt;/p&gt;
+
+&lt;p&gt;The primary argument against using a file in your programming language itself
+is that the compile time may be long, and deploying a brand new binary just to
+change the config file is laborious and slow.&lt;/p&gt;
+
+&lt;p&gt;But, I thought, Go doesn't have this limitation:
+Go compiles super fast, and the binaries tend to be reasonably sized,
+so deploys won't be that big of a deal.&lt;/p&gt;
+
+&lt;p&gt;So, can we just use Go code to be our configuration file?&lt;/p&gt;
+
+&lt;p&gt;Definitely.
+I wrote up a quick template (released under CC0, so feel free to copy and use)
+for a configuration file in Go.
+There's a small amount of boilerplate, but it is super easy to compromise.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/swenson/goconf"&gt;https://github.com/swenson/goconf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There are four key parts:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;var config = getConfig()&lt;/code&gt; &amp;ndash; this triggers the configuration file to be
+read at initialization time. You can also use an &lt;code&gt;init()&lt;/code&gt; function to do this.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;type Config struct { ... }&lt;/code&gt; &amp;ndash; specify all the variables you want in your
+config file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;func readConfig() Config { ... }&lt;/code&gt; &amp;ndash; populate a &lt;code&gt;Config&lt;/code&gt; struct based
+on your environment, which I do via a &lt;code&gt;switch&lt;/code&gt; statement.&lt;/li&gt;
+&lt;li&gt;Set your environment (&lt;code&gt;ENV&lt;/code&gt; environment variable) when running&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That's it.
+This is a pretty straightforward and easy way to do config files in Go.&lt;/p&gt;
+</description></item>
+</feed>

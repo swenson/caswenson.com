@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Christopher Swenson</title>
+  <link>http://www.caswenson.com/</link>
+  <pubDate>%s</pubDate>
+%s
+</channel>
+</rss>
