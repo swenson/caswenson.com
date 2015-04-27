@@ -87,7 +87,57 @@
 	<div class="tagline">computer science, math, programming and other stuff</div>
 	<div class="tagline">a blog by Christopher Swenson</div>
 
-	<div class="post"><div class="date">2014-12-02</div><h1><a href="2014_12_02_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes">So You Want To Learn Crypto, Part 2: Cyclic Groups And Short Codes</a></h1>
+	<div class="post"><div class="date">2015-04-26</div><h1><a href="2015_04_26_an_simple_aesbased_random_number_generator">An simple AES-based random number generator</a></h1>
+<p>When browsing through some stack traces doing Go development, I noticed that Go had done something rather
+clever in their codebase: on x86-64 processors, they used
+<a href="http://en.wikipedia.org/wiki/AES_instruction_set">the AES instruction set</a>
+<a href="https://github.com/golang/go/blob/7a4a64e8f3dc14717695e53c7560992789f8bc9e/src/runtime/asm_amd64.s#L874">to build a hash function</a>.</p>
+
+<p>The more I've thought about it, the more this is potentially quite brilliant.
+AES, the block cipher, compounds multiple rounds of mixing data together, shuffling bits around, and
+transforming it.
+For the past several years, all Intel and AMD processors have supported doing an AES round in
+a single instruction.</p>
+
+<p>Hashing and random number generation use the same sort of principles as AES is based on: basically,
+shuffle bits around and transform them.
+AES gets cryptographic strength by doing this many times in a row (usually 10+).</p>
+
+<p>However, if we are building a <a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a> or generating random numbers for simulations (or other non-cryptographic uses), then we don't need the full cryptographic strength of AES.
+But, we can still leverage the AES instruction set to build some fast random number generators and hashes.</p>
+
+<p>For starters, I've gone ahead and written <a href="https://github.com/swenson/aesrng">an AES-based random number generator</a> that performs a single round of AES as its core, and iterates to produce more random numbers.</p>
+
+<p>In practice, it is about twice as fast as the <a href="http://en.wikipedia.org/wiki/Mersenne_twister">Mersenne Twister</a>.</p>
+
+<p>I think that the biggest reason that most people haven't done this is that it's a relatively new feature, and
+doing CPUID detection to make sure that the AES instruction set is available at runtime is kind of annoying.
+At the very least, this library has those pieces already written.</p>
+
+<p>Some caveats:</p>
+
+<ul>
+<li>The quality of random numbers produced is not as high as the mersenne twister (they don't <em>quite</em> pass the <a href="http://www.phy.duke.edu/~rgb/General/dieharder.php">dieharder</a> test suite).
+They're not terrible either; they're just not as good.</li>
+<li>This only works on relatively modern x86-64 processors.
+To detect support, you can use the included <code>cpuid.h</code> to call <code>intel_has_feature(INTEL_FEATURE_AES)</code>
+to see if the <code>CPUID</code> instruction indicates support for the AES instruction set.</li>
+<li>It's very probably that more performance or better numbers could be created.
+I used a fairly straightforward seed and random number generator.</li>
+</ul>
+
+<p>I've also been experimenting with an AES-based hash function that is extremely similar to this.
+There is an equivalent test set to the Diehard tests for hash functions, called <a href="https://code.google.com/p/smhasher/">SMHasher</a>.</p>
+
+<p>Unfortunately, my preliminary results are not encouraging: AES instructions are possibly slower
+than the Murmur3 algorithm when tuned to pass the SMHasher tests.
+With only 1 or 2 rounds of encryption used, my AES hash function does not seem to pass the
+SMHasher suite, though it does after 3 or 4 rounds.
+Unfortunately, these extra rounds make the performance not quite as competitive.</p>
+
+<p>I'm still tinkering with the AES-based hash function though to try to make it faster
+or hash better. I'll report back with my findings.</p>
+</div><div class="post"><div class="date">2014-11-30</div><h1><a href="2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes">So You Want To Learn Crypto, Part 2: Cyclic Groups And Short Codes</a></h1>
 <p><a href="http://www.caswenson.com/2014_11_06_so_you_want_to_learn_crypto_part_1">Part 1 is here</a></p>
 
 <h2>Modular arithmetic</h2>
@@ -677,32 +727,6 @@ at lower dpi, larger screens (compared to Droid Sans Mono).</p>
 <p>It's free. Give it a shot.</p>
 
 <p>P.S.  Also, the web site got a bit of a facelift!</p>
-</div><div class="post"><div class="date">2013-08-25</div><h1><a href="2013_08_25_a_minimalistic_rss_reader">A Minimalistic RSS Reader</a></h1>
-<p>Saddened by the demise of Google Reader a few months ago, I completely gave up on RSS feeds and just cut myself off from the world.</p>
-
-<p>A few days ago, I finally decided it was time to move on. Unfortunately, I haven't been super pleased with the options available out there.
-Plus, I realized I didn't want to get burned again when they inevitably close and break my heart.</p>
-
-<p>So, like dozens of other people, I just decided to write my own RSS feed reader.</p>
-
-<h1>One user</h1>
-
-<p>One fundamental design decision I made early on is that this system would only support one user, and so I can throw out 95% of the complexity of designing the system right off the bat.</p>
-
-<p>Examples:</p>
-
-<ul>
-<li>No security. I can throw web page up under an Apache proxy with SSL and basic auth to allow only me in. I don't need to mess with logins or anything.</li>
-<li>No database. The entire state of the program will just be written out as a JSON blob periodically and read in on startup.</li>
-<li>No frills. I only use a few basic features, so I'm only going to implement those. This also means that the page looks incredibly ugly.</li>
-</ul>
-
-<h1>Open</h1>
-
-<p>I wrote it in Go (requires 1.1+) and open sourced it at https://github.com/swenson/littlereader under the MIT license.
-Feel free to use it, adapt it, whatever.</p>
-
-<p>It's not finished, but it has nearly every feature I need right now.</p>
 </div><div class="post"><div class="date">2013-07-21</div><h1><a href="2013_07_21_day_camp_4_developers">Day Camp 4 Developers</a></h1>
 <p>I'll be talking at this week's <a href="http://daycamp4developers.com/">Day Camp 4 Developers</a> on version control
 (or source code control, or source code management, or whatever we want to call it this week).
