@@ -1,5 +1,5 @@
 @import 'normalize';
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Droid+Sans:400,700|Droid+Sans+Mono|Droid+Serif:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Droid+Sans:400,700|Droid+Sans+Mono|Alegreya+Sans:400,700,400italic,700italic|Montserrat:400,700);
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -11,8 +11,8 @@
 
 // fonts
 $cs-font: 'Source Sans Pro', sans-serif;
-$serif: 'Droid Serif', serif;
-$sans: 'Droid Sans', sans-serif;
+$serif: 'Alegreya Sans', sans-serif;
+$sans: 'Montserrat', sans-serif;
 $mono: 'Droid Sans Mono', monospaced;
 
 // colors
@@ -29,7 +29,7 @@ $side-width: 0.17 * $width;
 $main-width: $width - $side-width - 0.08 * $width;
 
 body {
-  font: 100% $serif;
+  font: 110% $serif;
   background-color: $white;
   color: $black;
 }

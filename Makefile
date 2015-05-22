@@ -6,5 +6,5 @@ blog:
 	python make_blog.py
 
 style.css: style.scss _normalize.scss
-	sass style.scss $@
+	sassc style.scss $@
 	cp $@ static/
