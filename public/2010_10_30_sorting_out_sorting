@@ -56,7 +56,6 @@
 	    <li><a href="about">About</a></li>
 			<li><a href="contact">Contact</a></li>
 	    <li><a href="speaking">Speaking</a></li>
-			<li><a href="http://mathgineering.com">Consulting</a></li>
 		</ul>
 	</div>
 
@@ -77,8 +76,6 @@
 		<ul>
 			<li><a href="archive">Blog Archive</a></li>
 			<li><a href="mc">Modern Cryptanalysis</a></li>
-			<li><a href="https://artisanalcrypto.com">Artisinal Crypto</a></li>
-			<!--<li>Open Source Bounty</li>-->
 		</ul>
 	</div>
 </div>
