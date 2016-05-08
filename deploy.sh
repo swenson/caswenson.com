@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rsync -avz --delete public/* swenson@swenson.caswenson.com:/u/apps/caswenson/
+aws s3 sync public/ s3://caswenson.com/ --region us-west-2 --acl public-read
