@@ -96,6 +96,13 @@ If you wish to find out more, please contact me at <a href="contact">here</a>.
 
 <h2>Presentations</h2>
 
+<p>PyCon Australia 2016:
+<a href="https://www.youtube.com/watch?v=cUyMnGeZ_3c">
+CPython Internals and the VM
+</a>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cUyMnGeZ_3c" frameborder="0" allowfullscreen></iframe>
+
 <p>PyCon 2012:
 <a href="http://pyvideo.org/video/652/sage-open-source-math-in-python">
 Sage: Open Source Math in Python
