@@ -87,7 +87,7 @@ for mtime, post in posts:
     title = et.SubElement(entry, "title")
     title.text = post_title
     linker = et.SubElement(entry, "link")
-    linker.set('href', 'http://www.caswenson.com/' + link)
+    linker.set('href', 'http://swenson.io/' + link)
     linker.set('rel', 'alternate')
     ident = et.SubElement(entry, 'id')
     ident.text = link
@@ -111,7 +111,7 @@ for mtime, post in posts:
     title = et.SubElement(item, "title")
     title.text = post_title
     linker = et.SubElement(item, "link")
-    linker.text = 'http://www.caswenson.com/' + link
+    linker.text = 'http://swenson.io/' + link
     guid = et.SubElement(item, "guid")
     guid.text = str(uuid.uuid5(uuid_namespace, post_body))
     published = et.SubElement(item, "pubDate")
@@ -125,7 +125,7 @@ for mtime, post in posts:
   archive_text += """<li><a href="%s">%s</a></li>""" % (link, post_title)
   run_cmd("mkdir -p " + os.path.join("docs", os.path.dirname(link)))
   with open(os.path.join("docs", link), "w") as post_out:
-    url = "http://www.caswenson.com/" + link
+    url = "http://swenson.io/" + link
     #disqus = """<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/%s/embed.js"></script><noscript><a href="http://%s.disqus.com/?url=%s">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>"""
     #disqus = disqus % (DISQUS_SHORTNAME, DISQUS_SHORTNAME, url)
     disqus = ''

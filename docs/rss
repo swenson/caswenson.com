@@ -6,7 +6,7 @@
   <author>
     <name>Christopher Swenson</name>
   </author>
-<item><title>Friendship API</title><link>http://www.caswenson.com/2015_08_30_friendship_api</link><guid>28170f1c-80f7-5a15-81a4-7d02a69c16b8</guid><pubDate>Mon, 31 Aug 2015 01:36:17 -0800</pubDate><description>
+<item><title>Friendship API</title><link>http://swenson.io/2015_08_30_friendship_api</link><guid>28170f1c-80f7-5a15-81a4-7d02a69c16b8</guid><pubDate>Mon, 31 Aug 2015 01:36:17 -0800</pubDate><description>
 &lt;p&gt;This weekend, I wrote a quick email application called &lt;a href="http://friendshipapi.com"&gt;Friendship API&lt;/a&gt;.
 It solves a problem that I have: I am just terrible at staying in touch with my friends via email.
 This is a shame: email is really a great tool for keeping in touch.&lt;/p&gt;
@@ -80,7 +80,7 @@ aside a spare weekend? Well, here's the process I followed at least:&lt;/p&gt;
 addresses alone, so it can suggest someone whom you might be corresponding with regularly
 if you are doing so with a different email address.&lt;/li&gt;
 &lt;/ul&gt;
-</description></item><item><title>An simple AES-based random number generator</title><link>http://www.caswenson.com/2015_04_26_an_simple_aesbased_random_number_generator</link><guid>09c62638-7200-509b-ba60-4a24cc425a0e</guid><pubDate>Mon, 27 Apr 2015 00:43:28 -0800</pubDate><description>
+</description></item><item><title>An simple AES-based random number generator</title><link>http://swenson.io/2015_04_26_an_simple_aesbased_random_number_generator</link><guid>09c62638-7200-509b-ba60-4a24cc425a0e</guid><pubDate>Mon, 27 Apr 2015 00:43:28 -0800</pubDate><description>
 &lt;p&gt;When browsing through some stack traces doing Go development, I noticed that Go had done something rather
 clever in their codebase: on x86-64 processors, they used
 &lt;a href="http://en.wikipedia.org/wiki/AES_instruction_set"&gt;the AES instruction set&lt;/a&gt;
@@ -130,7 +130,7 @@ Unfortunately, these extra rounds make the performance not quite as competitive.
 
 &lt;p&gt;I'm still tinkering with the AES-based hash function though to try to make it faster
 or hash better. I'll report back with my findings.&lt;/p&gt;
-</description></item><item><title>So You Want To Learn Crypto, Part 2: Cyclic Groups And Short Codes</title><link>http://www.caswenson.com/2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes</link><guid>352e251e-004b-5f8f-800d-35705dbb7556</guid><pubDate>Sun, 30 Nov 2014 13:05:00 -0800</pubDate><description>
+</description></item><item><title>So You Want To Learn Crypto, Part 2: Cyclic Groups And Short Codes</title><link>http://swenson.io/2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes</link><guid>352e251e-004b-5f8f-800d-35705dbb7556</guid><pubDate>Sun, 30 Nov 2014 13:05:00 -0800</pubDate><description>
 &lt;p&gt;&lt;a href="http://www.caswenson.com/2014_11_06_so_you_want_to_learn_crypto_part_1"&gt;Part 1 is here&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;Modular arithmetic&lt;/h2&gt;
@@ -457,7 +457,7 @@ few modular exponentiations) the discrete logarithm of $4244504$ is $30$, which 
 &lt;p&gt;I've released code for the above computations, including the
 Pohlig&amp;ndash;Hellman algorithm implementation, in Python on
 &lt;a href="https://github.com/swenson/shortcodes"&gt;GitHub&lt;/a&gt;, licensed under MIT.&lt;/p&gt;
-</description></item><item><title>How to pronounce programming words</title><link>http://www.caswenson.com/2014_11_10_how_to_pronounce_programming_words</link><guid>4d68b6bf-1482-599f-9abd-107b1c22294c</guid><pubDate>Mon, 10 Nov 2014 16:51:59 -0800</pubDate><description>
+</description></item><item><title>How to pronounce programming words</title><link>http://swenson.io/2014_11_10_how_to_pronounce_programming_words</link><guid>4d68b6bf-1482-599f-9abd-107b1c22294c</guid><pubDate>Mon, 10 Nov 2014 16:51:59 -0800</pubDate><description>
 &lt;p&gt;Certain words in programming I've seen people mangle in various ways, and
 many times, I realized that I don't actually know the correct way to pronounce them.&lt;/p&gt;
 
@@ -487,7 +487,7 @@ I've tried to use the original authors of as the source, when possible, or other
 &lt;li&gt;&lt;em&gt;Trie&lt;/em&gt;: tree, &lt;a href="http://www.webcitation.org/5pqUULy24"&gt;http://www.webcitation.org/5pqUULy24&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;von Neumann&lt;/em&gt;: von noi-man &lt;a href="https://www.youtube.com/watch?v=VTS9O0CoVng"&gt;https://www.youtube.com/watch?v=VTS9O0CoVng&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description></item><item><title>So You Want To Learn Crypto, Part 1</title><link>http://www.caswenson.com/2014_11_06_so_you_want_to_learn_crypto_part_1</link><guid>a40ced9c-d8fe-5ed8-bc23-07f1535dba3b</guid><pubDate>Thu, 06 Nov 2014 20:00:00 -0800</pubDate><description>
+</description></item><item><title>So You Want To Learn Crypto, Part 1</title><link>http://swenson.io/2014_11_06_so_you_want_to_learn_crypto_part_1</link><guid>a40ced9c-d8fe-5ed8-bc23-07f1535dba3b</guid><pubDate>Thu, 06 Nov 2014 20:00:00 -0800</pubDate><description>
 &lt;p&gt;Cryptography and cryptanalysis are topics that fascinate many people, but it's a tricky area to get into.
 For instance, knowing the difference between a &lt;a href="http://en.wikipedia.org/wiki/Hash_function"&gt;hash function&lt;/a&gt; and a &lt;a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function"&gt;cryptographically strong hash function&lt;/a&gt; is critical, but extremely easy to mix up due to confusing terminology.
 In general, there's heavy jargon that takes serious studying to get a grasp on.&lt;/p&gt;
@@ -542,7 +542,7 @@ And even though it is possible to learn almost everything about cryptography and
 In particular, I know that there are some sticky points in finite fields, RSA, and hashing that I think I can help clarify.&lt;/p&gt;
 
 &lt;p&gt;Check back next week for part 2 of &lt;em&gt;So You Want To Learn Crypto&lt;/em&gt;.&lt;/p&gt;
-</description></item><item><title>What I Learned As A Teen Programmer</title><link>http://www.caswenson.com/2014_10_26_what_i_learned_as_a_teen_programmer</link><guid>2752b5ac-a2e3-5bb3-9fe3-f11a4f4d6f73</guid><pubDate>Mon, 27 Oct 2014 01:38:59 -0800</pubDate><description>
+</description></item><item><title>What I Learned As A Teen Programmer</title><link>http://swenson.io/2014_10_26_what_i_learned_as_a_teen_programmer</link><guid>2752b5ac-a2e3-5bb3-9fe3-f11a4f4d6f73</guid><pubDate>Mon, 27 Oct 2014 01:38:59 -0800</pubDate><description>
 &lt;p&gt;I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
 Reading through the source code, I thought a lot about how much I had grown as a developer and engineer since that long-forgotten summer.
 For instance, I now understand things like (ha!) having a consistent style (some of my code was indented over 24 spaces so that it would be in the middle of the monitor), writing comments (there are basically no comments in this code), and tests (I didn't even know that testing was a thing).
@@ -586,7 +586,7 @@ When you get it wrong, you often do so catastrophically.&lt;/p&gt;
 
 &lt;p&gt;Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
 I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.&lt;/p&gt;
-</description></item><item><title>ttyrec conversion</title><link>http://www.caswenson.com/2014_10_19_ttyrec_conversion</link><guid>ac7f0c3a-dcbd-5204-aea4-c945960dcbe1</guid><pubDate>Sun, 19 Oct 2014 18:44:14 -0800</pubDate><description>
+</description></item><item><title>ttyrec conversion</title><link>http://swenson.io/2014_10_19_ttyrec_conversion</link><guid>ac7f0c3a-dcbd-5204-aea4-c945960dcbe1</guid><pubDate>Sun, 19 Oct 2014 18:44:14 -0800</pubDate><description>
 &lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
 I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
 
@@ -609,7 +609,7 @@ I sped up the results by 5&amp;times; or so, and then run the whole thing throug
 
 &lt;p&gt;Anyway, at the very least, there are some cool GIFs out there to look at now.
 I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).&lt;/p&gt;
-</description></item><item><title>Pyway or the highway</title><link>http://www.caswenson.com/2014_10_12_pyway_or_the_highway</link><guid>f4b596d1-6b2d-50e7-b324-fac66cda24ab</guid><pubDate>Sun, 12 Oct 2014 19:15:24 -0800</pubDate><description>
+</description></item><item><title>Pyway or the highway</title><link>http://swenson.io/2014_10_12_pyway_or_the_highway</link><guid>f4b596d1-6b2d-50e7-b324-fac66cda24ab</guid><pubDate>Sun, 12 Oct 2014 19:15:24 -0800</pubDate><description>
 &lt;p&gt;&lt;a href="https://github.com/swenson/pyway"&gt;Pyway&lt;/a&gt; is a database migration tool that I wrote to solve the problem of: I want database migrations, but I don't want to bring &lt;a href="http://guides.rubyonrails.org/migrations.html"&gt;Rails&lt;/a&gt; or the entire &lt;a href="http://flywaydb.org/"&gt;JVM&lt;/a&gt; with me just to do them.&lt;/p&gt;
 
 &lt;p&gt;So, I wrote a little script that does the most simple thing you can do with database migrations: keep track of them by file name, and run any new ones in sorted order.
@@ -620,7 +620,7 @@ I didn't even use Python bindings for &lt;code&gt;sqlite3&lt;/code&gt;: I just c
 That way, it should be easy to modify it for other databases in the near future.&lt;/p&gt;
 
 &lt;p&gt;I'll probably end up adding Postgres or MySQL support sometime soon (when one of my projects that uses those technologies needs to be updated).&lt;/p&gt;
-</description></item><item><title>This Holacracy Thing</title><link>http://www.caswenson.com/2014_10_05_this_holacracy_thing</link><guid>978da426-9ea0-5497-a3a4-4587d11c6998</guid><pubDate>Sun, 05 Oct 2014 21:35:58 -0800</pubDate><description>
+</description></item><item><title>This Holacracy Thing</title><link>http://swenson.io/2014_10_05_this_holacracy_thing</link><guid>978da426-9ea0-5497-a3a4-4587d11c6998</guid><pubDate>Sun, 05 Oct 2014 21:35:58 -0800</pubDate><description>
 &lt;p&gt;I've had a busy year where I've been trying out a lot of new ideas for working
 and collaborating, and learning a lot.
 One thing that I learned about and experienced for a few weeks was the system of &lt;a href="http://en.wikipedia.org/wiki/Holacracy"&gt;Holacracy&lt;/a&gt;.
@@ -702,7 +702,7 @@ I don't expect to in the future, and I plan to avoid working for companies that 
 
 &lt;p&gt;Or, you know, maybe Holacracy could be rebranded to use an actual Captain Picard cardboard cutout and a real RPG-like rulebook.
 I might have had more fun then.&lt;/p&gt;
-</description></item><item><title>Adobe Source Code Pro</title><link>http://www.caswenson.com/2014_01_25_adobe_source_code_pro</link><guid>55880c22-e7ec-5837-ad62-b0364e61143b</guid><pubDate>Sun, 26 Jan 2014 03:15:29 -0800</pubDate><description>
+</description></item><item><title>Adobe Source Code Pro</title><link>http://swenson.io/2014_01_25_adobe_source_code_pro</link><guid>55880c22-e7ec-5837-ad62-b0364e61143b</guid><pubDate>Sun, 26 Jan 2014 03:15:29 -0800</pubDate><description>
 &lt;p&gt;Just thought I would mention, since I haven't talked about fonts for a while,
 that I would give a short update.&lt;/p&gt;
 
