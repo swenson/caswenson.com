@@ -1,0 +1,146 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>What I Learned As A Teen Programmer &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
+
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56218422-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about">About</a></li>
+			<li><a href="contact">Contact</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ChristopherSwenson">Google+</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive">Blog Archive</a></li>
+			<li><a href="mc">Modern Cryptanalysis</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2014_10_26_what_i_learned_as_a_teen_programmer">What I Learned As A Teen Programmer</a></h1>
+<p>I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
+Reading through the source code, I thought a lot about how much I had grown as a developer and engineer since that long-forgotten summer.
+For instance, I now understand things like (ha!) having a consistent style (some of my code was indented over 24 spaces so that it would be in the middle of the monitor), writing comments (there are basically no comments in this code), and tests (I didn't even know that testing was a thing).
+But, I also realized that writing that emulator, and all of the development I did at the time, laid a strange foundation that colored how I've thought about programming since.</p>
+
+<p>Up to that point, I'd puttered around a little in BASIC and C, but I didn't fall in love with programming until I discovered assembly language.
+Assembly was the first thing that really clicked for me: it was so simple, its semantics were so clear, and I found some great resources to help me learn (e.g., a nice tutorial I found on a BBS).
+So, in my heart, assembly language is my first language.</p>
+
+<p>When I tell this to people now, they give me strange looks.
+It's almost unfathomable to teach people assembly language first.
+But, in doing so, I learned an awful lot about how software works, how computers work, and what foundation programming languages are built on top of.</p>
+
+<p>My masterpiece as a teen programmer was the NES emulator I wrote  entirely in x86 assembly language: almost exactly 10,000 lines of it.
+This was my first taste of a real program: it was potentially useful, it had meaning, and it was a moderately large software project (my first).
+Programming this was what made me dig deep and learn how to program.</p>
+
+<p>Here's some things that writing that emulator, and assembly language in general, taught me:</p>
+
+<ol>
+<li><p><strong>Data is just memory</strong>. I remember trying to understand pointers in C and being incredibly frustrated with the strange syntax and the weird semantics. On the other hand, dealing with memory in assembly is so clearcut: memory is just a giant flat array (more or less), and pointers just point to stuff in that giant array. Indirect references, arrays of pointers, etc., make so much more sense when boiled down like this.</p>
+
+<p>Even today, when trying to visualize many problems, I think to myself: what does this look like in memory? What structures are being used and how are they laid out? This helps me understand how algorithms and data structures work together.</p></li>
+<li><p><strong>How to write everything yourself.</strong> There were some limited BIOS and DOS kernel calls, but for the most part, if I needed some capability, say, reading from a floppy drive or writing to the screen, I had to write it from scratch: calling I/O ports, reading and writing to RAM addresses, etc. If I wanted graphics, I had to draw every single pixel myself. These days, I know that this is just reinventing the wheel, something normally regarded as a bad habit; however, I also learned an awful lot about inventing wheels doing it.
+I still have the bad habit of writing too many things myself, and not leveraging existing libraries as often as I should, so this lesson wasn't a complete victory.</p></li>
+<li><p><strong>Sometimes you just have to buckle down and program all of the tedious parts</strong>. A big part of the NES emulator is writing a cycle-accurate CPU emulator. I'm sure that you can imagine how daunting it must be to start writing <code>CPU.ASM</code> and have an empty jump table with 256 entries, knowing that you have to write all 256 functions to handle every single operation. Even worse, you have to get every single piece <em>exactly</em> right.</p>
+
+<p>This taught me an extremely valuable skill: being able to focus on tedious, repetitive tasks.
+Programming is absolutely chock-full of tedious programming that is absolutely necessary.
+A great example is date and time functionality (especially time zones): incredibly important code to get correct, but so incredibly tedious and detail-oriented.
+Being able to dive into thousands of pages of specifications and turn them into working libraries and APIs has paid great dividends in my career as a software engineer, and I first learned that here.
+Being methodical and untiring is a great skill.</p>
+
+<p>And really, sometimes there is just no elegant solution. Often I see programmers strive to come up with a beautiful, simple, clean way to solve a problem, only to realize that the solution doesn't stand up to reality. Sometimes reality is <em>ugly</em>, and sometimes you have to write <em>ugly</em> code to solve it: you just need to program your way out of it.</p></li>
+<li><p><strong>Assembly is useful</strong>. Learning assembly has come in handy countless times: reading GDB disassembly of my code for degugging, understanding and optimizing performance, writing compilers. Every time I see an assembly dump on a screen, it feels like home.</p></li>
+<li><p><strong>You have to fail a lot to succeed</strong>. When writing code as a teenager in assembly language, I spent a lot of time crashing my computer. I mean, assembly is really easy to get wrong.
+When you get it wrong, you often do so catastrophically.</p>
+
+<p>But more so, in order to learn how to build things, you first have to learn to build them wrong, and learn to recognize your mistakes. And this code is just full of mistakes.</p></li>
+</ol>
+
+<p>Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
+I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.</p>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>

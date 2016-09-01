@@ -1,0 +1,125 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>ttyrec conversion &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
+
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56218422-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about">About</a></li>
+			<li><a href="contact">Contact</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ChristopherSwenson">Google+</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive">Blog Archive</a></li>
+			<li><a href="mc">Modern Cryptanalysis</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2014_10_19_ttyrec_conversion">ttyrec conversion</a></h1>
+<p>I'm an armchair fan of <a href="http://www.nethack.org">NetHack</a> and other roguelikes, though I don't play them too much.
+I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.</p>
+
+<p>I'd found some pieces of tools that might do the job around the Internet: <a href="http://nethack.wikia.com/wiki/Notable_ascensions">TTY "recordings" of NetHack ascensions</a> (essentially, replaying through the terminal sequences while they are playing), <a href="https://github.com/selectel/pyte">pyte</a> (a Python terminal emulator), and <a href="https://pypi.python.org/pypi/images2gif">images2gif</a> (a mostly working animated GIF maker).</p>
+
+<p>It's <em>almost</em> there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an <a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png">old  DOS bitmap font</a>, and then all of the glue code to make it all work together.
+I sped up the results by 5&times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.</p>
+
+<p>I open sourced the whole thing as <a href="https://github.com/swenson/ttyrec2gif">ttyrec2gif</a>. It produces nice GIFs like:</p>
+
+<p><img src="http://m.caswenson.com/images/out00001.gif" /></p>
+
+<p>There's one last piece: how to actually turn this into a screen saver.</p>
+
+<p>In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:</p>
+
+<p><img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" /></p>
+
+<p>(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)</p>
+
+<p>Anyway, at the very least, there are some cool GIFs out there to look at now.
+I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).</p>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>

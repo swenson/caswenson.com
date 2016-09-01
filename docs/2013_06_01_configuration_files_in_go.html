@@ -1,0 +1,151 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Configuration files in Go &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
+
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56218422-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about">About</a></li>
+			<li><a href="contact">Contact</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ChristopherSwenson">Google+</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive">Blog Archive</a></li>
+			<li><a href="mc">Modern Cryptanalysis</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2013_06_01_configuration_files_in_go">Configuration files in Go</a></h1>
+<p>The other day, I was starting to port an existing service I had into Go.
+There were a lot of issues that I had to tackle to get the functionality I wanted,
+including being able to run in at least four different environments:
+test, dev, stage, and prod.</p>
+
+<p>There are a lot of "standard" ways to do this, most focusing on some sort
+of text or structured file that you load at runtime using file I/O.</p>
+
+<p>However, in dynamic languages, a somewhat common practice is to use a file
+in that programming language as your configuration. So, in Python, you might
+have a <code>settings.py</code> file that is actual executed Python.</p>
+
+<p>In non-scripting languages, like Java, you normally have an XML, YAML, INI,
+or JSON file that you read in.
+But, I've seen at least one non-scripting language, Clojure, that encourages using
+an executable Clojure file for configuration.</p>
+
+<p>The primary argument against using a file in your programming language itself
+is that the compile time may be long, and deploying a brand new binary just to
+change the config file is laborious and slow.</p>
+
+<p>But, I thought, Go doesn't have this limitation:
+Go compiles super fast, and the binaries tend to be reasonably sized,
+so deploys won't be that big of a deal.</p>
+
+<p>So, can we just use Go code to be our configuration file?</p>
+
+<p>Definitely.
+I wrote up a quick template (released under CC0, so feel free to copy and use)
+for a configuration file in Go.
+There's a small amount of boilerplate, but it is super easy to compromise.</p>
+
+<p><a href="https://github.com/swenson/goconf">https://github.com/swenson/goconf</a></p>
+
+<p>There are four key parts:</p>
+
+<ul>
+<li><code>var config = getConfig()</code> &ndash; this triggers the configuration file to be
+read at initialization time. You can also use an <code>init()</code> function to do this.</li>
+<li><code>type Config struct { ... }</code> &ndash; specify all the variables you want in your
+config file</li>
+<li><code>func readConfig() Config { ... }</code> &ndash; populate a <code>Config</code> struct based
+on your environment, which I do via a <code>switch</code> statement.</li>
+<li>Set your environment (<code>ENV</code> environment variable) when running</li>
+</ul>
+
+<p>That's it.
+This is a pretty straightforward and easy way to do config files in Go.</p>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>

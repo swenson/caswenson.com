@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Another day, another page. &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
+
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56218422-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about">About</a></li>
+			<li><a href="contact">Contact</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ChristopherSwenson">Google+</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive">Blog Archive</a></li>
+			<li><a href="mc">Modern Cryptanalysis</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2007_06_06_another_day_another_page">Another day, another page.</a></h1>
+<p>So I am currently involved with my book and finishing my dissertation.  Both have been giving me a lot of motivation lately to finish them.</p>
+
+<p>I turned in another chapter of my book to my editors on Sunday.  It's still early on in the book, though they are starting to rearrange things, so it hasn't gotten too interesting.  The next chapters should be very exciting though: I get to typeset a lot of math, and I get to have a bit more fun with more material that I enjoy.</p>
+
+<p>So far, my editors have been nice, but a little lost sometimes when it comes to the low-level details.  They original gave me a Word template to use, where the headings and whatnot were rendered in (shudder) Arial, with the text in the very plain Times New Roman.  I agreed to use it on the condition that it would be filtered through InDesign where Real Fonts(tm) would be used to make it into a book, and I would be involved in this process if I wanted to be.</p>
+
+<p>However, as time passed, they realized how difficult it would be to do justice to the mathematics of the book using Word and InDesign, so apparently they are typesetting the book in TeX.  This makes me fairly happy.  Apparently the main text font is going to be Palatino, which is one of my very favorite fonts, so this also made me happy.</p>
+
+<p>I have not been too happy, though, with the way LaTeX's <code>mathpazo</code> package handled Palatino equations.  I decided to try the XeLaTeX solution, and have had mixed results.  XeLaTeX, essentially, is LaTeX, but updated with modern fonts in mind (it can use TrueType, OpenType, Postscript, and TeX fonts), as well as full Unicode support.  It's supposed to better integrate Palatino fonts into math mode, but so far it spits everything out in Computer Modern, and I am still trying to figure out what is going wrong.  So far, though, I have quite enjoyed XeLaTeX.</p>
+
+<p>Dissertation update: I turned in a form I needed to let them know that yes, in fact, I do intend to finish everything this summer.  Working on that as well.  I have my old lab setup working here in the home office, and have been crunching away at things.  Will post more when I have more.</p>
+
+<p>Laters!</p>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>

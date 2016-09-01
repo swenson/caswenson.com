@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Brilliant programming &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
+
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56218422-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about">About</a></li>
+			<li><a href="contact">Contact</a></li>
+	    <li><a href="speaking">Speaking</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ChristopherSwenson">Google+</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive">Blog Archive</a></li>
+			<li><a href="mc">Modern Cryptanalysis</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2009_08_14_brilliant_programming">Brilliant programming</a></h1>
+<p>Often, I like to read articles on particularly insightful programming techniques or algorithms.  Sometimes these algorithms are for some fairly mundane things, like searching and sorting.  (So mundane, of course, that Knuth wrote a <a href="http://www.amazon.com/gp/product/0201896850?ie=UTF8&amp;tag=mathfigu-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0201896850">whole book</a><img src="http://www.assoc-amazon.com/e/ir?t=mathfigu-20&amp;l=as2&amp;o=1&amp;a=0201896850" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> about it.)</p>
+
+<p>Two pieces I have enjoyed recently.</p>
+
+<p>First, <a href="http://bugs.python.org/file4451/timsort.txt">timsort</a> &ndash; the sorting algorithm used by Python.  It describes an interesting approach to mergesort that is stable and incredibly fast, especially for "almost" sorted arrays.</p>
+
+<p>Second is a class: <tt><a href="http://sources.redhat.com/cgi-bin/cvsweb.cgi/libc/string/strlen.c?cvsroot=glibc&amp;rev=1.1.2.1">strlen()</a></tt>, from glibc.  <tt>strlen()</tt>, for you non-C programmers, finds the length of a null-terminated string.  So, simply, given a location in memory, it finds the next zero byte.  Sounds easy?  Well, it is, but there are several tricks you can to do speed up the search by quite a bit.</p>
+
+<p>Any other favorite snippets of code out there?</p>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>
