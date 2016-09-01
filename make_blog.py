@@ -132,7 +132,7 @@ for mtime, post in posts:
     disqus = ''
     post_text = """<div class="postzoom">%s%s</div>""" % (post_h1, post_body)
     post_out.write(index_template.format(title=post_title, posts=post_text, disqus=disqus))
-  os.symlink(os.path.join("docs", link), os.path.join("docs", link_alias))
+  os.symlink(link, os.path.join("docs", link_alias))
 archive_text += "</ul>"
 
 print "Index"
@@ -145,7 +145,7 @@ print "Archive"
 # Create archive at /archive
 with open("docs/archive.html", "w") as archive:
   archive.write(index_template.format(title="Archive", posts=archive_text, disqus=""))
-os.symlink("docs/archive.html", "docs/archive")
+os.symlink("archive.html", "docs/archive")
 
 print "Atom"
 # Create Atom
@@ -167,4 +167,4 @@ for page in glob.glob("pages/*"):
   name = os.path.basename(page)
   with open("docs/" + name + ".html", "w") as page_out:
     page_out.write(index_template.format(title=name.replace("_", " ").capitalize(), posts=open(page).read(), disqus=""))
-  os.symlink("docs/" + name + ".html", "docs/" + name)
+  os.symlink(name + ".html", "docs/" + name)
