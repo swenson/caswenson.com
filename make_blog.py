@@ -74,8 +74,8 @@ for mtime, post in posts:
   post_title = lines[0][4:-5]
   slug = title_slug(post_title)
   pdate = str(date.fromtimestamp(mtime))
-  link_alias = "%s_%s.html" % (pdate.replace("-", "_"), slug)
-  link = "%s_%s" % (pdate.replace("-", "_"), slug)
+  link = "%s_%s.html" % (pdate.replace("-", "_"), slug)
+  link_alias = "%s_%s" % (pdate.replace("-", "_"), slug)
   post_h1 = "<h1><a href=\"%s\">%s</a></h1>" % (link, post_title)
   post_body = "\n".join(lines[1:])
   if processed < INDEX_POSTS:
@@ -125,15 +125,14 @@ for mtime, post in posts:
 
   archive_text += """<li><a href="%s">%s</a></li>""" % (link, post_title)
   run_cmd("mkdir -p " + os.path.join("docs", os.path.dirname(link)))
-  with open(os.path.join("docs", link_alias), "w") as post_out:
-    url = "http://swenson.io/" + link_alias
+  with open(os.path.join("docs", link), "w") as post_out:
+    url = "http://swenson.io/" + link
     #disqus = """<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/%s/embed.js"></script><noscript><a href="http://%s.disqus.com/?url=%s">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>"""
     #disqus = disqus % (DISQUS_SHORTNAME, DISQUS_SHORTNAME, url)
     disqus = ''
     post_text = """<div class="postzoom">%s%s</div>""" % (post_h1, post_body)
     post_out.write(index_template.format(title=post_title, posts=post_text, disqus=disqus))
-  print "Symlinking", os.path.join("docs", link), os.path.join("docs", link_alias)
-  os.symlink(os.path.join("docs", link_alias), os.path.join("docs", link))
+  os.symlink(os.path.join("docs", link), os.path.join("docs", link_alias))
 archive_text += "</ul>"
 
 print "Index"
@@ -144,8 +143,9 @@ with open("docs/index.html", "w") as index:
 
 print "Archive"
 # Create archive at /archive
-with open("docs/archive", "w") as archive:
+with open("docs/archive.html", "w") as archive:
   archive.write(index_template.format(title="Archive", posts=archive_text, disqus=""))
+os.symlink("docs/archive.html", "docs/archive")
 
 print "Atom"
 # Create Atom
@@ -165,5 +165,6 @@ print "Pages"
 # Create Pages
 for page in glob.glob("pages/*"):
   name = os.path.basename(page)
-  with open("docs/" + name, "w") as page_out:
+  with open("docs/" + name + ".html", "w") as page_out:
     page_out.write(index_template.format(title=name.replace("_", " ").capitalize(), posts=open(page).read(), disqus=""))
+  os.symlink("docs/" + name + ".html", "docs/" + name)
