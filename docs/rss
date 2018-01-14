@@ -2,16 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>Mon, 31 Aug 2015 01:36:17 -0800</updated>
+  <updated>Sun, 14 Jan 2018 21:32:58 -0800</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<item><title>Friendship API</title><link>http://swenson.io/2015_08_30_friendship_api.html</link><guid>28170f1c-80f7-5a15-81a4-7d02a69c16b8</guid><pubDate>Mon, 31 Aug 2015 01:36:17 -0800</pubDate><description>
+<item><title>ttyrec conversion</title><link>http://swenson.io/2018_01_14_ttyrec_conversion.html</link><guid>0bf32322-4c1d-5e92-b2bb-abbb67563ff1</guid><pubDate>Sun, 14 Jan 2018 21:32:58 -0800</pubDate><description>
+&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
+I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
+
+&lt;p&gt;I'd found some pieces of tools that might do the job around the Internet: &lt;a href="http://nethack.wikia.com/wiki/Notable_ascensions"&gt;TTY "recordings" of NetHack ascensions&lt;/a&gt; (essentially, replaying through the terminal sequences while they are playing), &lt;a href="https://github.com/selectel/pyte"&gt;pyte&lt;/a&gt; (a Python terminal emulator), and &lt;a href="https://pypi.python.org/pypi/images2gif"&gt;images2gif&lt;/a&gt; (a mostly working animated GIF maker).&lt;/p&gt;
+
+&lt;p&gt;It's &lt;em&gt;almost&lt;/em&gt; there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an &lt;a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png"&gt;old  DOS bitmap font&lt;/a&gt;, and then all of the glue code to make it all work together.
+I sped up the results by 5&amp;times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.&lt;/p&gt;
+
+&lt;p&gt;I open sourced the whole thing as &lt;a href="https://github.com/swenson/ttyrec2gif"&gt;ttyrec2gif&lt;/a&gt;. It produces nice GIFs like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://m.caswenson.com/images/out00001.gif" alt="Sample nethack screensaver animated GIF" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There's one last piece: how to actually turn this into a screen saver.&lt;/p&gt;
+
+&lt;p&gt;In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" alt="Quartz Composer screenshot of my screensaver app."/&gt;&lt;/p&gt;
+
+&lt;p&gt;(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)&lt;/p&gt;
+
+&lt;p&gt;Anyway, at the very least, there are some cool GIFs out there to look at now.
+I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).&lt;/p&gt;
+</description></item><item><title>Friendship API</title><link>http://swenson.io/2018_01_14_friendship_api.html</link><guid>1127c451-2b28-5a66-b007-13b40ad5c62f</guid><pubDate>Sun, 14 Jan 2018 21:32:58 -0800</pubDate><description>
 &lt;p&gt;This weekend, I wrote a quick email application called &lt;a href="http://friendshipapi.com"&gt;Friendship API&lt;/a&gt;.
 It solves a problem that I have: I am just terrible at staying in touch with my friends via email.
 This is a shame: email is really a great tool for keeping in touch.&lt;/p&gt;
 
-&lt;p&gt;Friendship API works like this: it uses &lt;a href="http://context.io"&gt;ContextIO&lt;/a&gt; to look at people you interact with, filter out what looks like spam and business email, and send you a weekly email reminding you that you owe a person an email.&lt;/p&gt;
+&lt;p&gt;Friendship API works like this: it uses ContextIO to look at people you interact with, filter out what looks like spam and business email, and send you a weekly email reminding you that you owe a person an email.&lt;/p&gt;
 
 &lt;p&gt;There's no account or password to manage: the weekly emails contain action links to ignore certain people in the future, generate another reminder, and cancel your subscription.
 Hence, I use the term "email application".&lt;/p&gt;
@@ -586,29 +609,6 @@ When you get it wrong, you often do so catastrophically.&lt;/p&gt;
 
 &lt;p&gt;Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
 I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.&lt;/p&gt;
-</description></item><item><title>ttyrec conversion</title><link>http://swenson.io/2014_10_19_ttyrec_conversion.html</link><guid>ac7f0c3a-dcbd-5204-aea4-c945960dcbe1</guid><pubDate>Sun, 19 Oct 2014 18:44:14 -0800</pubDate><description>
-&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
-I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
-
-&lt;p&gt;I'd found some pieces of tools that might do the job around the Internet: &lt;a href="http://nethack.wikia.com/wiki/Notable_ascensions"&gt;TTY "recordings" of NetHack ascensions&lt;/a&gt; (essentially, replaying through the terminal sequences while they are playing), &lt;a href="https://github.com/selectel/pyte"&gt;pyte&lt;/a&gt; (a Python terminal emulator), and &lt;a href="https://pypi.python.org/pypi/images2gif"&gt;images2gif&lt;/a&gt; (a mostly working animated GIF maker).&lt;/p&gt;
-
-&lt;p&gt;It's &lt;em&gt;almost&lt;/em&gt; there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an &lt;a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png"&gt;old  DOS bitmap font&lt;/a&gt;, and then all of the glue code to make it all work together.
-I sped up the results by 5&amp;times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.&lt;/p&gt;
-
-&lt;p&gt;I open sourced the whole thing as &lt;a href="https://github.com/swenson/ttyrec2gif"&gt;ttyrec2gif&lt;/a&gt;. It produces nice GIFs like:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://m.caswenson.com/images/out00001.gif" /&gt;&lt;/p&gt;
-
-&lt;p&gt;There's one last piece: how to actually turn this into a screen saver.&lt;/p&gt;
-
-&lt;p&gt;In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)&lt;/p&gt;
-
-&lt;p&gt;Anyway, at the very least, there are some cool GIFs out there to look at now.
-I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).&lt;/p&gt;
 </description></item><item><title>Pyway or the highway</title><link>http://swenson.io/2014_10_12_pyway_or_the_highway.html</link><guid>f4b596d1-6b2d-50e7-b324-fac66cda24ab</guid><pubDate>Sun, 12 Oct 2014 19:15:24 -0800</pubDate><description>
 &lt;p&gt;&lt;a href="https://github.com/swenson/pyway"&gt;Pyway&lt;/a&gt; is a database migration tool that I wrote to solve the problem of: I want database migrations, but I don't want to bring &lt;a href="http://guides.rubyonrails.org/migrations.html"&gt;Rails&lt;/a&gt; or the entire &lt;a href="http://flywaydb.org/"&gt;JVM&lt;/a&gt; with me just to do them.&lt;/p&gt;
 
