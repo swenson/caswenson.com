@@ -4,7 +4,7 @@ This weekend, I wrote a quick email application called [Friendship API](http://f
 It solves a problem that I have: I am just terrible at staying in touch with my friends via email.
 This is a shame: email is really a great tool for keeping in touch.
 
-Friendship API works like this: it uses [ContextIO](http://context.io) to look at people you interact with, filter out what looks like spam and business email, and send you a weekly email reminding you that you owe a person an email.
+Friendship API works like this: it uses ContextIO to look at people you interact with, filter out what looks like spam and business email, and send you a weekly email reminding you that you owe a person an email.
 
 There's no account or password to manage: the weekly emails contain action links to ignore certain people in the future, generate another reminder, and cancel your subscription.
 Hence, I use the term "email application".

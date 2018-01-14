@@ -10,13 +10,13 @@ I sped up the results by 5&times; or so, and then run the whole thing through Im
 
 I open sourced the whole thing as [ttyrec2gif](https://github.com/swenson/ttyrec2gif). It produces nice GIFs like:
 
-<img src="http://m.caswenson.com/images/out00001.gif" />
+<img src="http://m.caswenson.com/images/out00001.gif" alt="Sample nethack screensaver animated GIF" />
 
 There's one last piece: how to actually turn this into a screen saver.
 
 In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:
 
-<img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" />
+<img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" alt="Quartz Composer screenshot of my screensaver app."/>
 
 (Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)
 
