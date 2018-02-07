@@ -2,11 +2,120 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2018-01-14T21:32:58-00:00</updated>
+  <updated>2018-02-07T03:28:42-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>ttyrec conversion</title><link href="http://swenson.io/2018_01_14_ttyrec_conversion.html" rel="alternate" /><id>2018_01_14_ttyrec_conversion.html</id><published>2018-01-14T21:32:58-00:00</published><updated>2018-01-14T21:32:58-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>64-bit assembly language programming under macOS with NASM</title><link href="http://swenson.io/2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html" rel="alternate" /><id>2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html</id><published>2018-02-07T03:28:42-00:00</published><updated>2018-02-07T03:28:42-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;Just a quick follow-up to a &lt;a href="http://caswenson.com/2009_09_26_assembly_language_programmi</summary><content type="html">
+&lt;p&gt;Just a quick follow-up to a &lt;a href="http://caswenson.com/2009_09_26_assembly_language_programming_under_os_x_with_nasm.html"&gt;previous post on 32-bit assembly language programming for OS X&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I've had a fair amount of interest in this post, surprisingly, so I thought I would update it for the 64-bit Intel world we live in now.
+The biggest change is that the calling convention now uses registers instead of the stack &lt;a href="https://courses.cs.washington.edu/courses/cse378/10au/sections/Section1_recap.pdf"&gt;by
+default&lt;/a&gt;, and we
+use the &lt;code&gt;r*&lt;/code&gt; 64-bit registers instead of the &lt;code&gt;e*&lt;/code&gt; 32-bit registers.&lt;/p&gt;
+
+&lt;p&gt;A huge source of annoyance for me is the way we pass pointers to data.
+Now, in macOS, it is necessary for local data pointers to relative to the instruction pointer,
+which is most easily accomplished using &lt;code&gt;rel your_data_here&lt;/code&gt; and using &lt;code&gt;lea&lt;/code&gt; instead of a
+bare &lt;code&gt;mov&lt;/code&gt;.
+This can also be accomplished using the &lt;code&gt;DEFAULT REL&lt;/code&gt; directive, which says that
+all addresses in &lt;code&gt;lea&lt;/code&gt; should be &lt;code&gt;rel&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre name="code" class="nasm"&gt;
+BITS 64
+DEFAULT REL ; RIP-relative addressing by default
+;
+; Basic OS X calls to glibc
+;
+; compile with:
+; nasm -g -f macho64 malloc64.asm
+; gcc -o a.out malloc64.o
+;
+
+; glibc stuff
+extern _puts, _printf, _malloc, _free
+
+; static data
+section .data
+
+hello_world_str db "Hello world!", 10, 0
+int_str db "Address %llx", 10, 0
+
+; code
+section .text
+
+global _main
+
+_main:
+        ; save registers and align stack
+        push rbp
+        push r12
+        push rbx
+
+        lea  rdi, [hello_world_str]
+        call _puts
+
+        mov  rdi, 16
+        call _malloc
+
+        ; check if the malloc failed
+        test rax, rax
+        jz   fail_exit
+        mov  rbx, rax
+
+        xor  rax, rax
+        mov  rsi, rbx
+        lea  rdi, [int_str]
+        call _printf
+
+        ; print "A\nB\n..."
+        mov [rbx], word 0xD41 ; 'A\n'
+
+        mov r12, 10
+_loop:
+        mov  rdi, rbx
+        call  _puts
+        inc  qword [rbx]
+        dec  r12
+        jnz  _loop
+
+        ; free the malloc'd memory
+        mov  rdi, rbx
+        call _free
+
+        xor rax, rax
+        pop rbx
+        pop r12
+        pop rbp
+        ret
+
+fail_exit:
+        mov rax, 1
+        pop rbx
+        pop r12
+        pop rbp
+        ret
+&lt;/pre&gt;
+
+&lt;p&gt;The output should look something like this:&lt;/p&gt;
+
+&lt;pre&gt;
+Hello world!
+
+Address 100200000
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+&lt;/pre&gt;
+</content></entry><entry><title>ttyrec conversion</title><link href="http://swenson.io/2018_01_14_ttyrec_conversion.html" rel="alternate" /><id>2018_01_14_ttyrec_conversion.html</id><published>2018-01-14T21:32:58-00:00</published><updated>2018-01-14T21:32:58-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though</summary><content type="html">
 &lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
 I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
@@ -714,25 +823,5 @@ I don't expect to in the future, and I plan to avoid working for companies that 
 
 &lt;p&gt;Or, you know, maybe Holacracy could be rebranded to use an actual Captain Picard cardboard cutout and a real RPG-like rulebook.
 I might have had more fun then.&lt;/p&gt;
-</content></entry><entry><title>Adobe Source Code Pro</title><link href="http://swenson.io/2014_01_25_adobe_source_code_pro.html" rel="alternate" /><id>2014_01_25_adobe_source_code_pro.html</id><published>2014-01-26T03:15:29-00:00</published><updated>2014-01-26T03:15:29-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;Just thought I would mention, since I haven't talked about fonts for a while,
-that I would give </summary><content type="html">
-&lt;p&gt;Just thought I would mention, since I haven't talked about fonts for a while,
-that I would give a short update.&lt;/p&gt;
-
-&lt;p&gt;About a year ago, I decided to try
-&lt;a href="http://blogs.adobe.com/typblography/2012/09/source-code-pro.html"&gt;Adobe Source Code Pro&lt;/a&gt;,
-a new fixed-width font.&lt;/p&gt;
-
-&lt;p&gt;Since I kind of forgot that I was using it, and the experiment has gone on a year,
-I'll consider it a success.&lt;/p&gt;
-
-&lt;p&gt;I definitely notice that Source Code Pro is better suited to the desktop and
-laptop world: the font has a bit higher heights and feels a little more natural
-at lower dpi, larger screens (compared to Droid Sans Mono).&lt;/p&gt;
-
-&lt;p&gt;It's free. Give it a shot.&lt;/p&gt;
-
-&lt;p&gt;P.S.  Also, the web site got a bit of a facelift!&lt;/p&gt;
 </content></entry>
 </feed>

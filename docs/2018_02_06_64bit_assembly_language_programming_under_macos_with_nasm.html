@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<title>64-bit assembly language programming under macOS with NASM &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+
+	<link href="SyntaxHighlighter.css" rel="stylesheet" type="text/css" />
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script src="js/shCore.js" type="text/javascript"></script>
+	<script src="js/shBrushRuby.js" type="text/javascript"></script>
+	<script src="js/shBrushPython.js" type="text/javascript"></script>
+
+	<script language="javascript">
+	window.onload = function () {
+	    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	    dp.SyntaxHighlighter.HighlightAll('code');
+	}
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56218422-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+			<li><a href="hire.html">Hire</a></li>
+	    <li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+	    <li><a href="speaking.html">Speaking</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ChristopherSwenson">Google+</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive.html">Blog Archive</a></li>
+			<li><a href="mc.html">Modern Cryptanalysis</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html">64-bit assembly language programming under macOS with NASM</a></h1>
+<p>Just a quick follow-up to a <a href="http://caswenson.com/2009_09_26_assembly_language_programming_under_os_x_with_nasm.html">previous post on 32-bit assembly language programming for OS X</a>.</p>
+
+<p>I've had a fair amount of interest in this post, surprisingly, so I thought I would update it for the 64-bit Intel world we live in now.
+The biggest change is that the calling convention now uses registers instead of the stack <a href="https://courses.cs.washington.edu/courses/cse378/10au/sections/Section1_recap.pdf">by
+default</a>, and we
+use the <code>r*</code> 64-bit registers instead of the <code>e*</code> 32-bit registers.</p>
+
+<p>A huge source of annoyance for me is the way we pass pointers to data.
+Now, in macOS, it is necessary for local data pointers to relative to the instruction pointer,
+which is most easily accomplished using <code>rel your_data_here</code> and using <code>lea</code> instead of a
+bare <code>mov</code>.
+This can also be accomplished using the <code>DEFAULT REL</code> directive, which says that
+all addresses in <code>lea</code> should be <code>rel</code>.</p>
+
+<pre name="code" class="nasm">
+BITS 64
+DEFAULT REL ; RIP-relative addressing by default
+;
+; Basic OS X calls to glibc
+;
+; compile with:
+; nasm -g -f macho64 malloc64.asm
+; gcc -o a.out malloc64.o
+;
+
+; glibc stuff
+extern _puts, _printf, _malloc, _free
+
+; static data
+section .data
+
+hello_world_str db "Hello world!", 10, 0
+int_str db "Address %llx", 10, 0
+
+; code
+section .text
+
+global _main
+
+_main:
+        ; save registers and align stack
+        push rbp
+        push r12
+        push rbx
+
+        lea  rdi, [hello_world_str]
+        call _puts
+
+        mov  rdi, 16
+        call _malloc
+
+        ; check if the malloc failed
+        test rax, rax
+        jz   fail_exit
+        mov  rbx, rax
+
+        xor  rax, rax
+        mov  rsi, rbx
+        lea  rdi, [int_str]
+        call _printf
+
+        ; print "A\nB\n..."
+        mov [rbx], word 0xD41 ; 'A\n'
+
+        mov r12, 10
+_loop:
+        mov  rdi, rbx
+        call  _puts
+        inc  qword [rbx]
+        dec  r12
+        jnz  _loop
+
+        ; free the malloc'd memory
+        mov  rdi, rbx
+        call _free
+
+        xor rax, rax
+        pop rbx
+        pop r12
+        pop rbp
+        ret
+
+fail_exit:
+        mov rax, 1
+        pop rbx
+        pop r12
+        pop rbp
+        ret
+</pre>
+
+<p>The output should look something like this:</p>
+
+<pre>
+Hello world!
+
+Address 100200000
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+</pre>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014–2017 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>
