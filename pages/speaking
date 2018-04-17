@@ -10,6 +10,13 @@ If you wish to find out more, please contact me at <a href="contact">here</a>.
 
 <h2>Presentations</h2>
 
+<p>North Bay Python 2017:
+<a href="https://www.youtube.com/watch?v=PbdpW-yAeQo">
+Colossal Cave Adventure in Python
+</a>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PbdpW-yAeQo" frameborder="0" allowfullscreen></iframe>
+
 <p>PyCon Australia 2016:
 <a href="https://www.youtube.com/watch?v=cUyMnGeZ_3c">
 CPython Internals and the VM
