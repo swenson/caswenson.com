@@ -195,29 +195,6 @@ H
 I
 J
 </pre>
-</div><div class="post"><div class="date">2018-01-14</div><h1><a href="2018_01_14_ttyrec_conversion.html">ttyrec conversion</a></h1>
-<p>I'm an armchair fan of <a href="http://www.nethack.org">NetHack</a> and other roguelikes, though I don't play them too much.
-I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.</p>
-
-<p>I'd found some pieces of tools that might do the job around the Internet: <a href="http://nethack.wikia.com/wiki/Notable_ascensions">TTY "recordings" of NetHack ascensions</a> (essentially, replaying through the terminal sequences while they are playing), <a href="https://github.com/selectel/pyte">pyte</a> (a Python terminal emulator), and <a href="https://pypi.python.org/pypi/images2gif">images2gif</a> (a mostly working animated GIF maker).</p>
-
-<p>It's <em>almost</em> there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an <a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png">old  DOS bitmap font</a>, and then all of the glue code to make it all work together.
-I sped up the results by 5&times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.</p>
-
-<p>I open sourced the whole thing as <a href="https://github.com/swenson/ttyrec2gif">ttyrec2gif</a>. It produces nice GIFs like:</p>
-
-<p><img src="http://m.caswenson.com/images/out00001.gif" alt="Sample nethack screensaver animated GIF" /></p>
-
-<p>There's one last piece: how to actually turn this into a screen saver.</p>
-
-<p>In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:</p>
-
-<p><img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" alt="Quartz Composer screenshot of my screensaver app."/></p>
-
-<p>(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)</p>
-
-<p>Anyway, at the very least, there are some cool GIFs out there to look at now.
-I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).</p>
 </div><div class="post"><div class="date">2018-01-14</div><h1><a href="2018_01_14_friendship_api.html">Friendship API</a></h1>
 <p>This weekend, I wrote a quick email application called <a href="http://friendshipapi.com">Friendship API</a>.
 It solves a problem that I have: I am just terrible at staying in touch with my friends via email.
@@ -292,6 +269,29 @@ aside a spare weekend? Well, here's the process I followed at least:</p>
 addresses alone, so it can suggest someone whom you might be corresponding with regularly
 if you are doing so with a different email address.</li>
 </ul>
+</div><div class="post"><div class="date">2018-01-14</div><h1><a href="2018_01_14_ttyrec_conversion.html">ttyrec conversion</a></h1>
+<p>I'm an armchair fan of <a href="http://www.nethack.org">NetHack</a> and other roguelikes, though I don't play them too much.
+I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.</p>
+
+<p>I'd found some pieces of tools that might do the job around the Internet: <a href="http://nethack.wikia.com/wiki/Notable_ascensions">TTY "recordings" of NetHack ascensions</a> (essentially, replaying through the terminal sequences while they are playing), <a href="https://github.com/selectel/pyte">pyte</a> (a Python terminal emulator), and <a href="https://pypi.python.org/pypi/images2gif">images2gif</a> (a mostly working animated GIF maker).</p>
+
+<p>It's <em>almost</em> there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an <a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png">old  DOS bitmap font</a>, and then all of the glue code to make it all work together.
+I sped up the results by 5&times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.</p>
+
+<p>I open sourced the whole thing as <a href="https://github.com/swenson/ttyrec2gif">ttyrec2gif</a>. It produces nice GIFs like:</p>
+
+<p><img src="images/out00001.gif" alt="Sample nethack screensaver animated GIF" /></p>
+
+<p>There's one last piece: how to actually turn this into a screen saver.</p>
+
+<p>In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:</p>
+
+<p><img src="images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" alt="Quartz Composer screenshot of my screensaver app."/></p>
+
+<p>(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)</p>
+
+<p>Anyway, at the very least, there are some cool GIFs out there to look at now.
+I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).</p>
 </div><div class="post"><div class="date">2015-04-26</div><h1><a href="2015_04_26_an_simple_aesbased_random_number_generator.html">An simple AES-based random number generator</a></h1>
 <p>When browsing through some stack traces doing Go development, I noticed that Go had done something rather
 clever in their codebase: on x86-64 processors, they used
@@ -900,7 +900,7 @@ I might have had more fun then.</p>
 
 <div id="footer">
 	<p id="legal">
-		Copyright 2014–2017 Christopher Swenson
+		Copyright 2014–2020 Christopher Swenson
 	</p>
 </div>
 

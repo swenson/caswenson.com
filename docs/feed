@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2018-02-07T03:28:42-00:00</updated>
+  <updated>2018-02-07T03:28:39-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>64-bit assembly language programming under macOS with NASM</title><link href="http://swenson.io/2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html" rel="alternate" /><id>2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html</id><published>2018-02-07T03:28:42-00:00</published><updated>2018-02-07T03:28:42-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>64-bit assembly language programming under macOS with NASM</title><link href="http://swenson.io/2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html" rel="alternate" /><id>2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html</id><published>2018-02-07T03:28:39-00:00</published><updated>2018-02-07T03:28:39-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;Just a quick follow-up to a &lt;a href="http://caswenson.com/2009_09_26_assembly_language_programmi</summary><content type="html">
 &lt;p&gt;Just a quick follow-up to a &lt;a href="http://caswenson.com/2009_09_26_assembly_language_programming_under_os_x_with_nasm.html"&gt;previous post on 32-bit assembly language programming for OS X&lt;/a&gt;.&lt;/p&gt;
 
@@ -115,31 +115,7 @@ H
 I
 J
 &lt;/pre&gt;
-</content></entry><entry><title>ttyrec conversion</title><link href="http://swenson.io/2018_01_14_ttyrec_conversion.html" rel="alternate" /><id>2018_01_14_ttyrec_conversion.html</id><published>2018-01-14T21:32:58-00:00</published><updated>2018-01-14T21:32:58-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though</summary><content type="html">
-&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
-I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
-
-&lt;p&gt;I'd found some pieces of tools that might do the job around the Internet: &lt;a href="http://nethack.wikia.com/wiki/Notable_ascensions"&gt;TTY "recordings" of NetHack ascensions&lt;/a&gt; (essentially, replaying through the terminal sequences while they are playing), &lt;a href="https://github.com/selectel/pyte"&gt;pyte&lt;/a&gt; (a Python terminal emulator), and &lt;a href="https://pypi.python.org/pypi/images2gif"&gt;images2gif&lt;/a&gt; (a mostly working animated GIF maker).&lt;/p&gt;
-
-&lt;p&gt;It's &lt;em&gt;almost&lt;/em&gt; there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an &lt;a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png"&gt;old  DOS bitmap font&lt;/a&gt;, and then all of the glue code to make it all work together.
-I sped up the results by 5&amp;times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.&lt;/p&gt;
-
-&lt;p&gt;I open sourced the whole thing as &lt;a href="https://github.com/swenson/ttyrec2gif"&gt;ttyrec2gif&lt;/a&gt;. It produces nice GIFs like:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://m.caswenson.com/images/out00001.gif" alt="Sample nethack screensaver animated GIF" /&gt;&lt;/p&gt;
-
-&lt;p&gt;There's one last piece: how to actually turn this into a screen saver.&lt;/p&gt;
-
-&lt;p&gt;In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://m.caswenson.com/images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" alt="Quartz Composer screenshot of my screensaver app."/&gt;&lt;/p&gt;
-
-&lt;p&gt;(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)&lt;/p&gt;
-
-&lt;p&gt;Anyway, at the very least, there are some cool GIFs out there to look at now.
-I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).&lt;/p&gt;
-</content></entry><entry><title>Friendship API</title><link href="http://swenson.io/2018_01_14_friendship_api.html" rel="alternate" /><id>2018_01_14_friendship_api.html</id><published>2018-01-14T21:32:58-00:00</published><updated>2018-01-14T21:32:58-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>Friendship API</title><link href="http://swenson.io/2018_01_14_friendship_api.html" rel="alternate" /><id>2018_01_14_friendship_api.html</id><published>2018-01-14T21:28:37-00:00</published><updated>2018-01-14T21:28:37-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;This weekend, I wrote a quick email application called &lt;a href="http://friendshipapi.com"&gt;Friend</summary><content type="html">
 &lt;p&gt;This weekend, I wrote a quick email application called &lt;a href="http://friendshipapi.com"&gt;Friendship API&lt;/a&gt;.
 It solves a problem that I have: I am just terrible at staying in touch with my friends via email.
@@ -214,6 +190,30 @@ aside a spare weekend? Well, here's the process I followed at least:&lt;/p&gt;
 addresses alone, so it can suggest someone whom you might be corresponding with regularly
 if you are doing so with a different email address.&lt;/li&gt;
 &lt;/ul&gt;
+</content></entry><entry><title>ttyrec conversion</title><link href="http://swenson.io/2018_01_14_ttyrec_conversion.html" rel="alternate" /><id>2018_01_14_ttyrec_conversion.html</id><published>2018-01-14T08:00:00-00:00</published><updated>2018-01-14T08:00:00-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though</summary><content type="html">
+&lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
+I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
+
+&lt;p&gt;I'd found some pieces of tools that might do the job around the Internet: &lt;a href="http://nethack.wikia.com/wiki/Notable_ascensions"&gt;TTY "recordings" of NetHack ascensions&lt;/a&gt; (essentially, replaying through the terminal sequences while they are playing), &lt;a href="https://github.com/selectel/pyte"&gt;pyte&lt;/a&gt; (a Python terminal emulator), and &lt;a href="https://pypi.python.org/pypi/images2gif"&gt;images2gif&lt;/a&gt; (a mostly working animated GIF maker).&lt;/p&gt;
+
+&lt;p&gt;It's &lt;em&gt;almost&lt;/em&gt; there, so I wrote the missing piece that takes the screen buffer (as a matrix of character codes) and converts it to an image using an &lt;a href="http://en.wikipedia.org/wiki/Code_page_437#mediaviewer/File:Codepage-437.png"&gt;old  DOS bitmap font&lt;/a&gt;, and then all of the glue code to make it all work together.
+I sped up the results by 5&amp;times; or so, and then run the whole thing through ImageMagick in the end to shrink the animated GIF.&lt;/p&gt;
+
+&lt;p&gt;I open sourced the whole thing as &lt;a href="https://github.com/swenson/ttyrec2gif"&gt;ttyrec2gif&lt;/a&gt;. It produces nice GIFs like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="images/out00001.gif" alt="Sample nethack screensaver animated GIF" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There's one last piece: how to actually turn this into a screen saver.&lt;/p&gt;
+
+&lt;p&gt;In OS X, it's a matter of writing a little Quartz Composer program to randomly pick GIFs from a directory and play them as movies. This has hard-coded paths in it, because I haven't figured out how to make OS X screen saver configuration parameters, so I'll just post a screen shot of what the program looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="images/nethack-screensaver_-_Editor_2014-10-19_11-38-46.png" alt="Quartz Composer screenshot of my screensaver app."/&gt;&lt;/p&gt;
+
+&lt;p&gt;(Having Quartz pick a random GIF and then reload and pick another one after 5 minutes is a fun challenge. The best solution I came up with involved using a wave generator that, when rounded, would trigger an event only when it reached its apex, and this triggered a sampler to resample and pick a new random GIF. Kind of a Rube Goldberg way of doing it, but it was fun.)&lt;/p&gt;
+
+&lt;p&gt;Anyway, at the very least, there are some cool GIFs out there to look at now.
+I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).&lt;/p&gt;
 </content></entry><entry><title>An simple AES-based random number generator</title><link href="http://swenson.io/2015_04_26_an_simple_aesbased_random_number_generator.html" rel="alternate" /><id>2015_04_26_an_simple_aesbased_random_number_generator.html</id><published>2015-04-27T00:43:28-00:00</published><updated>2015-04-27T00:43:28-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;When browsing through some stack traces doing Go development, I noticed that Go had done somethi</summary><content type="html">
 &lt;p&gt;When browsing through some stack traces doing Go development, I noticed that Go had done something rather
@@ -265,7 +265,7 @@ Unfortunately, these extra rounds make the performance not quite as competitive.
 
 &lt;p&gt;I'm still tinkering with the AES-based hash function though to try to make it faster
 or hash better. I'll report back with my findings.&lt;/p&gt;
-</content></entry><entry><title>So You Want To Learn Crypto, Part 2: Cyclic Groups And Short Codes</title><link href="http://swenson.io/2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes.html" rel="alternate" /><id>2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes.html</id><published>2014-11-30T13:05:00-00:00</published><updated>2014-11-30T13:05:00-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>So You Want To Learn Crypto, Part 2: Cyclic Groups And Short Codes</title><link href="http://swenson.io/2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes.html" rel="alternate" /><id>2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes.html</id><published>2014-11-30T20:59:02-00:00</published><updated>2014-11-30T20:59:02-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;&lt;a href="http://www.caswenson.com/2014_11_06_so_you_want_to_learn_crypto_part_1"&gt;Part 1 is here&lt;</summary><content type="html">
 &lt;p&gt;&lt;a href="http://www.caswenson.com/2014_11_06_so_you_want_to_learn_crypto_part_1"&gt;Part 1 is here&lt;/a&gt;&lt;/p&gt;
 
@@ -625,7 +625,7 @@ I've tried to use the original authors of as the source, when possible, or other
 &lt;li&gt;&lt;em&gt;Trie&lt;/em&gt;: tree, &lt;a href="http://www.webcitation.org/5pqUULy24"&gt;http://www.webcitation.org/5pqUULy24&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;von Neumann&lt;/em&gt;: von noi-man &lt;a href="https://www.youtube.com/watch?v=VTS9O0CoVng"&gt;https://www.youtube.com/watch?v=VTS9O0CoVng&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>So You Want To Learn Crypto, Part 1</title><link href="http://swenson.io/2014_11_06_so_you_want_to_learn_crypto_part_1.html" rel="alternate" /><id>2014_11_06_so_you_want_to_learn_crypto_part_1.html</id><published>2014-11-06T20:00:00-00:00</published><updated>2014-11-06T20:00:00-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>So You Want To Learn Crypto, Part 1</title><link href="http://swenson.io/2014_11_06_so_you_want_to_learn_crypto_part_1.html" rel="alternate" /><id>2014_11_06_so_you_want_to_learn_crypto_part_1.html</id><published>2014-11-06T20:32:27-00:00</published><updated>2014-11-06T20:32:27-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;Cryptography and cryptanalysis are topics that fascinate many people, but it's a tricky area to </summary><content type="html">
 &lt;p&gt;Cryptography and cryptanalysis are topics that fascinate many people, but it's a tricky area to get into.
 For instance, knowing the difference between a &lt;a href="http://en.wikipedia.org/wiki/Hash_function"&gt;hash function&lt;/a&gt; and a &lt;a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function"&gt;cryptographically strong hash function&lt;/a&gt; is critical, but extremely easy to mix up due to confusing terminology.
@@ -681,7 +681,7 @@ And even though it is possible to learn almost everything about cryptography and
 In particular, I know that there are some sticky points in finite fields, RSA, and hashing that I think I can help clarify.&lt;/p&gt;
 
 &lt;p&gt;Check back next week for part 2 of &lt;em&gt;So You Want To Learn Crypto&lt;/em&gt;.&lt;/p&gt;
-</content></entry><entry><title>What I Learned As A Teen Programmer</title><link href="http://swenson.io/2014_10_26_what_i_learned_as_a_teen_programmer.html" rel="alternate" /><id>2014_10_26_what_i_learned_as_a_teen_programmer.html</id><published>2014-10-27T01:38:59-00:00</published><updated>2014-10-27T01:38:59-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+</content></entry><entry><title>What I Learned As A Teen Programmer</title><link href="http://swenson.io/2014_10_26_what_i_learned_as_a_teen_programmer.html" rel="alternate" /><id>2014_10_26_what_i_learned_as_a_teen_programmer.html</id><published>2014-10-27T01:38:42-00:00</published><updated>2014-10-27T01:38:42-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
 Reading t</summary><content type="html">
 &lt;p&gt;I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
