@@ -1,8 +1,9 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 
-from datetime import date
+from datetime import date, datetime
 import xml.etree.ElementTree as et
 import glob
+import re
 import os
 import os.path
 import shutil
@@ -10,6 +11,8 @@ import string
 import subprocess as sp
 import time
 import uuid
+
+date_pattern = re.compile(r'\[DATE\].*\(([0-9-]+)\)')
 
 uuid_namespace = uuid.UUID('fcd0d678-5e95-4d62-9551-ac14caa3ce22')
 
@@ -29,13 +32,18 @@ def run_cmd(cmd):
   return sp.Popen(cmd, shell=True, stdout=sp.PIPE).communicate()[0]
 
 def markdown(fname):
-  return run_cmd(MARKDOWN + " " + fname)
+  return run_cmd(MARKDOWN + " " + fname).decode('utf8')
+
 
 posts = []
 
 for post in glob.glob("posts/*.md"):
-  print "Reading " + post
+  print("Reading " + post)
   mtime = os.path.getmtime(post)
+  with open(post) as fin:
+      m = date_pattern.search(fin.read())
+      if m:
+          mtime = datetime.fromisoformat(m.group(1)).timestamp()
   posts.append((mtime, markdown(post)))
 
 posts.sort(reverse=True)
@@ -50,12 +58,12 @@ disqus_text = '' # disqus_template % DISQUS_SHORTNAME
 
 static_files = [os.path.join(x[0], y) for x in os.walk("static") for y in x[2]]
 
-print "Cleaning"
+print("Cleaning")
 # Copy static files.
 if os.path.exists("docs"):
   shutil.rmtree("docs")
 
-print "Static files"
+print("Static files")
 for fname in static_files:
   run_cmd("mkdir -p " + os.path.join("docs", os.path.dirname(fname[len("static/"):])))
   shutil.copy(fname, os.path.join("docs", fname[len("static/"):]))
@@ -63,7 +71,7 @@ for fname in static_files:
 months = 'xxx jan feb mar apr may jun jul aug sep oct nov dec'.split()
 
 # Create posts.
-print "Posting"
+print("Posting")
 posts_text = ""
 archive_text = """<ul id="archive">"""
 atom_text = ""
@@ -105,7 +113,7 @@ for mtime, post in posts:
     content = et.SubElement(entry, "content")
     content.set("type", "html")
     content.text = post_body
-    atom_text += et.tostring(entry, "utf-8")
+    atom_text += et.tostring(entry, "utf-8").decode("utf8")
 
     # RSS
     item = et.Element("item")
@@ -119,7 +127,7 @@ for mtime, post in posts:
     published.text = time.strftime("%a, %d %b %Y %H:%M:%S %z", time.gmtime(mtime))
     content = et.SubElement(item, "description")
     content.text = post_body
-    rss_text += et.tostring(item, "utf-8")
+    rss_text += et.tostring(item, "utf-8").decode("utf8")
 
   processed += 1
 
@@ -135,33 +143,33 @@ for mtime, post in posts:
   os.symlink(link, os.path.join("docs", link_alias))
 archive_text += "</ul>"
 
-print "Index"
+print("Index")
 
 # Create index.
 with open("docs/index.html", "w") as index:
   index.write(index_template.format(title="Main", posts=posts_text, disqus=disqus_text))
 
-print "Archive"
+print("Archive")
 # Create archive at /archive
 with open("docs/archive.html", "w") as archive:
   archive.write(index_template.format(title="Archive", posts=archive_text, disqus=""))
 os.symlink("archive.html", "docs/archive")
 
-print "Atom"
+print("Atom")
 # Create Atom
 with open("docs/feed", "w") as rss:
   mtime = posts[0][0]
   modified_time = time.strftime("%Y-%m-%dT%H:%M:%S-00:00", time.gmtime(mtime))
   rss.write(rss_template % (modified_time, atom_text))
 
-print "RSS 2.0"
+print("RSS 2.0")
 # Create RSS
 with open("docs/rss", "w") as rss:
   mtime = posts[0][0]
   modified_time = time.strftime("%a, %d %b %Y %H:%M:%S %z", time.gmtime(mtime))
   rss.write(rss_template % (modified_time, rss_text))
 
-print "Pages"
+print("Pages")
 # Create Pages
 for page in glob.glob("pages/*"):
   name = os.path.basename(page)

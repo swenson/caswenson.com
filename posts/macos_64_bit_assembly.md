@@ -1,3 +1,5 @@
+[DATE]: # (2018-02-06)
+
 # 64-bit assembly language programming under macOS with NASM
 
 Just a quick follow-up to a [previous post on 32-bit assembly language programming for OS X](http://caswenson.com/2009_09_26_assembly_language_programming_under_os_x_with_nasm.html).
