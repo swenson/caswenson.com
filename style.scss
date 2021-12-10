@@ -1,5 +1,6 @@
 @import 'normalize';
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:600|Droid+Sans:400,700|Droid+Sans+Mono|Alegreya+Sans:400,700,400italic,700italic|Montserrat:400,700);
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -10,13 +11,13 @@
 }
 
 // fonts
-$cs-font: 'Source Sans Pro', sans-serif;
-$serif: 'Alegreya Sans', sans-serif;
-$sans: 'Montserrat', sans-serif;
-$mono: 'Droid Sans Mono', monospaced;
+$cs-font: 'Open Sans',sans-serif;
+$serif: 'Open Sans', sans-serif;
+$sans: 'Open Sans', sans-serif;
+$mono: 'IBM Plex Mono', monospaced;
 
 // colors
-$gray: #CCC;
+$gray: #ddd;
 $navy: #006;
 $blue: #36c;
 $white: #fff;
@@ -24,7 +25,7 @@ $black: #000;
 $width: 1200px;
 
 $side-radius: 5px;
-$cs-size: 100pt;
+$cs-size: 90pt;
 $side-width: 0.17 * $width;
 $main-width: $width - $side-width - 0.08 * $width;
 
@@ -96,19 +97,18 @@ body {
 
 	#cs {
 		font-family: $cs-font;
-		font-weight: 600;
+    font-weight: bold;
 	  text-align: center;
 
 	  #c {
 		  font-size: $cs-size;
 		  color: $navy;
-
 	  }
 
 	  #s {
 		  font-size: 1.15 * $cs-size;
 		  color: $blue;
-	    vertical-align: -0.225 * $cs-size;
+	    vertical-align: -0.25 * $cs-size;
 	    margin-left: -0.35 * $cs-size;
 	  }
 	}
