@@ -2,11 +2,67 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2018-02-06T08:00:00-00:00</updated>
+  <updated>2021-12-10T08:00:00-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>64-bit assembly language programming under macOS with NASM</title><link href="http://swenson.io/2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html" rel="alternate" /><id>2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html</id><published>2018-02-06T08:00:00-00:00</published><updated>2018-02-06T08:00:00-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Why Hiring is Impossible</title><link href="http://swenson.io/2021_12_10_why_hiring_is_impossible.html" rel="alternate" /><id>2021_12_10_why_hiring_is_impossible.html</id><published>2021-12-10T08:00:00-00:00</published><updated>2021-12-10T08:00:00-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;For the purposes of this article, I am speaking of the "tech" industry in general (for companies</summary><content type="html">
+&lt;p&gt;For the purposes of this article, I am speaking of the "tech" industry in general (for companies of all sizes), especially for programmers, as that is where I have experience.&lt;/p&gt;
+
+&lt;p&gt;Hiring people &lt;em&gt;fairly&lt;/em&gt; is impossible, and therefore, meritocracy is a myth.
+(Here, meritocracy means the idea that you can identify and reward the "best" people.)&lt;/p&gt;
+
+&lt;p&gt;Why?&lt;/p&gt;
+
+&lt;p&gt;There is one simple reason for that.&lt;/p&gt;
+
+&lt;p&gt;(I am a mathematician, so bear with me here.)&lt;/p&gt;
+
+&lt;p&gt;First, the hiring process is binary.
+At the end of the process, you either hire someone or you don't,
+assigning them a value of 0 or 1.&lt;/p&gt;
+
+&lt;p&gt;This means you have assigned a 1-dimensional number to each candidate.
+(Which makes sense, because mathematically you can only &lt;em&gt;unambiguously&lt;/em&gt;, or fairly, you might say, compare 1-dimensional numbers.)&lt;/p&gt;
+
+&lt;p&gt;This means that, no matter the set of people that you have, you fundamentally have to &lt;em&gt;compare&lt;/em&gt; them.
+That is, you need to boil them down to a single number — 0 or 1 in the hiring sense, or to a more general real number if you want more granularity, like a number 1 to 5 or -1 to 1.
+(Mathematically, this is similar to defining a &lt;a href="https://en.wikipedia.org/wiki/Total_order"&gt;total order&lt;/a&gt; or
+&lt;a href="https://en.wikipedia.org/wiki/Metric_space"&gt;metric space&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;The problem is: people &lt;em&gt;are not&lt;/em&gt; a single number.&lt;/p&gt;
+
+&lt;p&gt;The fundamental theorem of people is: &lt;strong&gt;you cannot boil a person down to a single number&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Say that person A is a more reliable Python programmer than person B, but person B is more creative.
+And Person C is in between A and B in programming ability, but learns quickly.
+And Person D is a weak programmer, but can understand and destroy any technical problem.
+And Person E is a slow coder, but can be trusted to document and test their code thoroughly.
+And Person F tackles problems in an entirely different way.&lt;/p&gt;
+
+&lt;p&gt;Who is "better"?&lt;/p&gt;
+
+&lt;p&gt;The answer: &lt;em&gt;no one&lt;/em&gt; can be objectively better than the others, in general.
+Ultimately, who you hire should depend heavily on many other questions that are hard to quantify, and don't even entirely depend on the candidate: who is on your team now? Which people will work best with them, and with people you might hire in the future? Which person's strengths and weaknesses are complement the team as a whole?
+None of these questions are truly objective or depend solely on the intrinsic attributes of the candidate.&lt;/p&gt;
+
+&lt;p&gt;The job of the hiring manager is to boil down all of these parts of the people into a single number: 0 (don't hire) or 1 (hire).
+It is impossible to do this fairly and objectively for everyone.&lt;/p&gt;
+
+&lt;p&gt;That this is unfair and subjective is obvious to anyone who has been through the hiring gauntlet at most tech companies.
+They use a variety of methods to try to measure candidates, such as takeaway programming problems, pair programming exercises, whiteboard coding, brain teasers and puzzles, favoring certain degrees, requiring years of experience, or looking at open source work.
+Some people do well with one method or another, and some don't.
+You can't fairly say that because someone is worse at a whiteboard under high pressure that they will make a worse employee, or that someone being excellent at a take-home problem will work well with the existing team.
+The person at the whiteboard might simply be having an off day, they might not deal well being under the microscope of a high-pressure whiteboard interview, or even the person conducting the interview may not be able to guide them through the interview fairly.
+Likewise, acing a take-home exam demonstrates some ability to solve problems in a certain scenario, but does little to show how well they communicate or work with others.&lt;/p&gt;
+
+&lt;p&gt;It all comes down to: &lt;em&gt;all&lt;/em&gt; hiring processes are doomed to be unfair.
+You should accept that, and come to terms with it.
+Then, you should examine your hiring processes, make them as fair as possible,
+and know exactly how they are unfair.
+Only by understanding your own strengths and weaknesses as a company, hiring manager, or interviewer will you even come close to being able to hire people and set them up for success.&lt;/p&gt;
+</content></entry><entry><title>64-bit assembly language programming under macOS with NASM</title><link href="http://swenson.io/2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html" rel="alternate" /><id>2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html</id><published>2018-02-06T08:00:00-00:00</published><updated>2018-02-06T08:00:00-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;Just a quick follow-up to a &lt;a href="http://caswenson.com/2009_09_26_assembly_language_programmi</summary><content type="html">
 &lt;p&gt;Just a quick follow-up to a &lt;a href="http://caswenson.com/2009_09_26_assembly_language_programming_under_os_x_with_nasm.html"&gt;previous post on 32-bit assembly language programming for OS X&lt;/a&gt;.&lt;/p&gt;
 
@@ -739,89 +795,5 @@ I didn't even use Python bindings for &lt;code&gt;sqlite3&lt;/code&gt;: I just c
 That way, it should be easy to modify it for other databases in the near future.&lt;/p&gt;
 
 &lt;p&gt;I'll probably end up adding Postgres or MySQL support sometime soon (when one of my projects that uses those technologies needs to be updated).&lt;/p&gt;
-</content></entry><entry><title>This Holacracy Thing</title><link href="http://swenson.io/2014_10_05_this_holacracy_thing.html" rel="alternate" /><id>2014_10_05_this_holacracy_thing.html</id><published>2014-10-05T21:35:58-00:00</published><updated>2014-10-05T21:35:58-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;I've had a busy year where I've been trying out a lot of new ideas for working
-and collaborating</summary><content type="html">
-&lt;p&gt;I've had a busy year where I've been trying out a lot of new ideas for working
-and collaborating, and learning a lot.
-One thing that I learned about and experienced for a few weeks was the system of &lt;a href="http://en.wikipedia.org/wiki/Holacracy"&gt;Holacracy&lt;/a&gt;.
-The goal of Holacracy is to have a managerless, self-organized team of people rather than having a traditional top-down management tree.
-First, I'll state that my view of Holacracy comes after only about a month of working within it, and I don't feel that even after that I fully got it. So take this post with a grain of salt.&lt;/p&gt;
-
-&lt;h2&gt;It's an AI for a boss&lt;/h2&gt;
-
-&lt;p&gt;The initial appeal of Holacracy was that the group within the startup I was working at had no boss.
-The Holacratic system has enough processes in place to theoretically allow decisions to be made without a central leader: a true peer-to-peer sort of system.&lt;/p&gt;
-
-&lt;p&gt;Essentially, we had several Holacracy meetings a week.
-These meetings were incredibly structure-heavy.
-People would propose ideas at point A, discuss them at point B, and these discussions and round robins followed rules that theoretically ensured fairness.&lt;/p&gt;
-
-&lt;p&gt;An insight I had to this was that &lt;em&gt;your team is controlling an NPC "boss"&lt;/em&gt;, and you have a little script that you run through to control its AI.&lt;/p&gt;
-
-&lt;p&gt;This sounds like a good thing: if you have a very small team, maybe only a couple of people, it might seem like there would not be enough work for a full-time manager.
-So you can have a cardboard cutout that you all pretend is your boss, and you have a system through which your cardboard captain makes decisions.
-(I like to think of my cardboard cutout boss as Captain Picard.)&lt;/p&gt;
-
-&lt;h2&gt;It's too complex&lt;/h2&gt;
-
-&lt;p&gt;But, this AI is quite complex.
-Holacracy has a lot of rules.
-And I mean &lt;a href="http://holacracy.org/constitution"&gt;a lot&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;There was a discussion I had with someone at the startup where they indicated that Holacracy was probably impossible to understand (and certainly to get right) without hiring a special Holacracy consulting company to come in and help you adopt the system &amp;mdash; helping you go learn the rules and make your Captain Picard make decisions, basically.&lt;/p&gt;
-
-&lt;p&gt;This kind of put me off.
-A system that's so complex that it takes weeks of training to be able to even use it to have a constructive meeting?
-It smells a bit fishy to me.
-Meetings are hard, but they're not &lt;em&gt;that&lt;/em&gt; hard, even for a cave troll programmer like me.
-There are entire consulting companies who would love to sell you tons of expensive training for Holacracy.&lt;/p&gt;
-
-&lt;p&gt;To make it even worse, it's also nearly impossible to run with Holacracy without using special Holacracy meeting software to help you facilitate your meetings.
-There's a lot of structure and rules, and the software helps enforce these rules.
-This also smells a bit fishy.&lt;/p&gt;
-
-&lt;p&gt;Being a newcomer to this incredibly confusing set of rules was also incredibly unpleasant.
-I felt lost in a maze of rules.
-I felt that I couldn't contribute to meetings because I didn't even know when I was allowed to talk.
-And when I was allowed to talk, I often didn't know what to say.
-(There are lots of magic words you use to indicate your status, and I sort of had to learn these
-all from context.)
-Given that I was on a feeler contract (before I came on full-time), I was not given any training in Holacracy.&lt;/p&gt;
-
-&lt;p&gt;Finally, with such elaborate rules, there's inevitable rules-lawyering.
-The rules are meant to be used as a weapon to combat inefficiency, but sometimes people get wrapped up
-in them to the point that legitimate, necessary work was dropped on the floor because it did not
-fit into the system well.
-I felt that at times this did a disservice to the team, and certainly to the users of our software.&lt;/p&gt;
-
-&lt;h2&gt;It's time-consuming&lt;/h2&gt;
-
-&lt;p&gt;Given the AI manager and the complex rules, I think it's about a wash so far.
-It's nice not to have a manager, but annoying to have a large RPG rules book to memorize before starting work.&lt;/p&gt;
-
-&lt;p&gt;But, those meetings to make Captain Picard dance were &lt;em&gt;ridiculously time-consuming&lt;/em&gt;.
-I'm of the leave-me-alone-so-I-can-code-in-my-cave School of Programming.
-I can be coaxed out of my cave for the occasional meeting, and sometimes even enjoy it.
-But the level of meetings required for the Captain Picard gears to run was debilitating.
-Hours and hours each week were spent.
-Several people had a significant amount of work before and after meetings dedicated to cleanup and prep work.
-(And even during the meeting, a couple of people were often not allowed to participate in discussions, or supposed to limit such contributions significantly, as they played the role of facilitator, secretary, etc.)&lt;/p&gt;
-
-&lt;h2&gt;In conclusion&lt;/h2&gt;
-
-&lt;p&gt;Coming in as a new hire is daunting.
-You are adjusting to a new team, learning their quirks, and learning their work.
-When you add on a whole new system of thinking about meetings and management, and give no training (when a lot of training is required), you are setting people up to fail.
-It certainly was just too much for me.
-Holacracy was a huge contributor to my deciding not to work for this particular company long-term.&lt;/p&gt;
-
-&lt;p&gt;The company that I worked with clearly prefers Holacracy, and that's their prerogative.
-And if it works for them, that's great.
-But, I didn't feel comfortable in that system, and &lt;a href="http://recode.net/2014/10/03/holacracy-or-hella-crazy-the-fringe-ideas-driving-the-las-vegas-downtown-project/"&gt;I don't think I'm the only one&lt;/a&gt;.
-I don't expect to in the future, and I plan to avoid working for companies that embrace Holacracy.&lt;/p&gt;
-
-&lt;p&gt;Or, you know, maybe Holacracy could be rebranded to use an actual Captain Picard cardboard cutout and a real RPG-like rulebook.
-I might have had more fun then.&lt;/p&gt;
 </content></entry>
 </feed>
