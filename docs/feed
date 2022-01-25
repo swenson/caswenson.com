@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2021-12-10T08:00:00-00:00</updated>
+  <updated>2022-01-25T18:04:17-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>Why Hiring is Impossible</title><link href="http://swenson.io/2021_12_10_why_hiring_is_impossible.html" rel="alternate" /><id>2021_12_10_why_hiring_is_impossible.html</id><published>2021-12-10T08:00:00-00:00</published><updated>2021-12-10T08:00:00-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Modern Cryptanalysis v1.1 Available for Free</title><link href="http://swenson.io/2022_01_25_modern_cryptanalysis_v11_available_for_free.html" rel="alternate" /><id>2022_01_25_modern_cryptanalysis_v11_available_for_free.html</id><published>2022-01-25T18:04:17-00:00</published><updated>2022-01-25T18:04:17-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;In 2008, I wrote and published a book called &lt;em&gt;Modern Cryptanalysis&lt;/em&gt;, a technical book
+on </summary><content type="html">
+&lt;p&gt;In 2008, I wrote and published a book called &lt;em&gt;Modern Cryptanalysis&lt;/em&gt;, a technical book
+on cryptography and code breaking.&lt;/p&gt;
+
+&lt;p&gt;It's been about 14 years since Modern Cryptanalysis was published.
+It's had a good run, but it's been out of print for a while now.&lt;/p&gt;
+
+&lt;p&gt;As such, I'm releasing it for free!&lt;/p&gt;
+
+&lt;p&gt;I've made some very small changes to clean up known errata and to reformat it for US Letter paper, but otherwise I've left it essentially as the 2008 version.&lt;/p&gt;
+
+&lt;p&gt;Enjoy! Download here: &lt;a href="/Modern Cryptanalysis v1.1 2022-01-23.pdf"&gt;Modern Cryptanalysis v1.1&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Why Hiring is Impossible</title><link href="http://swenson.io/2021_12_10_why_hiring_is_impossible.html" rel="alternate" /><id>2021_12_10_why_hiring_is_impossible.html</id><published>2021-12-10T08:00:00-00:00</published><updated>2021-12-10T08:00:00-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;For the purposes of this article, I am speaking of the "tech" industry in general (for companies</summary><content type="html">
 &lt;p&gt;For the purposes of this article, I am speaking of the "tech" industry in general (for companies of all sizes), especially for programmers, as that is where I have experience.&lt;/p&gt;
 
@@ -783,17 +797,5 @@ When you get it wrong, you often do so catastrophically.&lt;/p&gt;
 
 &lt;p&gt;Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
 I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.&lt;/p&gt;
-</content></entry><entry><title>Pyway or the highway</title><link href="http://swenson.io/2014_10_12_pyway_or_the_highway.html" rel="alternate" /><id>2014_10_12_pyway_or_the_highway.html</id><published>2014-10-12T19:15:24-00:00</published><updated>2014-10-12T19:15:24-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;&lt;a href="https://github.com/swenson/pyway"&gt;Pyway&lt;/a&gt; is a database migration tool that I wrote t</summary><content type="html">
-&lt;p&gt;&lt;a href="https://github.com/swenson/pyway"&gt;Pyway&lt;/a&gt; is a database migration tool that I wrote to solve the problem of: I want database migrations, but I don't want to bring &lt;a href="http://guides.rubyonrails.org/migrations.html"&gt;Rails&lt;/a&gt; or the entire &lt;a href="http://flywaydb.org/"&gt;JVM&lt;/a&gt; with me just to do them.&lt;/p&gt;
-
-&lt;p&gt;So, I wrote a little script that does the most simple thing you can do with database migrations: keep track of them by file name, and run any new ones in sorted order.
-Python is pretty much universally present at this point in server environments, so that's the tool that I used.&lt;/p&gt;
-
-&lt;p&gt;This is nothing sophisticated, and currently has &lt;code&gt;sqlite3&lt;/code&gt; hardcoded in it, but it should be trivial to modify for any other databases.
-I didn't even use Python bindings for &lt;code&gt;sqlite3&lt;/code&gt;: I just called the command-line program to do the migrations.
-That way, it should be easy to modify it for other databases in the near future.&lt;/p&gt;
-
-&lt;p&gt;I'll probably end up adding Postgres or MySQL support sometime soon (when one of my projects that uses those technologies needs to be updated).&lt;/p&gt;
 </content></entry>
 </feed>

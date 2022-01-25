@@ -74,7 +74,19 @@
 	<div class="tagline">computer science, math, programming and other stuff</div>
 	<div class="tagline">a blog by Christopher Swenson</div>
 
-	<div class="post"><div class="date">2021-12-10</div><h1><a href="2021_12_10_why_hiring_is_impossible.html">Why Hiring is Impossible</a></h1>
+	<div class="post"><div class="date">2022-01-25</div><h1><a href="2022_01_25_modern_cryptanalysis_v11_available_for_free.html">Modern Cryptanalysis v1.1 Available for Free</a></h1>
+<p>In 2008, I wrote and published a book called <em>Modern Cryptanalysis</em>, a technical book
+on cryptography and code breaking.</p>
+
+<p>It's been about 14 years since Modern Cryptanalysis was published.
+It's had a good run, but it's been out of print for a while now.</p>
+
+<p>As such, I'm releasing it for free!</p>
+
+<p>I've made some very small changes to clean up known errata and to reformat it for US Letter paper, but otherwise I've left it essentially as the 2008 version.</p>
+
+<p>Enjoy! Download here: <a href="/Modern Cryptanalysis v1.1 2022-01-23.pdf">Modern Cryptanalysis v1.1</a>.</p>
+</div><div class="post"><div class="date">2021-12-10</div><h1><a href="2021_12_10_why_hiring_is_impossible.html">Why Hiring is Impossible</a></h1>
 <p>For the purposes of this article, I am speaking of the "tech" industry in general (for companies of all sizes), especially for programmers, as that is where I have experience.</p>
 
 <p>Hiring people <em>fairly</em> is impossible, and therefore, meritocracy is a myth.
@@ -840,17 +852,6 @@ When you get it wrong, you often do so catastrophically.</p>
 
 <p>Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
 I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.</p>
-</div><div class="post"><div class="date">2014-10-12</div><h1><a href="2014_10_12_pyway_or_the_highway.html">Pyway or the highway</a></h1>
-<p><a href="https://github.com/swenson/pyway">Pyway</a> is a database migration tool that I wrote to solve the problem of: I want database migrations, but I don't want to bring <a href="http://guides.rubyonrails.org/migrations.html">Rails</a> or the entire <a href="http://flywaydb.org/">JVM</a> with me just to do them.</p>
-
-<p>So, I wrote a little script that does the most simple thing you can do with database migrations: keep track of them by file name, and run any new ones in sorted order.
-Python is pretty much universally present at this point in server environments, so that's the tool that I used.</p>
-
-<p>This is nothing sophisticated, and currently has <code>sqlite3</code> hardcoded in it, but it should be trivial to modify for any other databases.
-I didn't even use Python bindings for <code>sqlite3</code>: I just called the command-line program to do the migrations.
-That way, it should be easy to modify it for other databases in the near future.</p>
-
-<p>I'll probably end up adding Postgres or MySQL support sometime soon (when one of my projects that uses those technologies needs to be updated).</p>
 </div>
 	
 
