@@ -41,7 +41,7 @@ Most parsers will treat this object as identical to:
 
 (although it is not clear which of the `left` actions will "win").
 
-In addition, it can be more difficult to parse such an object. In many languages, you might be forced to deserialize the object into a generic `map` or `dict`, which can lead to more error-prone code.
+In addition, it can be more difficult to parse this object even if there is no need to preserve repetitions or ordering. In many languages, you might be forced to deserialize the object into a generic `map` or `dict`, which can lead to more error-prone code.
 
 Instead of assigning semantic meaning to the keys, it is better to use an array with all of the objects being of the same type. This way you can enforce ordering, can have duplicates, and make it easier to parse.
 

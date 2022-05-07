@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2022-05-07T17:32:04-00:00</updated>
+  <updated>2022-05-07T17:34:39-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>JSON API Design</title><link href="http://swenson.io/2022_05_07_json_api_design.html" rel="alternate" /><id>2022_05_07_json_api_design.html</id><published>2022-05-07T17:32:04-00:00</published><updated>2022-05-07T17:32:04-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>JSON API Design</title><link href="http://swenson.io/2022_05_07_json_api_design.html" rel="alternate" /><id>2022_05_07_json_api_design.html</id><published>2022-05-07T17:34:39-00:00</published><updated>2022-05-07T17:34:39-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a har</summary><content type="html">
 &lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a hard time finding articles that pinned down this advice. So, here are a couple of design tips for JSON.&lt;/p&gt;
 
@@ -50,7 +50,7 @@ Most parsers will treat this object as identical to:&lt;/p&gt;
 
 &lt;p&gt;(although it is not clear which of the &lt;code&gt;left&lt;/code&gt; actions will "win").&lt;/p&gt;
 
-&lt;p&gt;In addition, it can be more difficult to parse such an object. In many languages, you might be forced to deserialize the object into a generic &lt;code&gt;map&lt;/code&gt; or &lt;code&gt;dict&lt;/code&gt;, which can lead to more error-prone code.&lt;/p&gt;
+&lt;p&gt;In addition, it can be more difficult to parse this object even if there is no need to preserve repetitions or ordering. In many languages, you might be forced to deserialize the object into a generic &lt;code&gt;map&lt;/code&gt; or &lt;code&gt;dict&lt;/code&gt;, which can lead to more error-prone code.&lt;/p&gt;
 
 &lt;p&gt;Instead of assigning semantic meaning to the keys, it is better to use an array with all of the objects being of the same type. This way you can enforce ordering, can have duplicates, and make it easier to parse.&lt;/p&gt;
 
