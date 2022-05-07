@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>Sat, 07 May 2022 17:29:23 -0800</updated>
+  <updated>Sat, 07 May 2022 17:32:04 -0800</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<item><title>JSON API Design</title><link>http://swenson.io/2022_05_07_json_api_design.html</link><guid>bdf14303-d465-5ad8-9e5d-21bf70d1fb34</guid><pubDate>Sat, 07 May 2022 17:29:23 -0800</pubDate><description>
+<item><title>JSON API Design</title><link>http://swenson.io/2022_05_07_json_api_design.html</link><guid>2a62d8c4-5969-5717-bc1b-db36907f82d3</guid><pubDate>Sat, 07 May 2022 17:32:04 -0800</pubDate><description>
 &lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a hard time finding articles that pinned down this advice. So, here are a couple of design tips for JSON.&lt;/p&gt;
 
 &lt;h2&gt;Don't give semantic meaning to object keys&lt;/h2&gt;
@@ -81,7 +81,7 @@ Most parsers will treat this object as identical to:&lt;/p&gt;
 
 &lt;p&gt;It may be more verbose and larger, but it is more extensible, easier to parse, and can preserve order without relying on tricky JSON parsing.&lt;/p&gt;
 
-&lt;h2&gt;Your top-level response should always be a object&lt;/h2&gt;
+&lt;h2&gt;Your top-level response should always be an object&lt;/h2&gt;
 
 &lt;p&gt;You may be tempted to make the top-level response for a list operation be an array, but it is critical that it always be an object.&lt;/p&gt;
 

@@ -73,7 +73,7 @@ Also, what if you wanted to have two arguments to an action, like specifying whi
 
 It may be more verbose and larger, but it is more extensible, easier to parse, and can preserve order without relying on tricky JSON parsing.
 
-## Your top-level response should always be a object
+## Your top-level response should always be an object
 
 You may be tempted to make the top-level response for a list operation be an array, but it is critical that it always be an object.
 
