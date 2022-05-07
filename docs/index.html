@@ -74,7 +74,111 @@
 	<div class="tagline">computer science, math, programming and other stuff</div>
 	<div class="tagline">a blog by Christopher Swenson</div>
 
-	<div class="post"><div class="date">2022-01-25</div><h1><a href="2022_01_25_modern_cryptanalysis_v11_available_for_free.html">Modern Cryptanalysis v1.1 Available for Free</a></h1>
+	<div class="post"><div class="date">2022-05-07</div><h1><a href="2022_05_07_json_api_design.html">JSON API Design</a></h1>
+<p>There are a few points I've learned about designing JSON APIs over the years, and I've had a hard time finding articles that pinned down this advice. So, here are a couple of design tips for JSON.</p>
+
+<h2>Don't give semantic meaning to object keys</h2>
+
+<p>The keys themselves in a JSON object should not give signifiant information.</p>
+
+<p>What do I mean? Here is a JSON object whose keys have semantic meaning from an endpoint that is meant to give a list of movements and actions for a robot to take.</p>
+
+<pre>
+{
+    "left": "5m",
+    "forward": "10m",
+    "grab": "left"
+}
+</pre>
+
+<p>At a glance, this seems nice and compact. However, ask yourself: are these actions ordered? Do I need to move left, then forward, then grab? What if I want to repeat an action, like left, forward, left?</p>
+
+<p>While it is technically valid for JSON to contain such repetitions and ordering, such as in:</p>
+
+<pre>
+{
+    "left": "5m",
+    "forward": "10m",
+    "left": "6m",
+    "grab": "left"
+}
+</pre>
+
+<p>To parse this correctly will be tricky and non-standard in every language.
+Most parsers will treat this object as identical to:</p>
+
+<pre>
+{
+  "forward": "10m",
+  "grab": "left",
+  "left": "6m"
+}
+</pre>
+
+<p>(although it is not clear which of the <code>left</code> actions will "win").</p>
+
+<p>In addition, it can be more difficult to parse such an object. In many languages, you might be forced to deserialize the object into a generic <code>map</code> or <code>dict</code>, which can lead to more error-prone code.</p>
+
+<p>Instead of assigning semantic meaning to the keys, it is better to use an array with all of the objects being of the same type. This way you can enforce ordering, can have duplicates, and make it easier to parse.</p>
+
+<p>Also, what if you wanted to have two arguments to an action, like specifying which arm to <code>grab</code> with and how much pressure? Wit the above format's compactness, it might be difficult to extend in a backwards-compatible way.</p>
+
+<p><strong>🚫 NO</strong></p>
+
+<pre>
+{
+    "left": "5m",
+    "forward": "10m",
+    "left": "6m",
+    "grab": "left"
+}
+</pre>
+
+<p><strong>✅ YES.</strong></p>
+
+<pre>
+{
+    "actions": [
+        { "action": "left", "argument": "5m" },
+        { "action": "forward", "argument": "10m" },
+        { "action": "left", "argument": "6m" },
+        { "action": "grab", "argument": "left" }
+    ]
+}
+</pre>
+
+<p>It may be more verbose and larger, but it is more extensible, easier to parse, and can preserve order without relying on tricky JSON parsing.</p>
+
+<h2>Your top-level response should always be a object</h2>
+
+<p>You may be tempted to make the top-level response for a list operation be an array, but it is critical that it always be an object.</p>
+
+<p>This is because, in the future, you may want to return additional information about the list itself: paging information, the kinds of things in the list, dates, etc.</p>
+
+<p>It is always safer to add additional keys to an object than to fundamentally change an endpoint from an array to an object.</p>
+
+<p><strong>🚫 NO</strong></p>
+
+<pre>
+[
+    { "a": "b"},
+    { "a": "c"}
+]
+</pre>
+
+<p><strong>✅ YES.</strong></p>
+
+<pre>
+{
+    "values": [
+        { "a": "b"},
+        { "a": "c"}
+    ]
+}
+</pre>
+
+<hr />
+</div><div class="post"><div class="date">2022-01-25</div><h1><a href="2022_01_25_modern_cryptanalysis_v11_available_for_free.html">Modern Cryptanalysis v1.1 Available for Free</a></h1>
 <p>In 2008, I wrote and published a book called <em>Modern Cryptanalysis</em>, a technical book
 on cryptography and code breaking.</p>
 
@@ -808,50 +912,6 @@ And even though it is possible to learn almost everything about cryptography and
 In particular, I know that there are some sticky points in finite fields, RSA, and hashing that I think I can help clarify.</p>
 
 <p>Check back next week for part 2 of <em>So You Want To Learn Crypto</em>.</p>
-</div><div class="post"><div class="date">2014-10-26</div><h1><a href="2014_10_26_what_i_learned_as_a_teen_programmer.html">What I Learned As A Teen Programmer</a></h1>
-<p>I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
-Reading through the source code, I thought a lot about how much I had grown as a developer and engineer since that long-forgotten summer.
-For instance, I now understand things like (ha!) having a consistent style (some of my code was indented over 24 spaces so that it would be in the middle of the monitor), writing comments (there are basically no comments in this code), and tests (I didn't even know that testing was a thing).
-But, I also realized that writing that emulator, and all of the development I did at the time, laid a strange foundation that colored how I've thought about programming since.</p>
-
-<p>Up to that point, I'd puttered around a little in BASIC and C, but I didn't fall in love with programming until I discovered assembly language.
-Assembly was the first thing that really clicked for me: it was so simple, its semantics were so clear, and I found some great resources to help me learn (e.g., a nice tutorial I found on a BBS).
-So, in my heart, assembly language is my first language.</p>
-
-<p>When I tell this to people now, they give me strange looks.
-It's almost unfathomable to teach people assembly language first.
-But, in doing so, I learned an awful lot about how software works, how computers work, and what foundation programming languages are built on top of.</p>
-
-<p>My masterpiece as a teen programmer was the NES emulator I wrote  entirely in x86 assembly language: almost exactly 10,000 lines of it.
-This was my first taste of a real program: it was potentially useful, it had meaning, and it was a moderately large software project (my first).
-Programming this was what made me dig deep and learn how to program.</p>
-
-<p>Here's some things that writing that emulator, and assembly language in general, taught me:</p>
-
-<ol>
-<li><p><strong>Data is just memory</strong>. I remember trying to understand pointers in C and being incredibly frustrated with the strange syntax and the weird semantics. On the other hand, dealing with memory in assembly is so clearcut: memory is just a giant flat array (more or less), and pointers just point to stuff in that giant array. Indirect references, arrays of pointers, etc., make so much more sense when boiled down like this.</p>
-
-<p>Even today, when trying to visualize many problems, I think to myself: what does this look like in memory? What structures are being used and how are they laid out? This helps me understand how algorithms and data structures work together.</p></li>
-<li><p><strong>How to write everything yourself.</strong> There were some limited BIOS and DOS kernel calls, but for the most part, if I needed some capability, say, reading from a floppy drive or writing to the screen, I had to write it from scratch: calling I/O ports, reading and writing to RAM addresses, etc. If I wanted graphics, I had to draw every single pixel myself. These days, I know that this is just reinventing the wheel, something normally regarded as a bad habit; however, I also learned an awful lot about inventing wheels doing it.
-I still have the bad habit of writing too many things myself, and not leveraging existing libraries as often as I should, so this lesson wasn't a complete victory.</p></li>
-<li><p><strong>Sometimes you just have to buckle down and program all of the tedious parts</strong>. A big part of the NES emulator is writing a cycle-accurate CPU emulator. I'm sure that you can imagine how daunting it must be to start writing <code>CPU.ASM</code> and have an empty jump table with 256 entries, knowing that you have to write all 256 functions to handle every single operation. Even worse, you have to get every single piece <em>exactly</em> right.</p>
-
-<p>This taught me an extremely valuable skill: being able to focus on tedious, repetitive tasks.
-Programming is absolutely chock-full of tedious programming that is absolutely necessary.
-A great example is date and time functionality (especially time zones): incredibly important code to get correct, but so incredibly tedious and detail-oriented.
-Being able to dive into thousands of pages of specifications and turn them into working libraries and APIs has paid great dividends in my career as a software engineer, and I first learned that here.
-Being methodical and untiring is a great skill.</p>
-
-<p>And really, sometimes there is just no elegant solution. Often I see programmers strive to come up with a beautiful, simple, clean way to solve a problem, only to realize that the solution doesn't stand up to reality. Sometimes reality is <em>ugly</em>, and sometimes you have to write <em>ugly</em> code to solve it: you just need to program your way out of it.</p></li>
-<li><p><strong>Assembly is useful</strong>. Learning assembly has come in handy countless times: reading GDB disassembly of my code for degugging, understanding and optimizing performance, writing compilers. Every time I see an assembly dump on a screen, it feels like home.</p></li>
-<li><p><strong>You have to fail a lot to succeed</strong>. When writing code as a teenager in assembly language, I spent a lot of time crashing my computer. I mean, assembly is really easy to get wrong.
-When you get it wrong, you often do so catastrophically.</p>
-
-<p>But more so, in order to learn how to build things, you first have to learn to build them wrong, and learn to recognize your mistakes. And this code is just full of mistakes.</p></li>
-</ol>
-
-<p>Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
-I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.</p>
 </div>
 	
 

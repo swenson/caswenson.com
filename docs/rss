@@ -2,11 +2,115 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>Tue, 25 Jan 2022 18:04:17 +0000</updated>
+  <updated>Sat, 07 May 2022 17:29:23 -0800</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<item><title>Modern Cryptanalysis v1.1 Available for Free</title><link>http://swenson.io/2022_01_25_modern_cryptanalysis_v11_available_for_free.html</link><guid>80c3f555-a2fd-502c-9f55-5fee8ca5e196</guid><pubDate>Tue, 25 Jan 2022 18:04:17 +0000</pubDate><description>
+<item><title>JSON API Design</title><link>http://swenson.io/2022_05_07_json_api_design.html</link><guid>bdf14303-d465-5ad8-9e5d-21bf70d1fb34</guid><pubDate>Sat, 07 May 2022 17:29:23 -0800</pubDate><description>
+&lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a hard time finding articles that pinned down this advice. So, here are a couple of design tips for JSON.&lt;/p&gt;
+
+&lt;h2&gt;Don't give semantic meaning to object keys&lt;/h2&gt;
+
+&lt;p&gt;The keys themselves in a JSON object should not give signifiant information.&lt;/p&gt;
+
+&lt;p&gt;What do I mean? Here is a JSON object whose keys have semantic meaning from an endpoint that is meant to give a list of movements and actions for a robot to take.&lt;/p&gt;
+
+&lt;pre&gt;
+{
+    "left": "5m",
+    "forward": "10m",
+    "grab": "left"
+}
+&lt;/pre&gt;
+
+&lt;p&gt;At a glance, this seems nice and compact. However, ask yourself: are these actions ordered? Do I need to move left, then forward, then grab? What if I want to repeat an action, like left, forward, left?&lt;/p&gt;
+
+&lt;p&gt;While it is technically valid for JSON to contain such repetitions and ordering, such as in:&lt;/p&gt;
+
+&lt;pre&gt;
+{
+    "left": "5m",
+    "forward": "10m",
+    "left": "6m",
+    "grab": "left"
+}
+&lt;/pre&gt;
+
+&lt;p&gt;To parse this correctly will be tricky and non-standard in every language.
+Most parsers will treat this object as identical to:&lt;/p&gt;
+
+&lt;pre&gt;
+{
+  "forward": "10m",
+  "grab": "left",
+  "left": "6m"
+}
+&lt;/pre&gt;
+
+&lt;p&gt;(although it is not clear which of the &lt;code&gt;left&lt;/code&gt; actions will "win").&lt;/p&gt;
+
+&lt;p&gt;In addition, it can be more difficult to parse such an object. In many languages, you might be forced to deserialize the object into a generic &lt;code&gt;map&lt;/code&gt; or &lt;code&gt;dict&lt;/code&gt;, which can lead to more error-prone code.&lt;/p&gt;
+
+&lt;p&gt;Instead of assigning semantic meaning to the keys, it is better to use an array with all of the objects being of the same type. This way you can enforce ordering, can have duplicates, and make it easier to parse.&lt;/p&gt;
+
+&lt;p&gt;Also, what if you wanted to have two arguments to an action, like specifying which arm to &lt;code&gt;grab&lt;/code&gt; with and how much pressure? Wit the above format's compactness, it might be difficult to extend in a backwards-compatible way.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;🚫 NO&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+{
+    "left": "5m",
+    "forward": "10m",
+    "left": "6m",
+    "grab": "left"
+}
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;✅ YES.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+{
+    "actions": [
+        { "action": "left", "argument": "5m" },
+        { "action": "forward", "argument": "10m" },
+        { "action": "left", "argument": "6m" },
+        { "action": "grab", "argument": "left" }
+    ]
+}
+&lt;/pre&gt;
+
+&lt;p&gt;It may be more verbose and larger, but it is more extensible, easier to parse, and can preserve order without relying on tricky JSON parsing.&lt;/p&gt;
+
+&lt;h2&gt;Your top-level response should always be a object&lt;/h2&gt;
+
+&lt;p&gt;You may be tempted to make the top-level response for a list operation be an array, but it is critical that it always be an object.&lt;/p&gt;
+
+&lt;p&gt;This is because, in the future, you may want to return additional information about the list itself: paging information, the kinds of things in the list, dates, etc.&lt;/p&gt;
+
+&lt;p&gt;It is always safer to add additional keys to an object than to fundamentally change an endpoint from an array to an object.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;🚫 NO&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+[
+    { "a": "b"},
+    { "a": "c"}
+]
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;✅ YES.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+{
+    "values": [
+        { "a": "b"},
+        { "a": "c"}
+    ]
+}
+&lt;/pre&gt;
+
+&lt;hr /&gt;
+</description></item><item><title>Modern Cryptanalysis v1.1 Available for Free</title><link>http://swenson.io/2022_01_25_modern_cryptanalysis_v11_available_for_free.html</link><guid>80c3f555-a2fd-502c-9f55-5fee8ca5e196</guid><pubDate>Tue, 25 Jan 2022 18:04:17 -0800</pubDate><description>
 &lt;p&gt;In 2008, I wrote and published a book called &lt;em&gt;Modern Cryptanalysis&lt;/em&gt;, a technical book
 on cryptography and code breaking.&lt;/p&gt;
 
@@ -18,7 +122,7 @@ It's had a good run, but it's been out of print for a while now.&lt;/p&gt;
 &lt;p&gt;I've made some very small changes to clean up known errata and to reformat it for US Letter paper, but otherwise I've left it essentially as the 2008 version.&lt;/p&gt;
 
 &lt;p&gt;Enjoy! Download here: &lt;a href="/Modern Cryptanalysis v1.1 2022-01-23.pdf"&gt;Modern Cryptanalysis v1.1&lt;/a&gt;.&lt;/p&gt;
-</description></item><item><title>Why Hiring is Impossible</title><link>http://swenson.io/2021_12_10_why_hiring_is_impossible.html</link><guid>f740f0cf-4e29-5093-bcb9-ee0f00607914</guid><pubDate>Fri, 10 Dec 2021 08:00:00 +0000</pubDate><description>
+</description></item><item><title>Why Hiring is Impossible</title><link>http://swenson.io/2021_12_10_why_hiring_is_impossible.html</link><guid>f740f0cf-4e29-5093-bcb9-ee0f00607914</guid><pubDate>Fri, 10 Dec 2021 08:00:00 -0800</pubDate><description>
 &lt;p&gt;For the purposes of this article, I am speaking of the "tech" industry in general (for companies of all sizes), especially for programmers, as that is where I have experience.&lt;/p&gt;
 
 &lt;p&gt;Hiring people &lt;em&gt;fairly&lt;/em&gt; is impossible, and therefore, meritocracy is a myth.
@@ -73,7 +177,7 @@ You should accept that, and come to terms with it.
 Then, you should examine your hiring processes, make them as fair as possible,
 and know exactly how they are unfair.
 Only by understanding your own strengths and weaknesses as a company, hiring manager, or interviewer will you even come close to being able to hire people and set them up for success.&lt;/p&gt;
-</description></item><item><title>64-bit assembly language programming under macOS with NASM</title><link>http://swenson.io/2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html</link><guid>2e5cac38-24a1-5f88-9775-6917a2d02c15</guid><pubDate>Tue, 06 Feb 2018 08:00:00 +0000</pubDate><description>
+</description></item><item><title>64-bit assembly language programming under macOS with NASM</title><link>http://swenson.io/2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html</link><guid>2e5cac38-24a1-5f88-9775-6917a2d02c15</guid><pubDate>Tue, 06 Feb 2018 08:00:00 -0800</pubDate><description>
 &lt;p&gt;Just a quick follow-up to a &lt;a href="http://caswenson.com/2009_09_26_assembly_language_programming_under_os_x_with_nasm.html"&gt;previous post on 32-bit assembly language programming for OS X&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I've had a fair amount of interest in this post, surprisingly, so I thought I would update it for the 64-bit Intel world we live in now.
@@ -181,7 +285,7 @@ H
 I
 J
 &lt;/pre&gt;
-</description></item><item><title>Friendship API</title><link>http://swenson.io/2018_01_14_friendship_api.html</link><guid>1127c451-2b28-5a66-b007-13b40ad5c62f</guid><pubDate>Sun, 14 Jan 2018 21:28:37 +0000</pubDate><description>
+</description></item><item><title>Friendship API</title><link>http://swenson.io/2018_01_14_friendship_api.html</link><guid>1127c451-2b28-5a66-b007-13b40ad5c62f</guid><pubDate>Sun, 14 Jan 2018 21:28:37 -0800</pubDate><description>
 &lt;p&gt;This weekend, I wrote a quick email application called &lt;a href="http://friendshipapi.com"&gt;Friendship API&lt;/a&gt;.
 It solves a problem that I have: I am just terrible at staying in touch with my friends via email.
 This is a shame: email is really a great tool for keeping in touch.&lt;/p&gt;
@@ -255,7 +359,7 @@ aside a spare weekend? Well, here's the process I followed at least:&lt;/p&gt;
 addresses alone, so it can suggest someone whom you might be corresponding with regularly
 if you are doing so with a different email address.&lt;/li&gt;
 &lt;/ul&gt;
-</description></item><item><title>ttyrec conversion</title><link>http://swenson.io/2018_01_14_ttyrec_conversion.html</link><guid>1485ae04-d23b-501f-ba50-f08009b65691</guid><pubDate>Sun, 14 Jan 2018 08:00:00 +0000</pubDate><description>
+</description></item><item><title>ttyrec conversion</title><link>http://swenson.io/2018_01_14_ttyrec_conversion.html</link><guid>1485ae04-d23b-501f-ba50-f08009b65691</guid><pubDate>Sun, 14 Jan 2018 08:00:00 -0800</pubDate><description>
 &lt;p&gt;I'm an armchair fan of &lt;a href="http://www.nethack.org"&gt;NetHack&lt;/a&gt; and other roguelikes, though I don't play them too much.
 I've always wondered why there wasn't, say, a NetHack screensaver that would just play through the game, since it seemed to be ripe for screensavering.&lt;/p&gt;
 
@@ -278,7 +382,7 @@ I sped up the results by 5&amp;times; or so, and then run the whole thing throug
 
 &lt;p&gt;Anyway, at the very least, there are some cool GIFs out there to look at now.
 I'm considering doing a big run and converting a more runs into GIFs, but it's very time-consuming (it takes many hours to convert a game to an animated GIF for now).&lt;/p&gt;
-</description></item><item><title>An simple AES-based random number generator</title><link>http://swenson.io/2015_04_26_an_simple_aesbased_random_number_generator.html</link><guid>09c62638-7200-509b-ba60-4a24cc425a0e</guid><pubDate>Mon, 27 Apr 2015 00:43:28 +0000</pubDate><description>
+</description></item><item><title>An simple AES-based random number generator</title><link>http://swenson.io/2015_04_26_an_simple_aesbased_random_number_generator.html</link><guid>09c62638-7200-509b-ba60-4a24cc425a0e</guid><pubDate>Mon, 27 Apr 2015 00:43:28 -0800</pubDate><description>
 &lt;p&gt;When browsing through some stack traces doing Go development, I noticed that Go had done something rather
 clever in their codebase: on x86-64 processors, they used
 &lt;a href="http://en.wikipedia.org/wiki/AES_instruction_set"&gt;the AES instruction set&lt;/a&gt;
@@ -328,7 +432,7 @@ Unfortunately, these extra rounds make the performance not quite as competitive.
 
 &lt;p&gt;I'm still tinkering with the AES-based hash function though to try to make it faster
 or hash better. I'll report back with my findings.&lt;/p&gt;
-</description></item><item><title>So You Want To Learn Crypto, Part 2: Cyclic Groups And Short Codes</title><link>http://swenson.io/2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes.html</link><guid>352e251e-004b-5f8f-800d-35705dbb7556</guid><pubDate>Sun, 30 Nov 2014 20:59:02 +0000</pubDate><description>
+</description></item><item><title>So You Want To Learn Crypto, Part 2: Cyclic Groups And Short Codes</title><link>http://swenson.io/2014_11_30_so_you_want_to_learn_crypto_part_2_cyclic_groups_and_short_codes.html</link><guid>352e251e-004b-5f8f-800d-35705dbb7556</guid><pubDate>Sun, 30 Nov 2014 20:59:02 -0800</pubDate><description>
 &lt;p&gt;&lt;a href="http://www.caswenson.com/2014_11_06_so_you_want_to_learn_crypto_part_1"&gt;Part 1 is here&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;Modular arithmetic&lt;/h2&gt;
@@ -655,7 +759,7 @@ few modular exponentiations) the discrete logarithm of $4244504$ is $30$, which 
 &lt;p&gt;I've released code for the above computations, including the
 Pohlig&amp;ndash;Hellman algorithm implementation, in Python on
 &lt;a href="https://github.com/swenson/shortcodes"&gt;GitHub&lt;/a&gt;, licensed under MIT.&lt;/p&gt;
-</description></item><item><title>How to pronounce programming words</title><link>http://swenson.io/2014_11_10_how_to_pronounce_programming_words.html</link><guid>4d68b6bf-1482-599f-9abd-107b1c22294c</guid><pubDate>Mon, 10 Nov 2014 16:51:59 +0000</pubDate><description>
+</description></item><item><title>How to pronounce programming words</title><link>http://swenson.io/2014_11_10_how_to_pronounce_programming_words.html</link><guid>4d68b6bf-1482-599f-9abd-107b1c22294c</guid><pubDate>Mon, 10 Nov 2014 16:51:59 -0800</pubDate><description>
 &lt;p&gt;Certain words in programming I've seen people mangle in various ways, and
 many times, I realized that I don't actually know the correct way to pronounce them.&lt;/p&gt;
 
@@ -685,7 +789,7 @@ I've tried to use the original authors of as the source, when possible, or other
 &lt;li&gt;&lt;em&gt;Trie&lt;/em&gt;: tree, &lt;a href="http://www.webcitation.org/5pqUULy24"&gt;http://www.webcitation.org/5pqUULy24&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;von Neumann&lt;/em&gt;: von noi-man &lt;a href="https://www.youtube.com/watch?v=VTS9O0CoVng"&gt;https://www.youtube.com/watch?v=VTS9O0CoVng&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description></item><item><title>So You Want To Learn Crypto, Part 1</title><link>http://swenson.io/2014_11_06_so_you_want_to_learn_crypto_part_1.html</link><guid>a40ced9c-d8fe-5ed8-bc23-07f1535dba3b</guid><pubDate>Thu, 06 Nov 2014 20:32:27 +0000</pubDate><description>
+</description></item><item><title>So You Want To Learn Crypto, Part 1</title><link>http://swenson.io/2014_11_06_so_you_want_to_learn_crypto_part_1.html</link><guid>a40ced9c-d8fe-5ed8-bc23-07f1535dba3b</guid><pubDate>Thu, 06 Nov 2014 20:32:27 -0800</pubDate><description>
 &lt;p&gt;Cryptography and cryptanalysis are topics that fascinate many people, but it's a tricky area to get into.
 For instance, knowing the difference between a &lt;a href="http://en.wikipedia.org/wiki/Hash_function"&gt;hash function&lt;/a&gt; and a &lt;a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function"&gt;cryptographically strong hash function&lt;/a&gt; is critical, but extremely easy to mix up due to confusing terminology.
 In general, there's heavy jargon that takes serious studying to get a grasp on.&lt;/p&gt;
@@ -740,49 +844,5 @@ And even though it is possible to learn almost everything about cryptography and
 In particular, I know that there are some sticky points in finite fields, RSA, and hashing that I think I can help clarify.&lt;/p&gt;
 
 &lt;p&gt;Check back next week for part 2 of &lt;em&gt;So You Want To Learn Crypto&lt;/em&gt;.&lt;/p&gt;
-</description></item><item><title>What I Learned As A Teen Programmer</title><link>http://swenson.io/2014_10_26_what_i_learned_as_a_teen_programmer.html</link><guid>2752b5ac-a2e3-5bb3-9fe3-f11a4f4d6f73</guid><pubDate>Mon, 27 Oct 2014 01:38:42 +0000</pubDate><description>
-&lt;p&gt;I recently stumbled across the source to a NES emulator I wrote when I was a teenager.
-Reading through the source code, I thought a lot about how much I had grown as a developer and engineer since that long-forgotten summer.
-For instance, I now understand things like (ha!) having a consistent style (some of my code was indented over 24 spaces so that it would be in the middle of the monitor), writing comments (there are basically no comments in this code), and tests (I didn't even know that testing was a thing).
-But, I also realized that writing that emulator, and all of the development I did at the time, laid a strange foundation that colored how I've thought about programming since.&lt;/p&gt;
-
-&lt;p&gt;Up to that point, I'd puttered around a little in BASIC and C, but I didn't fall in love with programming until I discovered assembly language.
-Assembly was the first thing that really clicked for me: it was so simple, its semantics were so clear, and I found some great resources to help me learn (e.g., a nice tutorial I found on a BBS).
-So, in my heart, assembly language is my first language.&lt;/p&gt;
-
-&lt;p&gt;When I tell this to people now, they give me strange looks.
-It's almost unfathomable to teach people assembly language first.
-But, in doing so, I learned an awful lot about how software works, how computers work, and what foundation programming languages are built on top of.&lt;/p&gt;
-
-&lt;p&gt;My masterpiece as a teen programmer was the NES emulator I wrote  entirely in x86 assembly language: almost exactly 10,000 lines of it.
-This was my first taste of a real program: it was potentially useful, it had meaning, and it was a moderately large software project (my first).
-Programming this was what made me dig deep and learn how to program.&lt;/p&gt;
-
-&lt;p&gt;Here's some things that writing that emulator, and assembly language in general, taught me:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Data is just memory&lt;/strong&gt;. I remember trying to understand pointers in C and being incredibly frustrated with the strange syntax and the weird semantics. On the other hand, dealing with memory in assembly is so clearcut: memory is just a giant flat array (more or less), and pointers just point to stuff in that giant array. Indirect references, arrays of pointers, etc., make so much more sense when boiled down like this.&lt;/p&gt;
-
-&lt;p&gt;Even today, when trying to visualize many problems, I think to myself: what does this look like in memory? What structures are being used and how are they laid out? This helps me understand how algorithms and data structures work together.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;How to write everything yourself.&lt;/strong&gt; There were some limited BIOS and DOS kernel calls, but for the most part, if I needed some capability, say, reading from a floppy drive or writing to the screen, I had to write it from scratch: calling I/O ports, reading and writing to RAM addresses, etc. If I wanted graphics, I had to draw every single pixel myself. These days, I know that this is just reinventing the wheel, something normally regarded as a bad habit; however, I also learned an awful lot about inventing wheels doing it.
-I still have the bad habit of writing too many things myself, and not leveraging existing libraries as often as I should, so this lesson wasn't a complete victory.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sometimes you just have to buckle down and program all of the tedious parts&lt;/strong&gt;. A big part of the NES emulator is writing a cycle-accurate CPU emulator. I'm sure that you can imagine how daunting it must be to start writing &lt;code&gt;CPU.ASM&lt;/code&gt; and have an empty jump table with 256 entries, knowing that you have to write all 256 functions to handle every single operation. Even worse, you have to get every single piece &lt;em&gt;exactly&lt;/em&gt; right.&lt;/p&gt;
-
-&lt;p&gt;This taught me an extremely valuable skill: being able to focus on tedious, repetitive tasks.
-Programming is absolutely chock-full of tedious programming that is absolutely necessary.
-A great example is date and time functionality (especially time zones): incredibly important code to get correct, but so incredibly tedious and detail-oriented.
-Being able to dive into thousands of pages of specifications and turn them into working libraries and APIs has paid great dividends in my career as a software engineer, and I first learned that here.
-Being methodical and untiring is a great skill.&lt;/p&gt;
-
-&lt;p&gt;And really, sometimes there is just no elegant solution. Often I see programmers strive to come up with a beautiful, simple, clean way to solve a problem, only to realize that the solution doesn't stand up to reality. Sometimes reality is &lt;em&gt;ugly&lt;/em&gt;, and sometimes you have to write &lt;em&gt;ugly&lt;/em&gt; code to solve it: you just need to program your way out of it.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Assembly is useful&lt;/strong&gt;. Learning assembly has come in handy countless times: reading GDB disassembly of my code for degugging, understanding and optimizing performance, writing compilers. Every time I see an assembly dump on a screen, it feels like home.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;You have to fail a lot to succeed&lt;/strong&gt;. When writing code as a teenager in assembly language, I spent a lot of time crashing my computer. I mean, assembly is really easy to get wrong.
-When you get it wrong, you often do so catastrophically.&lt;/p&gt;
-
-&lt;p&gt;But more so, in order to learn how to build things, you first have to learn to build them wrong, and learn to recognize your mistakes. And this code is just full of mistakes.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Overall, revisiting old code like this helped me reflect on my programming: where I've been, where I am, where I'm going.
-I encourage everyone to save as much of their code as they ever write, and come back to it in a few years, and to reflect.&lt;/p&gt;
 </description></item>
 </feed>
