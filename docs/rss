@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>Sat, 07 May 2022 17:34:39 -0800</updated>
+  <updated>Sat, 07 May 2022 17:34:36 -0800</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<item><title>JSON API Design</title><link>http://swenson.io/2022_05_07_json_api_design.html</link><guid>28595f90-cff6-50aa-a6aa-085046715b6f</guid><pubDate>Sat, 07 May 2022 17:34:39 -0800</pubDate><description>
+<item><title>JSON API Design</title><link>http://swenson.io/2022_05_07_json_api_design.html</link><guid>28595f90-cff6-50aa-a6aa-085046715b6f</guid><pubDate>Sat, 07 May 2022 17:34:36 -0800</pubDate><description>
 &lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a hard time finding articles that pinned down this advice. So, here are a couple of design tips for JSON.&lt;/p&gt;
 
 &lt;h2&gt;Don't give semantic meaning to object keys&lt;/h2&gt;

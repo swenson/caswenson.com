@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2022-05-07T17:34:39-00:00</updated>
+  <updated>2022-05-07T17:34:36-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>JSON API Design</title><link href="http://swenson.io/2022_05_07_json_api_design.html" rel="alternate" /><id>2022_05_07_json_api_design.html</id><published>2022-05-07T17:34:39-00:00</published><updated>2022-05-07T17:34:39-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>JSON API Design</title><link href="http://swenson.io/2022_05_07_json_api_design.html" rel="alternate" /><id>2022_05_07_json_api_design.html</id><published>2022-05-07T17:34:36-00:00</published><updated>2022-05-07T17:34:36-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a har</summary><content type="html">
 &lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a hard time finding articles that pinned down this advice. So, here are a couple of design tips for JSON.&lt;/p&gt;
 
