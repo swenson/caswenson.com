@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<title>Picking a plan for electricity &mdash; Christopher Swenson</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
+	<link href="rss" rel="alternate" title="RSS Feed" type="application/rss+xml" />
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56218422-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+
+</head>
+<body>
+<div id="wrap">
+
+<div id="sidebar">
+
+	<div id="cs">
+		<span id="c">
+			C
+		</span>
+		<span id="s">
+			S
+		</span>
+	</div>
+
+	<img id="pic" src="images/purple-top-hat.jpg" alt="purple top hat" />
+
+	<div class="side">
+		<ul>
+	    <li><a href="about.html">About</a></li>
+		<li><a href="contact.html">Contact</a></li>
+	    <li><a href="speaking.html">Speaking</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="http://github.com/swenson">GitHub</a></li>
+			<li><a href="http://twitter.com/chris_swenson">Twitter</a></li>
+			<li><a href="http://www.linkedin.com/in/christopherswenson/">LinkedIn</a></li>
+		</ul>
+	</div>
+
+	<hr />
+
+	<div class="side">
+		<ul>
+			<li><a href="archive.html">Blog Archive</a></li>
+			<li><a href="mc.html">Modern Cryptanalysis</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="main">
+	<div class="tagline">computer science, math, programming and other stuff</div>
+	<div class="tagline">a blog by Christopher Swenson</div>
+
+	<div class="postzoom"><h1><a href="2023_08_05_picking_a_plan_for_electricity.html">Picking a plan for electricity</a></h1>
+<p>I live in Oregon, and Pacific Power is my only choice for providing electricity.
+I put solar panels and a battery on my house a few years ago because (a) they're cool,
+(b) they are useful in emergencies, and (c) theoretically they will save me money in the very long-term
+(I calculated initially about 10–15 years to get back my investment).</p>
+
+<p>Recently, Pacific Power has listed a few pilot programs and options for having a variable cost for electricity as an option.
+The default "schedule", as it is called, is schedule 4: a flat rate at all times, which right now is
+$0.11911 (USD) per kWh. This is not terrible by any means.
+The new options provided have different rates at different times of the year and day.
+In total, my options are, all in units of dollars per kwH, and excluding other costs:</p>
+
+<ul>
+<li><a href="https://www.pacificpower.net/content/dam/pcorp/documents/en/pacificpower/rates-regulation/oregon/tariffs/Oregon_Price_Summary.pdf">Schedule 4 (current, default)</a>: 0.11911 flat rate.</li>
+<li><a href="https://www.pacificpower.net/savings-energy-choices/time-of-use.html">Schedule 4 ("choice")</a>: 0.11911 base rate, 0.06124 extra cost during "peak" hours, -0.01125 (credit) during "off-peak" hours. Peak hours are defined as: 4pm to 8pm in April through October, during weekdays and non-holidays, and 6am to 10am and 5pm to 8pm for November through March during weekdays and non-holidays. Note that these terms are poorly defined (<em>what</em> holidays? Are the ranges inclusive or exclusive? etc.).</li>
+<li><a href="https://www.pacificpower.net/savings-energy-choices/time-of-use.html">Schedule 6 ("residential time-of-use pilot")</a>: 0.26181 peak (5pm to 9pm), 0.08121 all other times.</li>
+</ul>
+
+<p>At a glance, knowing that I have solar generation and battery backup, I might be tempted to switch to one of these plans.
+But which? How much money would I save?</p>
+
+<p>Luckily, I have about a year's worth of energy usage data for my household in <a href="https://prometheus.io/">Prometheus</a>,
+including how much I sold back to Pacific Power, so I don't have to guess.</p>
+
+<p><img src="images/net-usage.png" width="640px" height="480px" alt="Net usage graph" /></p>
+
+<p>So, I wrote a quick Python program that simulated how much each power plan would cost me: it runs through every data point, estimates about how much power was used since the last data point, and accumulates the cost according the plan rules.
+I ran through a few different assumptions about what were meant by the time ranges, and ignored holidays (since Pacific Power doesn't define what holidays they follow anyway), but the gist was essentially:</p>
+
+<table border=1>
+    <thead>
+        <tr>
+            <th>Schedule</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>4</td>
+            <td>$2,295.67</td>
+        </tr>
+        <tr>
+            <td>"Choice"</td>
+            <td>$2,367.12</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>$2,296.90</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Changing some of the various assumptions shifts the amounts by a few dollars, but not significantly.</p>
+
+<p>With a few behavior changes, like modifying how the AC and heating in the house are used in certain seasons, it might be worth switching to one of the other schedules.
+But, I wanted to see what the hard numbers are for what my household's current behavior is, rather than what it could be.</p>
+
+<p>tl;dr: <strong>it's not worth switching for me</strong>. It's probably worth switching for many people though, and it might be worth switching if you can be trusted to modify your own behavior consistently.</p>
+</div>
+	
+
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+	<p id="legal">
+		Copyright 2014–2021 Christopher Swenson
+	</p>
+</div>
+
+</div>
+</body>
+</html>

@@ -2,11 +2,71 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2022-05-07T17:34:36-00:00</updated>
+  <updated>2023-08-05T21:51:14-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>JSON API Design</title><link href="http://swenson.io/2022_05_07_json_api_design.html" rel="alternate" /><id>2022_05_07_json_api_design.html</id><published>2022-05-07T17:34:36-00:00</published><updated>2022-05-07T17:34:36-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Picking a plan for electricity</title><link href="http://swenson.io/2023_08_05_picking_a_plan_for_electricity.html" rel="alternate" /><id>2023_08_05_picking_a_plan_for_electricity.html</id><published>2023-08-05T21:51:14-00:00</published><updated>2023-08-05T21:51:14-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+&lt;p&gt;I live in Oregon, and Pacific Power is my only choice for providing electricity.
+I put solar pan</summary><content type="html">
+&lt;p&gt;I live in Oregon, and Pacific Power is my only choice for providing electricity.
+I put solar panels and a battery on my house a few years ago because (a) they're cool,
+(b) they are useful in emergencies, and (c) theoretically they will save me money in the very long-term
+(I calculated initially about 10–15 years to get back my investment).&lt;/p&gt;
+
+&lt;p&gt;Recently, Pacific Power has listed a few pilot programs and options for having a variable cost for electricity as an option.
+The default "schedule", as it is called, is schedule 4: a flat rate at all times, which right now is
+$0.11911 (USD) per kWh. This is not terrible by any means.
+The new options provided have different rates at different times of the year and day.
+In total, my options are, all in units of dollars per kwH, and excluding other costs:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.pacificpower.net/content/dam/pcorp/documents/en/pacificpower/rates-regulation/oregon/tariffs/Oregon_Price_Summary.pdf"&gt;Schedule 4 (current, default)&lt;/a&gt;: 0.11911 flat rate.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.pacificpower.net/savings-energy-choices/time-of-use.html"&gt;Schedule 4 ("choice")&lt;/a&gt;: 0.11911 base rate, 0.06124 extra cost during "peak" hours, -0.01125 (credit) during "off-peak" hours. Peak hours are defined as: 4pm to 8pm in April through October, during weekdays and non-holidays, and 6am to 10am and 5pm to 8pm for November through March during weekdays and non-holidays. Note that these terms are poorly defined (&lt;em&gt;what&lt;/em&gt; holidays? Are the ranges inclusive or exclusive? etc.).&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.pacificpower.net/savings-energy-choices/time-of-use.html"&gt;Schedule 6 ("residential time-of-use pilot")&lt;/a&gt;: 0.26181 peak (5pm to 9pm), 0.08121 all other times.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At a glance, knowing that I have solar generation and battery backup, I might be tempted to switch to one of these plans.
+But which? How much money would I save?&lt;/p&gt;
+
+&lt;p&gt;Luckily, I have about a year's worth of energy usage data for my household in &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt;,
+including how much I sold back to Pacific Power, so I don't have to guess.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="images/net-usage.png" width="640px" height="480px" alt="Net usage graph" /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, I wrote a quick Python program that simulated how much each power plan would cost me: it runs through every data point, estimates about how much power was used since the last data point, and accumulates the cost according the plan rules.
+I ran through a few different assumptions about what were meant by the time ranges, and ignored holidays (since Pacific Power doesn't define what holidays they follow anyway), but the gist was essentially:&lt;/p&gt;
+
+&lt;table border=1&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Schedule&lt;/th&gt;
+            &lt;th&gt;Cost&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;4&lt;/td&gt;
+            &lt;td&gt;$2,295.67&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;"Choice"&lt;/td&gt;
+            &lt;td&gt;$2,367.12&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;6&lt;/td&gt;
+            &lt;td&gt;$2,296.90&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Changing some of the various assumptions shifts the amounts by a few dollars, but not significantly.&lt;/p&gt;
+
+&lt;p&gt;With a few behavior changes, like modifying how the AC and heating in the house are used in certain seasons, it might be worth switching to one of the other schedules.
+But, I wanted to see what the hard numbers are for what my household's current behavior is, rather than what it could be.&lt;/p&gt;
+
+&lt;p&gt;tl;dr: &lt;strong&gt;it's not worth switching for me&lt;/strong&gt;. It's probably worth switching for many people though, and it might be worth switching if you can be trusted to modify your own behavior consistently.&lt;/p&gt;
+</content></entry><entry><title>JSON API Design</title><link href="http://swenson.io/2022_05_07_json_api_design.html" rel="alternate" /><id>2022_05_07_json_api_design.html</id><published>2022-05-07T17:34:36-00:00</published><updated>2022-05-07T17:34:36-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a har</summary><content type="html">
 &lt;p&gt;There are a few points I've learned about designing JSON APIs over the years, and I've had a hard time finding articles that pinned down this advice. So, here are a couple of design tips for JSON.&lt;/p&gt;
 
@@ -800,61 +860,5 @@ I've tried to use the original authors of as the source, when possible, or other
 &lt;li&gt;&lt;em&gt;Trie&lt;/em&gt;: tree, &lt;a href="http://www.webcitation.org/5pqUULy24"&gt;http://www.webcitation.org/5pqUULy24&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;von Neumann&lt;/em&gt;: von noi-man &lt;a href="https://www.youtube.com/watch?v=VTS9O0CoVng"&gt;https://www.youtube.com/watch?v=VTS9O0CoVng&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>So You Want To Learn Crypto, Part 1</title><link href="http://swenson.io/2014_11_06_so_you_want_to_learn_crypto_part_1.html" rel="alternate" /><id>2014_11_06_so_you_want_to_learn_crypto_part_1.html</id><published>2014-11-06T20:32:27-00:00</published><updated>2014-11-06T20:32:27-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
-&lt;p&gt;Cryptography and cryptanalysis are topics that fascinate many people, but it's a tricky area to </summary><content type="html">
-&lt;p&gt;Cryptography and cryptanalysis are topics that fascinate many people, but it's a tricky area to get into.
-For instance, knowing the difference between a &lt;a href="http://en.wikipedia.org/wiki/Hash_function"&gt;hash function&lt;/a&gt; and a &lt;a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function"&gt;cryptographically strong hash function&lt;/a&gt; is critical, but extremely easy to mix up due to confusing terminology.
-In general, there's heavy jargon that takes serious studying to get a grasp on.&lt;/p&gt;
-
-&lt;p&gt;Cryptography is also almost entirely a self-taught discipline: even today, there are few college and graduate courses on cryptography, and most of those only cover the basics. (Indeed, this is why I wrote my book on cryptanalysis: I wanted to teach a class on the topic, and there was no suitable text, so I wrote my own.)
-This means that it is reasonable, even necessary, to learn a great deal of crypto on your own.&lt;/p&gt;
-
-&lt;p&gt;With that in mind, I'm going list a few resources, recommendations, and maybe even explain a little bit myself to help get you started.&lt;/p&gt;
-
-&lt;h2&gt;Some resources to get you started&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/lvh"&gt;lvh&lt;/a&gt; has a video from PyCon 2013 called &lt;a href="http://pyvideo.org/video/1778/crypto-101"&gt;Crypto 101&lt;/a&gt;.
-I'm not the biggest fan of this video, as it goes through too much material in too short an amount of time, but it does give you a quick look at many different areas of cryptography.
-Since it does cover so much, don't worry if not everything clicks.
-Instead, I'd pick something that interests you, like hash functions or AES, and dive further into that one topic.
-If you try to tackle too many subjects at once, it might be overwhelming.&lt;/li&gt;
-&lt;li&gt;Once you've figured out some areas you actually like, you can start digging in in that particular field.&lt;/li&gt;
-&lt;li&gt;There are some great books on cryptography that you'll probably want to read eventually, so I'll go ahead and list some of them here:
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.amazon.com/gp/product/047013593X/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=047013593X&amp;amp;linkCode=as2&amp;amp;tag=mathfigu-20&amp;amp;linkId=T5SNSQXDSP6LHEER"&gt;Modern Cryptanlysis&lt;/a&gt; by Christopher Swenson. Obviously, I'm a bit biased here, but I wrote some decent introduction sections to many areas of cryptography and cryptanalysis with lots of examples in Python, and there are far worse places to start. I focus primarily on block ciphers (like AES) and public key cryptography (like RSA).&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.amazon.com/gp/product/0471117099/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0471117099&amp;amp;linkCode=as2&amp;amp;tag=mathfigu-20&amp;amp;linkId=CBNLGUN6PZETLFCV"&gt;Applied Cryptography&lt;/a&gt; by Bruce Schneier. Extremely dated, but still has some useful stuff. A lot of block and stream cipher stuff.&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.amazon.com/gp/product/0471223573/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0471223573&amp;amp;linkCode=as2&amp;amp;tag=mathfigu-20&amp;amp;linkId=6ZT4U6PDRCMS4V3V"&gt;Practical Cryptography&lt;/a&gt; by Bruce Schneier. A good companion to Applied Cryptography that is a bit more updated, with lots of focus on understanding and correctly using cryptography.&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.amazon.com/gp/product/1420070029/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=1420070029&amp;amp;linkCode=as2&amp;amp;tag=mathfigu-20&amp;amp;linkId=CNJQJOUTTRFOKRBH"&gt;Algorithmic Cryptanalysis&lt;/a&gt; by Antoine Joux. One of the newest books, and chock full of good stuff, with a focus on public key cryptography, stream ciphers, and lattices. This one's probably one of the most advanced cryptography books on the market.&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://cacr.uwaterloo.ca/hac/"&gt;Handbook for Applied Cryptography&lt;/a&gt; by Alfred Menezes, Paul van Oorschot and Scott Vanstone. This book covers a lot of material, but I find it a little terse at times. It is free though, which is a big plus.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This list is not comprehensive: it's probably best to just look at all of the available books, glance through some of the pages and the table of contents, and see if the style, approach, and depth meet your interests. In general, there are two kinds of crypto books you'll see on the market: academic ones and practical ones. When you start out learning, you'll definitely want to focus on the more practical tomes (Schneier and Swenson, for example), and start reading academic books (Joux's book, and many published by academic publishers like Springer) as you get more comfortable.&lt;/p&gt;
-
-&lt;h2&gt;I know the basics, what next?&lt;/h2&gt;
-
-&lt;p&gt;Once you know Crypto 101 and you want to dive into Crypto 201, where do you go?&lt;/p&gt;
-
-&lt;p&gt;One great next step is to work on &lt;a href="http://cryptopals.com/"&gt;The Matasano Crypto Challenges&lt;/a&gt;.
-Not only will you have to learn a lot to complete them, but you'll have real experience making and breaking codes.
-I think this is a great next-step for a would-be crypto enthusiast.
-(And this is even a great step for cryptographers on any level &amp;ndash; I certainly had fun doing them.)&lt;/p&gt;
-
-&lt;p&gt;There are some Coursera courses on Cryptography taught by Dan Boneh (&lt;a href="https://www.coursera.org/course/crypto"&gt;Cryptography I&lt;/a&gt; and &lt;a href="https://www.coursera.org/course/crypto2"&gt;Cryptography II&lt;/a&gt;).
-I haven't taken them, but the instructor is top-notch, and the syllabi are solid.&lt;/p&gt;
-
-&lt;p&gt;As you progress further in your knowledge, you should start reading recent research papers in cryptography.
-One great place to keep track of is the IACR &lt;a href="http://eprint.iacr.org/"&gt;Cryptology ePrint Archive&lt;/a&gt;.
-These are the cutting edge of cryptography and cryptanalysis, and they range from beginner-friendly to extremely deep, specialist literature.
-The writing and publication quality of the cutting-edge papers also has a wide range.
-And even though it is possible to learn almost everything about cryptography and cryptanalysis for free from these papers, the books in the previous section are often much easier to learn from since they have consistent writing style, terminology, notation, and editing.&lt;/p&gt;
-
-&lt;h2&gt;This part confuses me. Help!&lt;/h2&gt;
-
-&lt;p&gt;I'm going to have some more blog posts in the near future clearing up some areas that I've seen be particularly sticky for some people.
-In particular, I know that there are some sticky points in finite fields, RSA, and hashing that I think I can help clarify.&lt;/p&gt;
-
-&lt;p&gt;Check back next week for part 2 of &lt;em&gt;So You Want To Learn Crypto&lt;/em&gt;.&lt;/p&gt;
 </content></entry>
 </feed>
