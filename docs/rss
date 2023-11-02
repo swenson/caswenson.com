@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>Sat, 05 Aug 2023 21:51:14 -0800</updated>
+  <updated>Sat, 05 Aug 2023 21:51:27 -0800</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<item><title>Picking a plan for electricity</title><link>http://swenson.io/2023_08_05_picking_a_plan_for_electricity.html</link><guid>f01ae0d6-16cf-52e0-9ae0-74c699380349</guid><pubDate>Sat, 05 Aug 2023 21:51:14 -0800</pubDate><description>
+<item><title>Picking a plan for electricity</title><link>http://swenson.io/2023_08_05_picking_a_plan_for_electricity.html</link><guid>a47af9a2-e909-55bd-b3b2-19bed2d94775</guid><pubDate>Sat, 05 Aug 2023 21:51:27 -0800</pubDate><description>
 &lt;p&gt;I live in Oregon, and Pacific Power is my only choice for providing electricity.
 I put solar panels and a battery on my house a few years ago because (a) they're cool,
 (b) they are useful in emergencies, and (c) theoretically they will save me money in the very long-term
@@ -35,7 +35,7 @@ including how much I sold back to Pacific Power, so I don't have to guess.&lt;/p
 &lt;p&gt;So, I wrote a quick Python program that simulated how much each power plan would cost me: it runs through every data point, estimates about how much power was used since the last data point, and accumulates the cost according the plan rules.
 I ran through a few different assumptions about what were meant by the time ranges, and ignored holidays (since Pacific Power doesn't define what holidays they follow anyway), but the gist was essentially:&lt;/p&gt;
 
-&lt;table border=1&gt;
+&lt;table&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;Schedule&lt;/th&gt;

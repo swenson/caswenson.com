@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2023-08-05T21:51:14-00:00</updated>
+  <updated>2023-08-05T21:51:27-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>Picking a plan for electricity</title><link href="http://swenson.io/2023_08_05_picking_a_plan_for_electricity.html" rel="alternate" /><id>2023_08_05_picking_a_plan_for_electricity.html</id><published>2023-08-05T21:51:14-00:00</published><updated>2023-08-05T21:51:14-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>Picking a plan for electricity</title><link href="http://swenson.io/2023_08_05_picking_a_plan_for_electricity.html" rel="alternate" /><id>2023_08_05_picking_a_plan_for_electricity.html</id><published>2023-08-05T21:51:27-00:00</published><updated>2023-08-05T21:51:27-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;I live in Oregon, and Pacific Power is my only choice for providing electricity.
 I put solar pan</summary><content type="html">
 &lt;p&gt;I live in Oregon, and Pacific Power is my only choice for providing electricity.
@@ -37,7 +37,7 @@ including how much I sold back to Pacific Power, so I don't have to guess.&lt;/p
 &lt;p&gt;So, I wrote a quick Python program that simulated how much each power plan would cost me: it runs through every data point, estimates about how much power was used since the last data point, and accumulates the cost according the plan rules.
 I ran through a few different assumptions about what were meant by the time ranges, and ignored holidays (since Pacific Power doesn't define what holidays they follow anyway), but the gist was essentially:&lt;/p&gt;
 
-&lt;table border=1&gt;
+&lt;table&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;Schedule&lt;/th&gt;
