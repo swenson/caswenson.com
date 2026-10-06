@@ -75,7 +75,15 @@
 	<div class="tagline">computer science, math, programming and other stuff</div>
 	<div class="tagline">a blog by Christopher Swenson</div>
 
-	<div class="post"><div class="date">2023-08-05</div><h1><a href="2023_08_05_picking_a_plan_for_electricity.html">Picking a plan for electricity</a></h1>
+	<div class="post"><div class="date">2026-10-06</div><h1><a href="2026_10_06_a_rust_riscv_disassembler.html">A Rust RISC-V Disassembler</a></h1>
+<p>When I was working on <a href="https://caliptra.io">Caliptra</a>, an open source silicon root of trust, I needed a Rust RISC-V disassembler to embed in our emulator to help with debugging. There was some Rust source code out there (such as Oxide Computer Company's <a href="https://github.com/oxidecomputer/disc-v">disc-v</a> source) but it was unlicensed, not published as a crate, as out of date. So at the time, I just redid the work of converting the same underlying C library to Rust (with some automation, but mostly by hand), and let it sit in the Caliptra's repositories, as I never really had time to polish it and publish a crate, and the Caliptra project probably didn't want to maintain that crate.</p>
+
+<p>Fast forward to now, when I potentially need that same disassembler again, but still no great RISC-V disassembly crate exists. But! The Caliptra source I made before is open source! I can just fork it, clean it up a bit, and repackage it, and I can publish it myself (with appropriate attribution and licensing).</p>
+
+<p>In the age of AI, there are far fewer excuses for not cleaning up that code, publishing it, and keeping it up-to-date. As the <a href="https://oxide-and-friends.transistor.fm/episodes/engineering-rigor-in-the-llm-age">Oxide folks would say</a>, let's use the AI tools to add more rigor and maintainability to our open source.</p>
+
+<p>Now live at <a href="https://crates.io/crates/disc-v/">https://crates.io/crates/disc-v/</a> -- many thanks to the folks I worked with on the Caliptra project for all of the work done on that open source module.</p>
+</div><div class="post"><div class="date">2023-08-05</div><h1><a href="2023_08_05_picking_a_plan_for_electricity.html">Picking a plan for electricity</a></h1>
 <p>I live in Oregon, and Pacific Power is my only choice for providing electricity.
 I put solar panels and a battery on my house a few years ago because (a) they're cool,
 (b) they are useful in emergencies, and (c) theoretically they will save me money in the very long-term
@@ -886,36 +894,6 @@ few modular exponentiations) the discrete logarithm of $4244504$ is $30$, which 
 <p>I've released code for the above computations, including the
 Pohlig&ndash;Hellman algorithm implementation, in Python on
 <a href="https://github.com/swenson/shortcodes">GitHub</a>, licensed under MIT.</p>
-</div><div class="post"><div class="date">2014-11-10</div><h1><a href="2014_11_10_how_to_pronounce_programming_words.html">How to pronounce programming words</a></h1>
-<p>Certain words in programming I've seen people mangle in various ways, and
-many times, I realized that I don't actually know the correct way to pronounce them.</p>
-
-<p>So, I've constructed a list of what I consider to be the correct pronounciations
-of various words.
-I've tried to use the original authors of as the source, when possible, or other authoritative sources.</p>
-
-<p>In alphabetical order:</p>
-
-<ul>
-<li><em>Akka</em>: ahh kahh, <a href="https://www.youtube.com/watch?v=GBvtE61Wrto">https://www.youtube.com/watch?v=GBvtE61Wrto</a></li>
-<li><em>Clique</em>: click, <a href="https://www.youtube.com/watch?v=txaGsawljjA">https://www.youtube.com/watch?v=txaGsawljjA</a></li>
-<li><em>GIF</em>: jif, sorry, <a href="http://www.olsenhome.com/gif/">http://www.olsenhome.com/gif/</a></li>
-<li><em>GNU</em>: guh-new, <a href="http://upload.wikimedia.org/wikipedia/commons/2/24/En-gnu.ogg">http://upload.wikimedia.org/wikipedia/commons/2/24/En-gnu.ogg</a></li>
-<li><em>Godel</em>: gurr-dle, <a href="http://upload.wikimedia.org/wikipedia/commons/f/fd/Kurt_g%C3%B6del.ogg">http://upload.wikimedia.org/wikipedia/commons/f/fd/Kurt_g%C3%B6del.ogg</a></li>
-<li><em>Knuth</em>: kuh-nooth, <a href="http://cs.stanford.edu/~uno/faq.html">http://cs.stanford.edu/~uno/faq.html</a></li>
-<li><em>LaTeX</em>: Leslie Lamport says there is no official pronunciation. Knuth pronounces it lah-tech, <a href="http://www.webofstories.com/play/donald.knuth/69;jsessionid=57A6533A825A17DE1474F30F5B254ADD">http://www.webofstories.com/play/donald.knuth/69;jsessionid=57A6533A825A17DE1474F30F5B254ADD</a></li>
-<li><em>Linux</em>: Lih-nucks, <a href="https://www.youtube.com/watch?v=uK0xXFZtJ8Q">https://www.youtube.com/watch?v=uK0xXFZtJ8Q</a></li>
-<li><em>MySQL</em>: my-ess-que-ell, <a href="https://www.youtube.com/watch?v=nalzRhtn-vw">https://www.youtube.com/watch?v=nalzRhtn-vw</a></li>
-<li><em>NumPy</em>: num-pie, <a href="https://www.youtube.com/watch?v=vrPRwUOt-7k">https://www.youtube.com/watch?v=vrPRwUOt-7k</a></li>
-<li><em>OS X</em>: oh-ess-Ten, <a href="https://www.youtube.com/watch?v=WcZqJHH3Gkc">https://www.youtube.com/watch?v=WcZqJHH3Gkc</a></li>
-<li><em>PyPI</em>: pie pee eye, <a href="http://www.quora.com/How-do-Pythonistas-pronounce-PyPy-and-PyPI">http://www.quora.com/How-do-Pythonistas-pronounce-PyPy-and-PyPI</a></li>
-<li><em>Qt</em>: cute, <a href="https://www.youtube.com/watch?v=2hE-Oo4ltJg">https://www.youtube.com/watch?v=2hE-Oo4ltJg</a></li>
-<li><em>Scala</em>: scah-lah, rhymes with challah, <a href="https://www.youtube.com/watch?v=ecekSCX3B4Q">https://www.youtube.com/watch?v=ecekSCX3B4Q</a></li>
-<li><em>SQL</em>: ess-que-ell (since Sequel is the predecessor), <a href="https://www.youtube.com/watch?v=BvmMGHtqY6Q">https://www.youtube.com/watch?v=BvmMGHtqY6Q</a></li>
-<li><em>TeX</em>: tech. <a href="https://www.youtube.com/watch?v=C3vILM2cNuo">https://www.youtube.com/watch?v=C3vILM2cNuo</a></li>
-<li><em>Trie</em>: tree, <a href="http://www.webcitation.org/5pqUULy24">http://www.webcitation.org/5pqUULy24</a></li>
-<li><em>von Neumann</em>: von noi-man <a href="https://www.youtube.com/watch?v=VTS9O0CoVng">https://www.youtube.com/watch?v=VTS9O0CoVng</a></li>
-</ul>
 </div>
 	
 

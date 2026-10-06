@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>Sat, 05 Aug 2023 21:51:27 -0800</updated>
+  <updated>Tue, 06 Oct 2026 18:13:31 -0800</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<item><title>Picking a plan for electricity</title><link>http://swenson.io/2023_08_05_picking_a_plan_for_electricity.html</link><guid>a47af9a2-e909-55bd-b3b2-19bed2d94775</guid><pubDate>Sat, 05 Aug 2023 21:51:27 -0800</pubDate><description>
+<item><title>A Rust RISC-V Disassembler</title><link>http://swenson.io/2026_10_06_a_rust_riscv_disassembler.html</link><guid>e5819020-416d-556a-bd30-a2795a16c44f</guid><pubDate>Tue, 06 Oct 2026 18:13:31 -0800</pubDate><description>
+&lt;p&gt;When I was working on &lt;a href="https://caliptra.io"&gt;Caliptra&lt;/a&gt;, an open source silicon root of trust, I needed a Rust RISC-V disassembler to embed in our emulator to help with debugging. There was some Rust source code out there (such as Oxide Computer Company's &lt;a href="https://github.com/oxidecomputer/disc-v"&gt;disc-v&lt;/a&gt; source) but it was unlicensed, not published as a crate, as out of date. So at the time, I just redid the work of converting the same underlying C library to Rust (with some automation, but mostly by hand), and let it sit in the Caliptra's repositories, as I never really had time to polish it and publish a crate, and the Caliptra project probably didn't want to maintain that crate.&lt;/p&gt;
+
+&lt;p&gt;Fast forward to now, when I potentially need that same disassembler again, but still no great RISC-V disassembly crate exists. But! The Caliptra source I made before is open source! I can just fork it, clean it up a bit, and repackage it, and I can publish it myself (with appropriate attribution and licensing).&lt;/p&gt;
+
+&lt;p&gt;In the age of AI, there are far fewer excuses for not cleaning up that code, publishing it, and keeping it up-to-date. As the &lt;a href="https://oxide-and-friends.transistor.fm/episodes/engineering-rigor-in-the-llm-age"&gt;Oxide folks would say&lt;/a&gt;, let's use the AI tools to add more rigor and maintainability to our open source.&lt;/p&gt;
+
+&lt;p&gt;Now live at &lt;a href="https://crates.io/crates/disc-v/"&gt;https://crates.io/crates/disc-v/&lt;/a&gt; -- many thanks to the folks I worked with on the Caliptra project for all of the work done on that open source module.&lt;/p&gt;
+</description></item><item><title>Picking a plan for electricity</title><link>http://swenson.io/2023_08_05_picking_a_plan_for_electricity.html</link><guid>a47af9a2-e909-55bd-b3b2-19bed2d94775</guid><pubDate>Sat, 05 Aug 2023 21:51:27 -0800</pubDate><description>
 &lt;p&gt;I live in Oregon, and Pacific Power is my only choice for providing electricity.
 I put solar panels and a battery on my house a few years ago because (a) they're cool,
 (b) they are useful in emergencies, and (c) theoretically they will save me money in the very long-term
@@ -817,35 +825,5 @@ few modular exponentiations) the discrete logarithm of $4244504$ is $30$, which 
 &lt;p&gt;I've released code for the above computations, including the
 Pohlig&amp;ndash;Hellman algorithm implementation, in Python on
 &lt;a href="https://github.com/swenson/shortcodes"&gt;GitHub&lt;/a&gt;, licensed under MIT.&lt;/p&gt;
-</description></item><item><title>How to pronounce programming words</title><link>http://swenson.io/2014_11_10_how_to_pronounce_programming_words.html</link><guid>4d68b6bf-1482-599f-9abd-107b1c22294c</guid><pubDate>Mon, 10 Nov 2014 16:51:59 -0800</pubDate><description>
-&lt;p&gt;Certain words in programming I've seen people mangle in various ways, and
-many times, I realized that I don't actually know the correct way to pronounce them.&lt;/p&gt;
-
-&lt;p&gt;So, I've constructed a list of what I consider to be the correct pronounciations
-of various words.
-I've tried to use the original authors of as the source, when possible, or other authoritative sources.&lt;/p&gt;
-
-&lt;p&gt;In alphabetical order:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Akka&lt;/em&gt;: ahh kahh, &lt;a href="https://www.youtube.com/watch?v=GBvtE61Wrto"&gt;https://www.youtube.com/watch?v=GBvtE61Wrto&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Clique&lt;/em&gt;: click, &lt;a href="https://www.youtube.com/watch?v=txaGsawljjA"&gt;https://www.youtube.com/watch?v=txaGsawljjA&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;GIF&lt;/em&gt;: jif, sorry, &lt;a href="http://www.olsenhome.com/gif/"&gt;http://www.olsenhome.com/gif/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;GNU&lt;/em&gt;: guh-new, &lt;a href="http://upload.wikimedia.org/wikipedia/commons/2/24/En-gnu.ogg"&gt;http://upload.wikimedia.org/wikipedia/commons/2/24/En-gnu.ogg&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Godel&lt;/em&gt;: gurr-dle, &lt;a href="http://upload.wikimedia.org/wikipedia/commons/f/fd/Kurt_g%C3%B6del.ogg"&gt;http://upload.wikimedia.org/wikipedia/commons/f/fd/Kurt_g%C3%B6del.ogg&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Knuth&lt;/em&gt;: kuh-nooth, &lt;a href="http://cs.stanford.edu/~uno/faq.html"&gt;http://cs.stanford.edu/~uno/faq.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;LaTeX&lt;/em&gt;: Leslie Lamport says there is no official pronunciation. Knuth pronounces it lah-tech, &lt;a href="http://www.webofstories.com/play/donald.knuth/69;jsessionid=57A6533A825A17DE1474F30F5B254ADD"&gt;http://www.webofstories.com/play/donald.knuth/69;jsessionid=57A6533A825A17DE1474F30F5B254ADD&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Linux&lt;/em&gt;: Lih-nucks, &lt;a href="https://www.youtube.com/watch?v=uK0xXFZtJ8Q"&gt;https://www.youtube.com/watch?v=uK0xXFZtJ8Q&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;MySQL&lt;/em&gt;: my-ess-que-ell, &lt;a href="https://www.youtube.com/watch?v=nalzRhtn-vw"&gt;https://www.youtube.com/watch?v=nalzRhtn-vw&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;NumPy&lt;/em&gt;: num-pie, &lt;a href="https://www.youtube.com/watch?v=vrPRwUOt-7k"&gt;https://www.youtube.com/watch?v=vrPRwUOt-7k&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;OS X&lt;/em&gt;: oh-ess-Ten, &lt;a href="https://www.youtube.com/watch?v=WcZqJHH3Gkc"&gt;https://www.youtube.com/watch?v=WcZqJHH3Gkc&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;PyPI&lt;/em&gt;: pie pee eye, &lt;a href="http://www.quora.com/How-do-Pythonistas-pronounce-PyPy-and-PyPI"&gt;http://www.quora.com/How-do-Pythonistas-pronounce-PyPy-and-PyPI&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Qt&lt;/em&gt;: cute, &lt;a href="https://www.youtube.com/watch?v=2hE-Oo4ltJg"&gt;https://www.youtube.com/watch?v=2hE-Oo4ltJg&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Scala&lt;/em&gt;: scah-lah, rhymes with challah, &lt;a href="https://www.youtube.com/watch?v=ecekSCX3B4Q"&gt;https://www.youtube.com/watch?v=ecekSCX3B4Q&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;SQL&lt;/em&gt;: ess-que-ell (since Sequel is the predecessor), &lt;a href="https://www.youtube.com/watch?v=BvmMGHtqY6Q"&gt;https://www.youtube.com/watch?v=BvmMGHtqY6Q&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;TeX&lt;/em&gt;: tech. &lt;a href="https://www.youtube.com/watch?v=C3vILM2cNuo"&gt;https://www.youtube.com/watch?v=C3vILM2cNuo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Trie&lt;/em&gt;: tree, &lt;a href="http://www.webcitation.org/5pqUULy24"&gt;http://www.webcitation.org/5pqUULy24&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;von Neumann&lt;/em&gt;: von noi-man &lt;a href="https://www.youtube.com/watch?v=VTS9O0CoVng"&gt;https://www.youtube.com/watch?v=VTS9O0CoVng&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description></item>
 </feed>
