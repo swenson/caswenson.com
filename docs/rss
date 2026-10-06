@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>Tue, 06 Oct 2026 18:13:31 -0800</updated>
+  <updated>Tue, 06 Oct 2026 19:13:45 -0800</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<item><title>A Rust RISC-V Disassembler</title><link>http://swenson.io/2026_10_06_a_rust_riscv_disassembler.html</link><guid>e5819020-416d-556a-bd30-a2795a16c44f</guid><pubDate>Tue, 06 Oct 2026 18:13:31 -0800</pubDate><description>
-&lt;p&gt;When I was working on &lt;a href="https://caliptra.io"&gt;Caliptra&lt;/a&gt;, an open source silicon root of trust, I needed a Rust RISC-V disassembler to embed in our emulator to help with debugging. There was some Rust source code out there (such as Oxide Computer Company's &lt;a href="https://github.com/oxidecomputer/disc-v"&gt;disc-v&lt;/a&gt; source) but it was unlicensed, not published as a crate, as out of date. So at the time, I just redid the work of converting the same underlying C library to Rust (with some automation, but mostly by hand), and let it sit in the Caliptra's repositories, as I never really had time to polish it and publish a crate, and the Caliptra project probably didn't want to maintain that crate.&lt;/p&gt;
+<item><title>A Rust RISC-V Disassembler</title><link>http://swenson.io/2026_10_06_a_rust_riscv_disassembler.html</link><guid>aabaa44f-ad7e-51dc-9f70-77d1d0b3eef1</guid><pubDate>Tue, 06 Oct 2026 19:13:45 -0800</pubDate><description>
+&lt;p&gt;When I was working on &lt;a href="https://caliptra.io"&gt;Caliptra&lt;/a&gt;, an open source silicon root of trust, I needed a Rust RISC-V disassembler to embed in our emulator to help with debugging. There was some Rust source code out there (such as Oxide Computer Company's &lt;a href="https://github.com/oxidecomputer/disc-v"&gt;disc-v&lt;/a&gt; source) but it was unlicensed, not published as a crate, and out of date. So at the time, I just redid the work of converting the same underlying C library to Rust (with some automation, but mostly by hand), and let it sit in the Caliptra's repositories, as I never really had time to polish it and publish a crate, and the Caliptra project probably didn't want to maintain that crate.&lt;/p&gt;
 
 &lt;p&gt;Fast forward to now, when I potentially need that same disassembler again, but still no great RISC-V disassembly crate exists. But! The Caliptra source I made before is open source! I can just fork it, clean it up a bit, and repackage it, and I can publish it myself (with appropriate attribution and licensing).&lt;/p&gt;
 

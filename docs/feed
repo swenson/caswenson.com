@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Christopher Swenson</title>
   <id>http://www.caswenson.com/</id>
-  <updated>2026-10-06T18:13:31-00:00</updated>
+  <updated>2026-10-06T19:13:45-00:00</updated>
   <author>
     <name>Christopher Swenson</name>
   </author>
-<entry><title>A Rust RISC-V Disassembler</title><link href="http://swenson.io/2026_10_06_a_rust_riscv_disassembler.html" rel="alternate" /><id>2026_10_06_a_rust_riscv_disassembler.html</id><published>2026-10-06T18:13:31-00:00</published><updated>2026-10-06T18:13:31-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
+<entry><title>A Rust RISC-V Disassembler</title><link href="http://swenson.io/2026_10_06_a_rust_riscv_disassembler.html" rel="alternate" /><id>2026_10_06_a_rust_riscv_disassembler.html</id><published>2026-10-06T19:13:45-00:00</published><updated>2026-10-06T19:13:45-00:00</updated><author><name>Christopher Swenson</name></author><summary type="html">
 &lt;p&gt;When I was working on &lt;a href="https://caliptra.io"&gt;Caliptra&lt;/a&gt;, an open source silicon root of</summary><content type="html">
-&lt;p&gt;When I was working on &lt;a href="https://caliptra.io"&gt;Caliptra&lt;/a&gt;, an open source silicon root of trust, I needed a Rust RISC-V disassembler to embed in our emulator to help with debugging. There was some Rust source code out there (such as Oxide Computer Company's &lt;a href="https://github.com/oxidecomputer/disc-v"&gt;disc-v&lt;/a&gt; source) but it was unlicensed, not published as a crate, as out of date. So at the time, I just redid the work of converting the same underlying C library to Rust (with some automation, but mostly by hand), and let it sit in the Caliptra's repositories, as I never really had time to polish it and publish a crate, and the Caliptra project probably didn't want to maintain that crate.&lt;/p&gt;
+&lt;p&gt;When I was working on &lt;a href="https://caliptra.io"&gt;Caliptra&lt;/a&gt;, an open source silicon root of trust, I needed a Rust RISC-V disassembler to embed in our emulator to help with debugging. There was some Rust source code out there (such as Oxide Computer Company's &lt;a href="https://github.com/oxidecomputer/disc-v"&gt;disc-v&lt;/a&gt; source) but it was unlicensed, not published as a crate, and out of date. So at the time, I just redid the work of converting the same underlying C library to Rust (with some automation, but mostly by hand), and let it sit in the Caliptra's repositories, as I never really had time to polish it and publish a crate, and the Caliptra project probably didn't want to maintain that crate.&lt;/p&gt;
 
 &lt;p&gt;Fast forward to now, when I potentially need that same disassembler again, but still no great RISC-V disassembly crate exists. But! The Caliptra source I made before is open source! I can just fork it, clean it up a bit, and repackage it, and I can publish it myself (with appropriate attribution and licensing).&lt;/p&gt;
 
